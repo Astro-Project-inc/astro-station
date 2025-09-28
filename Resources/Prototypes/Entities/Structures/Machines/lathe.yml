@@ -597,10 +597,10 @@
     - CameraBoards
     #- MechBoards - Goobstation - split between departmental lathes
     - ShuttleBoards
-    - AdvancedRoboticsBoards # CorvaxGoob MutableLaws
     # Goobstation Packs
     - SharedBoards
-    - Cloning # CorvaxGoob Cloning
+    # CorvaxGoob Packs
+    - Cloning # Cloning
   - type: MaterialStorage
     whitelist:
       tags:

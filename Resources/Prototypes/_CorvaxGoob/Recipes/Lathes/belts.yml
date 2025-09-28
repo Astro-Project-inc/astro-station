@@ -1,0 +1,67 @@
+- type: latheRecipe
+  parent: UtilityBelt
+  id: PlantBelt
+  result: ClothingBeltPlant
+
+- type: latheRecipe
+  parent: UtilityBelt
+  id: ChefBelt
+  result: ClothingBeltChef
+
+- type: latheRecipe
+  parent: UtilityBelt
+  id: JanitorBelt
+  result: ClothingBeltJanitor
+
+- type: latheRecipe
+  parent: UtilityBelt
+  id: MedicalBelt
+  result: ClothingBeltMedical
+
+- type: latheRecipe
+  parent: UtilityBelt
+  id: MedicalEMTBelt
+  result: ClothingBeltMedicalEMT
+
+- type: latheRecipe
+  parent: UtilityBelt
+  id: SurgicalBoard
+  result: ClothingBeltSurgicalBoard
+
+- type: latheRecipe
+  parent: UtilityBelt
+  id: MilitaryWebbingCMO
+  result: ClothingBeltMilitaryWebbingCMO
+
+- type: latheRecipe
+  parent: UtilityBelt
+  id: SecurityBelt
+  result: ClothingBeltSecurity
+
+- type: latheRecipe
+  parent: UtilityBelt
+  id: SecurityWebbing
+  result: ClothingBeltSecurityWebbing
+
+- type: latheRecipe
+  parent: UtilityBelt
+  id: HolsterBelt
+  result: ClothingBeltHolster
+
+- type: latheRecipe
+  parent: UtilityBelt
+  id: SalvageWebbing
+  result: ClothingBeltSalvageWebbing
+
+- type: latheRecipe
+  parent: UtilityBelt
+  id: ChiefEngineerBelt
+  result: ClothingBeltChiefEngineer
+
+- type: latheRecipe
+  parent: UtilityBelt
+  id: ScienceBelt
+  result: ClothingBeltScience
+  materials:
+    Cloth: 200
+    Steel: 250

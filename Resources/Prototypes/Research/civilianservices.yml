@@ -128,7 +128,11 @@
     - MassMediaCircuitboard
     - JukeboxCircuitBoard
     - BorgModuleLollypop # Goobstation
-  position: 0,2
+  # CorvaxGoob-WorkBelts-Techfab-start
+  position: 0,3
+  technologyPrerequisites:
+  - WokrBelts
+  # CorvaxGoob-WorkBelts-Techfab-end
 
 - type: technology
   id: MeatManipulation

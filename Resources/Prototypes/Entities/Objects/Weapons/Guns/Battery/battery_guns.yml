@@ -1023,6 +1023,10 @@
       Steel: 125
       Glass: 100
   - type: PacifismAllowedGun
+  - type: Tag # CorvaxGoob-WorkBelts-Techfab
+    tags:
+    - Sidearm
+    - ScienceTools
 
 
 - type: entity

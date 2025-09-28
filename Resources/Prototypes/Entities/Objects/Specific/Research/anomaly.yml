@@ -124,6 +124,9 @@
     materialComposition:
       Steel: 100
       Glass: 25
+  - type: Tag # CorvaxGoob-WorkBelts-Techfab
+    tags:
+    - ScienceTools
 
 - type: entity
   id: AnomalyLocatorUnpowered
@@ -166,6 +169,9 @@
     materialComposition:
       Steel: 100
       Glass: 25
+  - type: Tag # CorvaxGoob-WorkBelts-Techfab
+    tags:
+    - ScienceTools
 
 - type: entity
   id: AnomalyLocator
@@ -275,3 +281,6 @@
       Glass: 125
       Plasma: 125
       Silver: 62
+  - type: Tag # CorvaxGoob-WorkBelts-Techfab
+    tags:
+    - ScienceTools
