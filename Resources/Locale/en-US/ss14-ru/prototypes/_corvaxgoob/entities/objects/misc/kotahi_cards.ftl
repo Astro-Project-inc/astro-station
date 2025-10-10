@@ -1,12 +1,11 @@
-ent-CardBaseKotahi = карта
+ent-BookKotahiRules = Kotahi rulebook
+    .desc = Just read it before play.
+ent-CardBaseKotahi = card
     .desc = { ent-CardBase.desc }
-ent-CardBoxKotahi = колода карт Kotahi
+ent-CardBoxKotahi = kotahi deck box
     .desc = { ent-CardBoxBase.desc }
-ent-CardDeckKotahi = колода карт
+ent-CardDeckKotahi = deck of card
     .desc = { ent-CardDeckBase.desc }
-ent-BookKotahiRules = книга правил "Kotahi"
-    .desc = Просто прочитайте её перед игрой.
-# Blue
 ent-CardBlueSc0Kotahi = { ent-CardBaseKotahi }
     .desc = { ent-CardBaseKotahi.desc }
 ent-CardBlueSc1Kotahi = { ent-CardBaseKotahi }
@@ -33,7 +32,6 @@ ent-CardBlueScReverseKotahi = { ent-CardBaseKotahi }
     .desc = { ent-CardBaseKotahi.desc }
 ent-CardBlueScSkipKotahi = { ent-CardBaseKotahi }
     .desc = { ent-CardBaseKotahi.desc }
-# Green
 ent-CardGreenSc0Kotahi = { ent-CardBaseKotahi }
     .desc = { ent-CardBaseKotahi.desc }
 ent-CardGreenSc1Kotahi = { ent-CardBaseKotahi }
@@ -60,7 +58,6 @@ ent-CardGreenScReverseKotahi = { ent-CardBaseKotahi }
     .desc = { ent-CardBaseKotahi.desc }
 ent-CardGreenScSkipKotahi = { ent-CardBaseKotahi }
     .desc = { ent-CardBaseKotahi.desc }
-# Red
 ent-CardRedSc0Kotahi = { ent-CardBaseKotahi }
     .desc = { ent-CardBaseKotahi.desc }
 ent-CardRedSc1Kotahi = { ent-CardBaseKotahi }
@@ -87,7 +84,6 @@ ent-CardRedScReverseKotahi = { ent-CardBaseKotahi }
     .desc = { ent-CardBaseKotahi.desc }
 ent-CardRedScSkipKotahi = { ent-CardBaseKotahi }
     .desc = { ent-CardBaseKotahi.desc }
-# Yellow
 ent-CardYellowSc0Kotahi = { ent-CardBaseKotahi }
     .desc = { ent-CardBaseKotahi.desc }
 ent-CardYellowSc1Kotahi = { ent-CardBaseKotahi }
@@ -113,4 +109,8 @@ ent-CardYellowScDraw2Kotahi = { ent-CardBaseKotahi }
 ent-CardYellowScReverseKotahi = { ent-CardBaseKotahi }
     .desc = { ent-CardBaseKotahi.desc }
 ent-CardYellowScSkipKotahi = { ent-CardBaseKotahi }
+    .desc = { ent-CardBaseKotahi.desc }
+ent-CardBlackScDraw4Kotahi = { ent-CardBaseKotahi }
+    .desc = { ent-CardBaseKotahi.desc }
+ent-CardBlackScWildcardKotahi = { ent-CardBaseKotahi }
     .desc = { ent-CardBaseKotahi.desc }
