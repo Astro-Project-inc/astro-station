@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/11/2025 15:44:20
-  entityCount: 18719
+  time: 10/11/2025 16:26:16
+  entityCount: 18671
 maps:
 - 1
 grids:
@@ -7936,9 +7936,11 @@ entities:
             0: 48
             1: 2184
           2,13:
-            1: 61567
+            1: 61535
+            4: 32
           2,14:
-            1: 17749
+            1: 17493
+            2: 256
           2,15:
             1: 196
             0: 8192
@@ -8012,7 +8014,8 @@ entities:
           5,-1:
             1: 65535
           5,4:
-            1: 7389
+            1: 6365
+            5: 1024
           6,0:
             1: 56349
           6,1:
@@ -8133,7 +8136,7 @@ entities:
           7,13:
             1: 65535
           7,14:
-            4: 4080
+            6: 4080
             1: 32768
           7,15:
             1: 65535
@@ -8144,7 +8147,7 @@ entities:
           8,13:
             1: 64447
           8,14:
-            4: 816
+            6: 816
             1: 34946
           8,15:
             1: 30523
@@ -8154,36 +8157,36 @@ entities:
             0: 35564
           5,18:
             0: 21280
-            5: 128
+            7: 128
           5,19:
             0: 13059
-            6: 32896
+            8: 32896
           5,17:
             0: 59888
           5,20:
             0: 13107
-            7: 128
-            6: 32768
+            9: 128
+            8: 32768
           6,17:
             0: 61440
           6,18:
-            5: 240
-            8: 61440
+            7: 240
+            10: 61440
           6,19:
-            6: 61680
+            8: 61680
           7,17:
             0: 30304
           7,18:
-            5: 16
-            8: 4096
+            7: 16
+            10: 4096
             0: 17476
           7,19:
-            6: 4112
+            8: 4112
             0: 17476
           7,20:
             0: 17476
-            7: 16
-            6: 4096
+            9: 16
+            8: 4096
           8,16:
             1: 65303
           8,17:
@@ -8197,8 +8200,8 @@ entities:
           5,22:
             0: 3983
           6,20:
-            7: 240
-            6: 61440
+            9: 240
+            8: 61440
           6,22:
             0: 3855
           6,21:
@@ -8404,7 +8407,8 @@ entities:
           10,23:
             0: 61947
           11,21:
-            1: 20206
+            1: 18158
+            11: 2048
           11,22:
             1: 17486
             0: 43520
@@ -8478,7 +8482,8 @@ entities:
           14,6:
             1: 65319
           14,7:
-            1: 65295
+            1: 65287
+            12: 8
           14,8:
             1: 3855
           15,5:
@@ -8663,9 +8668,9 @@ entities:
             1: 4096
           19,3:
             0: 48
-            4: 57344
+            6: 57344
           19,4:
-            4: 61166
+            6: 61166
           20,0:
             1: 3184
           20,1:
@@ -8673,7 +8678,7 @@ entities:
           20,2:
             1: 65295
           20,3:
-            4: 36864
+            6: 36864
             0: 80
             1: 24576
           17,5:
@@ -8706,7 +8711,7 @@ entities:
           19,8:
             1: 4095
           20,4:
-            4: 40959
+            6: 40959
             1: 24576
           20,5:
             1: 61440
@@ -8804,10 +8809,10 @@ entities:
           21,2:
             1: 65281
           21,3:
-            4: 12288
+            6: 12288
             0: 34880
           21,4:
-            4: 13107
+            6: 13107
             0: 128
           22,1:
             1: 67
@@ -9357,6 +9362,44 @@ entities:
           - 0
           - 0
         - volume: 2500
+          temperature: 293.14365
+          moles:
+          - 1.5141267
+          - 5.696002
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 21.813705
+          - 82.06108
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
           temperature: 235
           moles:
           - 27.225372
@@ -9437,6 +9480,44 @@ entities:
           moles:
           - 6666.982
           - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 20.078888
+          - 75.53487
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 14.384373
+          - 54.11265
           - 0
           - 0
           - 0
@@ -47249,48 +47330,6 @@ entities:
     - type: Transform
       pos: 47.5,57.5
       parent: 2
-- proto: ClosetWallAtmospherics
-  entities:
-  - uid: 57
-    components:
-    - type: Transform
-      pos: 22.5,76.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 75.31168
-        moles:
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 62
-          - 61
-          - 58
-          - 65
-          - 63
-          - 60
-          - 64
 - proto: ClosetWallEmergencyFilledRandom
   entities:
   - uid: 447
@@ -47825,30 +47864,13 @@ entities:
     - type: Visibility
 - proto: ClothingBackpackERTClown
   entities:
-  - uid: 77
+  - uid: 38
     components:
     - type: Transform
-      parent: 74
+      parent: 21
     - type: Physics
       canCollide: False
-    - type: GroupExamine
-      group:
-      - hoverMessage: ""
-        contextText: verb-examine-group-other
-        icon: /Textures/Interface/examine-star.png
-        components:
-        - Armor
-        - ClothingSpeedModifier
-        entries:
-        - message: >-
-            Обеспечивает следующую защиту:
-
-            - [color=orange]Взрывной[/color] урон [color=white]к содержимому[/color] снижается на [color=lightblue]10%[/color].
-          priority: 0
-          component: Armor
-        title: null
     - type: InsideEntityStorage
-    - type: Visibility
 - proto: ClothingBeltMercWebbing
   entities:
   - uid: 6686
@@ -48447,20 +48469,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 17.338516,41.444668
       parent: 2
-- proto: ClothingMaskBreathMedicalSecurity
-  entities:
-  - uid: 69
-    components:
-    - type: Transform
-      parent: 66
-    - type: Physics
-      canCollide: False
 - proto: ClothingMaskClownBanana
   entities:
   - uid: 78
     components:
     - type: Transform
-      parent: 74
+      parent: 21
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -48474,7 +48488,7 @@ entities:
   - uid: 79
     components:
     - type: Transform
-      parent: 74
+      parent: 21
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -48534,15 +48548,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -3.7166939,30.423523
       parent: 2
-- proto: ClothingMaskGasAtmos
-  entities:
-  - uid: 60
-    components:
-    - type: Transform
-      parent: 57
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ClothingMaskGasMerc
   entities:
   - uid: 6688
@@ -48559,6 +48564,15 @@ entities:
     - type: Transform
       pos: 19.365498,57.517357
       parent: 2
+- proto: ClothingMaskMimeSecurity
+  entities:
+  - uid: 40
+    components:
+    - type: Transform
+      parent: 6875
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: ClothingMaskRat
   entities:
   - uid: 6874
@@ -48586,13 +48600,6 @@ entities:
     - type: InsideEntityStorage
 - proto: ClothingMaskSexyMime
   entities:
-  - uid: 80
-    components:
-    - type: Transform
-      parent: 74
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
   - uid: 6878
     components:
     - type: Transform
@@ -48718,9 +48725,10 @@ entities:
   - uid: 70
     components:
     - type: Transform
-      parent: 66
+      parent: 6875
     - type: Physics
       canCollide: False
+    - type: InsideEntityStorage
 - proto: ClothingNeckSolarisPin
   entities:
   - uid: 6896
@@ -48801,6 +48809,53 @@ entities:
     components:
     - type: Transform
       parent: 6875
+    - type: GroupExamine
+      group:
+      - hoverMessage: ""
+        contextText: verb-examine-group-other
+        icon: /Textures/Interface/examine-star.png
+        components:
+        - Armor
+        - ClothingSpeedModifier
+        entries:
+        - message: Понижает вашу скорость на [color=yellow]10%[/color].
+          priority: 0
+          component: ClothingSpeedModifier
+        - message: >-
+            Обеспечивает следующую защиту:
+
+            - [color=yellow]Эта броня снижает входящий урон для вашего(ей) груди[/color]
+
+            - [color=yellow]Эта броня снижает входящий урон для вашего(ей) паха[/color]
+
+            - [color=yellow]Эта броня снижает входящий урон для вашего(ей) рук[/color]
+
+            - [color=yellow]Эта броня снижает входящий урон для вашего(ей) кистей[/color]
+
+            - [color=yellow]Эта броня снижает входящий урон для вашего(ей) ног[/color]
+
+            - [color=yellow]Эта броня снижает входящий урон для вашего(ей) стоп[/color]
+
+            - [color=yellow]Эта броня снижает входящий урон для вашего(ей) хвоста[/color]
+
+            - [color=yellow]Ударный[/color] урон снижается на [color=lightblue]10%[/color].
+
+            - [color=yellow]Режущий[/color] урон снижается на [color=lightblue]10%[/color].
+
+            - [color=yellow]Колющий[/color] урон снижается на [color=lightblue]10%[/color].
+
+            - [color=yellow]Кислотный[/color] урон снижается на [color=lightblue]20%[/color].
+
+            - [color=orange]Огненный[/color] урон снижается на [color=lightblue]75%[/color].
+
+            - [color=red]Уменьшает[/color] задержку отложенного оглушения дубинкой на [color=lightblue]1 секунду[/color].
+
+            - [color=red]Увеличивает[/color] длительность отложенного оглушения дубинкой на [color=lightblue]1 секунду[/color].
+
+            - [color=orange]Взрывной[/color] урон снижается на [color=lightblue]10%[/color].
+          priority: 0
+          component: Armor
+        title: null
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -48837,15 +48892,6 @@ entities:
     - type: Transform
       pos: 64.45278,5.8528533
       parent: 2
-- proto: ClothingOuterSuitAtmosFire
-  entities:
-  - uid: 61
-    components:
-    - type: Transform
-      parent: 57
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ClothingOuterSuitCarp
   entities:
   - uid: 473
@@ -48872,23 +48918,15 @@ entities:
     - type: Transform
       pos: 15.536522,-38.48124
       parent: 2
-- proto: ClothingOuterWinterAtmos
-  entities:
-  - uid: 62
-    components:
-    - type: Transform
-      parent: 57
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ClothingOuterWinterMime
   entities:
   - uid: 71
     components:
     - type: Transform
-      parent: 66
+      parent: 6875
     - type: Physics
       canCollide: False
+    - type: InsideEntityStorage
 - proto: ClothingOuterWinterSec
   entities:
   - uid: 6911
@@ -48933,12 +48971,12 @@ entities:
     - type: Transform
       pos: 1.6860552,37.71367
       parent: 2
-- proto: ClothingShoesChameleonNoSlips
+- proto: ClothingShoesClownBanana
   entities:
-  - uid: 63
+  - uid: 36
     components:
     - type: Transform
-      parent: 57
+      parent: 21
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -49156,12 +49194,12 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitAtmos
+- proto: ClothingUniformJumpsuitClownBanana
   entities:
-  - uid: 64
+  - uid: 37
     components:
     - type: Transform
-      parent: 57
+      parent: 21
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -50472,8 +50510,10 @@ entities:
   - uid: 7092
     components:
     - type: Transform
-      pos: 7.1593523,58.18232
-      parent: 2
+      parent: 6875
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
   - uid: 7093
     components:
     - type: Transform
@@ -50543,8 +50583,10 @@ entities:
   - uid: 7103
     components:
     - type: Transform
-      pos: 10.47363,52.590603
-      parent: 2
+      parent: 21
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: CryogenicSleepUnit
   entities:
   - uid: 1197
@@ -56027,8 +56069,10 @@ entities:
   - uid: 8013
     components:
     - type: Transform
-      pos: 7.2999773,58.635445
-      parent: 2
+      parent: 6875
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: DrinkBottleWhiskey
   entities:
   - uid: 8014
@@ -56095,7 +56139,7 @@ entities:
     - type: Label
       currentLabel: кофейный ликёр
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.5611118
+      sprayFizzinessThresholdRoll: 0.1772374
     - type: NameModifier
       baseName: бутылка кофейного ликёра
     - type: ContainerContainer
@@ -56381,7 +56425,7 @@ entities:
     - type: Label
       currentLabel: ром
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.7402215
+      sprayFizzinessThresholdRoll: 0.77889955
     - type: NameModifier
       baseName: кубинский пряный ром капитана Пита
     - type: ContainerContainer
@@ -56423,7 +56467,7 @@ entities:
     - type: Label
       currentLabel: текила
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.94016373
+      sprayFizzinessThresholdRoll: 0.21532714
     - type: NameModifier
       baseName: бутылка текилы Каккаво гарантированного качества
     - type: ContainerContainer
@@ -56464,7 +56508,7 @@ entities:
     - type: Label
       currentLabel: вермут
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.19335954
+      sprayFizzinessThresholdRoll: 0.4220706
     - type: NameModifier
       baseName: бутылка вермута Золотой глаз
     - type: ContainerContainer
@@ -56487,7 +56531,7 @@ entities:
     - type: Label
       currentLabel: водка
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.6585453
+      sprayFizzinessThresholdRoll: 0.8750568
     - type: NameModifier
       baseName: бутылка водки
     - type: ContainerContainer
@@ -56537,7 +56581,7 @@ entities:
     - type: Label
       currentLabel: вино
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.6304549
+      sprayFizzinessThresholdRoll: 0.41170478
     - type: NameModifier
       baseName: особое двухбородое бородатое вино
     - type: ContainerContainer
@@ -60314,7 +60358,7 @@ entities:
       pos: 39.5,13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -74557.36
+      secondsUntilStateChange: -75141.94
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -62629,59 +62673,73 @@ entities:
       parent: 2
 - proto: FoodPieBananaCream
   entities:
-  - uid: 81
+  - uid: 22
     components:
     - type: Transform
-      parent: 74
+      parent: 21
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 82
+  - uid: 24
     components:
     - type: Transform
-      parent: 74
+      parent: 21
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 83
+  - uid: 25
     components:
     - type: Transform
-      parent: 74
+      parent: 21
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 84
+  - uid: 26
     components:
     - type: Transform
-      parent: 74
+      parent: 21
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 85
+  - uid: 28
     components:
     - type: Transform
-      parent: 74
+      parent: 21
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 86
+  - uid: 29
     components:
     - type: Transform
-      parent: 74
+      parent: 21
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 87
+  - uid: 30
     components:
     - type: Transform
-      parent: 74
+      parent: 21
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 88
+  - uid: 32
     components:
     - type: Transform
-      parent: 74
+      parent: 21
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 33
+    components:
+    - type: Transform
+      parent: 21
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 34
+    components:
+    - type: Transform
+      parent: 21
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -87483,15 +87541,6 @@ entities:
     - type: Transform
       pos: 16.5,-15.5
       parent: 2
-- proto: HolofanProjectorEmpty
-  entities:
-  - uid: 65
-    components:
-    - type: Transform
-      parent: 57
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: HolopadAiBackupPower
   entities:
   - uid: 12175
@@ -88616,55 +88665,36 @@ entities:
     - type: InsideEntityStorage
 - proto: JetpackSecurityFilled
   entities:
-  - uid: 28
+  - uid: 41
     components:
     - type: Transform
-      parent: 25
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 32
+      pos: 62.57378,27.61641
+      parent: 2
+  - uid: 53
     components:
     - type: Transform
-      parent: 29
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 36
+      pos: 62.41753,27.632044
+      parent: 2
+  - uid: 55
     components:
     - type: Transform
-      parent: 33
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 40
+      pos: 62.433155,27.61641
+      parent: 2
+  - uid: 67
     components:
     - type: Transform
-      parent: 37
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 44
+      pos: 62.41753,27.632044
+      parent: 2
+  - uid: 72
     components:
     - type: Transform
-      parent: 41
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 48
+      pos: 62.51128,27.632044
+      parent: 2
+  - uid: 75
     components:
     - type: Transform
-      parent: 45
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 12294
-    components:
-    - type: Transform
-      parent: 12293
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
+      pos: 62.44878,27.600773
+      parent: 2
 - proto: Joint
   entities:
   - uid: 12297
@@ -88817,9 +88847,10 @@ entities:
   - uid: 14913
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 9.599047,53.415604
-      parent: 2
+      parent: 21
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: LeavesCannabisDried
   entities:
   - uid: 6836
@@ -89484,7 +89515,7 @@ entities:
         - 0
 - proto: LockerClown
   entities:
-  - uid: 74
+  - uid: 21
     components:
     - type: Transform
       pos: 9.5,53.5
@@ -89493,10 +89524,10 @@ entities:
       air:
         volume: 200
         immutable: False
-        temperature: 293.14673
+        temperature: 293.14365
         moles:
-        - 1.7459903
-        - 6.568249
+        - 0.13166319
+        - 0.49530452
         - 0
         - 0
         - 0
@@ -89517,21 +89548,24 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 81
-          - 80
-          - 82
-          - 77
-          - 75
-          - 79
-          - 89
-          - 88
-          - 86
-          - 90
-          - 84
-          - 83
-          - 87
+          - 38
+          - 37
+          - 36
+          - 14913
           - 78
-          - 85
+          - 7103
+          - 18168
+          - 34
+          - 33
+          - 32
+          - 30
+          - 29
+          - 28
+          - 26
+          - 25
+          - 24
+          - 22
+          - 79
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -89940,16 +89974,44 @@ entities:
     - type: Transform
       pos: 8.5,58.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
           showEnts: False
           occludes: True
           ents:
-          - 6877
+          - 7092
+          - 8013
+          - 70
+          - 71
+          - 12658
           - 6876
+          - 6877
           - 6878
           - 6879
+          - 40
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -90730,47 +90792,6 @@ entities:
     - type: Transform
       pos: 15.5,71.5
       parent: 2
-- proto: Mannequin
-  entities:
-  - uid: 66
-    components:
-    - type: Transform
-      pos: 7.4690375,57.399216
-      parent: 2
-    - type: ContainerContainer
-      containers:
-        jumpsuit: !type:ContainerSlot
-          showEnts: False
-          occludes: False
-          ent: null
-        outerClothing: !type:ContainerSlot
-          showEnts: False
-          occludes: False
-          ent: 71
-        neck: !type:ContainerSlot
-          showEnts: False
-          occludes: False
-          ent: 70
-        mask: !type:ContainerSlot
-          showEnts: False
-          occludes: False
-          ent: 69
-        eyes: !type:ContainerSlot
-          showEnts: False
-          occludes: False
-          ent: null
-        head: !type:ContainerSlot
-          showEnts: False
-          occludes: False
-          ent: 67
-        suitstorage: !type:ContainerSlot
-          showEnts: False
-          occludes: False
-          ent: null
-        back: !type:ContainerSlot
-          showEnts: False
-          occludes: False
-          ent: null
 - proto: Matchbox
   entities:
   - uid: 12467
@@ -91695,15 +91716,6 @@ entities:
     - type: InsideEntityStorage
 - proto: Paper
   entities:
-  - uid: 89
-    components:
-    - type: Transform
-      parent: 74
-    - type: Paper
-      content: "ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК СПАСИТЕ МЕНЯ УМОЛЯЮ 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 \nХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 ХОНК 1984 "
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
   - uid: 1284
     components:
     - type: Transform
@@ -91778,8 +91790,9 @@ entities:
   - uid: 12658
     components:
     - type: Transform
-      pos: 7.8624773,58.760445
-      parent: 2
+      parent: 6875
+    - type: Physics
+      canCollide: False
     - type: Paper
       content: >2-
 
@@ -91790,6 +91803,7 @@ entities:
 
 
                                                         [bold]МОЛЧАТЬ![/bold]
+    - type: InsideEntityStorage
   - uid: 12659
     components:
     - type: Transform
@@ -101425,7 +101439,7 @@ entities:
   - uid: 14260
     components:
     - type: Transform
-      pos: 8.159352,57.810135
+      pos: 8.389431,57.542248
       parent: 2
   - uid: 14261
     components:
@@ -106387,10 +106401,10 @@ entities:
       parent: 2
 - proto: StealthBox
   entities:
-  - uid: 18473
+  - uid: 69
     components:
     - type: Transform
-      pos: 22.513361,75.49998
+      pos: 17.497864,72.44126
       parent: 2
 - proto: SteelBench
   entities:
@@ -106918,286 +106932,46 @@ entities:
       parent: 2
 - proto: SuitStorageEngi
   entities:
-  - uid: 21
-    components:
-    - type: Transform
-      pos: 47.5,86.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 22
-          - 24
-  - uid: 7950
-    components:
-    - type: Transform
-      pos: 45.5,86.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 7951
-          - 7952
-  - uid: 7953
-    components:
-    - type: Transform
-      pos: 45.5,85.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 7954
-          - 7955
-  - uid: 7956
-    components:
-    - type: Transform
-      pos: 47.5,84.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 7958
-          - 7957
-  - uid: 7959
-    components:
-    - type: Transform
-      pos: 45.5,83.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 7960
-          - 7961
-  - uid: 7962
-    components:
-    - type: Transform
-      pos: 45.5,84.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 7964
-          - 7963
-  - uid: 7965
+  - uid: 57
     components:
     - type: Transform
       pos: 47.5,83.5
       parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 7967
-          - 7966
-  - uid: 7968
+  - uid: 58
+    components:
+    - type: Transform
+      pos: 45.5,83.5
+      parent: 2
+  - uid: 60
+    components:
+    - type: Transform
+      pos: 45.5,84.5
+      parent: 2
+  - uid: 61
     components:
     - type: Transform
       pos: 47.5,85.5
       parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 7969
-          - 7970
+  - uid: 62
+    components:
+    - type: Transform
+      pos: 45.5,86.5
+      parent: 2
+  - uid: 63
+    components:
+    - type: Transform
+      pos: 45.5,85.5
+      parent: 2
+  - uid: 64
+    components:
+    - type: Transform
+      pos: 47.5,86.5
+      parent: 2
+  - uid: 65
+    components:
+    - type: Transform
+      pos: 47.5,84.5
+      parent: 2
 - proto: SuitStorageEVA
   entities:
   - uid: 12917
@@ -107216,8 +106990,8 @@ entities:
         immutable: False
         temperature: 293.14673
         moles:
-        - 1.8856695
-        - 7.0937095
+        - 1.8968438
+        - 7.1357465
         - 0
         - 0
         - 0
@@ -107238,8 +107012,8 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 9192
           - 9315
+          - 9192
   - uid: 15095
     components:
     - type: Transform
@@ -107429,289 +107203,50 @@ entities:
       parent: 2
 - proto: SuitStorageHOS
   entities:
-  - uid: 12629
+  - uid: 66
     components:
     - type: Transform
       pos: 49.5,33.5
       parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.8856695
-        - 7.0937095
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 12630
 - proto: SuitStorageSec
   entities:
-  - uid: 25
-    components:
-    - type: Transform
-      pos: 60.5,28.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 28
-          - 26
-  - uid: 29
-    components:
-    - type: Transform
-      pos: 61.5,28.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 30
-          - 32
-  - uid: 33
-    components:
-    - type: Transform
-      pos: 60.5,26.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 34
-          - 36
-  - uid: 37
-    components:
-    - type: Transform
-      pos: 59.5,28.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 40
-          - 38
-  - uid: 41
+  - uid: 42
     components:
     - type: Transform
       pos: 61.5,26.5
       parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 42
-          - 44
+  - uid: 44
+    components:
+    - type: Transform
+      pos: 61.5,28.5
+      parent: 2
   - uid: 45
+    components:
+    - type: Transform
+      pos: 59.5,28.5
+      parent: 2
+  - uid: 46
+    components:
+    - type: Transform
+      pos: 60.5,26.5
+      parent: 2
+  - uid: 48
+    components:
+    - type: Transform
+      pos: 60.5,28.5
+      parent: 2
+  - uid: 74
     components:
     - type: Transform
       pos: 59.5,26.5
       parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 46
-          - 48
 - proto: SuitStorageWarden
   entities:
-  - uid: 12293
+  - uid: 51
     components:
     - type: Transform
       pos: 49.5,28.5
       parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 12294
-          - 12295
 - proto: SurveillanceCameraCommand
   entities:
   - uid: 15103
@@ -109743,6 +109278,11 @@ entities:
       parent: 2
 - proto: TableReinforced
   entities:
+  - uid: 49
+    components:
+    - type: Transform
+      pos: 62.5,27.5
+      parent: 2
   - uid: 1148
     components:
     - type: Transform
@@ -125697,15 +125237,6 @@ entities:
     - type: Transform
       pos: 12.494158,76.412155
       parent: 2
-- proto: WeaponImprovisedPneumaticCannon
-  entities:
-  - uid: 90
-    components:
-    - type: Transform
-      parent: 74
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: WeaponLaserCarbinePractice
   entities:
   - uid: 9040
@@ -127277,8 +126808,10 @@ entities:
   - uid: 18168
     components:
     - type: Transform
-      pos: 8.424977,53.63826
-      parent: 2
+      parent: 21
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
   - uid: 18169
     components:
     - type: Transform
