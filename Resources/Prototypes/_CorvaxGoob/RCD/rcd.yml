@@ -25,7 +25,7 @@
 - type: rcd
   id: Windoor
   category: Airlocks
-  sprite: /Textures/_CorvaxGoob/RCD/Structures/Windoors/windoor.png
+  sprite: /Textures/_CorvaxGoob/Interface/Radial/RCD/windoor.png
   mode: ConstructObject
   prototype: Windoor
   cost: 4
@@ -36,7 +36,7 @@
 - type: rcd
   id: WindoorSecure
   category: Airlocks
-  sprite: /Textures/_CorvaxGoob/RCD/Structures/Windoors/windoor_secure.png
+  sprite: /Textures/_CorvaxGoob/Interface/Radial/RCD/windoor_secure.png
   mode: ConstructObject
   prototype: WindoorSecure
   cost: 6
@@ -48,7 +48,7 @@
 - type: rcd
   id: WallReinforced
   category: WallsAndFlooring
-  sprite: /Textures/Structures/Walls/solid.rsi/rgeneric.png
+  sprite: /Textures/Interface/Radial/RCD/reinforced_wall.png
   mode: ConstructObject
   prototype: WallReinforced
   cost: 5

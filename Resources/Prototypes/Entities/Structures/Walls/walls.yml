@@ -235,6 +235,8 @@
   id: BaseWall
   components:
   - type: Occluder # Breaks on diagonal walls
+  - type: RCDDeconstructable
+    chrono: false
 
 - type: entity
   abstract: true

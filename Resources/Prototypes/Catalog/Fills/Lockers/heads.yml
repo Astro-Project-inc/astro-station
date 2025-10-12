@@ -336,6 +336,7 @@
     - id: WeaponLauncherSingularityBuster
     - id: MachinePowerTransmissionLaserFlatpack
     - id: RCDRechargingCE
+    - id: RPDRechargingCE # CorvaxGoob-RCD-update
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

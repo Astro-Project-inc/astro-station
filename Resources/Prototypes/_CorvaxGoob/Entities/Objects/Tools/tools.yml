@@ -17,3 +17,25 @@
     sprite: _CorvaxGoob/Objects/Tools/rpd_chrono.rsi
   - type: RCD
     isChrono: true
+
+- type: entity
+  parent: RPD
+  id: RPDRechargingCE
+  name: experimental RPD
+  description: Rapid Piping Device which creates compressed matter on the fly using an internal fabricator.
+  suffix: AutoRecharge
+  components:
+  - type: LimitedCharges
+    maxCharges: 20
+  - type: AutoRecharge
+    rechargeDuration: 10
+
+- type: entity
+  id: RPDExperimental
+  parent: RPD
+  suffix: Admeme
+  name: experimental RPD
+  description: A bluespace-enhanced rapid piping device that passively generates its own compressed matter.
+  components:
+  - type: AutoRecharge
+    rechargeDuration: 1

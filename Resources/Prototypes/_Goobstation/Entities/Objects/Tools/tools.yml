@@ -279,3 +279,31 @@
     maxCharges: 20
   - type: AutoRecharge
     rechargeDuration: 10
+# CorvaxGoob-RCD-update-start
+  - type: RCD
+    availablePrototypes:
+    - WallSolid
+    - FloorSteel
+    - Plating
+    - Catwalk
+    - Grille
+    - Window
+    - WindowDirectional
+    - WindowReinforcedDirectional
+    - ReinforcedWindow
+    - Airlock
+    - AirlockGlass
+    - Firelock
+    - TubeLight
+    - BulbLight
+    - LVCable
+    - MVCable
+    - HVCable
+    - CableTerminal
+    - Deconstruct
+    - Camera
+    - MachineFrame
+    - Windoor
+    - WindoorSecure
+    - WallReinforced
+# CorvaxGoob-RCD-update-end
