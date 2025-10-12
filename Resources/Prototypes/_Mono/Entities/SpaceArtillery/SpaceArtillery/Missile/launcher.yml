@@ -21,7 +21,7 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
-    fireRate: 3
+    fireRate: 2
     projectileSpeed: 50
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rocket_launcher.ogg
@@ -31,7 +31,7 @@
     autoRecharge: true
     autoRechargeRate: 200
   - type: SpaceArtillery
-    powerChargeRate: 200
+    powerChargeRate: 800
     powerUsePassive: 750
     powerUseActive: 0
   - type: Actions
@@ -116,7 +116,7 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
-    fireRate: 0.8
+    fireRate: 0.4
     projectileSpeed: 50
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rocket_launcher.ogg
