@@ -64,6 +64,9 @@
         blacklist:
           tags:
           - PowerCage
+  - type: Tag
+    tags:
+    - Cybernetic # CorvaxGoob-Cybernetic-items
 
 # Power Cell Charger
 
@@ -78,6 +81,9 @@
   - type: Organ
     slotId: charger
   - type: AugmentCharger
+  - type: Tag
+    tags:
+    - Cybernetic # CorvaxGoob-Cybernetic-items
 
 - type: entity
   parent: BaseItem
@@ -92,7 +98,9 @@
     graph: AugmentRecharger
     node: casing
   - type: Tag
-    tags: [ AugmentRechargerCasing ]
+    tags:
+    - AugmentRechargerCasing
+    - Cybernetic # CorvaxGoob-Cybernetic-items
 
 - type: entity
   parent: BaseItem

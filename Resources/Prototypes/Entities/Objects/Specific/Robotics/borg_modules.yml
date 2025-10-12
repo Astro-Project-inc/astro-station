@@ -1267,6 +1267,7 @@
         - BodyPart
         tags:
         - Organ
+        - Cybernetic # CorvaxGoob-Cybernetic-items
     # End Frontier: droppable borg items
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: surgery-module }
