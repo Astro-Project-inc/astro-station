@@ -1265,9 +1265,10 @@
       whitelist:
         components:
         - BodyPart
+        - AugmentPowerCellSlot # CorvaxGoob-Cybernetic-items
+        - AugmentCharger # CorvaxGoob-Cybernetic-items
         tags:
         - Organ
-        - Cybernetic # CorvaxGoob-Cybernetic-items
     # End Frontier: droppable borg items
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: surgery-module }
