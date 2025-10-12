@@ -27,6 +27,15 @@
   - CentralCommand
   - NanotrasenRepresentative
   - BlueshieldOfficer
+  components:
+  - type: Skills # CorvaxGoob-Skills
+    skills:
+    - ShuttleControl
+    - Shooting
+    - AdvancedBuilding
+    - Surgery
+    - MedicalEquipment
+    - Butchering
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant ]
@@ -67,6 +76,15 @@
     - CentralCommand
     - NanotrasenRepresentative
     - BlueshieldOfficer
+  components:
+  - type: Skills # CorvaxGoob-Skills
+    skills:
+    - ShuttleControl
+    - Shooting
+    - AdvancedBuilding
+    - Surgery
+    - MedicalEquipment
+    - Butchering
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant ]
@@ -108,6 +126,15 @@
     - CentralCommand
     - NanotrasenRepresentative
     - BlueshieldOfficer
+  components:
+  - type: Skills # CorvaxGoob-Skills
+    skills:
+    - ShuttleControl
+    - Shooting
+    - AdvancedBuilding
+    - Surgery
+    - MedicalEquipment
+    - Butchering
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant ]
@@ -150,6 +177,15 @@
     - CentralCommand
     - NanotrasenRepresentative
     - BlueshieldOfficer
+  components:
+  - type: Skills # CorvaxGoob-Skills
+    skills:
+    - ShuttleControl
+    - Shooting
+    - AdvancedBuilding
+    - Surgery
+    - MedicalEquipment
+    - Butchering
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant]
@@ -192,6 +228,15 @@
   - CentralCommand
   - NanotrasenRepresentative
   - BlueshieldOfficer
+  components:
+  - type: Skills # CorvaxGoob-Skills
+    skills:
+    - ShuttleControl
+    - Shooting
+    - AdvancedBuilding
+    - Surgery
+    - MedicalEquipment
+    - Butchering
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant ]
@@ -230,6 +275,15 @@
   - CentralCommand
   - NanotrasenRepresentative
   - BlueshieldOfficer
+  components:
+  - type: Skills # CorvaxGoob-Skills
+    skills:
+    - ShuttleControl
+    - Shooting
+    - AdvancedBuilding
+    - Surgery
+    - MedicalEquipment
+    - Butchering
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant ]
