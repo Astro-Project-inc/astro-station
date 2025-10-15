@@ -29,6 +29,15 @@
   id: Hemostat
 
 - type: Tag
+  id: LightTubeCrystalBlue
+
+- type: Tag
+  id: LightTubeCrystalGreen
+
+- type: Tag
+  id: LightTubeCrystalRed
+
+- type: Tag
   id: Locator
 
 - type: Tag

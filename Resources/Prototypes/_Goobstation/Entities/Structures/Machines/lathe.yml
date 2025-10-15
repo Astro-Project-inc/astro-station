@@ -58,6 +58,7 @@
     - NailgunStatic
     - NailsStatic
     dynamicPacks:
+    - ConstructionBagOfHolding
     - AdvancedTools
     - AtmosTools
     - EngineeringWeapons
@@ -69,6 +70,7 @@
     - SharedBoards
     - CameraBoards
     - ShuttleBoards
+    - ShuttleBoardsGoob
     - BluespaceTheory
     - ScienceClothing
     - UpgradeKits
@@ -136,8 +138,10 @@
     - CargoBoards
     - SharedBoards
     - ShuttleBoards
+    - ShuttleBoardsGoob
     - BluespaceTheory
     - ScienceClothing
+    - ConstructionBagOfHolding
     # CorvaxGoob Packs
     - WorkBeltsSharedDynamic # WorkBelts-Techfab
     - WorkBeltsSalDynamic # WorkBelts-Techfab
@@ -215,11 +219,13 @@
     - SharedBoards
     - ScienceBoards
     - ShuttleBoards
+    - ShuttleBoardsGoob
     - MedicalBoardsGoob
     - BluespaceTheory
     - ExperimentalScienceGoob
     - MechBoardsScience
     - Pinpointers
+    - Genetics
     # Einstein Engines Packs
     - Translators
     - TranslatorImplanters

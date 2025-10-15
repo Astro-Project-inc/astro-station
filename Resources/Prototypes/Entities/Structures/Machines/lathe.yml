@@ -526,6 +526,7 @@
     - MedicalVehiclesAdvanced
     - UpgradeKits
     - BodyBagsDynamic # Corvax-Goob-AdvancedBodyBags-end
+    - ConstructionBagOfHolding
     # Einstein Engines Packs
     - Translators
   - type: EmagLatheRecipes
@@ -599,6 +600,7 @@
     - ShuttleBoards
     # Goobstation Packs
     - SharedBoards
+    - ShuttleBoardsGoob
     # CorvaxGoob Packs
     - Cloning # Cloning
   - type: MaterialStorage
@@ -891,6 +893,7 @@
     - MedicalVehiclesAdvanced
     - MedicalBoards
     - Janitor
+    - Genetics
     # Einstein Engines Packs
     - Translators # Language
     - TranslatorImplanters # Language
@@ -940,6 +943,7 @@
     - CorvaxClothing
     # Goobstation Packs
     - ClothingCasualJumpsuits
+    - ClothingCommandSummer
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ClothingCentComm
