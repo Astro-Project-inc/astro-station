@@ -37,7 +37,7 @@ traitor-gorlexmarauders-roundend = [color=red]мародёр Gorlex[/color]
 traitor-tigercooperative-intro = Вы — фанатик Tiger Cooperative.
 traitor-tigercooperative-goal = Помните учение Хай-лургиксона: сперва убей, потом задавай вопросы!
 traitor-tigercooperative-allies = Доверяйте только просвещённым братьям Tiger. Все остальные должны быть изгнаны из этого мира!
-traitor-tigercooperative-uplink = Друзья из Cybersun выдали вам аплинк Синдиката. Докажите улью генокрадов, что вы достойны быть частью их сущности.
+traitor-tigercooperative-uplink = Друзья из Cybersun выдали вам аплинк Синдиката. Докажите улью генокрадов, что вы достойны стать их частью.
 traitor-tigercooperative-roundend = [color=crimson]фанатик Tiger Cooperative[/color]
 traitor-wafflecorporation-intro = Вы — внедрённый агент Waffle Co.
 traitor-wafflecorporation-goal = Вы не здесь не для того, чтобы устраивать показательную резню. Может, другие агенты Waffle Co. и будут этим заниматься, но ваша задача — просто выполнить цели.
@@ -60,7 +60,7 @@ traitor-legaltrouble-allies = Смерть Синдикату.
 traitor-legaltrouble-uplink = Вы подключились к чёрному рынку, чтобы замести следы. Аплинк находится в вашем КПК. Нет улик — нет преступления.
 traitor-legaltrouble-roundend = [color=white]под следствием[/color]
 traitor-mi13-intro = Вы — агент MI13.
-traitor-mi13-goal = Избегайте убийства невиновных любой ценой. Мы не здесь, чтобы бездумно убивать — это привлекло бы слишком много внимания. Оставайтесь незаметны.
+traitor-mi13-goal = Избегайте убийства невиновных любой ценой. Мы здесь не для того, чтобы бездумно убивать — это привлекло бы слишком много внимания. Оставайтесь незаметным.
 traitor-mi13-allies = Вы — единственный настоящий агент. Все остальные — самозванцы. Доверяйте только специалистам Cybersun.
 traitor-mi13-uplink = Вам выдали аплинк Синдиката в КПК для выполнения задания.
 traitor-mi13-roundend = [color=cyan]агент MI13[/color]
