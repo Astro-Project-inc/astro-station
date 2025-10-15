@@ -2,15 +2,15 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-language-FloorGoblin-name = Гном-тапкокрад
+language-FloorGoblin-name = Гоблин-тапкокрад
 language-FloorGoblin-description = Мимими мимими ои и и и а о мимимими бябябябя бебебебе мимим мимими!
-chat-language-FloorGoblin-name = Гном-тапкокрад
-chat-speech-verb-name-floor-goblin = Гном-тапкокрад
+chat-language-FloorGoblin-name = Гоблин-тапкокрад
+chat-speech-verb-name-floor-goblin = Гоблин-тапкокрад
 chat-speech-verb-floor-goblin-1 = бормочет
 chat-speech-verb-floor-goblin-2 = визжит
 chat-speech-verb-floor-goblin-3 = вопит
-ghost-role-information-floor-goblin-name = Гном-тапкокрад
-ghost-role-information-floor-goblin-description = Красть боты, кусать ноги, бежать от злiй грейтайдов.
+ghost-role-information-floor-goblin-name = Гоблин-тапкокрад
+ghost-role-information-floor-goblin-description = Красть боты, кусать пятки, бежать от злiй грейтайдов.
 crawl-under-floor-toggle-on = { $name } пролез под пол.
 crawl-under-floor-toggle-off = { $name } вылез из-под пола.
 crawl-under-floor-toggle-on-self = Ты пролезаешь под пол.

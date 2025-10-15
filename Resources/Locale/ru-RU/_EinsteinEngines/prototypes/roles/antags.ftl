@@ -6,7 +6,7 @@ ghost-role-information-deserter-rules =
     Захват заложников и необоснованные требования всячески поощряются. Здесь вы можете воплотить свою мечту космического пирата.
     Не стремитесь к массовым разрушениям, ведь если превратите станцию в шлак, вам тоже будет не сладко.
 roles-antag-sol-alliance-navy-deserter = Дезертир
-roles-antag-sol-alliance-navy-deserter-objective = Наполните свой корабль как можно более ценной добычей и выживите, чтобы потом похвастаться этим на следующем посте.
+roles-antag-sol-alliance-navy-deserter-objective = Наполните свой корабль как можно более ценной добычей и выживите, чтобы потом похвастаться этим на следующем посту.
 id-card-access-level-sol-alliance-navy = ОСА
 role-type-SAN-antagonist-name = Дезертир
 # Shadowling
