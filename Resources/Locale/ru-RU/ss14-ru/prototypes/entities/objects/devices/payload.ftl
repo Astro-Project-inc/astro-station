@@ -1,5 +1,7 @@
 ent-BasePayload = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
+ent-ShrapnelPayload = шрапнель заряд
+    .desc = { ent-BasePayload.desc }
 ent-ExplosivePayload = разрывной заряд
     .desc = { ent-BasePayload.desc }
 ent-ChemicalPayload = химический заряд
