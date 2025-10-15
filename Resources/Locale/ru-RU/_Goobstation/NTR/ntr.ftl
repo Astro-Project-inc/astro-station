@@ -92,7 +92,6 @@ ntr-executive-tier-2-name = Команды реагирования
 ntr-executive-tier-3-name = Персональное
 ntr-executive-tier-4-name = Зловещее
 ntr-executive-tier-5-name = Редкие машинные платы
-
 # insert attempt in console
 ntr-console-insert-deny = Неверно!
 ntr-console-insert-accept = Верно!

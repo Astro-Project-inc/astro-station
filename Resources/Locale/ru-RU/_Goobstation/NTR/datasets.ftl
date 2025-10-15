@@ -277,7 +277,6 @@ ntr-document-funny-sci3-13 = что ни одна исследовательск
 ntr-document-funny-sci3-14 = что все проекты робототехники действительно следуют законам Азимова (или хотя бы делают вид, что следуют).
 ntr-document-funny-sci3-15 = что ни одна машина активно не сопротивляется выключению.
 ntr-document-funny-sci3-16 = что леденцы, утилизируемые медиборгом, не ядовиты.
-
 # funny verbs SCIENCE 4 (stamps below confirm)
 ntr-document-funny-sci4-1 = что вы не будете подавать на нас в суд.
 ntr-document-funny-sci4-2 = что вы не будете увольняться.
