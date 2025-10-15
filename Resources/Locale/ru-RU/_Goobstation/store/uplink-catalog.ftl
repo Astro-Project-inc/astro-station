@@ -161,7 +161,7 @@ uplink-high-caliber-shotgun-box-flash-slug-desc = 16 светошумовых п
 uplink-high-caliber-shotgun-box-sarin-name = Коробка с патронами с газом зарин 8 калибра
 uplink-high-caliber-shotgun-box-sarin-desc = 16 патронов 8 калибра с газом зарин для боевого дробовика, выпускающих небольшой плюс-образный облак газа.
 uplink-estoc-ammo-name = Магазин для винтовки (.20)
-uplink-estoc-ammo-desc = 25 патронов .20 калибра. Для Эсток.
+uplink-estoc-ammo-desc = 25 патронов .20 калибра. Для Эстока.
 
 # Grenades
 
