@@ -9,7 +9,7 @@
 
 job-name-futureagent = агент будущего
 job-name-salvagediver = спасатель
-job-name-ntr = инспектор Nanotrasen
+job-name-ntr = представитель Nanotrasen
 job-name-bs = офицер Синего Щита
 job-name-overall = общее
 job-name-exec = служебный доступ
@@ -44,7 +44,7 @@ job-name-mercenarycaptain = капитан Наёмников
 # Role timers - Make these alphabetical or I cut you (dont listen to upstream, i copied and pasted this, make it very un-alphabetical :godo:)
 
 JobBlueshieldOfficer = офицер Синего Щита
-JobNanotrasenRepresentative = инспектор Nanotrasen
+JobNanotrasenRepresentative = представитель Nanotrasen
 JobNanotrasenCareerTrainer = наставник ЦК
 JobHecuOperative = агент HECU
 JobNavyOfficer = офицер ЦК
