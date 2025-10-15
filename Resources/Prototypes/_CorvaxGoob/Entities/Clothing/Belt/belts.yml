@@ -104,12 +104,12 @@
   parent: ClothingBeltStorageBase
   id: ClothingBeltScience
   name: science belt
-  description: A enlarged belt for various tools that can also support weight G.O.R.I.L.L.A. gauntlet
+  description: A enlarged belt for various tools that can also support weight G.O.R.I.L.L.A. gauntlet.
   components:
   - type: Sprite
-    sprite: _CorvaxGoob/Clothing/Belt/surgical_board.rsi
+    sprite: _CorvaxGoob/Clothing/Belt/science.rsi
   - type: Clothing
-    sprite: _CorvaxGoob/Clothing/Belt/surgical_board.rsi
+    sprite: _CorvaxGoob/Clothing/Belt/science.rsi
   - type: Storage
     maxItemSize: Large
     grid:
@@ -151,37 +151,21 @@
         - HandLabeler
   - type: ItemMapper
     mapLayers:
-      drill:
+      anomalyscanner:
+        whitelist:
+          components:
+          - AnomalyScanner
+      anomalylocator:
         whitelist:
           tags:
-          - Powerdrill
-      cutters_red:
+          - Locator
+      anomalylocatorwide:
         whitelist:
           tags:
-          - Wirecutter
-      crowbar:
+          - LocatorWide
+      chimp:
         whitelist:
           tags:
-          - Crowbar
-      crowbar_red:
-        whitelist:
-          tags:
-          - CrowbarRed
-      jaws:
-        whitelist:
-          tags:
-          - JawsOfLife
-      screwdriver_nuke:
-        whitelist:
-          tags:
-          - Screwdriver
-      wrench:
-        whitelist:
-          tags:
-          - Wrench
-      multitool:
-        whitelist:
-          tags:
-            - Multitool
-    sprite: Clothing/Belt/belt_overlay.rsi
+          - CHIMP
+    sprite: _CorvaxGoob/Clothing/Belt/belt_overlay.rsi
   - type: Appearance

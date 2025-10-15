@@ -172,6 +172,7 @@
   - type: Tag # CorvaxGoob-WorkBelts-Techfab
     tags:
     - ScienceTools
+    - Locator
 
 - type: entity
   id: AnomalyLocator
@@ -207,6 +208,9 @@
     maxBeepInterval: 0.5
   - type: ProximityDetector
     range: 40
+  - type: Tag # CorvaxGoob-WorkBelts-Techfab
+    tags:
+    - LocatorWide
 
 - type: entity
   id: AnomalyLocatorWide
