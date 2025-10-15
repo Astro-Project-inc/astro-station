@@ -37,7 +37,7 @@ ghost-role-information-navy-captain-name = Капитан ВМС
 ghost-role-information-navy-captain-description = Секретно.
 ghost-role-information-navy-captain-rules = Ты ни перед кем не в ответе.
 ghost-role-information-special-operations-officer-name = Офицер Спецопераций
-ghost-role-information-special-operations-officer-description = Отправляй, инструктируй и управляй командами экстренного реагирования и другими силами NanoTrasen. Освободи ядерные коды — или нет.
+ghost-role-information-special-operations-officer-description = Отправляй, инструктируй и управляй командами экстренного реагирования и другими силами NanoTrasen.
 ghost-role-information-special-operations-officer-rules = Доставь представителя NanoTrasen живым, остальные — просто потеря. Приказы [color=#yellow][bold]Капитана ВМС[/bold][/color] могут изменить этот порядок.
 ghost-role-information-navy-officer-name = Офицер ВМС
 ghost-role-information-navy-officer-description = Отвечай на факсы и радиосообщения Центрального Командования. Проводить расследования на станции и среди экипажа.

@@ -4,8 +4,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-spellbook-upgrade-mime-malaise-name = Улучшение "Мимическое недомогание"
-spellbook-upgrade-mime-malaise-desc = Позволяет улучшить "Мимическое недомогание" до максимального 5-го уровня!
+spellbook-upgrade-mime-malaise-name = Улучшение "Мимическая апатия"
+spellbook-upgrade-mime-malaise-desc = Позволяет улучшить "Мимическая апатия" до максимального 5-го уровня!
 spellbook-upgrade-cluwne-curse-name = Улучшение "Проклятие Клувня"
 spellbook-upgrade-cluwne-curse-desc = Позволяет улучшить "Проклятие Клувня" до максимального 3-го уровня!
 spellbook-upgrade-banana-touch-name = Улучшение "Банановое касание"
