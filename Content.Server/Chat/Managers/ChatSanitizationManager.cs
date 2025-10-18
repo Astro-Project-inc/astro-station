@@ -48,7 +48,9 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
         { "рофл", "chatsan-laughs" },
         { "яхз", "chatsan-shrugs" },
         { ":0", "chatsan-surprised" },
-        { ":р", "chatsan-stick-out-tongue" }, // cyrillic р
+        { "=р", "chatsan-stick-out-tongue" }, // cyrillic р
+        { "=ь", "chatsan-stick-out-tongue" }, // cyrillic b
+        { ":ь", "chatsan-stick-out-tongue" }, // cyrillic b
         { "кек", "chatsan-laughs" },
         { "T_T", "chatsan-cries" },
         { "Т_Т", "chatsan-cries" }, // cyrillic T
@@ -111,6 +113,7 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
         { "o-o", "chatsan-wide-eyed" },
         { "o.o", "chatsan-wide-eyed" },
         { "._.", "chatsan-surprised" },
+        { "!", "chatsan-surprised"},
         { ".-.", "chatsan-confused" },
         { "-_-", "chatsan-unimpressed" },
         { "smh", "chatsan-unimpressed" },
