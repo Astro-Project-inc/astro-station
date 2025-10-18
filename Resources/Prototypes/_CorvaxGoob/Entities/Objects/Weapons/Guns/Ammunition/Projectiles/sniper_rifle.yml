@@ -7,7 +7,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 70
+        Piercing: 65
       armorPenetration: 0.4
     penetrationThreshold: 100
   - type: StaminaDamageOnCollide
