@@ -220,6 +220,8 @@
   - type: Airtight
   - type: StaticPrice
     price: 75
+  - type: RadiationBlocker # CorvaxGoob Radiation Overhaul Revert
+    resistance: 2
   - type: BlockWeather
   - type: SunShadowCast
   # Goobstation
@@ -354,8 +356,9 @@
     cost: 6
     delay: 8
     fx: EffectRCDDeconstruct8
-  - type: RadiationBlocker # Goobstation
-    resistance: 40
+# CorvaxGoob Radiation Overhaul Revert
+#  - type: RadiationBlocker # Goobstation
+#    resistance: 40
   - type: Destructible
     thresholds:
     - trigger:
@@ -529,8 +532,9 @@
   - type: Construction
     graph: Girder
     node: goldWall
-  - type: RadiationBlocker # Goobstation
-    resistance: 10
+# CorvaxGoob Radiation Overhaul Revert
+#  - type: RadiationBlocker # Goobstation
+#    resistance: 10
   - type: RCDDeconstructable
     cost: 6
     delay: 8
@@ -646,7 +650,8 @@
     key: walls
     base: plasma
   - type: RadiationBlocker
-    resistance: 10 # Goobstation - Radiation Overhaul
+    resistance: 5 # CorvaxGoob Radiation Overhaul Revert
+    #resistance: 10 # Goobstation - Radiation Overhaul
   - type: CosmicCorruptible # DeltaV - Cosmic Cult
     convertTo: WallCosmicCult
 
@@ -1408,7 +1413,8 @@
     key: walls
     base: uranium
   - type: RadiationBlocker
-    resistance: 20 # Goobstation - Radiation Overhaul
+    resistance: 6 # # CorvaxGoob Radiation Overhaul Revert
+    #resistance: 20 # Goobstation - Radiation Overhaul
   - type: CosmicCorruptible # DeltaV - Cosmic Cult
     convertTo: WallCosmicCult
 
