@@ -386,3 +386,4 @@ accent-dwarf-words-198 = пилот
 accent-dwarf-words-replace-198 = водила
 accent-dwarf-words-199 = психолог
 accent-dwarf-words-replace-199 = мозгоправ
+# Corvax-Goob-DwarfAccent-end
