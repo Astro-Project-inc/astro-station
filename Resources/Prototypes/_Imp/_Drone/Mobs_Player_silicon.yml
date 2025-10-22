@@ -271,6 +271,7 @@
     - EmagImmune
     - CanPilot
     - VimPilot
+    - Bot # Goobstation
   - type: CollectiveMind # Goobstation
     defaultChannel: Dronemind
     channels:
@@ -280,6 +281,10 @@
     - Engineering
     - Maintenance
     - Atmospherics # Goobstation
+  - type: Skills # CorvaxGoob-Skills
+    skills:
+      - AdvancedBuilding
+      - ShuttleControl
   - type: RandomMetadata
     nameSegments:
     - NamesDrone # maintainer drones get named after maintainers get it? its funny
