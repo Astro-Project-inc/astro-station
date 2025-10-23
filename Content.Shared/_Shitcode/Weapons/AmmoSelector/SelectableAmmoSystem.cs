@@ -47,9 +47,7 @@ public sealed class SelectableAmmoSystem : EntitySystem
         if (entId == null) // name -> entId
             return;
 
-        var loc = Loc.GetString("ent-" + entId);
-
-        args.PushMarkup(Loc.GetString("ammo-selector-examine-mode", ("mode", loc))); // name -> loc
+        args.PushMarkup(Loc.GetString("ammo-selector-examine-mode", ("mode", Loc.GetString("ent-" + entId)))); // name -> loc // name -> Loc.GetString("ent-" + entId)
         // CorvaxGoob-localization-end
     }
 
@@ -70,10 +68,7 @@ public sealed class SelectableAmmoSystem : EntitySystem
         // CorvaxGoob-localization-start
         var entId = GetProviderProtoId(ent); // GetProviderProtoName -> GetProviderProtoId // name -> entId
         if (entId != null) // name -> entId
-        {
-            var loc = Loc.GetString("ent-" + entId);
-            _popup.PopupClient(Loc.GetString("mode-selected", ("mode", loc)), ent, args.Actor); // ("mode", name) -> ("mode", loc)
-        }
+            _popup.PopupClient(Loc.GetString("mode-selected", ("mode", Loc.GetString("ent-" + entId))), ent, args.Actor); // ("mode", name) -> ("mode", Loc.GetString("ent-" + entId))
         // CorvaxGoob-localization-end
         _audio.PlayPredicted(ent.Comp.SoundSelect, ent, args.Actor);
     }
