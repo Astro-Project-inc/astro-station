@@ -549,7 +549,7 @@ namespace Content.Client.HealthAnalyzer.UI
             {
                 var groupTitleText = $"{Loc.GetString(
                     "group-solution-name",
-                    ("solution", data.Name ?? Loc.GetString("group-solution-unknown"))
+                    ("solution", Loc.GetString("solution-type-" + data.Name) ?? Loc.GetString("group-solution-unknown"))
                 )}";
 
                 var groupContainer = new BoxContainer
