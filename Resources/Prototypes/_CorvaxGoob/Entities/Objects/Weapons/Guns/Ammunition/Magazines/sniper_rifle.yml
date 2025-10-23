@@ -4,9 +4,6 @@
   parent: [ BaseItem, BaseSecurityContraband ]
   abstract: true
   components:
-  - type: Tag
-    tags:
-    - MagazineLargeCaliber
   - type: Item
     size: Small
   - type: BallisticAmmoProvider
@@ -31,6 +28,9 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
+  - type: Tag
+    tags:
+    - MagazineLargeCaliber
 
 - type: entity
   id: MagazineLargeCaliberEmpty
