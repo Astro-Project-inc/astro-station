@@ -15,8 +15,8 @@
   - type: Appearance
   - type: AmmoCounter
   - type: Battery
-    maxCharge: 40000
-    startingCharge: 40000
+    maxCharge: 20000
+    startingCharge: 20000
   - type: ExaminableBattery
   - type: WirelessNetworkConnection
     range: 500
@@ -31,13 +31,13 @@
     autoRecharge: true
     autoRechargeRate: 200
   - type: SpaceArtillery
-    powerChargeRate: 800
+    powerChargeRate: 200
     powerUsePassive: 750
     powerUseActive: 0
   - type: Actions
   - type: ProjectileBatteryAmmoProvider
     proto: ShipMissileASM417
-    fireCost: 867
+    fireCost: 2000
   - type: RadarBlip
     radarColor: "#FCBA03"
     scale: 2
@@ -116,7 +116,7 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
-    fireRate: 0.4
+    fireRate: 0.2
     projectileSpeed: 50
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rocket_launcher.ogg

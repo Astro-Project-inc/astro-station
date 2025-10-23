@@ -71,8 +71,8 @@
   - type: Appearance
   - type: AmmoCounter
   - type: Battery
-    maxCharge: 3000
-    startingCharge: 3000
+    maxCharge: 1500
+    startingCharge: 1500
   - type: ExaminableBattery
   - type: WirelessNetworkConnection
     range: 500
@@ -87,7 +87,7 @@
     autoRecharge: false
     autoRechargeRate: 0
   - type: SpaceArtillery
-    powerChargeRate: 100
+    powerChargeRate: 30
     powerUsePassive: 0
     powerUseActive: 0
   - type: Actions
@@ -140,13 +140,13 @@
     autoRecharge: true
     autoRechargeRate: 125
   - type: SpaceArtillery
-    powerChargeRate: 1000
+    powerChargeRate: 400
     powerUsePassive: 0
     powerUseActive: 500
   - type: Actions
   - type: ProjectileBatteryAmmoProvider
     proto: 90mmBulletArmorPiercing
-    fireCost: 900
+    fireCost: 1000
   - type: RadarBlip
     radarColor: "#FF0000"
     scale: 1.5
@@ -318,7 +318,7 @@
     autoRecharge: true
     autoRechargeRate: 1000
   - type: SpaceArtillery
-    powerChargeRate: 1000
+    powerChargeRate: 500
     powerUsePassive: 500
     powerUseActive: 0
   - type: Actions
