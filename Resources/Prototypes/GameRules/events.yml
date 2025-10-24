@@ -303,6 +303,9 @@
     minimumPlayers: 15
     chaos: # Goobstation
       Power: 100
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/e-storm.ogg
     eventType: Maintenance # Goobstation
   # Goobstation
   - type: GameRule
@@ -362,7 +365,7 @@
   components:
   - type: StationEvent
     weight: 2 # Goobstation - was 3
-    earliestStart: 45
+    earliestStart: 30 # Goobstation was 45
     #recorruenceDelay: 20 # Goobstation - no longer needed
     maxOccurrences: 1 # Goobstation
     minimumPlayers: 50
@@ -942,9 +945,6 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
-      - type: AutoImplant
-        implants:
-        - DeathAcidifierImplant # Goobstation
       mindRoles:
       - MindRoleNukeops
   - type: AntagLoadProfileRule # Goobstation
