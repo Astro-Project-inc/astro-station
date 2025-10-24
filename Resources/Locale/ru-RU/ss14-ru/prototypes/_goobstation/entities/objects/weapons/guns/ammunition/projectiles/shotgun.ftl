@@ -1,8 +1,8 @@
-ent-HighCaliberPelletShotgun = pellet (8 Gauge carpshot)
+ent-HighCaliberPelletShotgun = дробина (8 карповая)
     .desc = { ent-BaseBullet.desc }
 ent-HighCaliberPelletShotgunSpread = { ent-HighCaliberPelletShotgun }
     .desc = { ent-HighCaliberPelletShotgun.desc }
-ent-HighCaliberPelletShotgunIncendiary = pellet (8 Gauge incendiary)
+ent-HighCaliberPelletShotgunIncendiary = дробина (8 зажигательная)
     .desc = { ent-BaseBulletIncendiary.desc }
 ent-HighCaliberPelletShotgunIncendiarySpread = { ent-HighCaliberPelletShotgunIncendiary }
     .desc = { ent-HighCaliberPelletShotgunIncendiary.desc }
