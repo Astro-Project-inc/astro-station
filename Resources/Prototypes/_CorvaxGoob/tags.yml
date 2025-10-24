@@ -56,7 +56,7 @@
   id: ScalpelLaser
 
 - type: Tag
-  id: ScienceTools
+  id: ScienceTool
 
 - type: Tag
   id: Skills

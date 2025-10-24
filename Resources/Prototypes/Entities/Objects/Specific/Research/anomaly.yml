@@ -126,7 +126,7 @@
       Glass: 25
   - type: Tag # CorvaxGoob-WorkBelts-Techfab
     tags:
-    - ScienceTools
+    - ScienceTool
 
 - type: entity
   id: AnomalyLocatorUnpowered
@@ -171,7 +171,7 @@
       Glass: 25
   - type: Tag # CorvaxGoob-WorkBelts-Techfab
     tags:
-    - ScienceTools
+    - ScienceTool
     - Locator
 
 - type: entity
@@ -287,4 +287,4 @@
       Silver: 62
   - type: Tag # CorvaxGoob-WorkBelts-Techfab
     tags:
-    - ScienceTools
+    - ScienceTool

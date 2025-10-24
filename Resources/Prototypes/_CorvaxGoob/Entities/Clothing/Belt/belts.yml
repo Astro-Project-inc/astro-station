@@ -136,7 +136,7 @@
         - Hammer # Goobstation
         - Nailgun # Goobstation
         - MagazineNailgun # Goobstation
-        - ScienceTools
+        - ScienceTool
       components:
         - StationMap
         - SprayPainter

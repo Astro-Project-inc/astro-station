@@ -47,7 +47,7 @@
     - Science
   - type: Tag # CorvaxGoob-WorkBelts-Techfab
     tags:
-    - ScienceTools
+    - ScienceTool
 
 - type: entity
   parent: ResearchDisk
