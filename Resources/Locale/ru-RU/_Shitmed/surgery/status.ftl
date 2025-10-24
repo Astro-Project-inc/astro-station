@@ -10,7 +10,7 @@ inspect-part-status-comma = ,
 inspect-part-status-conjunction2 = . Это также{ " " }
 inspect-part-status-conjunction3 = Это{ " " }
 inspect-part-status-and = и{ " " }
-inspect-part-status-you = Ваш
+inspect-part-status-you = Ваша
 inspect-part-status-their = Их
 
 body-part-head = голова
@@ -19,7 +19,7 @@ body-part-left-arm = левая рука
 body-part-right-arm = правая рука
 body-part-left-hand = левая кисть
 body-part-right-hand = правая кисть
-body-part-groin = пах
+body-part-groin = паховая область
 body-part-left-leg = левая нога
 body-part-right-leg = правая нога
 body-part-left-foot = левая стопа
