@@ -168,6 +168,7 @@
   - WeaponPistolCHIMP
   - AnomalySynchronizerCircuitboard
   - AnomalyVesselExperimentalCircuitboard
+  - AnomalyPayload # Corvax-Next-AnomalyGrenades
   technologyPrerequisites:
   - BasicAnomalousResearch
   position: -3,0
