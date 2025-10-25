@@ -27,11 +27,19 @@
   parent: UtilityBelt
   id: SurgicalBoard
   result: ClothingBeltSurgicalBoard
+  materials:
+    Durathread: 200
+    Steel: 250
+    Plasma: 500
 
 - type: latheRecipe
   parent: UtilityBelt
   id: MilitaryWebbingCMO
   result: ClothingBeltMilitaryWebbingCMO
+  materials:
+    Durathread: 200
+    Steel: 250
+    Plasma: 500
 
 - type: latheRecipe
   parent: UtilityBelt
@@ -57,11 +65,17 @@
   parent: UtilityBelt
   id: ChiefEngineerBelt
   result: ClothingBeltChiefEngineer
+  materials:
+    Durathread: 200
+    Steel: 250
+    Plasma: 500
 
 - type: latheRecipe
   parent: UtilityBelt
   id: ScienceBelt
   result: ClothingBeltScience
   materials:
-    Cloth: 200
+  materials:
+    Durathread: 200
     Steel: 250
+    Plasma: 500

@@ -528,10 +528,11 @@
     - MedicalMisc
     - MedicalVehiclesAdvanced
     - UpgradeKits
-    - BodyBagsDynamic # Corvax-Goob-AdvancedBodyBags-end
     - ConstructionBagOfHolding
     # Einstein Engines Packs
     - Translators
+    # CorvaxGoob Packs
+    - BodyBagsDynamic # AdvancedBodyBags
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
@@ -543,7 +544,8 @@
     - SecurityWeaponsGoob
     - RestraintTechnology
     - MiningWeapons
-    - SyndicateBodyBagsStatic # Corvax-Goob-AdvancedBodyBag
+    # CorvaxGoob Packs
+    - SyndicateBodyBagsStatic # AdvancedBodyBag
 
 - type: entity
   id: ProtolatheHyperConvection
@@ -595,8 +597,6 @@
     - CargoBoards
     - MedicalBoards
     - ServiceBoards
-    - BluespaceTechnologyBoards # CorvaxGoob BluespaceHarvester
-    - BluespaceHarvesterBoards # CorvaxGoob BluespaceHarvester
     #- ScienceBoards - Goobstation - Moved to Scifab
     - CameraBoards
     #- MechBoards - Goobstation - split between departmental lathes
@@ -605,6 +605,8 @@
     - SharedBoards
     - ShuttleBoardsGoob
     # CorvaxGoob Packs
+    - BluespaceTechnologyBoards # BluespaceHarvester
+    - BluespaceHarvesterBoards # BluespaceHarvester
     - Cloning # Cloning
   - type: MaterialStorage
     whitelist:
@@ -792,7 +794,9 @@
     # - ServiceWeapons
     - SpecOpsGoogles
     - PowerCells
-    - SecurityCaptureDevicePack # Corvax-Goob-WeaponGrapplingGunHunter
+    # CorvaxGoob Packs
+    - SecurityCaptureDevicePack # WeaponGrapplingGunHunter
+    - WorkBeltsSecDynamic # WorkBelts-Techfab
   - type: EmagLatheRecipes # Goobstation
     emagStaticPacks:
     - SyndicateAmmoLightStatic
@@ -886,7 +890,6 @@
     - SyringeCase
     dynamicPacks:
     - Chemistry
-    - BodyBagsDynamic # Corvax-Goob-AdvancedBodyBag
     # Goobstation Packs
     - Surgery
     - MedicalCybernetics
@@ -900,12 +903,16 @@
     # Einstein Engines Packs
     - Translators # Language
     - TranslatorImplanters # Language
+    # CorvaxGoob Packs
+    - BodyBagsDynamic # AdvancedBodyBag
+    - WorkBeltsMedDynamic # WorkBelts-Techfab
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: EmagLatheRecipes # Goobstation Packs
     emagStaticPacks:
     - SyndicateCatridgesStatic
-    - SyndicateBodyBagsStatic # Corvax-Goob-AdvancedBodyBags
+    # CorvaxGoob Packs
+    - SyndicateBodyBagsStatic # AdvancedBodyBags
   - type: StealTarget
     stealGroup: MedicalTechFabCircuitboard
 
