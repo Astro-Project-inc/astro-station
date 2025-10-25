@@ -54,7 +54,7 @@
     ignoreWeaponGrid: true
   - type: ShipWeaponProjectile
   - type: TimedDespawn
-    lifetime: 1.55
+    lifetime: 1.55 #CorvaxGoob-ShuttleGuns-Rebalance
   - type: PointLight
     radius: 3.5
     energy: 0.5
@@ -73,7 +73,7 @@
     damage:
       types:
         Structural: 25
-        Piercing: 35
+        Piercing: 25 #CorvaxGoob-ShuttleGuns-Rebalance
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/50_armorpiercing_machinegun_casing.rsi
     layers:
@@ -92,9 +92,9 @@
   - type: Projectile
     damage:
       types:
-        Structural: 150
-        Blunt: 80
-        Piercing: 50
+        Structural: 150 #CorvaxGoob-ShuttleGuns-Rebalance
+        Blunt: 80 #CorvaxGoob-ShuttleGuns-Rebalance
+        Piercing: 50 #CorvaxGoob-ShuttleGuns-Rebalance
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/57_shell.rsi
     layers:
@@ -114,7 +114,7 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: HardBomb
-    totalIntensity: 30
+    totalIntensity: 30 #CorvaxGoob-ShuttleGuns-Rebalance
     intensitySlope: 5
     maxIntensity: 25
     maxTileBreak: 1
@@ -149,9 +149,9 @@
   - type: Projectile
     damage:
       types:
-        Structural: 200
-        Blunt: 90
-        Piercing: 90
+        Structural: 200 #CorvaxGoob-ShuttleGuns-Rebalance
+        Blunt: 90 #CorvaxGoob-ShuttleGuns-Rebalance
+        Piercing: 90 #CorvaxGoob-ShuttleGuns-Rebalance
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
     layers:
@@ -221,9 +221,9 @@
   - type: Projectile
     damage:
       types:
-        Structural: 1000
-        Blunt: 200
-        Ion: 200
+        Structural: 1000 #CorvaxGoob-ShuttleGuns-Rebalance
+        Blunt: 200 #CorvaxGoob-ShuttleGuns-Rebalance
+        Ion: 200 #CorvaxGoob-ShuttleGuns-Rebalance
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
     layers:
@@ -243,9 +243,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: HardBomb
-    totalIntensity: 300
+    totalIntensity: 300 #CorvaxGoob-ShuttleGuns-Rebalance
     intensitySlope: 5
-    maxIntensity: 900
+    maxIntensity: 900 #CorvaxGoob-ShuttleGuns-Rebalance
   - type: GatheringProjectile
 
 # 255mm Bofors
@@ -259,9 +259,9 @@
   - type: Projectile
     damage:
       types:
-        Structural: 800
-        Blunt: 300
-        Ion: 300
+        Structural: 800 #CorvaxGoob-ShuttleGuns-Rebalance
+        Blunt: 300 #CorvaxGoob-ShuttleGuns-Rebalance
+        Ion: 300 #CorvaxGoob-ShuttleGuns-Rebalance
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
     layers:
@@ -297,9 +297,9 @@
   - type: Projectile
     damage:
       types:
-        Structural: 600
-        Blunt: 200
-        Ion: 200
+        Structural: 600 #CorvaxGoob-ShuttleGuns-Rebalance
+        Blunt: 200 #CorvaxGoob-ShuttleGuns-Rebalance
+        Ion: 200 #CorvaxGoob-ShuttleGuns-Rebalance
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
     layers:
@@ -336,9 +336,9 @@
   - type: Projectile
     damage:
       types:
-        Structural: 1200
-        Blunt: 400
-        Ion: 300
+        Structural: 1200 #CorvaxGoob-ShuttleGuns-Rebalance
+        Blunt: 400 #CorvaxGoob-ShuttleGuns-Rebalance
+        Ion: 300 #CorvaxGoob-ShuttleGuns-Rebalance
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
     layers:
