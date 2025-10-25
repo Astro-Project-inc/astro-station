@@ -75,7 +75,6 @@
   id: ScienceBelt
   result: ClothingBeltScience
   materials:
-  materials:
     Durathread: 200
     Steel: 250
     Plasma: 500
