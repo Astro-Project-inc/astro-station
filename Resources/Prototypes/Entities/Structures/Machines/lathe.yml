@@ -774,6 +774,7 @@
     - ScienceExplosives
     - GrenadeTriggersStatic
     - SecurityWeaponsNonEmaggableStaticGoob
+    - SecurityAmmoStaticCorvaxGoob # Corvax-Goob-UncleStyopa
     dynamicPacks:
     - SalvageSecurityBoards
     - SalvageSecurityWeapons
