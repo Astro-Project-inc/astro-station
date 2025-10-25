@@ -4,7 +4,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Server._CorvaxGoob.ReplaceOnInteractWith;
+namespace Content.Shared._CorvaxGoob.ReplaceOnInteractWith;
 
 [RegisterComponent]
 public sealed partial class ReplaceOnInteractWithComponent : Component

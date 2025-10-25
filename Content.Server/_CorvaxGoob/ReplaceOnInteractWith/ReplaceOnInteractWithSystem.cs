@@ -1,3 +1,4 @@
+using Content.Shared._CorvaxGoob.ReplaceOnInteractWith;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Whitelist;

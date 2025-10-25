@@ -15,7 +15,6 @@ public sealed class EntitySpawnInRangeOnTriggerSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] protected readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -44,7 +43,7 @@ public sealed class EntitySpawnInRangeOnTriggerSystem : EntitySystem
 
         foreach (var tileref in tiles)
         {
-            var coords = _mapSystem.ToCenterCoordinates(tileref, grid);
+            var coords = _map.ToCenterCoordinates(tileref, grid);
 
             Spawn(_random.Pick(entry.Spawns), coords);
 

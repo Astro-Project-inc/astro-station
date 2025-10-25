@@ -40,9 +40,22 @@
   id: LightTubeCrystalGreen
 
 - type: Tag
-  id: LightTubeCrystalBlue
+  id: LightTubeCrystalRed
 
 - type: Tag
-  id: CarcTile # Spacessonne
+  id: MagazineLargeCaliber
 
+- type: Tag
+  id: Retractor
 
+- type: Tag
+  id: SawElectric
+
+- type: Tag
+  id: Scalpel
+
+- type: Tag
+  id: ScalpelLaser
+
+- type: Tag
+  id: Skills
