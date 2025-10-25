@@ -52,6 +52,7 @@ using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Hands.Components;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
+using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
 
 namespace Content.Shared.RCD.Systems;
@@ -599,6 +600,7 @@ public sealed class RCDSystem : EntitySystem
 
                     return false;
                 }
+
                 // The object is not in the RPD whitelist
                 if (!deconstructible.RpdDeconstructable && component.IsRpd)
                 {
@@ -608,32 +610,37 @@ public sealed class RCDSystem : EntitySystem
                     return false;
                 }
 
-                // Goobstation - RCD check access for doors
-                if (!_accessReader.IsAllowed(user, target.Value))
+                // CorvaxGoob-Fix-Door-Start
+                if (HasComp<DoorComponent>(target))
+                {
+                    // Goobstation - RCD check access for doors
+                    if (!_accessReader.IsAllowed(user, target.Value))
+                    {
+                        if (popMsgs)
+                            _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-no-access"), uid, user);
+
+                        return false;
+                    }
+
+                    // Goobstation - RCD check access for bolts (Yeah, this should be event based...)
+                    if (_doorSystem.IsBolted(target.Value))
+                    {
+                        if (popMsgs)
+                            _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-is-bolted"), uid, user);
+
+                        return false;
+                    }
+                }
+                // CorvaxGoob-Fix-Door-End
+
+                // The object is not in the whitelist
+                if (!TryComp<RCDDeconstructableComponent>(target, out var deconstructable) || !deconstructable.Deconstructable)
                 {
                     if (popMsgs)
-                        _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-no-access"), uid, user);
+                        _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
 
                     return false;
                 }
-
-                // Goobstation - RCD check access for bolts (Yeah, this should be event based...)
-                if (_doorSystem.IsBolted(target.Value))
-                {
-                    if (popMsgs)
-                        _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-is-bolted"), uid, user);
-
-                    return false;
-                }
-            }
-
-            // The object is not in the whitelist
-            if (!TryComp<RCDDeconstructableComponent>(target, out var deconstructable) || !deconstructable.Deconstructable)
-            {
-                if (popMsgs)
-                    _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
-
-                return false;
             }
             // CorvaxGoob-RCD-update-end
         }
