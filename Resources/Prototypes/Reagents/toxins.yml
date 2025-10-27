@@ -676,11 +676,13 @@
     Poison:
       metabolismRate: 0.05
       effects:
-      - !type:Polymorph
-        prototype: Bananamen
-        conditions:
-        - !type:ReagentThreshold
-          min: 30
+      # CorvaxGoob-No-Bananamen-start
+      # - !type:Polymorph
+      #   prototype: Bananamen
+      #   conditions:
+      #   - !type:ReagentThreshold
+      #     min: 30
+      # CorvaxGoob-No-Bananamen-end
       - !type:Emote
         emote: Honk
         showInChat: true
