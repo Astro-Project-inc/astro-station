@@ -674,7 +674,7 @@
   color: "#F2E9D2"
   metabolisms:
     Poison:
-      metabolismRate: 0.2
+      metabolismRate: 0.2 # CorvaxGoob-debaf-honk // 0.05 -> 0.2
       effects:
       - !type:Polymorph
         prototype: Bananamen
@@ -696,12 +696,14 @@
         damage:
           types:
             Poison: 0.06
+      # CorvaxGoob-debaf-honk-start
       - !type:AdjustReagent
         reagent: Honk
         amount: -20
         conditions:
         - !type:ReagentThreshold
           min: 50
+      # CorvaxGoob-debaf-honk-end
 
 
 - type: reagent
