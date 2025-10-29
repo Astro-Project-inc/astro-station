@@ -680,7 +680,7 @@
         prototype: Bananamen
         conditions:
         - !type:ReagentThreshold
-          min: 50
+          min: 50 # CorvaxGoob-debaf-honk // 30 -> 50
       - !type:Emote
         emote: Honk
         showInChat: true
