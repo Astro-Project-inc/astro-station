@@ -674,15 +674,13 @@
   color: "#F2E9D2"
   metabolisms:
     Poison:
-      metabolismRate: 0.05
+      metabolismRate: 0.2
       effects:
-      # CorvaxGoob-No-Bananamen-start
-      # - !type:Polymorph
-      #   prototype: Bananamen
-      #   conditions:
-      #   - !type:ReagentThreshold
-      #     min: 30
-      # CorvaxGoob-No-Bananamen-end
+      - !type:Polymorph
+        prototype: Bananamen
+        conditions:
+        - !type:ReagentThreshold
+          min: 50
       - !type:Emote
         emote: Honk
         showInChat: true
@@ -698,6 +696,12 @@
         damage:
           types:
             Poison: 0.06
+      - !type:AdjustReagent
+        reagent: Honk
+        amount: -20
+        conditions:
+        - !type:ReagentThreshold
+          min: 50
 
 
 - type: reagent
