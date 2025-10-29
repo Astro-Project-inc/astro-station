@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.GameStates;
 
-namespace Content.Shared._CorvaxNext.OfferItem;
+namespace Content.Shared._CorvaxGoob.OfferItem;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
 [Access(typeof(SharedOfferItemSystem))]

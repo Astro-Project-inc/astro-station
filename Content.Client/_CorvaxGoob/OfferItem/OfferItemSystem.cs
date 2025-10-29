@@ -1,11 +1,11 @@
-﻿using Content.Shared._CorvaxNext;
-using Content.Shared._CorvaxNext.OfferItem;
+﻿using Content.Shared._CorvaxGoob.CCCVars;
+using Content.Shared._CorvaxGoob.OfferItem;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
 
-namespace Content.Client._CorvaxNext.OfferItem;
+namespace Content.Client._CorvaxGoob.OfferItem;
 
 public sealed class OfferItemSystem : SharedOfferItemSystem
 {
@@ -18,7 +18,7 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
     public override void Initialize()
     {
         base.Initialize();
-        Subs.CVar(_cfg, NextVars.OfferModeIndicatorsPointShow, OnShowOfferIndicatorsChanged, true);
+        Subs.CVar(_cfg, CCCVars.OfferModeIndicatorsPointShow, OnShowOfferIndicatorsChanged, true);
     }
 
     public override void Shutdown()

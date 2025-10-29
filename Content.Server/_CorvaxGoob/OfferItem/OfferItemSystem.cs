@@ -1,9 +1,9 @@
-﻿using Content.Shared._CorvaxNext.OfferItem;
+﻿using Content.Shared._CorvaxGoob.OfferItem;
 using Content.Shared.Alert;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 
-namespace Content.Server._CorvaxNext.OfferItem;
+namespace Content.Server._CorvaxGoob.OfferItem;
 
 public sealed class OfferItemSystem : SharedOfferItemSystem
 {
@@ -28,6 +28,8 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
             if (_hands.GetActiveHand(uid) == null)
                 continue;
 
+            // TODO implement a normal fix. More info on this:
+            // https://github.com/space-syndicate/space-station-14-next/blob/27f6125c828b5ad051f67a5f557bf67bd1d3c2be/Content.Server/_CorvaxNext/OfferItem/OfferItemSystem.cs#L31
             if (offerItem.Hand is not null && hands.Hands[offerItem.Hand] == null)
             {
                 if (offerItem.Target is not null)

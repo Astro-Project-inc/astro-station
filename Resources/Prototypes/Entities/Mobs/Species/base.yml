@@ -521,7 +521,7 @@
   abstract: true
   components:
   - type: Absorbable # Goobstation - changelings
-  - type: OfferItem # Corvax-Next-Offer
+  - type: OfferItem # CorvaxGoob-Offer
   - type: Barotrauma
     damage:
       types:
