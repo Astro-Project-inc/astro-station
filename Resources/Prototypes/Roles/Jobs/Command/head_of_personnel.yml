@@ -152,10 +152,11 @@
     - !type:DepartmentTimeRequirement
       department: Command
       time: 9000 # 2.5 hours
-    - !type:SpeciesRequirement # Goob - None Felinid
-      inverted: true
+    - !type:SpeciesRequirement # CorvaxGoob - Human Supermacy
+      inverted: false
       species:
-      - Felinid
+      - Human
+      - Dwarf
   #goobcoins: 40 #Goob content Corvax-Goob-coins
   weight: 20
   startingGear: HoPGear

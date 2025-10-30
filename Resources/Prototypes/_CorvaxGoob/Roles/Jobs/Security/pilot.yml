@@ -11,6 +11,11 @@
     inverted: true
     traits:
     - Muted
+    - !type:SpeciesRequirement # CorvaxGoob - Human Supermacy
+      inverted: false
+      species:
+      - Human
+      - Dwarf
   startingGear: PilotGear
   icon: "JobIconPilot"
   supervisors: job-supervisors-hos

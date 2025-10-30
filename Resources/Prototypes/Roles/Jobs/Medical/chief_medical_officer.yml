@@ -145,10 +145,11 @@
     - !type:DepartmentTimeRequirement
       department: Medical
       time: 36000 #10 hrs
-    - !type:SpeciesRequirement # Goob - None Felinid
-      inverted: true
+    - !type:SpeciesRequirement # CorvaxGoob - Human Supermacy
+      inverted: false
       species:
-      - Felinid
+      - Human
+      - Dwarf
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
   supervisors: job-supervisors-captain

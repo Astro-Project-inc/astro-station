@@ -44,10 +44,11 @@
       time: 90000 # 25 hours
     - !type:AgeRequirement
       requiredAge: 21
-    - !type:SpeciesRequirement # Goob - None Felinid
-      inverted: true
+    - !type:SpeciesRequirement # CorvaxGoob - Human Supermacy
+      inverted: false
       species:
-      - Felinid
+      - Human
+      - Dwarf
   #goobcoins: 45 Corvax-Goob-coins
   weight: 20
   startingGear: BlueshieldOfficerGear
