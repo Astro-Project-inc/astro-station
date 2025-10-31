@@ -456,9 +456,9 @@
       - SpawnMobAdultSlimesYellowAngry
       - SpawnMobBee
       - ReagentSlime
-      - MobXenoSpitter
+      - CMMobXenoDroneSentient
       - WeaponTurretXeno
-      - MobXeno
+      - CMMobXenoRavagerSentient
       - MobButterfly
       - MobBasilisk
   - type: UseDelay
