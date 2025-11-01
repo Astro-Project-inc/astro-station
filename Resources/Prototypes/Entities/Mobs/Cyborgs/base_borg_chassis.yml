@@ -432,6 +432,7 @@
     - CanPilot
     - Unimplantable
     - SiliconMob
+    - IPCDrinkBlacklist # Goobstation - Energycrit: Don't let self antagging IPCs steal power from borgs.
     - SiliconEmotes
   - type: Emoting
   - type: GuideHelp
@@ -453,14 +454,6 @@
   - type: Penetratable # Goobstation - Better snipers
     penetrateDamage: 75 # It's harder to kill iron golem
     damagePenalty: 0.25
-  - type: Skills # CorvaxGoob-Skills
-    skills:
-    - ShuttleControl
-    - Shooting
-    - AdvancedBuilding
-    - Surgery
-    - MedicalEquipment
-    - Butchering
 
 - type: entity
   abstract: true

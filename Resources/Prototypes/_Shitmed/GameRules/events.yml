@@ -25,7 +25,7 @@
     reoccurrenceDelay: 45
     weight: 4 # Goobstation - 7.5 -> 4
     minimumPlayers: 10
-    duration: 1
+    duration: null # Goobstation - chud
     chaos:
       Hostile: 75
       Medical: 75
@@ -47,6 +47,8 @@
       max: 1
       pickPlayer: false
       startingGear: LoneAbductorGear
+      skills: # CorvaxGoob-Skills
+      - All
       briefing:
         text: abductor-role-greeting
         color: Green
@@ -66,7 +68,7 @@
           settings: default
         requirements:
         - !type:OverallPlaytimeRequirement
-          time: 18000 #5 hours
+          time: 180000 #50 hours
         - !type:DepartmentTimeRequirement
           department: Medical
           time: 7200 #2 hours
@@ -74,14 +76,6 @@
           department: Security
           time: 7200 #2 hours
       - type: GhostTakeoverAvailable
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: NpcFactionMember
         factions:
           - SimpleHostile
@@ -133,7 +127,7 @@
     reoccurrenceDelay: 45
     weight: 4 # Goobstation - 7.5 -> 4
     minimumPlayers: 20
-    duration: 1
+    duration: null # Goobstation - chud
     chaos:
       Hostile: 150
       Medical: 150
@@ -155,20 +149,14 @@
       max: 1
       pickPlayer: false
       startingGear: AbductorScientistGear
+      skills: # CorvaxGoob-Skills
+      - All
       briefing:
         text: abductor-role-greeting
         color: Green
         sound: /Audio/_Shitmed/Misc/abductor.ogg
       components:
       - type: Abductor
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: ActionGrant
         actions:
           - ActionReturnToShip
@@ -182,7 +170,7 @@
           settings: default
         requirements:
         - !type:OverallPlaytimeRequirement
-          time: 18000 #5 hours
+          time: 180000 #50 hours
         - !type:DepartmentTimeRequirement
           department: Medical
           time: 10800 #3 hours
@@ -214,20 +202,14 @@
       max: 1
       pickPlayer: false
       startingGear: AbductorAgentGear
+      skills: # CorvaxGoob-Skills
+      - All
       briefing:
         text: abductor-role-greeting
         color: Green
         sound: /Audio/_Shitmed/Misc/abductor.ogg
       components:
       - type: Abductor
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: ActionGrant
         actions:
           - ActionReturnToShip

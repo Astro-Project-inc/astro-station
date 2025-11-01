@@ -55,6 +55,11 @@
   joinNotifyCrew: true
   supervisors: job-supervisors-ntr-centcom
   canBeAntag: false
+  skills: # CorvaxGoob-Skills
+  - ShuttleControl
+  - Shooting
+  - MedicalEquipment
+  - Surgery
   access:
   - Security
   - Brig
@@ -72,15 +77,12 @@
   - Cargo
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, BluespaceLifelineImplant ] # Go big, or go home.
+    implants: [ MindShieldImplant ] # CorvaxGoob-Not-Roundstart-BluespaceLifeline-Implant
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
       - type: Condemned
         soulOwnedNotDevil: true
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - Shooting
   - !type:AddObjectiveSpecial
     objectives:
     - BlueshieldRandomCommandAliveObjective

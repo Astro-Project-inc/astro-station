@@ -168,6 +168,9 @@
     name: ghost-role-information-drone-name
     description: ghost-role-information-drone-description
     rules: ghost-role-information-drone-rules
+    skills: # CorvaxGoob-Skills
+      - AdvancedBuilding
+      - ShuttleControl
     mindRoles:
     - MindRoleGhostRoleSilicon
   - type: GhostTakeoverAvailable
@@ -271,6 +274,7 @@
     - EmagImmune
     - CanPilot
     - VimPilot
+    - Bot # Goobstation
   - type: CollectiveMind # Goobstation
     defaultChannel: Dronemind
     channels:

@@ -260,19 +260,14 @@
       - Normal
       - CosmicCultMonument # DeltaV - Cosmic Cult
       - Abductor
-  - type: Skills # CorvaxGoob-Skills
-    skills:
-      - ShuttleControl
-      - Shooting
-      - AdvancedBuilding
-      - Surgery
-      - MedicalEquipment
-      - Butchering
+  - type: IgnoreSkills # CorvaxGoob-Skills
   # Corvax-Goob-start
   - type: MovementSpeedModifier
     baseSprintSpeed: 30
     baseWalkSpeed: 12
   # Corvax-Goob-end
+  - type: OwnInteractionVerbs
+    allowedVerbs: []
   - type: ExplosionResistance
     damageCoefficient: 0
 
