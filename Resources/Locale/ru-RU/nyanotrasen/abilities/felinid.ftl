@@ -4,9 +4,9 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-action-name-hairball = Cough Up Hairball
-action-description-hairball = Purge some of your chemstream, and gain a cool hairball to throw at people.
-hairball-mask = Take off your { $mask } first.
-hairball-cough = { CAPITALIZE(THE($name)) } starts coughing up a hairball!
-action-name-eat-mouse = Eat Mouse
-action-description-eat-mouse = Eat the mouse in your hand, gaining nutriment and a hairball charge.
+action-name-hairball = Откашлять шерстяной комок
+action-description-hairball = Очистите часть своего химического потока и получите крутой шерстяной комок, чтобы кидаться в людей.
+hairball-mask = Сначала снимите свою { $mask }.
+hairball-cough = { CAPITALIZE($name) } начинает откашливать шерстяной комок!
+action-name-eat-mouse = Съесть мышь
+action-description-eat-mouse = Съешьте мышь в своей руке, получив питательные вещества и заряд для шерстяного комка.

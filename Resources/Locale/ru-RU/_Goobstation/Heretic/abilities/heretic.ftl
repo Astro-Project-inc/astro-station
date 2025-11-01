@@ -30,7 +30,7 @@ heretic-blade-examine = [color=yellow]Использование этого кл
 heretic-blade-use = Клинок разбивается, и вы ощущаете, как голоса уносят вас прочь.
 heretic-riposte-used = Контратака применена!
 heretic-riposte-available = Контратака доступна!
-heretic-cant-shoot = Я не могу использовать { THE($entity) } из-за моей священной клятвы пути клинка.
+heretic-cant-shoot = Я не могу использовать { $entity } из-за моей священной клятвы пути клинка.
 
 ## paths exclusive
 

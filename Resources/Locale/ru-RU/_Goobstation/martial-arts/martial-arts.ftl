@@ -4,8 +4,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-cqc-fail-used = { CAPITALIZE(THE($manual)) } уже используется.
-cqc-fail-notself = Ты не можешь обучать кого-либо с помощью { CAPITALIZE(THE($manual)) }.
+cqc-fail-used = { CAPITALIZE($manual) } уже используется.
+cqc-fail-notself = Ты не можешь обучать кого-либо с помощью { CAPITALIZE($manual) }.
 cqc-fail-changeling = Мы вышли за пределы использования этого.
 cqc-fail-knowanother = Ты уже знаешь другое боевое искусство.
 cqc-fail-already = Ты уже знаешь всё о боевом искусстве.
@@ -14,7 +14,7 @@ capoeira-success-learned = Вы освоили капоэйру. Учебник 
 dragon-success-learned = Вы освоили стиль Дракона (Кунг-фу). Учебник сгорает у вас в руках...
 ninjutsu-success-learned = Вы освоили ниндзюцу. Свиток сгорает у вас в руках...
 cqc-success-learned = Ты изучил рукопашный бой.
-cqc-manual-used = [color=white]{ CAPITALIZE(THE($manual)) } кажется уже используется.[/color]
+cqc-manual-used = [color=white]{ CAPITALIZE($manual) } кажется уже используется.[/color]
 carp-scroll-waiting = Путь в тысячу миль начинается с одного шага, а путь мудрости проходит медленно, урок за уроком.
 carp-scroll-advance = Ты сделал ещё один шаг к мастерству Пути Спящего Карпа.
 carp-scroll-complete = Теперь ты мастер Пути Спящего Карпа.
