@@ -303,6 +303,9 @@
     minimumPlayers: 15
     chaos: # Goobstation
       Power: 100
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/e-storm.ogg
     eventType: Maintenance # Goobstation
   # Goobstation
   - type: GameRule
@@ -362,7 +365,7 @@
   components:
   - type: StationEvent
     weight: 2 # Goobstation - was 3
-    earliestStart: 45
+    earliestStart: 30 # Goobstation was 45
     #recorruenceDelay: 20 # Goobstation - no longer needed
     maxOccurrences: 1 # Goobstation
     minimumPlayers: 50
@@ -444,6 +447,8 @@
       max: 1
       pickPlayer: false
       startingGear: SpaceNinjaGear
+      skills: # CorvaxGoob-Skills
+      - All
       roleLoadout:
       - RoleSurvivalEVA
       briefing:
@@ -452,14 +457,6 @@
         sound: /Audio/Misc/ninja_greeting.ogg
       components:
       - type: SpaceNinja
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: NpcFactionMember
         factions:
         - Syndicate
@@ -510,6 +507,8 @@
       max: 1
       pickPlayer: false
       startingGear: ParadoxCloneGear
+      skills: # CorvaxGoob-Skills
+      - All
       roleLoadout:
       - RoleSurvivalVoxTank # give vox something to breath in case they don't get a copy
       - RoleSurvivalPlasmaTank # Goobstation
@@ -519,15 +518,6 @@
         sound: /Audio/Misc/paradox_clone_greeting.ogg
       mindRoles:
       - MindRoleParadoxClone
-      components:
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
 
 #- type: entity   Goobstaion start - disabled until rework
 #  parent: BaseGameRule
@@ -865,6 +855,8 @@
     - prefRoles: [ InitialInfected ]
       max: 3
       playerRatio: 10
+      skills: # CorvaxGoob-Skills
+      - All
       blacklist:
         components:
         - BibleUser
@@ -880,14 +872,6 @@
         maxInitialInfectedGrace: 450
       - type: ZombifyOnDeath
       - type: IncurableZombie
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: InitialInfected
       mindRoles:
       - MindRoleInitialInfected
@@ -922,18 +906,12 @@
       pickPlayer: false
       startingGear: SyndicateLoneOperativeGearFull
       unequipOldGear: true
+      skills: # CorvaxGoob-Skills
+      - All
       roleLoadout:
       - RoleSurvivalNukie
       components:
       - type: NukeOperative
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: RandomMetadata
         nameSegments:
         - NamesSyndicatePrefix
@@ -942,9 +920,6 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
-      - type: AutoImplant
-        implants:
-        - DeathAcidifierImplant # Goobstation
       mindRoles:
       - MindRoleNukeops
   - type: AntagLoadProfileRule # Goobstation
@@ -980,19 +955,12 @@
       max: 2
       playerRatio: 10
       chaosScore: 200 # Goobstation - same as roundstart traitor gamerule
+      skills: # CorvaxGoob-Skills
+      - All
       blacklist:
         components:
         - AntagImmune
         - CommandStaff
-      components: # CorvaxGoob-Skills
-      - type: Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       mindRoles:
       - MindRoleTraitorSleeper
 
