@@ -607,29 +607,34 @@ public sealed class RCDSystem : EntitySystem
                     if (popMsgs)
                         _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
 
-                        return false;
-                    }
+                    return false;
                 }
 
                 // CorvaxGoob-Fix-Door-Start
-                if (HasComp<DoorComponent>(target))
+                if (HasComp<AirlockComponent>(target))
                 {
-                    // Goobstation - RCD check access for doors
-                    if (!_accessReader.IsAllowed(user, target.Value))
+                    if (HasComp<AccessReaderComponent>(target))
                     {
-                        if (popMsgs)
-                            _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-no-access"), uid, user);
+                        // Goobstation - RCD check access for doors
+                        if (!_accessReader.IsAllowed(user, target.Value))
+                        {
+                            if (popMsgs)
+                                _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-no-access"), uid, user);
 
-                        return false;
+                            return false;
+                        }
                     }
 
-                    // Goobstation - RCD check access for bolts (Yeah, this should be event based...)
-                    if (_doorSystem.IsBolted(target.Value))
+                    if (HasComp<DoorBoltComponent>(target))
                     {
-                        if (popMsgs)
-                            _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-is-bolted"), uid, user);
+                        // Goobstation - RCD check access for bolts (Yeah, this should be event based...)
+                        if (_doorSystem.IsBolted(target.Value))
+                        {
+                            if (popMsgs)
+                                _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-is-bolted"), uid, user);
 
-                        return false;
+                            return false;
+                        }
                     }
                 }
                 // CorvaxGoob-Fix-Door-End
@@ -640,8 +645,7 @@ public sealed class RCDSystem : EntitySystem
                     if (popMsgs)
                         _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
 
-                        return false;
-                    }
+                    return false;
                 }
             }
             // CorvaxGoob-RCD-update-end
