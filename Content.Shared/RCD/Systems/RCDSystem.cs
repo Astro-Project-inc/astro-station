@@ -607,7 +607,8 @@ public sealed class RCDSystem : EntitySystem
                     if (popMsgs)
                         _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
 
-                    return false;
+                        return false;
+                    }
                 }
 
                 // CorvaxGoob-Fix-Door-Start
@@ -639,7 +640,8 @@ public sealed class RCDSystem : EntitySystem
                     if (popMsgs)
                         _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
 
-                    return false;
+                        return false;
+                    }
                 }
             }
             // CorvaxGoob-RCD-update-end
