@@ -23,7 +23,7 @@ ghost-role-information-skibidi-toilet-rules = Ты — [color=red][bold]враг
 ghost-role-information-Hecu-name = Оперативник HECU
 ghost-role-information-Hecu-description = Центральное командование поручило задание.
 ghost-role-information-Hecu-rules = Ты обязан выполнять приказы своего начальника, фактически являясь его [color=#6495ed][bold]личным агентом[/bold][/color].
-ghost-role-information-lootbug-name = Жук-воришка
+ghost-role-information-lootbug-name = Жук-сборщик
 ghost-role-information-lootbug-description = Постарайся не стать жертвой грейтайдеров.
 ghost-role-information-homunculus-name = Гомункул
 ghost-role-information-homunculus-description = Подчиняйся создателю. Если его нет — действуй по своей воле.

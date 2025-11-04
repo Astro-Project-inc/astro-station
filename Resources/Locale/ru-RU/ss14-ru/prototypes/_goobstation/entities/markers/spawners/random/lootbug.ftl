@@ -1,2 +1,2 @@
-ent-SpawnLootLootbug = спавнер жука-воришки
+ent-SpawnLootLootbug = спавнер жука-сборщика
     .desc = { ent-MarkerBase.desc }
