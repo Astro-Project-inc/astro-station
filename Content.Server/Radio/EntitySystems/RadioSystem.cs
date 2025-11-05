@@ -170,6 +170,14 @@ public sealed class RadioSystem : EntitySystem
         else
             speech = _chat.GetSpeechVerb(messageSource, message);
 
+        // CorvaxGoob-Anonymous-Radio-Start
+        if (channel.Anonymous)
+        {
+            name = AnonymizeName(name);
+            speech.SpeechVerbStrings = ["chat-speech-verb-default"]; // shitcode :cat_gagaga:
+        }
+        // CorvaxGoob-Anonymous-Radio-End
+
         var content = escapeMarkup
             ? FormattedMessage.EscapeText(message)
             : message;
@@ -248,6 +256,56 @@ public sealed class RadioSystem : EntitySystem
         _replay.RecordServerMessage(msg); // Einstein Engines - Language
         _messages.Remove(message);
     }
+
+    // CorvaxGoob-Anonymous-Radio-Start
+
+    /// <summary>
+    /// Replaced name with garbage symbols
+    /// </summary>
+    /// <param name="name">String that will be anonymized</param>
+    /// <returns></returns>
+    private string AnonymizeName(string name)
+    {
+        var garbageChars = "1234567890!@#$%^&*";
+        var newName = string.Empty;
+
+        for (var i = 1; i < name.Length + 1; ++i)
+        {
+            newName += garbageChars[_random.Next(garbageChars.Length)];
+        }
+
+        // This is needed to make things a little bit harder for metagaming secs.
+        var randomNumber = _random.Next(0, 2);
+        switch (randomNumber)
+        {
+            case 1:
+            {
+                for (var i = 0; i < _random.Next(1, 5); ++i)
+                {
+                    if (_random.Next(0, 1) != 1)
+                        continue;
+                    newName += garbageChars[_random.Next(garbageChars.Length)];
+                }
+
+                break;
+            }
+            case 2:
+            {
+                for (var i = 0; i < _random.Next(1, 5); ++i)
+                {
+                    if (_random.Next(0, 1) != 1)
+                        continue;
+                    newName.Remove(i);
+                }
+
+                break;
+            }
+        }
+
+        return newName;
+    }
+
+    // CorvaxGoob-Anonymous-Radio-End
 
     // Einstein Engines - Language begin
     private string WrapRadioMessage(
