@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/26/2025 14:12:24
-  entityCount: 21191
+  time: 11/01/2025 17:38:55
+  entityCount: 21196
 maps:
 - 1
 grids:
@@ -21083,8 +21083,6 @@ entities:
       containerName: food
       container: 17
   - uid: 18676
-    mapInit: true
-    paused: true
     components:
     - type: MetaData
       name: solution - food
@@ -21119,17 +21117,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 12.424086,-61.87117
       parent: 2
-- proto: ActionToggleLight
-  entities:
-  - uid: 21151
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 17150
-    - type: Action
-      container: 17150
-      originalIconColor: '#FFFFFFFF'
 - proto: AirAlarm
   entities:
   - uid: 22
@@ -57637,22 +57624,8 @@ entities:
     components:
     - type: Transform
       parent: 5737
-    - type: HandheldLight
-      toggleActionEntity: 21151
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 21151
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
     - type: InsideEntityStorage
 - proto: ClothingHeadHatHardhatYellow
   entities:
@@ -100848,8 +100821,6 @@ entities:
         solution@food: !type:ContainerSlot
           ent: 18
   - uid: 382
-    mapInit: true
-    paused: true
     components:
     - type: MetaData
       name: Обращение
@@ -100863,8 +100834,6 @@ entities:
         stampedName: Уборщик
       content: Настоятельно рекомендуется воздержаться от рыбной ловли в фонтане, так как для этой цели предусмотрена специализированная зона, расположенная на спутнике искусственного интеллекта. Доступ к данной зоне можно получить через комнату, находящуюся западнее помещения уборщика.
       editingDisabled: True
-    - type: EmitSoundOnCollide
-      nextSound: -715.7326176
     - type: SolutionContainerManager
       solutions: null
       containers:
@@ -116361,6 +116330,31 @@ entities:
     components:
     - type: Transform
       pos: -62.5,30.5
+      parent: 2
+  - uid: 21151
+    components:
+    - type: Transform
+      pos: -65.5,18.5
+      parent: 2
+  - uid: 21160
+    components:
+    - type: Transform
+      pos: -66.5,18.5
+      parent: 2
+  - uid: 21161
+    components:
+    - type: Transform
+      pos: -67.5,18.5
+      parent: 2
+  - uid: 21162
+    components:
+    - type: Transform
+      pos: -65.5,30.5
+      parent: 2
+  - uid: 21163
+    components:
+    - type: Transform
+      pos: -66.5,32.5
       parent: 2
 - proto: TeslaGenerator
   entities:
@@ -145758,6 +145752,13 @@ entities:
     components:
     - type: Transform
       pos: -58.531128,-26.566456
+      parent: 2
+- proto: WeaponSniperUncleStyopa
+  entities:
+  - uid: 21164
+    components:
+    - type: Transform
+      pos: -53.742237,-19.493906
       parent: 2
 - proto: WeaponSubMachineGunDrozd
   entities:

@@ -39,18 +39,12 @@
       mindRoles:
       - MindRoleWizard
       startingGear: WizardGear
+      skills: # CorvaxGoob-Skills
+      - All
       unequipOldGear: true
       roleLoadout:
       - RoleSurvivalEVA
       components:
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: Wizard
       - type: CanEnchant
       - type: LanguageKnowledge
@@ -71,6 +65,7 @@
     speciesOverride: Human
     speciesOverrideBlacklist:
     - Yowie # Penalized by wearing robes, still should be possible to select them in magic mirror.
+    - Plasmaman # EE
   - type: RuleGrids
   - type: LoadMapRule
     mapPath: /Maps/_Goobstation/Nonstations/wizden.yml
@@ -109,17 +104,11 @@
       - MindRoleWizard
       startingGear: WizardGear
       unequipOldGear: true
+      skills: # CorvaxGoob-Skills
+      - All
       roleLoadout:
       - RoleSurvivalEVA
       components:
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: Wizard
       - type: RandomMetadata
       - type: CanEnchant
