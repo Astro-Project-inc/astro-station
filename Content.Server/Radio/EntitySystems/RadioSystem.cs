@@ -260,10 +260,10 @@ public sealed class RadioSystem : EntitySystem
     // CorvaxGoob-Anonymous-Radio-Start
 
     /// <summary>
-    /// Replaced name with garbage symbols
+    /// Replaces string with garbage symbols and adding/removing characters from it with random chance
     /// </summary>
     /// <param name="name">String that will be anonymized</param>
-    /// <returns></returns>
+    /// <returns>String consisting of garbage characters</returns>
     private string AnonymizeName(string name)
     {
         var garbageChars = "1234567890!@#$%^&*";
@@ -274,7 +274,7 @@ public sealed class RadioSystem : EntitySystem
             newName += garbageChars[_random.Next(garbageChars.Length)];
         }
 
-        // This is needed to make things a little bit harder for metagaming secs.
+        // Adding/removing characters from string to make identifying by length harder.
         var randomNumber = _random.Next(0, 2);
         switch (randomNumber)
         {
@@ -295,6 +295,9 @@ public sealed class RadioSystem : EntitySystem
                 {
                     if (_random.Next(0, 1) != 1)
                         continue;
+                    if (newName.Length - 1 < 2)
+                        break;
+
                     newName.Remove(i);
                 }
 
