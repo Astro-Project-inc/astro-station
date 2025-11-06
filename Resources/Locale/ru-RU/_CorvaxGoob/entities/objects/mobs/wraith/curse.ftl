@@ -5,7 +5,7 @@ curse-weakness-pale-3 = Твои ноги сдают.
 curse-weakness-drowsy-1 = Твое сознание угасает.
 curse-weakness-drowsy-2 = Ты чувствуешь невероятную сонливость.
 
-curse-blood-1 = {CAPITALIZE(THE($entity))} тошнит большим количеством крови!
+curse-blood-1 = {CAPITALIZE(($entity))} тошнит большим количеством крови!
 
 curse-rot-cant-eat = Ты чувствуешь себя слишком плохо, чтобы есть...
 
@@ -15,7 +15,7 @@ curse-blindness-3 = Вы моргаете и замечаете, что ваше
 
 curse-death-1 = Вы чувствуете, как руки из ада хватают вашу душу!
 curse-death-2 = ОНО ИДЕТ ЗА ТОБОЙ!
-curse-death-3 = {CAPITALIZE(THE($entity))} плоть разрывается прямо у вас на глазах!!
+curse-death-3 = {CAPITALIZE(($entity))} плоть разрывается прямо у вас на глазах!!
 
 curse-popup-weakness = Их сила рушится под твоей волей.
 curse-popup-blood = Их вены лопаются по твоему приказу.

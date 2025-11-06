@@ -1,5 +1,5 @@
 names-wraith-dataset-1 = Онсен
-names-wraith-dataset-2 = люминар
+names-wraith-dataset-2 = Люминар
 names-wraith-dataset-3 = Хару
 names-wraith-dataset-4 = Ноэль
 names-wraith-dataset-5 = Каурин
