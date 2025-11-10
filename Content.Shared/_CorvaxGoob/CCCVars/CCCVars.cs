@@ -90,7 +90,7 @@ public sealed class CCCVars
     public static readonly CVarDef<bool> MrpJobsEnabled =
         CVarDef.Create("jobs.mrp_enabled", true, CVar.SERVER | CVar.REPLICATED);
 
-    /// </summary>
+    /// <summary>
     /// Activate announcer in round by their special calendar.
     /// </summary>
     public static readonly CVarDef<bool> CalendarAnnouncerEnabled =
@@ -98,4 +98,10 @@ public sealed class CCCVars
 
     public static readonly CVarDef<bool> CombatModeSoundEnabled =
         CVarDef.Create("audio.combat_mode_sound_enabled", true, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    /// <summary>
+    /// Halal version enable
+    /// </summary>
+    public static readonly CVarDef<bool> HalalVersionEnabled =
+        CVarDef.Create("accessibility.halal_mode_enabled", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 }
