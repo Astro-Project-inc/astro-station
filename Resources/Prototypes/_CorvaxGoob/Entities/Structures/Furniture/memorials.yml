@@ -1,0 +1,10 @@
+- type: entity
+  parent: Memorial
+  id: BetaStatue
+  name: golden statue of Beta-Ru
+  description: A majestic statue of the most intelligent, handsome, charismatic, and sexy unati in the entire universe.
+  components:
+  - type: Sprite
+    sprite: _CorvaxGoob/Structures/Furniture/Memorials/betaru.rsi
+    state: betaru
+    
