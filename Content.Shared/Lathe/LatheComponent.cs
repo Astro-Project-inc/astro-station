@@ -139,6 +139,18 @@ namespace Content.Shared.Lathe
         // Goobstation change end
     }
 
+    // CorvaxGoob-Prefilled-Printers-Start
+    [Serializable]
+    public sealed partial class LatheGetResultEvent : EntityEventArgs
+    {
+        public readonly EntityUid ResultItem;
+        public LatheGetResultEvent(EntityUid result)
+        {
+            ResultItem = result;
+        }
+    }
+    // CorvaxGoob-Prefilled-Printers-End
+
     public sealed class LatheGetRecipesEvent : EntityEventArgs
     {
         public readonly EntityUid Lathe;
