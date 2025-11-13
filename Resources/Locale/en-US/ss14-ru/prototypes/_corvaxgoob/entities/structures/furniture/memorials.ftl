@@ -1,2 +1,2 @@
 ent-BetaStatue = golden statue of the founder
-    .desc = A majestic statue of the founder of this station. The name of unati on the pedestal is partially erased, only the first and last letters are visible: B and U. On her head are two pairs of horns.
+    .desc = A majestic, golden statue of the founder of this station. By her will, you are trapped here. The name was crossed out by someone dissatisfied with the station's quality before you. Only the first and last letters are visible: B and U.
