@@ -20127,7 +20127,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -0.5,20.5
       parent: 15658
-- proto: BetaStatue
+- proto: AwesomeStatue
   entities:
   - uid: 315
     components:
