@@ -1,14 +1,14 @@
 - type: entity
   parent: BaseStructure
-  id: BetaStatue
-  name: golden statue of Beta-Ru
-  description: A majestic statue of the most intelligent, handsome, charismatic, and sexy unati in the entire universe.
+  id: AwesomeStatue
+  name: golden statue of the founder
+  description: A majestic statue of the founder of this station. The name of unati on the pedestal is partially erased, only the first and last letters are visible: B and U. On her head are two pairs of horns.
   components:
   - type: Sprite
     noRot: true
     layers:
-    - state: betaru
-      sprite: _CorvaxGoob/Structures/Furniture/Memorials/betaru.rsi
+    - state: awesome
+      sprite: _CorvaxGoob/Structures/Furniture/Memorials/awesome.rsi
       scale: "1.0, 1.0"
       drawDepth: WallMountedItems
       offset: "0.5, 0.5"
