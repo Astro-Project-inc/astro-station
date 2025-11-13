@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseStructure
-  id: BetaStatue
-  name: golden statue of Beta-Ru
-  description: A majestic statue of the most intelligent, handsome, charismatic, and sexy unati in the entire universe.
+  id: AwesomeStatue
+  name: golden statue of the founder
+  description: A majestic, golden statue of the founder of this station. By her will, you are trapped here. The name was crossed out by someone dissatisfied with the station's quality before you. Only the first and last letters are visible: B and U.
   components:
   - type: Sprite
     noRot: true
