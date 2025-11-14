@@ -4,7 +4,7 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 11/13/2025 14:54:12
+  time: 11/14/2025 04:03:32
   entityCount: 26397
 maps:
 - 1
@@ -13263,7 +13263,7 @@ entities:
       pos: 12.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -151493.1
+      secondsUntilStateChange: -151664.97
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13274,7 +13274,7 @@ entities:
       pos: 13.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -151491.52
+      secondsUntilStateChange: -151663.39
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -19209,6 +19209,15 @@ entities:
       parent: 2
     - type: SiloUtilizer
       silo: 22398
+- proto: AwesomeStatue
+  entities:
+  - uid: 315
+    components:
+    - type: MetaData
+      desc: Величественная, золотая статуя основательницы этой станции. По её воле вы заперты тут. Имя на постаменте — Бета-Ру, кто-то пытался зачеркнуть его, но антимаркерное покрытие защитило честь основателя.
+    - type: Transform
+      pos: 11.5,15.5
+      parent: 2
 - proto: BananaSeeds
   entities:
   - uid: 14524
