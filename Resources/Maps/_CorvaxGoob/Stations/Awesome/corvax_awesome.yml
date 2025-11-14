@@ -20127,13 +20127,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -0.5,20.5
       parent: 15658
-- proto: AwesomeStatue
-  entities:
-  - uid: 315
-    components:
-    - type: Transform
-      pos: 11.5,15.5
-      parent: 2
 - proto: BigBox
   entities:
   - uid: 1125
