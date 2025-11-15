@@ -1,10 +1,10 @@
-﻿using Content.Shared._CorvaxGoob.Documents;
+﻿using Content.Server.Station.Systems;
+using Content.Shared._CorvaxGoob.Documents;
 using Content.Shared.Access.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.GameTicking;
 using Content.Shared.Lathe;
 using Content.Shared.Paper;
-using Content.Shared.Station;
 using Robust.Shared.Timing;
 
 namespace Content.Server._CorvaxGoob.Document;
@@ -13,7 +13,7 @@ public sealed class DocumentPrinterSystem : EntitySystem
 {
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
     [Dependency] private readonly PaperSystem _paper = default!;
-    [Dependency] private readonly SharedStationSystem _station = default!;
+    [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedGameTicker _gameTicker = default!;
 
@@ -27,8 +27,7 @@ public sealed class DocumentPrinterSystem : EntitySystem
     {
         var paperComp = EnsureComp<PaperComponent>(result.ResultItem);
 
-        var station = _station.GetCurrentStation(result.ResultItem);
-        // TODO: StationName is always null
+        var station = _station.GetOwningStation(result.ResultItem);
         var stationName = station != null ? Name(station.Value) : null;
 
         if (_itemSlots.TryGetSlot(ent.Owner, ent.Comp.SlotName, out var slot) && slot.Item is { Valid: true } idCardEntity
