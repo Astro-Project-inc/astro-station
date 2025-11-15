@@ -109,6 +109,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Server.Chat.Systems;
 using Content.Goobstation.Common.NTR.Scan; // Goobstation
+using Content.Server._CorvaxGoob.Document; // CorvaxGoob-Prefilled-Printers
 using Content.Shared.Chat;
 
 namespace Content.Server.Lathe
