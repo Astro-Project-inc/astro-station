@@ -52,11 +52,11 @@
       machine_board: !type:Container
       machine_parts: !type:Container
       blueprint: !type:Container
-        id: !type:ContainerSlot
+      id: !type:ContainerSlot
   - type: ItemSlots
     slots:
       id:
         name: IdSlot
         whitelist:
           components:
-            - IdCard
+          - IdCard
