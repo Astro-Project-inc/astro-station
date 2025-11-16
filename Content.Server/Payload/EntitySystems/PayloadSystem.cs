@@ -42,9 +42,8 @@ public sealed class PayloadSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
-    [Dependency] private readonly UseDelaySystem _useDelay = default!; // Corvax-Next-AnomalyGrenades
-    [Dependency] private readonly IGameTiming _timing = default!; // Corvax-Next-AnomalyGrenades
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!; // Corvax-Next-AnomalyGrenades
+    [Dependency] private readonly UseDelaySystem _useDelay = default!; // CorvaxGoob-AnomalyGrenade
+    [Dependency] private readonly IGameTiming _timing = default!; // CorvaxGoob-AnomalyGrenade
 
     private const string DefaultUseDelayId = "default";
     private static readonly ProtoId<TagPrototype> PayloadTag = "Payload";
@@ -93,14 +92,16 @@ public sealed class PayloadSystem : EntitySystem
                 if (_useDelay.IsDelayed((ent, payloadUseDelayComp), id: DefaultUseDelayId))
                 {
                     _useDelay.SetLength(uid, payloadUseDelayComp.Delays[DefaultUseDelayId].EndTime - _timing.CurTime);
-                    _useDelay.TryResetDelay(uid, id: DefaultUseDelayId);
-                    continue;
                 }
                 else
                 {
+                    _useDelay.SetLength(ent, payloadUseDelayComp.Delay, id: DefaultUseDelayId);
                     _useDelay.TryResetDelay((ent, payloadUseDelayComp), id: DefaultUseDelayId);
+
                     _useDelay.SetLength(uid, payloadUseDelayComp.Delay, id: DefaultUseDelayId);
                 }
+
+                _useDelay.TryResetDelay(uid, id: DefaultUseDelayId);
             }
             // CorvaxGoob-AnomalyGrenade-End
 

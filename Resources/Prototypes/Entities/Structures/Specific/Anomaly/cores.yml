@@ -50,7 +50,7 @@
   - type: Tag
     tags:
     - ForceableFollow
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     sound:
       path: /Audio/Machines/button.ogg
     prototype: FlashPayload
@@ -104,7 +104,7 @@
     maxLevel: 2 # Non-inert cores can roll max level
     enchants:
     - EnchantKnockback
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadGravity
 
 - type: entity
@@ -124,7 +124,7 @@
     maxLevel: 4 # Non-inert cores can roll max level
     enchants:
     - EnchantProtFire
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadIce
 
 - type: entity
@@ -145,7 +145,7 @@
     maxLevel: 5 # Non-inert cores can roll max level
     enchants:
     - EnchantSharpness
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadFlesh
 
 - type: entity
@@ -166,7 +166,7 @@
     enchants:
     - EnchantProtection
     - EnchantUnbreaking
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadRock
 
 - type: entity
@@ -187,7 +187,7 @@
     enchants:
     - EnchantSlippery
     - EnchantUnslippable
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadChemical
 
 - type: entity
@@ -203,7 +203,7 @@
     energy: 3.5
     color: "#00ccff"
     castShadows: false
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadBluespace
 
 - type: entity
@@ -223,7 +223,7 @@
   - type: Enchanter # Goobstation
     enchants:
     - EnchantInsulated
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadElectro
 
 - type: entity
@@ -245,7 +245,7 @@
     maxLevel: 3 # Non-inert cores can roll max level
     enchants:
     - EnchantThorns
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadFlora
 
 - type: entity
@@ -261,7 +261,7 @@
     energy: 2.0
     color: "#793a80"
     castShadows: false
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadShadow
 
 - type: entity
@@ -277,7 +277,7 @@
     energy: 2.0
     color: "#56c1e8"
     castShadows: false
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadTech
 
 - type: entity
@@ -298,7 +298,7 @@
     enchants:
     - EnchantFortune
 
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadPresent
 
 # Inert cores
@@ -336,7 +336,7 @@
     enchants:
     - EnchantFireAspect
     - EnchantLavaforged
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadPyro
 
 - type: entity
@@ -356,7 +356,7 @@
     maxLevel: 1
     enchants:
     - EnchantKnockback
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadGravity
 
 - type: entity
@@ -376,7 +376,7 @@
     maxLevel: 2
     enchants:
     - EnchantProtFire
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadIce
 
 - type: entity
@@ -397,7 +397,7 @@
     maxLevel: 3
     enchants:
     - EnchantSharpness
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadFlesh
 
 - type: entity
@@ -418,7 +418,7 @@
     enchants:
     - EnchantProtection
     - EnchantUnbreaking
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadRock
 
 - type: entity
@@ -439,7 +439,7 @@
     enchants:
     - EnchantSlippery
     - EnchantUnslippable
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadChemical
 
 - type: entity
@@ -455,7 +455,7 @@
     energy: 3.5
     color: "#00ccff"
     castShadows: false
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadBluespace
 
 - type: entity
@@ -475,7 +475,7 @@
     maxLevel: 4 # Insuls rolling
     enchants:
     - EnchantBudgetInsulated
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadElectro
 
 - type: entity
@@ -497,7 +497,7 @@
     maxLevel: 2
     enchants:
     - EnchantThorns
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadFlora
 
 - type: entity
@@ -513,7 +513,7 @@
     energy: 2.0
     color: "#793a80"
     castShadows: false
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadShadow
 
 - type: entity
@@ -529,7 +529,7 @@
     energy: 2.0
     color: "#56c1e8"
     castShadows: false
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadTech
 
 - type: entity
@@ -549,5 +549,5 @@
     maxLevel: 2
     enchants:
     - EnchantFortune
-  - type: ReplaceOnInteractWith # Corvax-Next-AnomalyGrenade
+  - type: ReplaceOnInteractWith # CorvaxGoob-AnomalyGrenade
     prototype: AnomalyPayloadPresent
