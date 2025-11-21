@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 11/14/2025 04:03:32
-  entityCount: 26397
+  time: 11/21/2025 12:57:01
+  entityCount: 26398
 maps:
 - 1
 grids:
@@ -13263,7 +13263,7 @@ entities:
       pos: 12.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -151664.97
+      secondsUntilStateChange: -151715.5
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13274,7 +13274,7 @@ entities:
       pos: 13.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -151663.39
+      secondsUntilStateChange: -151713.92
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -139871,11 +139871,6 @@ entities:
     - type: Transform
       pos: 11.5,40.5
       parent: 2
-  - uid: 26387
-    components:
-    - type: Transform
-      pos: 12.5,40.5
-      parent: 2
   - uid: 26388
     components:
     - type: Transform
@@ -139907,6 +139902,18 @@ entities:
     components:
     - type: Transform
       pos: 8.5,41.5
+      parent: 2
+- proto: SpawnPointRoboticist
+  entities:
+  - uid: 24691
+    components:
+    - type: Transform
+      pos: 12.5,40.5
+      parent: 2
+  - uid: 26387
+    components:
+    - type: Transform
+      pos: 12.5,63.5
       parent: 2
 - proto: SpawnPointSalvageSpecialist
   entities:
