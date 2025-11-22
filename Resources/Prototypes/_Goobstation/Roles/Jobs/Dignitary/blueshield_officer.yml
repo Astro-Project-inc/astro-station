@@ -83,6 +83,7 @@
   - Cargo
   - Atmospherics
   - Medical
+  - BlueshieldOfficer
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ] # CorvaxGoob-Not-Roundstart-BluespaceLifeline-Implant
