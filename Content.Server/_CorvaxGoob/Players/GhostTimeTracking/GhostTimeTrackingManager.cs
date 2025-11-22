@@ -14,7 +14,7 @@ public sealed class GhostTimeTrackingManager
     }
 
     /// <summary>
-    /// Returns player's played time as ghost.
+    /// Clears all players played time data as ghost.
     /// </summary>
     public void ClearAllGhostTimeData()
     {
