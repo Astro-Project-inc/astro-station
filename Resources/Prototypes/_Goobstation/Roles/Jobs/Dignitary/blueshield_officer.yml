@@ -61,20 +61,28 @@
   - MedicalEquipment
   - Surgery
   access:
-  - Security
-  - Brig
+  - Command
+  - Bar
+  - Service
+  - Maintenance
+  - Janitor
+  - Theatre
+  - Kitchen
+  - Chapel
+  - Hydroponics
   - External
   - Cryogenics
-  - Maintenance
+  - Chemistry
   - Engineering
-  - Medical
   - Research
-  - Command
-  - CentralCommand
-  - BlueshieldOfficer
-  - Service
-  - Hydroponics
+  - Detective
+  - Salvage
+  - Security
+  - Brig
+  - Lawyer
   - Cargo
+  - Atmospherics
+  - Medical
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ] # CorvaxGoob-Not-Roundstart-BluespaceLifeline-Implant
