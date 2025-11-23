@@ -98,6 +98,12 @@ public sealed partial class AudioTab : Control
             scale: ContentAudioSystem.TtsMultiplier);
         // CorvaxGoob-TTS-End
 
+        // CorvaxGoob-Announcements-Volume-Start
+        Control.AddOptionPercentSlider(
+            CCCVars.AnnouncementsSound,
+            SliderVolumeAnnouncements);
+        // CorvaxGoob-Announcements-Volume-End
+
         Control.AddOptionPercentSlider(
             CVars.MidiVolume,
             SliderVolumeMidi,
