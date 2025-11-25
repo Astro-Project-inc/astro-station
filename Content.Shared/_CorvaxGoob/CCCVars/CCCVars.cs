@@ -104,4 +104,8 @@ public sealed class CCCVars
 
     public static readonly CVarDef<bool> CombatModeSoundEnabled =
         CVarDef.Create("audio.combat_mode_sound_enabled", true, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    public static readonly CVarDef<bool> AutoPunctuate =
+        CVarDef.Create("auto_punctuate", false, CVar.REPLICATED | CVar.CLIENT | CVar.ARCHIVE);
+
 }

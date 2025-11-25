@@ -144,6 +144,7 @@ using Content.Shared.Players;
 using Content.Shared.Players.RateLimiting;
 using Content.Shared.Radio;
 using Content.Shared.Whitelist;
+using Content.Shared._CorvaxGoob.CCCVars; // CorvaxGoob-Auto-Punctuation
 using Content.Goobstation.Common.Chat;
 using Content.Goobstation.Common.Traits;
 using Robust.Server.Player;
@@ -180,6 +181,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly INetConfigurationManager _netConfigManager = default!; // CorvaxGoob-Auto-Punctuation
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
@@ -369,7 +371,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         var language = languageOverride ?? _language.GetLanguage(source); // Einstein Engines - Language
 
         bool shouldCapitalize = (desiredType != InGameICChatType.Emote);
-        bool shouldPunctuate = _configurationManager.GetCVar(CCVars.ChatPunctuation);
+        bool shouldPunctuate = _configurationManager.GetCVar(CCVars.ChatPunctuation) || player != null && _netConfigManager.GetClientCVar(player.Channel, CCCVars.AutoPunctuate); // CorvaxGoob-Auto-Punctuation
         // Capitalizing the word I only happens in English, so we check language here
         bool shouldCapitalizeTheWordI = (!CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Parent.Name == "en")
             || (CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Name == "en");
