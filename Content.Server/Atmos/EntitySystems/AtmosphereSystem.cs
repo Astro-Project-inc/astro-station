@@ -52,6 +52,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using System.Linq;
+using Content.Server.Atmos.Piping.Components;
 using Content.Server.Atmos.Piping.EntitySystems;
 using Content.Shared.Damage.Systems;
 using Robust.Shared.Threading;
@@ -85,6 +86,7 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
 
     private EntityQuery<GridAtmosphereComponent> _atmosQuery;
     private EntityQuery<MapAtmosphereComponent> _mapAtmosQuery;
+    private EntityQuery<AtmosDeviceComponent> _atmosDeviceQuery;
     private EntityQuery<AirtightComponent> _airtightQuery;
     private EntityQuery<FirelockComponent> _firelockQuery;
     private HashSet<EntityUid> _entSet = new();
@@ -103,8 +105,9 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
         InitializeGridAtmosphere();
         InitializeMap();
 
-        _mapAtmosQuery = GetEntityQuery<MapAtmosphereComponent>();
         _atmosQuery = GetEntityQuery<GridAtmosphereComponent>();
+        _mapAtmosQuery = GetEntityQuery<MapAtmosphereComponent>();
+        _atmosDeviceQuery = GetEntityQuery<AtmosDeviceComponent>();
         _airtightQuery = GetEntityQuery<AirtightComponent>();
         _firelockQuery = GetEntityQuery<FirelockComponent>();
 
