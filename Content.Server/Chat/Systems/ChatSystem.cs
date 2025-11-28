@@ -112,18 +112,11 @@
 using Content.Server._CorvaxGoob.Announcer;
 using Content.Server._EinsteinEngines.Language; // Einstein Engines - Language
 using Content.Goobstation.Shared.Loudspeaker.Events; // goob - loudspeakers
-using System.Collections.Immutable; // Goobstation - Starlight collective mind port
-using System.Globalization;
-using System.Linq;
-using System.Text;
 using Content.Server._Goobstation.Wizard.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
-using Content.Server.Players.RateLimiting;
-using Content.Server.Speech; // Einstein Engines - Language
-using Content.Server.Speech.Components;
 using Content.Server.Speech.EntitySystems;
 using Content.Server.Speech.Prototypes;
 using Content.Server.Station.Components;
