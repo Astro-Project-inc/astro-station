@@ -73,6 +73,16 @@
   - type: SurgeryTarget
   - type: Bloodstream
     bloodReagent: AlienBlood
+  # Corvax-Goob-GraysResprite-start
+  - type: Inventory
+    speciesId: abductor
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Shitmed/Mobs/Species/Abductor/displacement.rsi
+            state: jumpsuit
+  # Corvax-Goob-GraysResprite-end
 
 - type: entity
   parent: BaseSpeciesDummy
