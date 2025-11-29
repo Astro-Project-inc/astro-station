@@ -51,4 +51,33 @@
   - type: Anchorable
   - type: Transform
     noRot: true
-    
+
+- type: entity
+  parent: BaseStructure
+  id: KochergaStatue
+  name: golden statue of the unknown hero
+  description: "Man of 1000 faces... One returned salvage shuttle... One removes official NT stations and replaced them with hold and lonely planet... And no one know who is he..."
+  components:
+  - type: Sprite
+    noRot: true
+    layers:
+    - state: kocherga
+      sprite: _CorvaxGoob/Structures/Furniture/Memorials/kocherga.rsi
+      scale: "0.5, 0.5"
+      drawDepth: WallMountedItems
+      offset: "0.5, 0.5"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "1.0,0.0,0.75,1.0"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+  - type: Transform
+    noRot: true
+  - type: InteractionOutline
