@@ -46,6 +46,7 @@
   - AnomalyLocatorWide
   - HoloprojectorField
   #- SignallerAdvanced - Goobstation - Removed from there. Still in Equipment.
+  - PhysicalConverterMouse # CorvaxGoob-PhysicalConverter
   - DeviceQuantumSpinInverter
   - DeviceDesynchronizer
   - ClothingBackpackHarmpack

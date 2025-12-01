@@ -46,4 +46,19 @@
   position: -5,-2
   technologyPrerequisites:
     - BluespaceTheory
-  # Goobstation R&D Console rework end
+
+- type: technology
+  id: AtomicReconstruction
+  name: research-atomic-reconstruction
+  icon:
+    sprite: _CorvaxGoob/Objects/Devices/physical_converter.rsi
+    state: icon
+  discipline: Experimental
+  tier: 3
+  cost: 7500
+  recipeUnlocks:
+  - PhysicalConverterMouse
+  position: -3, 3
+  technologyPrerequisites:
+    - GravityManipulation
+

@@ -1,0 +1,9 @@
+- type: latheRecipe
+  id: PhysicalConverterMouse
+  result: PhysicalConverterMouse
+  completetime: 10
+  materials:
+    Steel: 1000
+    Glass: 200
+    Uranium: 200
+    Plasma: 500

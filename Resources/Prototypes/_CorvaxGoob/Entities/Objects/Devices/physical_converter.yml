@@ -1,0 +1,20 @@
+- type: entity
+  id: BasePhysicalConverter
+  parent: BaseItem
+  name: physical converter
+  description: A high-tech device capable of temporarily reassembling the user's cells into a specified creature inside the program.
+  components:
+  - type: Sprite
+    sprite: _CorvaxGoob/Objects/Devices/physical_converter.rsi
+    state: icon-on
+  - type: TriggerOnUse
+  - type: UseDelay
+    delay: 300
+
+- type: entity
+  id: PhysicalConverterMouse
+  parent: BasePhysicalConverter
+  name: mouse physical converter
+  components:
+  - type: PolymorphOnTrigger
+    polymorph: PhysicalConverterMouse

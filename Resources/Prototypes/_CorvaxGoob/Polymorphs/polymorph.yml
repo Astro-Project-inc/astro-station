@@ -1,0 +1,13 @@
+- type: polymorph
+  id: PhysicalConverterMouse
+  configuration:
+    entity: MobMouse
+    transferName: false
+    inventory: None
+    forced: false
+    revertOnDeath: true
+    allowRepeatedMorphs: false
+    polymorphSound: /Audio/_CorvaxGoob/Effects/Magic/mandswap.ogg
+    exitPolymorphSound: /Audio/Magic/ethereal_exit.ogg
+    duration: 120
+    effectProto: EffectTelepadSparks
