@@ -36,7 +36,7 @@ while True:
     print(f"Всего файлов для проверки: {total_files}\n")
     print(f"Ищем: '{search_word}'\n")
 
-    # Регулярное выражение для точного совпадения. 
+    # Регулярное выражение для точного совпадения
     pattern = re.compile(rf'\b{re.escape(search_word)}\b')
 
     matches = []
