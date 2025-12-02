@@ -2,6 +2,10 @@ import os
 import sys
 import re
 
+def clear_console():
+    print("\033[H\033[J", end="")
+clear_console()
+
 folder_path = "../../Resources/Locale"
 
 # Сбор всех .ftl
@@ -13,9 +17,6 @@ for root, dirs, files in os.walk(folder_path):
 
 total_files = len(ftl_files)
 
-def clear_console():
-    print("\033[H\033[J", end="")
-
 # Крутой прогресс-бар
 def print_progress(current, total, bar_length=20):
     fraction = current / total
@@ -26,7 +27,7 @@ def print_progress(current, total, bar_length=20):
     sys.stdout.flush()
 
 while True:
-    search_word = input("\nЧто ищем?\n").strip()
+    search_word = input("Что ищем?\n").strip()
     if not search_word:
         print("Вы не ввели слово. Завершение работы.")
         break
@@ -59,3 +60,4 @@ while True:
             print(match)
     else:
         print("Совпадений не найдено.")
+    print()
