@@ -290,7 +290,10 @@
     - id: DoorRemoteService
     - id: HoPIDCard
     - id: IDComputerCircuitboard
-    - id: ComputerFundingAllocationFlatpack # Goobstation
+    # Corvax-Goob-RevertFundingHoP-start
+    #- id: ComputerFundingAllocationFlatpack # Goobstation # Corvax-Goob-RevertFundingHoP
+    - id: PrinterDocFlatpack
+    # Corvax-Goob-RevertFundingHoP-end
     - id: ComputerCargoRequestServiceFlatpack # Goobstation
     - id: RubberStampApproved
     - id: RubberStampDenied
