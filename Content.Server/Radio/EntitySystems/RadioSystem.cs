@@ -33,6 +33,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq;  // goob - intermap transmitters
+using Content.Goobstation.Shared.Communications; // goob - intermap transmitters
 using Content.Goobstation.Shared.Loudspeaker.Events; // goob - loudspeakers
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
@@ -170,6 +172,14 @@ public sealed class RadioSystem : EntitySystem
         else
             speech = _chat.GetSpeechVerb(messageSource, message);
 
+        // CorvaxGoob-Anonymous-Radio-Start
+        if (channel.Anonymous)
+        {
+            name = AnonymizeName(name);
+            speech.SpeechVerbStrings = ["chat-speech-verb-default"]; // shitcode :cat_gagaga:
+        }
+        // CorvaxGoob-Anonymous-Radio-End
+
         var content = escapeMarkup
             ? FormattedMessage.EscapeText(message)
             : message;
@@ -193,12 +203,16 @@ public sealed class RadioSystem : EntitySystem
         //     null);
         // var chatMsg = new MsgChatMessage { Message = chat };
         // var ev = new RadioReceiveEvent(message, messageSource, channel, radioSource, chatMsg);
-        var msg = new ChatMessage(ChatChannel.Radio, content, wrappedMessage, NetEntity.Invalid, null); // Einstein Engines - Language
+        // Goobstation - Chat Pings
+        // Added GetNetEntity(messageSource), to source
+        var msg = new ChatMessage(ChatChannel.Radio, content, wrappedMessage, GetNetEntity(messageSource), null);
 
         // Einstein Engines - Language begin
         var obfuscated = _language.ObfuscateSpeech(content, language);
         var obfuscatedWrapped = WrapRadioMessage(messageSource, channel, name, obfuscated, language);
-        var notUdsMsg = new ChatMessage(ChatChannel.Radio, obfuscated, obfuscatedWrapped, NetEntity.Invalid, null);
+        // Goobstation - Chat Pings
+        // Added GetNetEntity(messageSource), to source
+        var notUdsMsg = new ChatMessage(ChatChannel.Radio, obfuscated, obfuscatedWrapped, GetNetEntity(messageSource), null);
         var ev = new RadioReceiveEvent(messageSource, channel, msg, notUdsMsg, language, radioSource);
         // Einstein Engines - Language end
 
@@ -221,7 +235,8 @@ public sealed class RadioSystem : EntitySystem
                     continue;
             }
 
-            if (!channel.LongRange && transform.MapID != sourceMapId && !radio.GlobalReceive)
+            if (!channel.LongRange && transform.MapID != sourceMapId && !radio.GlobalReceive
+                && !(HasActiveTransmitter(transform.MapID) && HasActiveTransmitter(sourceMapId))) // goob - intermap transmitters
                 continue;
 
             // don't need telecom server for long range channels or handheld radios and intercoms
@@ -248,6 +263,59 @@ public sealed class RadioSystem : EntitySystem
         _replay.RecordServerMessage(msg); // Einstein Engines - Language
         _messages.Remove(message);
     }
+
+    // CorvaxGoob-Anonymous-Radio-Start
+
+    /// <summary>
+    /// Replaces string with garbage symbols and adding/removing characters from it with random chance
+    /// </summary>
+    /// <param name="name">String that will be anonymized</param>
+    /// <returns>String consisting of garbage characters</returns>
+    private string AnonymizeName(string name)
+    {
+        var garbageChars = "1234567890!@#$%^&*";
+        var newName = string.Empty;
+
+        for (var i = 1; i < name.Length + 1; ++i)
+        {
+            newName += garbageChars[_random.Next(garbageChars.Length)];
+        }
+
+        // Adding/removing characters from string to make identifying by length harder.
+        var randomNumber = _random.Next(0, 2);
+        switch (randomNumber)
+        {
+            case 1:
+            {
+                for (var i = 0; i < _random.Next(1, 5); ++i)
+                {
+                    if (_random.Next(0, 1) != 1)
+                        continue;
+                    newName += garbageChars[_random.Next(garbageChars.Length)];
+                }
+
+                break;
+            }
+            case 2:
+            {
+                for (var i = 0; i < _random.Next(1, 5); ++i)
+                {
+                    if (_random.Next(0, 1) != 1)
+                        continue;
+                    if (newName.Length - 1 < 2)
+                        break;
+
+                    newName.Remove(i);
+                }
+
+                break;
+            }
+        }
+
+        return newName;
+    }
+
+    // CorvaxGoob-Anonymous-Radio-End
 
     // Einstein Engines - Language begin
     private string WrapRadioMessage(
@@ -325,4 +393,12 @@ public sealed class RadioSystem : EntitySystem
         }
         return false;
     }
+    // goob start - intermap transmitters
+    /// <inheritdoc cref="TelecomServerComponent"/>
+    private bool HasActiveTransmitter(MapId mapId)
+    {
+        return EntityQuery<TelecomTransmitterComponent, ApcPowerReceiverComponent, TransformComponent>()
+            .Any(server => server.Item3.MapID == mapId && server.Item2.Powered);
+    }
+    // goob end
 }

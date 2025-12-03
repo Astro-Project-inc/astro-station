@@ -88,6 +88,7 @@
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 loltart <lo1tartyt@gmail.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 # SPDX-FileCopyrightText: 2025 terminatorbo <kovalevb059@gmail.com>
 #
@@ -109,6 +110,7 @@
     inverted: true
     species:
     - Plasmaman
+    - Abductor # CorvaxGoob-Species
   guides: [ NuclearOperatives ]
 
 - type: antag
@@ -130,6 +132,7 @@
     inverted: true
     species:
     - Plasmaman
+    - Abductor # CorvaxGoob-Species
   guides: [ NuclearOperatives ]
 
 - type: antag
@@ -152,6 +155,7 @@
     inverted: true
     species:
     - Plasmaman
+    - Abductor # CorvaxGoob-Species
   guides: [ NuclearOperatives ]
 
 - type: startingGear
@@ -251,4 +255,4 @@
   parent: SyndicateOperativeGearFull
   equipment:
     # Goobstation - Telecrystal rework
-    pocket2: BaseUplinkRadio350TC
+    pocket2: LoneOpsUplink350TC #Goobstation
