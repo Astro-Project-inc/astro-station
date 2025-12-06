@@ -1,0 +1,37 @@
+# ИНСТРУКЦИЯ
+# Из лобби устанавливаем режим, отключаем позднее подключение game.disallow_late_joins в true
+# устанавливаем нужное число активных игры vv /entity/1(ентити режима)/NumberofSessions или както так
+
+- type: gamePreset
+  id: Deathmatch_CorvaxStabion
+  alias:
+    - deathmatch_CorvaxStabion
+    - dmCS
+  name: противостояние
+  description: Вы хотели зайти в CS но попали в CorvaxStation.
+  maxPlayers: 100
+  minPlayers: 0
+  showInVote: false
+  supportedMaps: DeathMatchMapPool_CS
+  rules:
+    - DeathMatch_CS
+
+- type: entity
+  id: DeathMatch_CS
+  parent: BaseGameRule
+  components:
+  - type: CSRule
+    NumberofSessions: 4
+    rewardSpawns:
+    - id: Telecrystal1
+  - type: RespawnDeadRule
+  - type: RespawnTracker # это потом пригодится... возможно
+    respawnDelay: 5
+
+- type: gameMapPool
+  id: DeathMatchMapPool_CS
+  maps:
+  - dm01-entryway
+  - Box_CS
+  - CorvaxGlacier
+  - CorvaxPilgrim

@@ -1,0 +1,143 @@
+- type: startingGear
+  id: SyndicateTDMGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryColorRed
+    head: ClothingHeadHelmetSwatSyndicate
+    back: ClothingBackpackSyndicate
+    shoes: ClothingShoesBootsMerc
+    pocket1: BaseUplinkRadio_CS
+    pocket2: CEIDCard
+
+- type: startingGear
+  id: NanoTrasenTDMGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitRecruitNT
+    head: ClothingHeadHelmetSwat
+    back: ClothingBackpackNanoTrasenTDM
+    shoes: ClothingShoesBootsCombat
+    pocket1: BaseUplinkRadio_CS
+    pocket2: CEIDCard
+
+##################################################################
+- type: randomHumanoidSettings
+  speciesBlacklist:
+  - Chitinid
+  - Abductor
+  - Shadowkin
+  - Scurret
+  - Felinid
+  - Oni
+  - Resomi
+  - Shadow
+  - Plasmaman
+  - Rodentia
+  - Feroxi
+  - Harpy
+  - Diona
+  - Arachnid
+  - Dwarf
+  - Moth
+  - Reptilian
+  - Skeleton
+  - Vulpkanin
+  - Vox
+  - Tajaran
+  - IPC
+  - SlimePerson
+  id: SyndicateTDM
+  parent: EventHumanoid
+  components:
+  - type: GhostRole
+    name: боец команды Синдиката
+    description: "."
+  - type: Loadout
+    prototypes: [ SyndicateTDMGear ]
+
+- type: randomHumanoidSettings
+  speciesBlacklist:
+  - Chitinid
+  - Abductor
+  - Shadowkin
+  - Scurret
+  - Felinid
+  - Oni
+  - Resomi
+  - Shadow
+  - Plasmaman
+  - Rodentia
+  - Feroxi
+  - Harpy
+  - Diona
+  - Arachnid
+  - Dwarf
+  - Moth
+  - Reptilian
+  - Skeleton
+  - Vulpkanin
+  - Vox
+  - Tajaran
+  - IPC
+  - SlimePerson
+  id: NanoTrasenTDM
+  parent: EventHumanoid
+  components:
+  - type: GhostRole
+    name: боец команды NanoTrasen
+    description: "РДМ роль для РДМ арены."
+  - type: Loadout
+    prototypes: [ NanoTrasenTDMGear ]
+##################################################################
+- type: entity
+  id: RandomHumanoidSyndicateTDM
+  name: пехотинец Синдиката
+  suffix: КС_
+  components:
+  - type: IsFighter
+  - type: Sprite
+    layers:
+    #- state: green
+    - sprite: Mobs/Species/Human/parts.rsi
+      state: full
+    - sprite: Clothing/Shoes/Boots/combatboots.rsi
+      state: equipped-FEET
+    - sprite: Clothing/Uniforms/Jumpsuit/recruit_syndie.rsi
+      state: equipped-INNERCLOTHING
+    - sprite: Clothing/OuterClothing/Armor/security.rsi
+      state: equipped-OUTERCLOTHING
+    - sprite: Clothing/Head/Helmets/swat_syndicate.rsi
+      state: equipped-HELMET
+  - type: RandomHumanoidSpawner
+    settings: SyndicateTDM
+
+- type: entity
+  id: RandomHumanoidNanoTrasenTDM
+  name: пехотинец NanoTrasen
+  suffix: КС_
+  components:
+  - type: IsFighter
+  - type: Sprite
+    layers:
+    #- state: green
+    - sprite: Mobs/Species/Human/parts.rsi
+      state: full
+    - sprite: Clothing/Shoes/Boots/combatboots.rsi
+      state: equipped-FEET
+    - sprite: Clothing/Uniforms/Jumpsuit/recruit_nt.rsi
+      state: equipped-INNERCLOTHING
+    - sprite: Clothing/OuterClothing/Armor/security.rsi
+      state: equipped-OUTERCLOTHING
+    - sprite: Clothing/Head/Helmets/swat.rsi
+      state: equipped-HELMET
+  - type: RandomHumanoidSpawner
+    settings: NanoTrasenTDM
+##################################################################
+
+- type: entity
+  parent: ClothingBackpackSyndicate
+  id: ClothingBackpackNanoTrasenTDM
+  name: рюкзак
+  description: Вы носите это на спине и кладёте в него предметы.
+  suffix: КС
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/backpack.rsi

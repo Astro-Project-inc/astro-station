@@ -5,17 +5,18 @@
   - type: Store
     name: store-preset-name-uplink
     categories:
-    - UplinkWeaponry_CS
-    - UplinkAmmo_СS
-    - UplinkExplosives_CS
-    #- UplinkWeaponry
-    #- UplinkAmmo
+#    - UplinkWeaponry_CS
+#    - UplinkAmmo_СS
+#    - UplinkExplosives_CS
+    - UplinkWeaponry
+    - UplinkAmmo
+    - Explosives_CS
     - UplinkWearables
     - UplinkPointless
     currencyWhitelist:
     - Telecrystal
     balance:
-      Telecrystal: 0
+      Telecrystal: 100
 
 - type: entity
   parent: [BaseItem, StorePresetUplink_CS, BaseSyndicateContraband]
@@ -23,7 +24,7 @@
   name: Магазин
   description: Ну вы поняли
   components:
-  - type: Unremoveable
+#  - type: Unremoveable
   - type: Sprite
     sprite: Objects/Devices/communication.rsi
     layers:
