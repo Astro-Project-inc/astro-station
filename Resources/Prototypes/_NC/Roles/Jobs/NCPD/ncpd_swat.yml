@@ -14,4 +14,11 @@
   id: NCPDSWATGear
   equipment:
     id: NCPDSWATPDA
-    jumpsuit: ClothingUniformJumpsuitColorGrey
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficerBlack
+    outerCloting: ClothingOuterArmorBulletproof
+    ears: ClothingHeadsetSecurity
+    belt: ClothingBeltAssaultFilled
+    back: ClothingBackpackSatchelSecurity
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHelmetBasic
+    gloves: ClothingHandsGlovesCombat

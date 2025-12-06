@@ -11,4 +11,10 @@
   id: TraumaTeamParamedicGear
   equipment:
     id: TraumaTeamParamedicPDA
-    jumpsuit: ClothingUniformJumpsuitColorGrey
+    jumpsuit: ClothingUniformJumpsuitMedicalDoctor
+    outerClothing: ClothingOuterHardsuitTraumaTeamMedic
+    gloves: ClothingShoesBootsCombat
+    ears: ClothingHeadsetMedical
+    belt: ClothingBeltMedicalEMTFilled
+    back: ClothingBackpackSatchelMedical
+    shoes: ClothingShoesBootsCombat

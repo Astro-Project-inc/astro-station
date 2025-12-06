@@ -1,6 +1,6 @@
 - type: job
   id: NCPDProsecutor
-  name: Прокурор NCPD
+  name: Следователь NCPD
   description: job-description-ncpd-prosecutor
   playTimeTracker: JobNCPDProsecutor
   startingGear: NCPDProsecutorGear

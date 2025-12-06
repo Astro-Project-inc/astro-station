@@ -11,4 +11,8 @@
   id: TraumaTeamDoctorGear
   equipment:
     id: TraumaTeamDoctorPDA
-    jumpsuit: ClothingUniformJumpsuitColorGrey
+    jumpsuit: ClothingUniformJumpsuitMedicalDoctor
+    ears: ClothingHeadsetMedical
+    belt: ClothingBeltMedicalFilled
+    back: ClothingBackpackSatchelMedical
+    shoes: ClothingShoesColorWhite

@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingOuterHardsuitBase]
+  parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitTraumaTeamOperative
   name: Костюм оперативника на Trauma Team
   description: Этот костюм предназначен для оперативников Trauma Team. Он обеспечивает высокую защиту и оснащён специальными функциями для работы в опасных условиях.
@@ -34,7 +34,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingOuterHardsuitBase]
+  parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitTraumaTeamMedic
   name: Костюм медика на Trauma Team
   description: Этот костюм предназначен для медиков Trauma Team. Он обеспечивает защиту и оснащён специальными функциями для работы в опасных условиях.

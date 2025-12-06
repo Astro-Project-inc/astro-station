@@ -1,6 +1,6 @@
 - type: entity
   parent: ClothingOuterArmorBase
-  id: ClothingOuterArmorMilitaryArmorVest
+  id: ClothingOuterArmorMilitechArmorVest
   name: Бронижилет Militech
   description: Прочный бронижилет, разработанный Militech для обеспечения максимальной защиты в боевых условиях. Идеально подходит для военных и охранников, требующих надежной защиты от различных угроз.
   components:

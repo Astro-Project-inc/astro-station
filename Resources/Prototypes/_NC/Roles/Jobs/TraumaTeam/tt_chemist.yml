@@ -12,4 +12,9 @@
   id: TraumaTeamChemistGear
   equipment:
     id: TraumaTeamChemistPDA
-    jumpsuit: ClothingUniformJumpsuitColorGrey
+    jumpsuit: ClothingUniformJumpsuitChemistry
+    outerClothing: ClothingOuterCoatLabChemOpened
+    ears: ClothingHeadsetMedical
+    belt: ChemBagFilled
+    back: ClothingBackpackSatchelChemistry
+    shoes: ClothingShoesColorWhite

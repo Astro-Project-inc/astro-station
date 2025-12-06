@@ -13,4 +13,7 @@
   id: TraumaTeamChiefGear
   equipment:
     id: TraumaTeamChiefPDA
-    jumpsuit: ClothingUniformJumpsuitColorGrey
+    jumpsuit: ClothingUniformJumpsuitCMOTurtle
+    ears: ClothingHeadsetMedical
+    back: ClothingBackpackSatchelMedical
+    shoes: ClothingShoesBootsLaceup
