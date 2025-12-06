@@ -87,7 +87,7 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
         {
             if (!GameTicker.IsGameRuleActive(uid, rule))
                 return;
-            while ((this.SessionsListS?.Count ?? 0) <= cscomp.NumberofSessions)
+            while ((this.SessionsListS?.Count ?? 0) < cscomp.NumberofSessions)
             {
                 Session newsession = new();
                 Addmap(out var grids, out var mapId);

@@ -92,7 +92,6 @@
   name: пехотинец Синдиката
   suffix: КС_
   components:
-  - type: IsFighter
   - type: Sprite
     layers:
     #- state: green
@@ -108,13 +107,13 @@
       state: equipped-HELMET
   - type: RandomHumanoidSpawner
     settings: SyndicateTDM
+    #Components: IsFighter
 
 - type: entity
   id: RandomHumanoidNanoTrasenTDM
   name: пехотинец NanoTrasen
   suffix: КС_
   components:
-  - type: IsFighter
   - type: Sprite
     layers:
     #- state: green
@@ -130,6 +129,7 @@
       state: equipped-HELMET
   - type: RandomHumanoidSpawner
     settings: NanoTrasenTDM
+    #Components: IsFighter
 ##################################################################
 
 - type: entity
