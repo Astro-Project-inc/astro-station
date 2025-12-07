@@ -5,8 +5,9 @@
     head: ClothingHeadHelmetSwatSyndicate
     back: ClothingBackpackSyndicate
     shoes: ClothingShoesBootsMerc
-    pocket1: BaseUplinkRadio_CS
+    pocket1: BaseUplinkRadio100TC
     pocket2: HoPIDCard
+    gloves: ClothingHandsGlovesCombat
 
 - type: startingGear
   id: NanoTrasenTDMGear
@@ -15,10 +16,11 @@
     head: ClothingHeadHelmetSwat
     back: ClothingBackpackNanoTrasenTDM
     shoes: ClothingShoesBootsCombat
-    pocket1: BaseUplinkRadio_CS
+    pocket1: BaseUplinkRadio100TC
     pocket2: HoPIDCard
+    gloves: ClothingHandsGlovesCombat
+###
 
-##################################################################
 - type: randomHumanoidSettings
   speciesBlacklist:
   - Chitinid
@@ -57,7 +59,6 @@
     preventGhosting: true
     preventSuicide: true
 
-
 - type: randomHumanoidSettings
   speciesBlacklist:
   - Chitinid
@@ -95,7 +96,8 @@
   - type: Mind
     preventGhosting: true
     preventSuicide: true
-##################################################################
+###
+
 - type: entity
   id: RandomHumanoidSyndicateTDM
   name: пехотинец Синдиката
@@ -103,7 +105,6 @@
   components:
   - type: Sprite
     layers:
-    #- state: green
     - sprite: Mobs/Species/Human/parts.rsi
       state: full
     - sprite: Clothing/Shoes/Boots/combatboots.rsi
@@ -124,7 +125,6 @@
   components:
   - type: Sprite
     layers:
-    #- state: green
     - sprite: Mobs/Species/Human/parts.rsi
       state: full
     - sprite: Clothing/Shoes/Boots/combatboots.rsi
@@ -137,7 +137,7 @@
       state: equipped-HELMET
   - type: RandomHumanoidSpawner
     settings: NanoTrasenTDM
-##################################################################
+###
 
 - type: entity
   parent: ClothingBackpackSyndicate

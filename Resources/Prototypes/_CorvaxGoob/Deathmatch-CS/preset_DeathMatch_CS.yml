@@ -1,6 +1,3 @@
-# ИНСТРУКЦИЯ
-# устанавливаем нужное число активных игры vv /entity/1(ентити режима)/NumberofSessions или както так
-# лишние карты - лаваленд, раундстарт карту и прочие
 - type: gamePreset
   id: Deathmatch_CorvaxStabion
   alias:
@@ -20,11 +17,11 @@
   parent: BaseGameRule
   components:
   - type: CSRule
-    NumberofSessions: 4
+    numberOfSessions: 4 # Изменять от числа игроков, но не уроните ничего на сервер.
     rewardSpawns:
     - id: Telecrystal1
   - type: RespawnDeadRule
-  - type: RespawnTracker #потом пригодится... возможно
+  - type: RespawnTracker
     respawnDelay: 5
 
 - type: gameMapPool

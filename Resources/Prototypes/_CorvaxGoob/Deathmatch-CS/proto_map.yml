@@ -1,9 +1,7 @@
-# > entities with ConditionalSpawner delete
-# смэс, атмосия
+#Как адекватно подготовить карту - "> entities with ConditionalSpawner delete", смэс, атмосия
 - type: gameMap
   id: Box_CS
   mapName: 'Box Station'
-  #mapPath: /Uploaded/rdmbox.yml
   mapPath: /Maps/_CorvaxGoob/Nonstations/rdmbox.yml
   minPlayers: 0
   maxPlayers: 100
@@ -16,8 +14,3 @@
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'TG'
-#        - type: StationEmergencyShuttle
-#          emergencyShuttlePath: /Maps/Shuttles/emergency_box.yml
-#        - type: StationJobs
-#          availableJobs:
-#            Passenger: [ 0, 0 ]
