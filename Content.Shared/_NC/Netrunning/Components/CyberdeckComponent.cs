@@ -1,5 +1,6 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._NC.Netrunning.Components
 {
@@ -9,10 +10,7 @@ namespace Content.Shared._NC.Netrunning.Components
         [DataField("range"), AutoNetworkedField]
         public float Range = 15.0f;
 
-        [DataField("installedPrograms"), AutoNetworkedField]
-        public List<string> InstalledPrograms = new()
-        {
-            "ActionNetrunnerReturn" 
-        };
+        [DataField("installedPrograms")]
+        public List<EntProtoId> InstalledPrograms = new();
     }
 }

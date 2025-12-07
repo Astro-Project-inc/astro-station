@@ -1,15 +1,26 @@
 - type: entity
-  id: NCCyberdeckBase
-  name: Arasaka Portable Deck
-  description: Стандартная дека для входа в сеть.
+  id: BaseCyberdeck
+  abstract: true 
+  name: Cyberdeck Base
   parent: BaseItem
   components:
   - type: Sprite
     sprite: Objects/Tools/access_breaker.rsi
     state: icon
   - type: Item
-    sprite: Objects/Tools/access_breaker.rsi
+    size: Small
+  - type: Cyberdeck 
+    range: 10
+    installedPrograms: 
+    - ActionNetrunnerReturn
+
+- type: entity
+  id: CyberdeckMilitary
+  parent: BaseCyberdeck
+  name: Дека 'Mil-Tech Ogre'
+  description: Запрещенный прототип. Жарит мозги и двери.
+  components:
   - type: Cyberdeck
-    range: 15
+    range: 25 # Огромный радиус
     installedPrograms:
-    - ActionNetrunnerReturn  # Базовый выход
+    - ActionNetrunnerReturn

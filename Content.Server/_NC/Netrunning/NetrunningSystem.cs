@@ -8,7 +8,7 @@ using Robust.Shared.Player;
 using Content.Shared.Movement.Components;
 using Content.Server.Mind;
 using Content.Shared.Mind;
-using Content.Shared.Actions; // <--- Этот using должен остаться
+using Content.Shared.Actions; 
 
 namespace Content.Server._NC.Netrunning
 {
@@ -40,26 +40,27 @@ namespace Content.Server._NC.Netrunning
             var coords = _transform.GetMapCoordinates(user);
             var avatar = Spawn("NCNetrunnerAvatar", coords);
 
-            // Настраиваем компонент аватара
             var avatarComp = EnsureComp<NetrunnerAvatarComponent>(avatar);
             avatarComp.LinkedBody = GetNetEntity(user);
             avatarComp.LinkedDeck = GetNetEntity(uid);
 
-            // 1. Сначала переносим разум (чтобы клиент "сел" в аватара)
+            // 1. ПЕРЕНОС РАЗУМА (Сначала разум, потом кнопки — это важно для UI!)
             _mind.TransferTo(mindId, avatar, mind: mind);
 
-            // 2. ВЫДАЕМ "РОДНОЙ" ЭКШЕН ВЫХОДА (СТИЛЬ JAUNT)
-            // Мы передаем ссылку "ref avatarComp.ActionEntity". 
-            // Система сама создаст ActionsComponent (если его нет) и запишет туда кнопку.
+            // 2. ВЫДАЕМ ГЛАВНУЮ КНОПКУ (Совет из Discord)
+            // Использование 'ref avatarComp.ActionEntity' гарантирует, что 
+            // сервер запомнит эту кнопку и привяжет её к компоненту.
             _actions.AddAction(avatar, ref avatarComp.ActionEntity, avatarComp.ActionId);
 
-            // 3. ВЫДАЕМ ПРОГРАММЫ ИЗ ДЕКИ (ВАШИ СКРИПТЫ)
+            // 3. ВЫДАЕМ ОСТАЛЬНЫЕ ПРОГРАММЫ
+            // Если в деке есть дополнительные скрипты (кроме выхода), добавляем их.
             if (component.InstalledPrograms != null)
             {
                 foreach (var actionId in component.InstalledPrograms)
                 {
-                    // Для дополнительных скриптов используем простую перегрузку.
-                    // Она просто добавит кнопку в список.
+                    // Для списка мы используем простую выдачу.
+                    // (Чтобы использовать ref для списка, нужно сильно усложнять код компонента, 
+                    // для начала хватит и так).
                     _actions.AddAction(avatar, actionId);
                 }
             }
@@ -81,9 +82,8 @@ namespace Content.Server._NC.Netrunning
             }
         }
 
-        // =============================================================
-        // 3. АВТО-ВЫХОД ПРИ УРОНЕ
-        // =============================================================
+        // ... Остальной код (OnDamageTaken, Update, JackOut) без изменений ...
+        
         private void OnDamageTaken(EntityUid uid, DamageableComponent component, DamageChangedEvent args)
         {
             if (args.DamageDelta == null || args.DamageDelta.Empty) return;
@@ -98,9 +98,6 @@ namespace Content.Server._NC.Netrunning
             }
         }
 
-        // =============================================================
-        // 4. ПРОВЕРКА ДИСТАНЦИИ
-        // =============================================================
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
@@ -125,9 +122,6 @@ namespace Content.Server._NC.Netrunning
             }
         }
 
-        // =============================================================
-        // 5. ФУНКЦИЯ ВОЗВРАТА
-        // =============================================================
         private void JackOut(EntityUid avatarUid, EntityUid bodyUid, NetrunnerAvatarComponent? component = null)
         {
             if (_mind.TryGetMind(avatarUid, out var mindId, out var mind)) {
