@@ -1,5 +1,5 @@
 # > entities with ConditionalSpawner delete
-# смэс, атмосия,
+# смэс, атмосия
 - type: gameMap
   id: Box_CS
   mapName: 'Box Station'
@@ -8,7 +8,7 @@
   minPlayers: 0
   maxPlayers: 100
   stations:
-    Boxstation:
+    CorvaxBox:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
@@ -18,6 +18,6 @@
             prefixCreator: 'TG'
 #        - type: StationEmergencyShuttle
 #          emergencyShuttlePath: /Maps/Shuttles/emergency_box.yml
-        - type: StationJobs
-          availableJobs:
-            Passenger: [ 0, 0 ]
+#        - type: StationJobs
+#          availableJobs:
+#            Passenger: [ 0, 0 ]

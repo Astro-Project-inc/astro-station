@@ -8,6 +8,7 @@ using Content.Server.Maps;
 using Content.Server.Mind;
 using Content.Server.RoundEnd;
 using Content.Server.Station.Systems;
+using Content.Shared._CorvaxGoob.Deathmatch_CS;
 using Content.Shared.GameTicking.Components;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
@@ -57,14 +58,14 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
             }*/
         }
     }
-    private void NewSession(CSRuleComponent cscomp)
+    public void NewSession(CSRuleComponent cscomp)
     {
         var query = EntityQueryEnumerator<CSRuleComponent, GameRuleComponent>();
         while (query.MoveNext(out var uid, out var dm, out var rule))
         {
             if (!GameTicker.IsGameRuleActive(uid, rule))
                 return;
-            while ((this.SessionsListS?.Count ?? 0) < cscomp.NumberofSessions)
+            if ((this.SessionsListS?.Count ?? 0) < cscomp.NumberofSessions)
             {
                 Session newsession = new();
                 Addmap(out var mapId);
@@ -94,9 +95,9 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
     private void OnKillReported(ref KillReportedEvent ev)
     {
         var query = EntityQueryEnumerator<CSRuleComponent, RespawnTrackerComponent, GameRuleComponent>();
-        while (query.MoveNext(out var uid, out var dm, out _, out var rule))
+        while (query.MoveNext(out var guid, out var dm, out _, out var rule))
         {
-            if (!GameTicker.IsGameRuleActive(uid, rule))
+            if (!GameTicker.IsGameRuleActive(guid, rule))
                 continue;
             foreach (var session in SessionsListS)
             {
@@ -114,4 +115,9 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
             }
         }
     }
+    // ТуДу
+    // Отслеживание выхода игрока из игры
+    // проверка связий айди в механиках регистрации сессии
+    // проверка на отслеживание суицида
+    // проверка, на случай трансформации, не записывать игрока в сессию дважды, переделать на сикей?...
 }

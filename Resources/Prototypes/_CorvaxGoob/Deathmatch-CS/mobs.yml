@@ -53,6 +53,9 @@
   - type: Loadout
     prototypes: [ SyndicateTDMGear ]
   - type: IsFighter
+  - type: Mind
+    preventGhosting: true
+    preventSuicide: true
 
 
 - type: randomHumanoidSettings
@@ -89,6 +92,9 @@
   - type: Loadout
     prototypes: [ NanoTrasenTDMGear ]
   - type: IsFighter
+  - type: Mind
+    preventGhosting: true
+    preventSuicide: true
 ##################################################################
 - type: entity
   id: RandomHumanoidSyndicateTDM
