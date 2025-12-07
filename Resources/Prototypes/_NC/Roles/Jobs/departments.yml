@@ -45,7 +45,7 @@
     - NCPDChief
     - NCPDOfficer
     - NCPDSWAT
-    - NCPDProsecutor
+    - JobNCPDInspector
 
 - type: department
   id: Government

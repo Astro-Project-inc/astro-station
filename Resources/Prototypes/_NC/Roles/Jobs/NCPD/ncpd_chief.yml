@@ -13,4 +13,10 @@
   id: NCPDChiefGear
   equipment:
     id: NCPDChiefPDA
-    jumpsuit: ClothingUniformJumpsuitColorGrey
+    jumpsuit: ClothingUniformJumpsuitBlueshieldOfficer
+    outerCloting: ClothingOuterCoatHoSTrench
+    ears: ClothingHeadsetSecurity
+    back: ClothingBackpackSatchelSecurity
+    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatBeretHoS
+    eyes: ClothingEyesGlassesSecurity

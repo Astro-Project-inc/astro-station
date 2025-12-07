@@ -60,7 +60,7 @@
   id: JobNCPDSWAT
 
 - type: playTimeTracker
-  id: JobNCPDProsecutor
+  id: JobNCPDInspector
 
 - type: playTimeTracker
   id: JobNCPDChief

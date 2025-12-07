@@ -13,9 +13,10 @@
   id: NCPDOfficerGear
   equipment:
     id: NCPDOfficerPDA
-    jumpsuit: ClothingUniformSecurityTrooper
+    jumpsuit: ClothingUniformJumpsuitBlueshieldOfficer
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltSecurityFilled
     back: ClothingBackpackSatchelSecurity
     shoes: ClothingShoesChameleonNoSlips
     head: ClothingHeadHatSecsoft
+    eyes: ClothingEyesGlassesSecurity
