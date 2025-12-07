@@ -16,6 +16,7 @@ using Content.Server.Points;
 using Content.Server.RoundEnd;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
+using Content.Shared._CorvaxGoob.Deathmatch_CS;
 using Content.Shared.CCVar;
 using Content.Shared.Doors.Components;
 using Content.Shared.GameTicking;
@@ -39,7 +40,7 @@ using System.Linq;
 using System.Text;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
-namespace Content.Server._CorvaxGoob.DM_CS;
+namespace Content.Server._CorvaxGoob.Deathmatch_CS;
 
 public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
 {
@@ -68,7 +69,6 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
 
         SubscribeLocalEvent<GameRuleStartedEvent>(RStart);
         SubscribeLocalEvent<KillReportedEvent>(OnKillReported);
-        SubscribeLocalEvent<MindGotRemovedEvent>(Addinsession);
     }
     private void RStart(ref GameRuleStartedEvent i)
     {
@@ -134,16 +134,6 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
                 }
                 break;
             }
-        }
-    }
-    private void Addinsession(MindGotRemovedEvent ev)
-    {
-        var query = EntityQueryEnumerator<CSRuleComponent, RespawnTrackerComponent, GameRuleComponent>();
-        while (query.MoveNext(out var uid, out var dm, out _, out var rule))
-        {
-            if (!GameTicker.IsGameRuleActive(uid, rule))
-                continue;
-            
         }
     }
 }

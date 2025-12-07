@@ -1,6 +1,6 @@
 using Content.Shared.Storage;
 
-namespace Content.Server._CorvaxGoob.DM_CS;
+namespace Content.Server._CorvaxGoob.Deathmatch_CS;
 
 [RegisterComponent, Access(typeof(CSRuleSystem))]
 public sealed partial class CSRuleComponent : Component

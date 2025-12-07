@@ -52,6 +52,8 @@
     description: "."
   - type: Loadout
     prototypes: [ SyndicateTDMGear ]
+  - type: IsFighter
+
 
 - type: randomHumanoidSettings
   speciesBlacklist:
@@ -86,6 +88,7 @@
     description: "РДМ роль для РДМ арены."
   - type: Loadout
     prototypes: [ NanoTrasenTDMGear ]
+  - type: IsFighter
 ##################################################################
 - type: entity
   id: RandomHumanoidSyndicateTDM
@@ -107,7 +110,6 @@
       state: equipped-HELMET
   - type: RandomHumanoidSpawner
     settings: SyndicateTDM
-    #Components: IsFighter
 
 - type: entity
   id: RandomHumanoidNanoTrasenTDM
@@ -129,7 +131,6 @@
       state: equipped-HELMET
   - type: RandomHumanoidSpawner
     settings: NanoTrasenTDM
-    #Components: IsFighter
 ##################################################################
 
 - type: entity
