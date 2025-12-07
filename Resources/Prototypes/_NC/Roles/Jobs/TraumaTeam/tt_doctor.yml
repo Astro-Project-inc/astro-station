@@ -10,7 +10,7 @@
 - type: startingGear
   id: TraumaTeamDoctorGear
   equipment:
-    id: TraumaTeamDoctorPDA
+    id: HoPPDA
     jumpsuit: ClothingUniformJumpsuitMedicalDoctor
     ears: ClothingHeadsetMedical
     belt: ClothingBeltMedicalFilled

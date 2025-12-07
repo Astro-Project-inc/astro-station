@@ -124,6 +124,9 @@
   name: Urist McHands
   parent: BaseMobHuman
   id: MobHuman
+  components:
+    - type: TraumaSubscriber 
+      tier: Bronze
   
 #Syndie
 - type: entity

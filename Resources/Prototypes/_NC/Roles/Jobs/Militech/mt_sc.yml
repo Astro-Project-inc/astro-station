@@ -15,5 +15,5 @@
 - type: startingGear
   id: SquadCommanderMilitechPDA
   equipment:
-    id: SquadCommanderMilitechPDA
+    id: HoPPDA
     jumpsuit: ClothingUniformJumpsuitColorGrey

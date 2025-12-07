@@ -10,7 +10,7 @@
 - type: startingGear
   id: TraumaTeamParamedicGear
   equipment:
-    id: TraumaTeamParamedicPDA
+    id: HoPPDA
     jumpsuit: ClothingUniformJumpsuitMedicalDoctor
     outerClothing: ClothingOuterHardsuitTraumaTeamMedic
     gloves: ClothingShoesBootsCombat

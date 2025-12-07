@@ -13,7 +13,7 @@
 - type: startingGear
   id: NCPDInspectorGear
   equipment:
-    id: NCPDInspectorPDA
+    id: HoPPDA
     jumpsuit: ClothingUniformJumpsuitBlueshieldOfficer
     outerCloting: ClothingOuterCoatDetectiveLoadout
     ears: ClothingHeadsetSecurity

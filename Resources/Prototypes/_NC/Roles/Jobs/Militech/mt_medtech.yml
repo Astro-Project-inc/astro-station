@@ -13,5 +13,5 @@
 - type: startingGear
   id: MedTechMGear
   equipment:
-    id: MedTechMPDA
+    id: HoPPDA
     jumpsuit: ClothingUniformJumpsuitColorGrey

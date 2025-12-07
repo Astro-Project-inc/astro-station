@@ -12,7 +12,7 @@
 - type: startingGear
   id: TraumaTeamChiefGear
   equipment:
-    id: TraumaTeamChiefPDA
+    id: HoPPDA
     jumpsuit: ClothingUniformJumpsuitCMOTurtle
     ears: ClothingHeadsetMedical
     back: ClothingBackpackSatchelMedical

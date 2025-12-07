@@ -14,5 +14,5 @@
 - type: startingGear
   id: HoSGear
   equipment:
-    id: HoSMilitechPDA
+    id: HoPPDA
     jumpsuit: ClothingUniformJumpsuitColorGrey

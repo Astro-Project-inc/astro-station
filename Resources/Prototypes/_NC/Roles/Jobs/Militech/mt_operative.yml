@@ -15,5 +15,5 @@
 - type: startingGear
   id: OperativeMGear
   equipment:
-    id: OperativeMilitechPDA
+    id: HoPPDA
     jumpsuit: ClothingUniformJumpsuitColorGrey

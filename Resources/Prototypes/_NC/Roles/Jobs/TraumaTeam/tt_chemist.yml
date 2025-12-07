@@ -11,7 +11,7 @@
 - type: startingGear
   id: TraumaTeamChemistGear
   equipment:
-    id: TraumaTeamChemistPDA
+    id: HoPPDA
     jumpsuit: ClothingUniformJumpsuitChemistry
     outerClothing: ClothingOuterCoatLabChemOpened
     ears: ClothingHeadsetMedical

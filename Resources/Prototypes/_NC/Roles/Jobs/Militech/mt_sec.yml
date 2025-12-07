@@ -14,5 +14,5 @@
 - type: startingGear
   id: SecMGear
   equipment:
-    id: SecurityMilitechPDA
+    id: HoPPDA
     jumpsuit: ClothingUniformJumpsuitColorGrey

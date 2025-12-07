@@ -13,7 +13,7 @@
 - type: startingGear
   id: NCPDSWATGear
   equipment:
-    id: NCPDSWATPDA
+    id: HoPPDA
     jumpsuit: ClothingUniformJumpsuitCentcomOfficerBlack
     outerCloting: ClothingOuterArmorBulletproof
     ears: ClothingHeadsetSecurity

@@ -1,0 +1,13 @@
+- type: entity
+  id: NCTraumaComputer
+  parent: BaseComputer
+  name: консоль Trauma Team
+  description: Консоль для мониторинга клиентов платиновой подписки.
+  components:
+  - type: TraumaComputer
+  - type: ActivatableUI
+    key: enum.TraumaComputerUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.TraumaComputerUiKey.Key:         # <--- УБРАЛИ дефис (-). Это теперь Ключ.
+        type: TraumaComputerBoundUserInterface # <--- Значение
