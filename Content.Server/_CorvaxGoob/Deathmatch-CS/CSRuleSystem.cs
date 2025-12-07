@@ -1,60 +1,26 @@
-using Content.Goobstation.Shared.Wraith.Components.Mobs;
-using Content.Server.Administration.Commands;
-using Content.Server.Cargo.Systems;
 using Content.Server.Clothing.Systems;
-using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.GameTicking.Rules.Components;
-using Content.Server.Ghost.Roles.Components;
-using Content.Server.Ghost.Roles.Events;
 using Content.Server.GridPreloader;
 using Content.Server.KillTracking;
 using Content.Server.Maps;
 using Content.Server.Mind;
-using Content.Server.Points;
 using Content.Server.RoundEnd;
-using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
-using Content.Shared._CorvaxGoob.Deathmatch_CS;
-using Content.Shared.CCVar;
-using Content.Shared.Doors.Components;
-using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
-using Content.Shared.Mind.Components;
-using Content.Shared.Points;
-using Content.Shared.Station.Components;
-using Content.Shared.Storage;
-using Microsoft.CodeAnalysis.FlowAnalysis;
-using Microsoft.Extensions.Configuration;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Content.Server._CorvaxGoob.Deathmatch_CS;
 
 public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
 {
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly OutfitSystem _outfitSystem = default!;
-    [Dependency] private readonly RespawnRuleSystem _respawn = default!;
-    [Dependency] private readonly RoundEndSystem _roundEnd = default!;
-    [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
+
     [Dependency] private readonly MapSystem _map = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
-    [Dependency] private readonly GridPreloaderSystem _gridPreloader = default!;
     [Dependency] private readonly IGameMapManager _gameMapManager = default!;
 
     public List<Session> SessionsListS = new();
@@ -70,7 +36,7 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
         SubscribeLocalEvent<GameRuleStartedEvent>(RStart);
         SubscribeLocalEvent<KillReportedEvent>(OnKillReported);
     }
-    private void RStart(ref GameRuleStartedEvent i)
+    private void RStart(ref GameRuleStartedEvent _)
     {
         var query = EntityQueryEnumerator<CSRuleComponent, GameRuleComponent>();
         while (query.MoveNext(out var uid, out var dm, out var rule))
@@ -78,6 +44,17 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
             if (!GameTicker.IsGameRuleActive(uid, rule))
                 continue;
             NewSession(dm);
+            /*if (GameTicker.GetAddedGameRules().Count() < 3)
+            {
+                foreach (var i in _map.GetAllMapIds())
+                {
+                    if (!_map.MapExists(i)) continue;
+                    var bl = true;
+                    foreach (var i2 in SessionsListS)
+                        if (i2.MapId == i) bl = false;
+                    if (bl) _map.DeleteMap(i);
+                }
+            }*/
         }
     }
     private void NewSession(CSRuleComponent cscomp)
@@ -90,14 +67,14 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
             while ((this.SessionsListS?.Count ?? 0) < cscomp.NumberofSessions)
             {
                 Session newsession = new();
-                Addmap(out var grids, out var mapId);
+                Addmap(out var mapId);
                 newsession.MapId = mapId;
                 _map.InitializeMap(mapId);
                 SessionsListS?.Add(newsession);
             }
         }
     }
-    private void Addmap(out IReadOnlyList<EntityUid> grids, out MapId mapId)
+    private void Addmap(out MapId mapId)
     {
         var mainStationMap = _gameMapManager.GetSelectedMap();
         var maps = new List<GameMapPrototype>();
@@ -110,7 +87,8 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
         {
             maps.Add(mainStationMap);
         }
-        grids = GameTicker.LoadGameMap(mainStationMap!, out MapId mapId1, null); mapId = mapId1;
+        GameTicker.LoadGameMap(mainStationMap!, out MapId mapId1);
+        mapId = mapId1;
     }
 
     private void OnKillReported(ref KillReportedEvent ev)

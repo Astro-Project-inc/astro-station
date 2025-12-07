@@ -1,7 +1,6 @@
 # ИНСТРУКЦИЯ
-# Из лобби устанавливаем режим, отключаем позднее подключение game.disallow_late_joins в true
 # устанавливаем нужное число активных игры vv /entity/1(ентити режима)/NumberofSessions или както так
-
+# удалить лишние карты, лаваленд
 - type: gamePreset
   id: Deathmatch_CorvaxStabion
   alias:
@@ -25,13 +24,10 @@
     rewardSpawns:
     - id: Telecrystal1
   - type: RespawnDeadRule
-  - type: RespawnTracker # это потом пригодится... возможно
+  - type: RespawnTracker #потом пригодится... возможно
     respawnDelay: 5
 
 - type: gameMapPool
   id: DeathMatchMapPool_CS
   maps:
-  - dm01-entryway
   - Box_CS
-  - CorvaxGlacier
-  - CorvaxPilgrim

@@ -6,7 +6,7 @@
     back: ClothingBackpackSyndicate
     shoes: ClothingShoesBootsMerc
     pocket1: BaseUplinkRadio_CS
-    pocket2: CEIDCard
+    pocket2: HoPIDCard
 
 - type: startingGear
   id: NanoTrasenTDMGear
@@ -16,7 +16,7 @@
     back: ClothingBackpackNanoTrasenTDM
     shoes: ClothingShoesBootsCombat
     pocket1: BaseUplinkRadio_CS
-    pocket2: CEIDCard
+    pocket2: HoPIDCard
 
 ##################################################################
 - type: randomHumanoidSettings
@@ -49,7 +49,7 @@
   components:
   - type: GhostRole
     name: боец команды Синдиката
-    description: "."
+    description: "Ликвидируйте бойцов NanoTrasen"
   - type: Loadout
     prototypes: [ SyndicateTDMGear ]
   - type: IsFighter
@@ -85,7 +85,7 @@
   components:
   - type: GhostRole
     name: боец команды NanoTrasen
-    description: "РДМ роль для РДМ арены."
+    description: "Ликвидируйте Синдикат"
   - type: Loadout
     prototypes: [ NanoTrasenTDMGear ]
   - type: IsFighter

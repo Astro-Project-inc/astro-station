@@ -1,8 +1,10 @@
+# > entities with ConditionalSpawner delete
+# смэс, атмосия,
 - type: gameMap
   id: Box_CS
   mapName: 'Box Station'
   #mapPath: /Uploaded/rdmbox.yml
-  mapPath: /Maps/_Goobstation/box.yml
+  mapPath: /Maps/_CorvaxGoob/Nonstations/rdmbox.yml
   minPlayers: 0
   maxPlayers: 100
   stations:
