@@ -3,7 +3,7 @@
   name: job-name-hosm
   description: job-description-hosm
   playTimeTracker: JobHoSM
-  startingGear: HoSMGear
+  startingGear: HoSecGear
   icon: "JobIconPassenger" #TODO: change icon
   access:   #TODO: change access
   - SecurityMilitech
@@ -12,7 +12,7 @@
 
 
 - type: startingGear
-  id: HoSGear
+  id: HoSecGear
   equipment:
     id: HoPPDA
     jumpsuit: ClothingUniformJumpsuitColorGrey

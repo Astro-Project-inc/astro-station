@@ -4,16 +4,16 @@
                       MinSize="500 400">
     <BoxContainer Orientation="Vertical">
         
-        <BoxContainer Orientation="Horizontal" MinHeight="30" Margin="0 0 0 10">
-            <Label Text="Имя клиента" HorizontalExpand="True" ClipText="True"/>
-            <Label Text="Состояние" MinWidth="100"/>
-            <Label Text="Пакет услуг" MinWidth="120"/>
+        <BoxContainer Orientation="Horizontal" MinHeight="30" Margin="15 10 15 10">
+            <Label Text="Имя клиента" HorizontalExpand="True" ClipText="True" StyleClasses="LabelHeading"/>
+            <Label Text="Состояние" MinWidth="100" StyleClasses="LabelHeading"/>
+            <Label Text="Пакет услуг" MinWidth="120" StyleClasses="LabelHeading"/>
         </BoxContainer>
         
         <controls:HLine Color="#404040" Thickness="2" Margin="0 5"/>
 
-        <ScrollContainer VerticalExpand="True">
-            <BoxContainer Name="PatientList" Orientation="Vertical"/>
+        <ScrollContainer VerticalExpand="True" Margin="15 0 15 0">
+            <BoxContainer Name="PatientList" Orientation="Vertical" />
         </ScrollContainer>
         
     </BoxContainer>

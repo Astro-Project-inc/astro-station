@@ -1,0 +1,15 @@
+- type: entity
+  id: NCCyberdeckBase
+  name: Arasaka Portable Deck
+  description: Стандартная дека для входа в сеть.
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/access_breaker.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Tools/access_breaker.rsi
+  - type: Cyberdeck
+    range: 15
+    installedPrograms:
+    - ActionNetrunnerReturn  # Базовый выход

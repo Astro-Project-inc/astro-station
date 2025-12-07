@@ -1,0 +1,10 @@
+- type: entity
+  id: ActionNetrunnerReturn
+  name: "Jack Out"
+  description: "Emergency disconnect from the Net."
+  # Наследуемся от базового экшена, чтобы не писать лишнего
+  parent: BaseAction 
+  components:
+  - type: InstantAction # <--- Важный компонент
+    icon: { Interface/Actions/actions_ai.rsi, state: manifest }
+    event: !type:ReturnToBodyEvent

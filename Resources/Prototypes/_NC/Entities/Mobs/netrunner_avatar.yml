@@ -1,0 +1,65 @@
+- type: entity
+  id: NCNetrunnerAvatar
+  name: Net Avatar
+  description: A projection of consciousness.
+  noSpawn: true
+  components:
+  # --- ОСНОВНЫЕ КОМПОНЕНТЫ ИГРОКА ---
+  - type: MindContainer
+  - type: Input      # Принимает ввод с клавиатуры
+  - type: MobState   # Состояние живой/мертвый
+  - type: PlayerMob  # Маркер игрока
+  - type: CombatMode # Нужен для работы некоторых механик
+  - type: Examiner
+  
+  # --- ВАЖНО: КОНТЕЙНЕР ЭКШЕНОВ ---
+  # Без этого компонента кнопка "Jack Out" не появится, даже если выдать её кодом
+  - type: Actions 
+
+  # --- ВАЖНО: ДВИЖЕНИЕ ---
+  # Без этих двух компонентов вы не сможете сдвинуться с места
+  - type: InputMover 
+  - type: MobMover   
+  
+  # Настройки скорости и полета
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 6
+    baseSprintSpeed: 10
+  - type: MovementIgnoreGravity # Чтобы летать, а не ходить
+
+  # --- ВАЖНО: ГЛАЗА ---
+  # Чтобы камера центрировалась на аватаре
+  - type: Eye 
+  - type: ContentEye 
+
+  # --- ВАШ КОМПОНЕНТ ---
+  - type: NetrunnerAvatar
+
+  # --- ФИЗИКА (ПРИЗРАК) ---
+  - type: Physics
+    bodyType: KinematicController # Kinematic = управляется игроком
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        # layer 0 и mask 0 = проходит сквозь стены
+        layer: 0
+        mask: 0
+        
+  # --- РУКИ ---
+  - type: Hands
+
+  # --- ВИЗУАЛ ---
+  - type: Sprite
+    sprite: Mobs/Ghosts/ghost_human.rsi
+    state: icon
+    color: "#00FF00"
+    layers:
+    - state: icon
+      shader: unshaded # Чтобы светился в темноте
+
+  # --- НЕВИДИМОСТЬ ---
+  - type: Visibility
+    layer: 4 # Ghost (обычные люди не видят)
