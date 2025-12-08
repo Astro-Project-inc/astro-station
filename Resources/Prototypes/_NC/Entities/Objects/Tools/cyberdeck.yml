@@ -29,4 +29,5 @@
     installedPrograms:
     - ActionNetrunnerShock  # <--- КНОПКА АТАКИ (Важно!)
     - ActionNetrunnerIgnite
+    - ActionNetrunnerDoorToggle
     

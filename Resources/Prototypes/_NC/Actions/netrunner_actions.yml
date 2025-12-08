@@ -45,3 +45,22 @@
     checkCanAccess: false # Сквозь стены
     range: 15
   - type: TargetAction
+
+- type: entity
+  id: ActionNetrunnerDoorToggle
+  parent: BaseAction
+  name: Door Override
+  description: "Принудительно меняет состояние двери (Открыть/Закрыть), игнорируя доступы."
+  components:
+  - type: Action
+    useDelay: 5.0
+    icon: 
+      sprite: Interface/Actions/actions_ai.rsi
+      state: manifest
+      color: "#00DDFF" # Голубой цвет (как у хакеров)
+  - type: EntityTargetAction
+    event: !type:NetrunnerDoorToggleEvent
+    checkCanAccess: false 
+    range: 15
+    itemIconStyle: BigAction
+  - type: TargetAction
