@@ -32,8 +32,9 @@ public sealed class Observer : EntitySystem
                 {
                     if (!session.Players.Contains(uid)) session.Players.Add(uid);
 
+                    var query2 = EntityQueryEnumerator<IsFighterComponent, GhostRoleComponent>();
                     int count = 0;
-                    while (EntityQueryEnumerator<IsFighterComponent, GhostRoleComponent>().MoveNext(out var guid, out _, out var i))
+                    while (query2.MoveNext(out var guid, out _, out var i))
                     {
                         if (EntityManager.TryGetComponent(guid, out IsFighterComponent? _)) count++;
                     }

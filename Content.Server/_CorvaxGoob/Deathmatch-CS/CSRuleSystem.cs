@@ -63,7 +63,6 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
                 Session newsession = new();
                 Addmap(out var mapId);
                 newsession.MapId = mapId;
-                _map.InitializeMap(mapId);
                 Sessions?.Add(newsession);
             }
         }
@@ -97,6 +96,7 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
         }
         GameTicker.LoadGameMap(protoSelectedMap!, out MapId mapIdproxy);
         mapId = mapIdproxy;
+        _map.InitializeMap(mapId);
     }
 
     private void OnKillReported(ref KillReportedEvent ev) // эта поебота вообще пашет?

@@ -19,7 +19,7 @@
   - type: CSRule
     numberOfSessions: 4 # Изменять от числа игроков, но не уроните ничего на сервер.
     rewardSpawns:
-    - id: Telecrystal1
+    - id: Telecrystal10
   - type: RespawnDeadRule
   - type: RespawnTracker
     respawnDelay: 5
