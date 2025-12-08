@@ -125,7 +125,7 @@
   parent: BaseMobHuman
   id: MobHuman
   components:
-    - type: TraumaSubscriber 
+    - type: TraumaSubscriber # NC Trauma Team стандартная подписка при старте раунда
       tier: Bronze
   
 #Syndie
