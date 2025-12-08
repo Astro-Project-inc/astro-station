@@ -27,7 +27,6 @@
     event: !type:NetrunnerShockEvent
     checkCanAccess: false # Бьем сквозь стены
     range: 15
-    itemIconStyle: NoItem
   - type: TargetAction
   
 - type: entity
@@ -41,10 +40,8 @@
     icon: 
       sprite: Interface/Actions/actions_ai.rsi
       state: manifest
-      color: "#FF4400" # Подкрасим иконку в рыжий
   - type: EntityTargetAction
     event: !type:NetrunnerIgniteEvent
     checkCanAccess: false # Сквозь стены
     range: 15
-    itemIconStyle: NoItem
   - type: TargetAction
