@@ -1,11 +1,8 @@
 using Content.Server.GameTicking;
-using Content.Server.GameTicking.Rules;
-using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Ghost.Roles.Components;
-using Content.Server.Maps;
 using Content.Shared.GameTicking.Components;
-using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
+using Content.Shared.Mobs.Systems;
 
 namespace Content.Server._CorvaxGoob.Deathmatch_CS;
 
@@ -13,6 +10,7 @@ public sealed class Observer : EntitySystem
 {
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly CSRuleSystem _csRuleSystem = default!;
+    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -34,11 +32,12 @@ public sealed class Observer : EntitySystem
 
                     var query2 = EntityQueryEnumerator<IsFighterComponent, GhostRoleComponent>();
                     int count = 0;
-                    while (query2.MoveNext(out var guid, out _, out var i))
+                    while (query2.MoveNext(out var guid, out _, out _))
                     {
-                        if (EntityManager.TryGetComponent(guid, out IsFighterComponent? _)) count++;
+                        if (EntityManager.TryGetComponent(guid, out MindContainerComponent? mindContC))
+                            if (mindContC.Mind == null && _mobStateSystem.IsAlive(guid)) count++;
                     }
-                    if (count == 0) _csRuleSystem.NewSession(csRuleC);
+                    if (count == 0) _csRuleSystem.NewSession();
                     break;
                 }
         }

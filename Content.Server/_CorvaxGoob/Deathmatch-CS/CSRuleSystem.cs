@@ -1,19 +1,15 @@
-using Content.Server.Clothing.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
-using Content.Server.GameTicking.Rules.Components;
-using Content.Server.GridPreloader;
-using Content.Server.KillTracking;
+using Content.Server.Ghost.Roles.Components;
 using Content.Server.Maps;
-using Content.Server.Mind;
-using Content.Server.RoundEnd;
-using Content.Server.Station.Systems;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Mind.Components;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Systems;
 using Robust.Server.GameObjects;
-using Robust.Server.Player;
-using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
-using Robust.Shared.Prototypes;
+using Robust.Shared.Player;
+using Robust.Shared.Random;
 using System.Linq;
 
 namespace Content.Server._CorvaxGoob.Deathmatch_CS;
@@ -22,6 +18,8 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
 {
     [Dependency] private readonly MapSystem _map = default!;
     [Dependency] private readonly IGameMapManager _gameMapManager = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
 
     public List<Session> Sessions = new();
     public sealed class Session
@@ -33,27 +31,22 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<GameRuleStartedEvent>(RoundStart);
-        SubscribeLocalEvent<KillReportedEvent>(OnKillReported);
         SubscribeLocalEvent<GameRunLevelChangedEvent>(MapClearing);
+        SubscribeLocalEvent<GameRuleStartedEvent>(RoundStart);
+
+        SubscribeLocalEvent<IsFighterComponent, MobStateChangedEvent>(OnKillReported);
+        SubscribeLocalEvent<IsFighterComponent, PlayerDetachedEvent>(PlayerHasDisconnectednected);
     }
 
     private void RoundStart(ref GameRuleStartedEvent _)
     {
-        var query = EntityQueryEnumerator<CSRuleComponent, GameRuleComponent>();
-        while (query.MoveNext(out var uId, out var csRuleC, out var gRuleC))
-        {
-            if (!GameTicker.IsGameRuleActive(uId, gRuleC))
-                continue;
-
-            NewSession(csRuleC);
-        }
+        NewSession();
     }
 
-    public void NewSession(CSRuleComponent csRuleC)
+    public void NewSession()
     {
         var query = EntityQueryEnumerator<CSRuleComponent, GameRuleComponent>();
-        while (query.MoveNext(out var uId, out _, out var gRuleC))
+        while (query.MoveNext(out var uId, out var csRuleC, out var gRuleC))
         {
             if (!GameTicker.IsGameRuleActive(uId, gRuleC))
                 return;
@@ -61,8 +54,17 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
             if ((this.Sessions?.Count ?? 0) < csRuleC.NumberOfSessions)
             {
                 Session newsession = new();
-                Addmap(out var mapId);
-                newsession.MapId = mapId;
+                GameMapPrototype? protoMap;
+
+                if (!csRuleC.RandomArena)
+                    protoMap = _gameMapManager.GetSelectedMap();
+                else
+                {
+                    var maps = _gameMapManager.CurrentlyEligibleMaps().ToList();
+                    protoMap = _random.Pick(maps);
+                }
+
+                Addmap(out newsession.MapId, protoMap);
                 Sessions?.Add(newsession);
             }
         }
@@ -86,47 +88,55 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
             }
         }
     }
-    private void Addmap(out MapId mapId)
+    private void Addmap(out MapId mapId, GameMapPrototype? mapProto)
     {
-        var protoSelectedMap = _gameMapManager.GetSelectedMap();
-        if (protoSelectedMap == null)
+        if (mapProto == null)
         {
             _gameMapManager.SelectMapByConfigRules();
-            protoSelectedMap = _gameMapManager.GetSelectedMap();
+            mapProto = _gameMapManager.GetSelectedMap();
         }
-        GameTicker.LoadGameMap(protoSelectedMap!, out MapId mapIdproxy);
+        GameTicker.LoadGameMap(mapProto!, out MapId mapIdproxy);
         mapId = mapIdproxy;
         _map.InitializeMap(mapId);
     }
 
-    private void OnKillReported(ref KillReportedEvent ev) // эта поебота вообще пашет?
+    private void OnKillReported(EntityUid uid, IsFighterComponent _, MobStateChangedEvent args)
     {
-        var query = EntityQueryEnumerator<CSRuleComponent, GameRuleComponent>();
-        while (query.MoveNext(out var uId, out var csRuleC, out var gRuleC))
+        if (MobState.Dead != args.NewMobState || Sessions == null) return;
+        RemovingRromSession(uid);
+    }
+    private void PlayerHasDisconnectednected(EntityUid uid, IsFighterComponent _, PlayerDetachedEvent args)
+    {
+        RemovingRromSession(uid);
+    }
+    private void RemovingRromSession(EntityUid uid)
+    {
+        foreach (var session in Sessions)
         {
-            if (!GameTicker.IsGameRuleActive(uId, gRuleC))
-                return;
-            foreach (var session in Sessions)
+            if (!session.Players.Contains(uid)) continue;
+            session.Players.Remove(uid);
+
+            if (session.Players.Count == 0)
             {
-                foreach (var player in session.Players)
+                var query2 = EntityQueryEnumerator<IsFighterComponent, GhostRoleComponent, TransformComponent>();
+                int count = 0;
+                while (query2.MoveNext(out var guid, out _, out _, out var xform))
                 {
-                    if (player == ev.Entity)
-                    {
-                        session.Players.Remove(ev.Entity);
-                        if (session.Players.Count == 0)
-                        { _map.DeleteMap(session.MapId); Sessions.Remove(session); NewSession(csRuleC); }
-                        break;
-                    }
+                    if (xform.MapID == session.MapId)
+                        if (EntityManager.TryGetComponent(guid, out MindContainerComponent? mindContC))
+                            if (mindContC.Mind == null && _mobStateSystem.IsAlive(guid)) count++;
                 }
-                break;
+                if (count == 0)
+                {
+                    _map.DeleteMap(session.MapId);
+                    Sessions.Remove(session);
+                    NewSession();
+                }
             }
+            break;
         }
     }
     // ТуДу
-    // Отслеживание выхода игрока из игры
-    // проверка связий айди в механиках регистрации сессии
-    // проверка на отслеживание суицида
+    // проверка связии айди
     // проверка на случай трансформации
-    // добавить рандомный выбор карты из маппула для сессий от компача
-    //вырезать трекер компонент
 }

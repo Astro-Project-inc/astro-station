@@ -52,6 +52,9 @@
   - type: GhostRole
     name: боец команды Синдиката
     description: "Ликвидируйте бойцов NanoTrasen"
+    skills:
+      - ShuttleControl
+      - Shooting
   - type: Loadout
     prototypes: [ SyndicateTDMGear ]
   - type: IsFighter
@@ -90,6 +93,9 @@
   - type: GhostRole
     name: боец команды NanoTrasen
     description: "Ликвидируйте Синдикат"
+    skills:
+      - ShuttleControl
+      - Shooting
   - type: Loadout
     prototypes: [ NanoTrasenTDMGear ]
   - type: IsFighter

@@ -16,13 +16,12 @@
   id: DeathMatch_CS
   parent: BaseGameRule
   components:
-  - type: CSRule
-    numberOfSessions: 4 # Изменять от числа игроков, но не уроните ничего на сервер.
+  - type: CSRule # можно изменять во время игры vv [айди ивента, найти можно через endgamerule]
+    numberOfSessions: 4
     rewardSpawns:
     - id: Telecrystal10
-  - type: RespawnDeadRule
-  - type: RespawnTracker
-    respawnDelay: 5
+  #- type: RespawnTracker
+  #  respawnDelay: 5
 
 - type: gameMapPool
   id: DeathMatchMapPool_CS

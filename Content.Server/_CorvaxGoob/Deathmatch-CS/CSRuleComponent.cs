@@ -1,3 +1,4 @@
+using Content.Server.InteractionVerbs.Actions;
 using Content.Shared.Storage;
 
 namespace Content.Server._CorvaxGoob.Deathmatch_CS;
@@ -12,5 +13,11 @@ public sealed partial class CSRuleComponent : Component
     public List<EntitySpawnEntry> RewardSpawns = new();
 
     [DataField("numberOfSessions"), ViewVariables(VVAccess.ReadWrite)]
-    public int NumberOfSessions = 1;
+    public int NumberOfSessions = 2;
+
+    /// <summary>
+    /// Will the arenas being created be selected from the mapool or those that were selected earlier.
+    /// </summary>
+    [DataField("randomArena"), ViewVariables(VVAccess.ReadWrite)]
+    public bool RandomArena = false;
 }
