@@ -22,9 +22,8 @@
   components:
   - type: Cyberdeck
     range: 25
-    # === НОВЫЕ ПАРАМЕТРЫ ===
-    shockDamage: 30       # Сильный урон (обычно у шокера 10-15)
-    shockStunTime: 15.0    # 5 секунд стана
+    shockDamage: 30       # Сильный урон
+    shockStunTime: 10    # 10 секунд стана
     
     # === СПИСОК ПРОГРАММ ===
     installedPrograms:

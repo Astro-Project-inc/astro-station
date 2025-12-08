@@ -19,7 +19,7 @@
   description: Перегружает нейросети цели мощным разрядом.
   components:
   - type: Action
-    useDelay: 1.0
+    useDelay: 10.0
     icon: 
       sprite: Interface/Actions/actions_ai.rsi
       state: manifest
@@ -37,7 +37,7 @@
   description: Отключает кулеры кибернетики цели, вызывая возгорание.
   components:
   - type: Action
-    useDelay: 1.0
+    useDelay: 15.0
     icon: 
       sprite: Interface/Actions/actions_ai.rsi
       state: manifest
