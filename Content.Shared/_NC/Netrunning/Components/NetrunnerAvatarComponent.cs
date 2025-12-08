@@ -20,5 +20,6 @@ namespace Content.Shared._NC.Netrunning.Components
         // Сюда запишется сама сущность кнопки.
         [DataField("actionEntity"), AutoNetworkedField]
         public EntityUid? ActionEntity;
+
     }
 }

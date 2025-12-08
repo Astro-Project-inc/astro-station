@@ -12,6 +12,9 @@ using Content.Shared.Actions;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Server.Electrocution; // Нужно для системы электричества
+using Content.Server.Atmos.EntitySystems; // НУЖНО ДЛЯ ОГНЯ (FlammableSystem)
+using Content.Server.Atmos.Components;
+using Content.Shared.Actions.Components;
 
 namespace Content.Server._NC.Netrunning
 {
@@ -23,6 +26,7 @@ namespace Content.Server._NC.Netrunning
         [Dependency] private readonly SharedActionsSystem _actions = default!;
         [Dependency] private readonly ElectrocutionSystem _electrocution = default!;
         [Dependency] private readonly SharedPopupSystem _popup = default!;
+        [Dependency] private readonly FlammableSystem _flammable = default!;
 
         public override void Initialize()
         {
@@ -39,6 +43,10 @@ namespace Content.Server._NC.Netrunning
 
             // 4. Использование боевой способности "Short Circuit"
             SubscribeLocalEvent<NetrunnerAvatarComponent, NetrunnerShockEvent>(OnShockTarget);
+
+            // 5. Использование боевой способности "Ignite"
+            SubscribeLocalEvent<NetrunnerAvatarComponent, NetrunnerIgniteEvent>(OnIgniteTarget);
+            
         }
 
         // =============================================================
@@ -122,6 +130,7 @@ namespace Content.Server._NC.Netrunning
 
             var target = args.Target;
 
+
             // Нельзя хакнуть самого себя
             if (target == uid) return;
 
@@ -151,6 +160,41 @@ namespace Content.Server._NC.Netrunning
                 _popup.PopupEntity("Target System Overloaded!", target, uid, PopupType.Medium);
                 args.Handled = true;
             }
+        }
+
+        // =============================================================
+        // СПОСОБНОСТЬ: OVERHEAT (ПОДЖОГ)
+        // =============================================================
+        private void OnIgniteTarget(EntityUid uid, NetrunnerAvatarComponent component, NetrunnerIgniteEvent args)
+        {
+            // 1. Проверка деки
+            if (component.LinkedDeck == null) return;
+            var deckUid = GetEntity(component.LinkedDeck.Value);
+            if (!TryComp<CyberdeckComponent>(deckUid, out var deckComp)) return;
+
+            var target = args.Target;
+            if (target == uid) return;
+
+            // 2. Проверяем, может ли цель гореть
+            // Если у цели нет компонента Flammable, мы не сможем её поджечь.
+            if (!HasComp<FlammableComponent>(target))
+            {
+                _popup.PopupEntity("Target is fireproof!", target, uid, PopupType.SmallCaution);
+                return;
+            }
+
+            // 3. ПОДЖИГАЕМ
+            // Добавляем стаки огня (интенсивность)
+            _flammable.AdjustFireStacks(target, deckComp.IgniteFireStacks);
+            // Заставляем загореться прямо сейчас
+            _flammable.Ignite(target, uid);
+
+            // Визуал и звук
+            _popup.PopupEntity("Thermal Optics Overloaded!", target, uid, PopupType.MediumCaution);
+            // Звук огня проиграется сам системой Flammable, но можно добавить свой звук хака:
+            // _audio.PlayPvs(..., target);
+
+            args.Handled = true;
         }
 
         // =============================================================

@@ -18,6 +18,13 @@ namespace Content.Shared._NC.Netrunning.Components
         [DataField("shockStunTime"), AutoNetworkedField]
         public float ShockStunTime = 3.0f;
 
+        // === ПАРАМЕТРЫ ПЕРЕГРЕВА (ОГНЯ) ===
+        // Количество стаков огня. 
+        // 1-2 стака = легкое возгорание.
+        // 5+ стаков = сильный пожар.
+        [DataField("igniteFireStacks"), AutoNetworkedField]
+        public float IgniteFireStacks = 3.0f;
+
         [DataField("installedPrograms")]
         public List<EntProtoId> InstalledPrograms = new();
     }
