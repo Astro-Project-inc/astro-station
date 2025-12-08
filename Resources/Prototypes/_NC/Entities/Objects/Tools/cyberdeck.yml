@@ -21,6 +21,13 @@
   description: Запрещенный прототип. Жарит мозги и двери.
   components:
   - type: Cyberdeck
-    range: 25 # Огромный радиус
+    range: 25
+    # === НОВЫЕ ПАРАМЕТРЫ ===
+    shockDamage: 30       # Сильный урон (обычно у шокера 10-15)
+    shockStunTime: 5.0    # 5 секунд стана
+    
+    # === СПИСОК ПРОГРАММ ===
     installedPrograms:
-    - ActionNetrunnerReturn
+    - ActionNetrunnerReturn # Кнопка выхода (обязательно оставьте)
+    - ActionNetrunnerShock  # <--- КНОПКА АТАКИ (Важно!)
+    

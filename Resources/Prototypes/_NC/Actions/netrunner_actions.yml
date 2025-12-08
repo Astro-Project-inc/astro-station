@@ -1,10 +1,32 @@
 - type: entity
+  parent: BaseAction
   id: ActionNetrunnerReturn
   name: "Jack Out"
   description: "Emergency disconnect from the Net."
-  parent: BaseAction
   components:
-  - type: InstantAction
-    icon: { sprite: Interface/Actions/actions_ai.rsi, state: manifest } 
-    event: !type:ReturnToBodyEvent
+  - type: Action
     useDelay: 1.0
+    icon: 
+      sprite: Interface/Actions/actions_ai.rsi
+      state: manifest
+  - type: InstantAction
+    event: !type:ReturnToBodyEvent
+    
+- type: entity
+  id: ActionNetrunnerShock
+  parent: BaseAction
+  name: Short Circuit
+  description: Перегружает нейросети цели мощным разрядом.
+  components:
+  - type: Action
+    useDelay: 1.0
+    icon: 
+      sprite: Interface/Actions/actions_ai.rsi
+      state: manifest
+  - type: EntityTargetAction
+    event: !type:NetrunnerShockEvent
+    checkCanAccess: false # Бьем сквозь стены
+    range: 15
+    itemIconStyle: NoItem
+  - type: TargetAction
+  
