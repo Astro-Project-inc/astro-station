@@ -15,19 +15,17 @@
     - ActionNetrunnerReturn
 
 - type: entity
-  id: CyberdeckMilitary
+  id: CyberdeckStandard
   parent: BaseCyberdeck
-  name: Дека 'Mil-Tech Ogre'
-  description: Запрещенный прототип. Жарит мозги и двери.
+  name: Дека 'XiaoMi 400000 ULTRA PRO MAX SUPER GIGA BUBA NOOBA BMW TOYOTA EDITION'
+  description: Многофункциональная кибердека для взлома систем.
   components:
   - type: Cyberdeck
     range: 25
     shockDamage: 30       # Сильный урон
     shockStunTime: 10    # 10 секунд стана
-    
-    # === СПИСОК ПРОГРАММ ===
     installedPrograms:
-    - ActionNetrunnerShock  # <--- КНОПКА АТАКИ (Важно!)
+    - ActionNetrunnerShock 
     - ActionNetrunnerIgnite
     - ActionNetrunnerDoorToggle
     

@@ -17,10 +17,8 @@ using Content.Server.Atmos.Components;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
 using Content.Server.Doors.Systems;
-// === ИСПРАВЛЕННЫЕ АУДИО ЮЗИНГИ ===
 using Robust.Shared.Audio;
-using Robust.Shared.Audio.Systems; // <--- ЗДЕСЬ ЖИВЕТ SharedAudioSystem
-// =================================
+using Robust.Shared.Audio.Systems;
 
 namespace Content.Server._NC.Netrunning
 {
@@ -127,7 +125,7 @@ namespace Content.Server._NC.Netrunning
             if (success)
             {
                 Spawn("EffectSparks", _transform.GetMapCoordinates(target));
-                _popup.PopupEntity("Target System Overloaded!", target, uid, PopupType.Medium);
+                _popup.PopupEntity("Вызов короткого замыкания прошел успешно!", target, uid, PopupType.Medium);
                 args.Handled = true;
             }
         }
@@ -146,13 +144,13 @@ namespace Content.Server._NC.Netrunning
 
             if (!HasComp<FlammableComponent>(target))
             {
-                _popup.PopupEntity("Target is fireproof!", target, uid, PopupType.SmallCaution);
+                _popup.PopupEntity("Цель не может загореться!", target, uid, PopupType.SmallCaution);
                 return;
             }
 
             _flammable.AdjustFireStacks(target, deckComp.IgniteFireStacks);
             _flammable.Ignite(target, uid);
-            _popup.PopupEntity("Thermal Optics Overloaded!", target, uid, PopupType.MediumCaution);
+            _popup.PopupEntity("Вызов перегрева систем, прошел успешно", target, uid, PopupType.MediumCaution);
 
             args.Handled = true;
         }
@@ -167,19 +165,19 @@ namespace Content.Server._NC.Netrunning
 
             if (!TryComp<DoorComponent>(target, out var doorComp))
             {
-                _popup.PopupEntity("Invalid Target: Not a door!", target, uid, PopupType.SmallCaution);
+                _popup.PopupEntity("Invalid Target: Это не дверь!", target, uid, PopupType.SmallCaution);
                 return;
             }
 
             if (doorComp.State == DoorState.Open)
             {
                 _door.StartClosing(target, doorComp);
-                _popup.PopupEntity("Closing protocol executed.", target, uid, PopupType.Medium);
+                _popup.PopupEntity("Протокол закрытия активирован.", target, uid, PopupType.Medium);
             }
             else
             {
                 _door.StartOpening(target, doorComp);
-                _popup.PopupEntity("Opening protocol executed.", target, uid, PopupType.Medium);
+                _popup.PopupEntity("Протокол открытия активирован.", target, uid, PopupType.Medium);
             }
 
             args.Handled = true;
@@ -200,7 +198,7 @@ namespace Content.Server._NC.Netrunning
 
                 if (bodyUid == uid)
                 {
-                    _popup.PopupEntity("EMERGENCY DISCONNECT!", uid, uid, PopupType.LargeCaution);
+                    _popup.PopupEntity("ЭКСТРЕННЫЙ ВЫХОД!", uid, uid, PopupType.LargeCaution);
                     JackOut(avatarUid, bodyUid, avatarComp);
                     break;
                 }
@@ -240,7 +238,7 @@ namespace Content.Server._NC.Netrunning
                     if (deckCoords.MapId != avatarCoords.MapId ||
                         (deckCoords.Position - avatarCoords.Position).Length() > deck.Range)
                     {
-                        _popup.PopupEntity("SIGNAL LOST", avatarUid, avatarUid, PopupType.LargeCaution);
+                        _popup.PopupEntity("СИГНАЛ ПОТЕРЯН", avatarUid, avatarUid, PopupType.LargeCaution);
                         JackOut(avatarUid, bodyUid, avatarComp);
                     }
                 }
