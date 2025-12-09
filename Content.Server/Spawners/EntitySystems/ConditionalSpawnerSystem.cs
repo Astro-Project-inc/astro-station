@@ -219,7 +219,7 @@ namespace Content.Server.Spawners.EntitySystems
                 var trueCoords = coords.Offset(new Vector2(xOffset, yOffset));
 
                 EntityUid _ent = SpawnAtPosition(proto, trueCoords);
-                EntityManager.System<SharedTransformSystem>().SetWorldRotation(ent, Transform(ent.Owner).LocalRotation);
+                EntityManager.System<SharedTransformSystem>().SetWorldRotation(_ent, Transform(ent.Owner).LocalRotation);
             }
         }
     }
