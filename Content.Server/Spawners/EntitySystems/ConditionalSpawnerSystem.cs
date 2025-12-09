@@ -178,6 +178,7 @@ namespace Content.Server.Spawners.EntitySystems
         {
             if (component.RarePrototypes.Count > 0 && (component.RareChance == 1.0f || _robustRandom.Prob(component.RareChance)))
             {
+                //CorvaxGoob-Rotational Spawners-Start
                 var ent = Spawn(_robustRandom.Pick(component.RarePrototypes), Transform(uid).Coordinates);
                 EntityManager.System<SharedTransformSystem>().SetWorldRotation(ent, Transform(uid).LocalRotation);
                 return;
