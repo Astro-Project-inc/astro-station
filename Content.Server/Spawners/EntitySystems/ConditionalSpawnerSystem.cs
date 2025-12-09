@@ -218,6 +218,7 @@ namespace Content.Server.Spawners.EntitySystems
                 var yOffset = _robustRandom.NextFloat(-ent.Comp.Offset, ent.Comp.Offset);
                 var trueCoords = coords.Offset(new Vector2(xOffset, yOffset));
 
+                //CorvaxGoob-Rotational Spawners-Start
                 EntityUid _ent = SpawnAtPosition(proto, trueCoords);
                 EntityManager.System<SharedTransformSystem>().SetWorldRotation(ent, Transform(ent.Owner).LocalRotation);
             }
