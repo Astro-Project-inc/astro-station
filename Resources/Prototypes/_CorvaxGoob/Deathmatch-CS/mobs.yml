@@ -57,7 +57,7 @@
       - Shooting
   - type: Loadout
     prototypes: [ SyndicateTDMGear ]
-  - type: IsFighter
+  - type: Fighter
     command: 1
   - type: Mind
     preventGhosting: true
@@ -99,7 +99,7 @@
       - Shooting
   - type: Loadout
     prototypes: [ NanoTrasenTDMGear ]
-  - type: IsFighter
+  - type: Fighter
     command: 2
   - type: Mind
     preventGhosting: true

@@ -30,7 +30,7 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
 
     private List<Session> _sessions = new();
-    public List<Session> PSessions => _sessions;
+    public List<Session> Sessions => _sessions;
 
     public override void Initialize()
     {
@@ -39,22 +39,22 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
         SubscribeLocalEvent<GameRuleStartedEvent>(RoundStart);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(RoundEnd);
 
-        SubscribeLocalEvent<IsFighterComponent, MobStateChangedEvent>(OnKillReported);
-        SubscribeLocalEvent<IsFighterComponent, PlayerDetachedEvent>(PlayerHasDisconnectednected);
-        SubscribeLocalEvent<IsFighterComponent, EraseEvent>(EraseАPlayer);
-        SubscribeLocalEvent<IsFighterComponent, EntityTerminatingEvent>(DeleteАPlayer);
+        SubscribeLocalEvent<FighterComponent, MobStateChangedEvent>(OnKillReported);
+        SubscribeLocalEvent<FighterComponent, PlayerDetachedEvent>(PlayerHasDisconnectednected);
+        SubscribeLocalEvent<FighterComponent, EraseEvent>(EraseАPlayer);
+        SubscribeLocalEvent<FighterComponent, EntityTerminatingEvent>(DeleteАPlayer);
     }
 
     private void RoundStart(ref GameRuleStartedEvent _)
     {
-        NewSession();
+        CreateNewSession();
     }
     private void RoundEnd(RoundRestartCleanupEvent _)
     {
         _sessions.Clear();
     }
 
-    public void NewSession()
+    public void CreateNewSession()
     {
         var query = EntityQueryEnumerator<CSRuleComponent, GameRuleComponent>();
         while (query.MoveNext(out var uId, out var csRuleC, out var gRuleC))
@@ -64,7 +64,7 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
 
             if ((this._sessions?.Count ?? 0) < csRuleC.NumberOfSessions)
             {
-                Session newsession = new();
+                Session newSession = new();
                 GameMapPrototype? protoMap;
 
                 if (!csRuleC.RandomArena)
@@ -75,8 +75,8 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
                     protoMap = _random.Pick(maps);
                 }
 
-                Addmap(out newsession.MapId, protoMap);
-                _sessions?.Add(newsession);
+                Addmap(out newSession.MapId, protoMap);
+                _sessions?.Add(newSession);
             }
         }
     }
@@ -111,47 +111,55 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
         }
     }
 
-    private void OnKillReported(EntityUid uid, IsFighterComponent isFighterComp, MobStateChangedEvent args)
+    private void OnKillReported(EntityUid uid, FighterComponent isFighterComp, MobStateChangedEvent args)
     {
-        if (MobState.Dead != args.NewMobState || _sessions == null) return;
+        if (MobState.Dead != args.NewMobState || _sessions == null)
+            return;
         RemovingRromSession(uid, isFighterComp);
     }
-    private void PlayerHasDisconnectednected(EntityUid uid, IsFighterComponent isFighterComp, PlayerDetachedEvent args)
-    {
-        RemovingRromSession(uid, isFighterComp);
-    }
-    private void EraseАPlayer(EntityUid uid, IsFighterComponent isFighterComp, EraseEvent args)
-    {
-        RemovingRromSession(uid, isFighterComp);
-    }
-    private void DeleteАPlayer(EntityUid uid, IsFighterComponent isFighterComp, EntityTerminatingEvent args)
-    {
-        RemovingRromSession(uid, isFighterComp);
-    }
-    private void RemovingRromSession(EntityUid uid, IsFighterComponent isFighterComp)
+    private void RemovingRromSession(EntityUid uid, FighterComponent isFighterComp)
     {
         foreach (var session in _sessions)
         {
-            if (!session.Players.Contains(uid)) continue;
+            if (!session.Players.Contains(uid))
+                continue;
+
             session.Players.Remove(uid);
 
             foreach (var playerUid in session.Players)
             {
-                if (EntityManager.TryGetComponent(playerUid, out IsFighterComponent? teammatesComp))
-                    if (teammatesComp.Command == isFighterComp.Command) return;
+                if (EntityManager.TryGetComponent(playerUid, out FighterComponent? teammatesComp))
+                    if (teammatesComp.Command == isFighterComp.Command)
+                        return;
             }
 
-            var query2 = EntityQueryEnumerator<IsFighterComponent, GhostRoleComponent, TransformComponent, MindContainerComponent>();
-            while (query2.MoveNext(out var guid, out var timmFighterComp, out _, out var xform, out var mindContC)) // остались ли незанятые роли
+            var query2 = EntityQueryEnumerator<FighterComponent, GhostRoleComponent, TransformComponent, MindContainerComponent>();
+            // остались ли незанятые роли
+            while (query2.MoveNext(out var guid, out var timmFighterComp, out _, out var xform, out var mindContC))
             {
                 if (xform.MapID == session.MapId)
-                    if (mindContC.Mind == null && _mobStateSystem.IsAlive(guid) && timmFighterComp.Command == isFighterComp.Command) return;
+                    if (mindContC.Mind == null &&
+                        _mobStateSystem.IsAlive(guid) &&
+                        timmFighterComp.Command == isFighterComp.Command)
+                        return;
             }
 
             _map.DeleteMap(session.MapId);
             _sessions.Remove(session);
-            NewSession();
+            CreateNewSession();
             return;
         }
+    }
+    private void PlayerHasDisconnectednected(EntityUid uid, FighterComponent isFighterComp, PlayerDetachedEvent args)
+    {
+        RemovingRromSession(uid, isFighterComp);
+    }
+    private void EraseАPlayer(EntityUid uid, FighterComponent isFighterComp, EraseEvent args)
+    {
+        RemovingRromSession(uid, isFighterComp);
+    }
+    private void DeleteАPlayer(EntityUid uid, FighterComponent isFighterComp, EntityTerminatingEvent args)
+    {
+        RemovingRromSession(uid, isFighterComp);
     }
 }

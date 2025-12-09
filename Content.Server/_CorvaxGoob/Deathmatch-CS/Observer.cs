@@ -14,10 +14,10 @@ public sealed class CSObserver : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<IsFighterComponent, MindAddedMessage>(OnMindAdded);
+        SubscribeLocalEvent<FighterComponent, MindAddedMessage>(OnMindAdded);
     }
 
-    private void OnMindAdded(EntityUid uid, IsFighterComponent component, MindAddedMessage args)
+    private void OnMindAdded(EntityUid uid, FighterComponent component, MindAddedMessage args)
     {
         var query = EntityQueryEnumerator<CSRuleComponent, GameRuleComponent>();
         while (query.MoveNext(out var uId, out var csRuleC, out var gRuleC))
@@ -25,19 +25,19 @@ public sealed class CSObserver : EntitySystem
             if (!_gameTicker.IsGameRuleActive(uId, gRuleC))
                 continue;
 
-            foreach (var session in _csRuleSystem.PSessions)
+            foreach (var session in _csRuleSystem.Sessions)
                 if (session.MapId == EntityManager.GetComponent<TransformComponent>(uid).MapID)
                 {
                     if (!session.Players.Contains(uid)) session.Players.Add(uid);
 
-                    var query2 = EntityQueryEnumerator<IsFighterComponent, GhostRoleComponent>();
+                    var query2 = EntityQueryEnumerator<FighterComponent, GhostRoleComponent>();
                     int count = 0;
                     while (query2.MoveNext(out var guid, out _, out _))
                     {
                         if (EntityManager.TryGetComponent(guid, out MindContainerComponent? mindContC))
                             if (mindContC.Mind == null && _mobStateSystem.IsAlive(guid)) count++;
                     }
-                    if (count == 0) _csRuleSystem.NewSession();
+                    if (count == 0) _csRuleSystem.CreateNewSession();
                     break;
                 }
         }

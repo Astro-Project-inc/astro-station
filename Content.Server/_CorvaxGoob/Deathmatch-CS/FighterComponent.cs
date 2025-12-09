@@ -1,7 +1,7 @@
 namespace Content.Server._CorvaxGoob.Deathmatch_CS;
 
 [RegisterComponent]
-public sealed partial class IsFighterComponent : Component
+public sealed partial class FighterComponent : Component
 {
     /// <summary>
     ///     The component allows the CS system to recognize the mob as a participant in the battle.
