@@ -181,6 +181,7 @@ namespace Content.Server.Spawners.EntitySystems
                 //CorvaxGoob-Rotational Spawners-Start
                 var ent = Spawn(_robustRandom.Pick(component.RarePrototypes), Transform(uid).Coordinates);
                 EntityManager.System<SharedTransformSystem>().SetWorldRotation(ent, Transform(uid).LocalRotation);
+                //CorvaxGoob-Rotational Spawners-End
                 return;
             }
 
