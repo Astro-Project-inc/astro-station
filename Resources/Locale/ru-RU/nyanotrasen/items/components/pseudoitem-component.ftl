@@ -4,5 +4,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-action-name-insert-self = Вставить в себя
+action-name-insert-self = Вставить себя
 action-name-insert-other = Вставить в { $target }
