@@ -221,6 +221,7 @@ namespace Content.Server.Spawners.EntitySystems
                 //CorvaxGoob-Rotational Spawners-Start
                 EntityUid _ent = SpawnAtPosition(proto, trueCoords);
                 EntityManager.System<SharedTransformSystem>().SetWorldRotation(ent, Transform(ent.Owner).LocalRotation);
+                //CorvaxGoob-Rotational Spawners-End
             }
         }
     }
