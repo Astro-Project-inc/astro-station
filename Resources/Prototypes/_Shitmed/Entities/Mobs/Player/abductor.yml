@@ -13,10 +13,76 @@
 # Entity Prototypes
 
 - type: entity
-  parent: MobAbductor
+  parent:
+  # Corvax-Goob-GreySpecies-start
+  - MobBloodstream
+  - MobFlammable
+  - BaseMobSpecies
+  - MobAtmosStandard
+  - BaseMobDisgust # Goobstation
   id: MobAbductorAntag
   abstract: true
   components:
+  - type: Absorbable # BLOOD FOR THE BLOOD GOD
+  # - type: GlorpAccent # GoobStation - Glorpshit # Removed for EE - Languages
+  - type: HumanoidAppearance
+    species: Abductor
+  - type: Icon
+    sprite: _Shitmed/Mobs/Species/Abductor/parts.rsi
+    state: full
+  - type: Fingerprint
+  - type: Blindable
+  - type: Body
+    prototype: Abductor
+    requiredLegs: 2
+  - type: FireVisuals
+    alternateState: Standing
+  - type: Damageable
+    damageContainer: Biological
+  - type: LanguageKnowledge # Einstein Engines - Language
+    speaks:
+    - Xeeplian
+    understands:
+    - TauCetiBasic # Can understand, but cannot speak it.
+    - Xeeplian
+  - type: Targeting
+  - type: SurgeryTarget
+  - type: Bloodstream
+    bloodReagent: AlienBlood
+  - type: FootprintOwner # CorvaxGoob-Footprints
+  - type: Temperature
+    heatDamageThreshold: 320
+    currentTemperature: 310.15
+    specificHeat: 46
+    heatDamage:
+      types:
+        Heat : 2
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0.07
+  - type: Inventory
+    speciesId: abductor
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Shitmed/Mobs/Species/Abductor/displacement.rsi
+            state: jumpsuit
+  - type: PressureImmunity
+  - type: SpecialHighTempImmunity
+  - type: SpecialLowTempImmunity
+  - type: Flammable
+    damage:
+      types:
+        Heat: 0.5
+  - type: CollectiveMind
+    defaultChannel: AbductormindAntag
+    channels:
+    - AbductormindAntag
+    - Abductormind
+  # Corvax-Goob-GreySpecies-end
+
   - type: Abductor
   - type: ActionGrant
     actions:
@@ -41,20 +107,6 @@
       - CanPilot
       - FootstepSound
       - DoorBumpOpener
-  # Corvax-Goob-GreySpecies-start
-  - type: PressureImmunity
-  - type: SpecialHighTempImmunity
-  - type: SpecialLowTempImmunity
-  - type: Flammable
-    damage:
-      types:
-        Heat: 0.5
-  - type: CollectiveMind
-    defaultChannel: AbductormindAntag
-    channels:
-    - AbductormindAntag
-    - Abductormind
-  # Corvax-Goob-GreySpecies-end
 
 - type: entity
   name: lone abductor
