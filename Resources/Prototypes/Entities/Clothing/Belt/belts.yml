@@ -346,7 +346,7 @@
         - EnergySpeedloader # Goobstation
         - Sidearm # Goobstation
         - PepperSpray # Goobstation
-        - BolaEnergy #CorvaxGoob
+        - BolaEnergy # CorvaxGoob
       components:
         - Stunbaton
         - FlashOnTrigger
