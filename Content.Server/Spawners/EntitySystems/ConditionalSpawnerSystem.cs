@@ -223,8 +223,8 @@ namespace Content.Server.Spawners.EntitySystems
                 var trueCoords = coords.Offset(new Vector2(xOffset, yOffset));
 
                 //CorvaxGoob-Rotational Spawners-Start
-                EntityUid _ent = SpawnAtPosition(proto, trueCoords);
-                EntityManager.System<SharedTransformSystem>().SetWorldRotation(_ent, Transform(ent.Owner).LocalRotation);
+                var target = SpawnAtPosition(proto, trueCoords);
+                EntityManager.System<SharedTransformSystem>().SetWorldRotation(target, Transform(ent.Owner).LocalRotation);
                 //CorvaxGoob-Rotational Spawners-End
             }
         }
