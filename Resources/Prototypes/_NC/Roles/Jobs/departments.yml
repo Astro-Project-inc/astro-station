@@ -1,15 +1,4 @@
 - type: department
-  id: CivilianNC
-  name: Гражданские
-  description: department-CivilianNC-description
-  color: "#999999"
-  roles:
-    - Citizen
-    - Reaper
-    - Fixer
-    - EdgeRunnerSolo
-
-- type: department
   id: Militech
   name: Корпорация Militech
   description: department-Militech-description
@@ -23,20 +12,6 @@
     - OperativeMilitech
 
 - type: department
-  id: Biotech
-  name: Корпорация Biotech
-  description: department-Biotech-description
-  color: "#00d848"
-  roles:
-    - HoSBiotech
-    - HoDBiotech
-    - SquadCommanderBiotech
-    - SecurityBiotech
-    - MedTechB
-    - OperativeBiotech
-    - BotanistBiotech
-
-- type: department
   id: NCPD
   name: NCPD
   description: department-NCPD-description
@@ -45,24 +20,7 @@
     - NCPDChief
     - NCPDOfficer
     - NCPDSWAT
-    - JobNCPDInspector
-
-- type: department
-  id: Government
-  name: Мэрия
-  description: department-Government-description
-  color: "#ffb300"
-  roles:
-    - Mayor
-
-- type: department
-  id: Builders
-  name: Строительная компания
-  description: department-Builders-description
-  color: "#f4d03f"
-  roles:
-    - BuilderChief
-    - Builder
+    - NCPDInspector
 
 - type: department
   id: TraumaTeam
