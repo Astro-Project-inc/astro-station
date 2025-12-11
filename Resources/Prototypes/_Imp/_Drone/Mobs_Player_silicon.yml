@@ -168,6 +168,9 @@
     name: ghost-role-information-drone-name
     description: ghost-role-information-drone-description
     rules: ghost-role-information-drone-rules
+    skills: # CorvaxGoob-Skills
+      - AdvancedBuilding
+      - ShuttleControl
     mindRoles:
     - MindRoleGhostRoleSilicon
   - type: GhostTakeoverAvailable
@@ -222,7 +225,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.3
-        density: 50
+        density: 30
         mask:
         - SmallMobMask
         layer:
@@ -261,6 +264,10 @@
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
   - type: ProtectedFromStepTriggers
+  - type: DamageOnInteractProtection # Goobstation - Copied from borgs
+    damageProtection:
+      flatReductions:
+        Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
   - type: InputMover
   - type: MobMover
   - type: ContentEye
@@ -281,10 +288,6 @@
     - Engineering
     - Maintenance
     - Atmospherics # Goobstation
-  - type: Skills # CorvaxGoob-Skills
-    skills:
-      - AdvancedBuilding
-      - ShuttleControl
   - type: RandomMetadata
     nameSegments:
     - NamesDrone # maintainer drones get named after maintainers get it? its funny
