@@ -183,6 +183,7 @@
   - type: Ghost
   - type: GhostHearing
   - type: ShowElectrocutionHUD
+  - type: ShowEventIcon # CorvaxGoob-Event-Icons
   - type: IntrinsicRadioReceiver
   - type: ActiveRadio
     receiveAllChannels: true
