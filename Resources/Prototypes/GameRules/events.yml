@@ -160,6 +160,7 @@
     - id: GasLeak
     - id: GreytideVirus
     - id: IonStorm # its calm like 90% of the time smh
+    - id: JobDistributionError
     - id: KudzuGrowth
     - id: MassHallucinations
     - id: MimicVendorRule
@@ -176,8 +177,7 @@
     - id: MothroachSpawn # DeltaV
     - id: DerelictCyborgSyndicateSpawn # Goobstation - usually calm
     - id: MalignRiftSpawn # DeltaV
-    - id: FloorGoblinSpawn # Goobstation
-    - id: HellGooseSpawn # Goobstation
+    - id: FloorGoblinMidRound # Goobstation
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -199,6 +199,8 @@
     - id: BingleSpawn #Goobstation - Bingle
     - id: SlaughterDemonMidround # Goobstation - Slaughter Demon
     - id: XenomorphsInfestation # WD EDIT
+    #- id: WraithMidround # Goobstation - Wraith
+    #TODO When Slasher is ready- id: SlasherSpawn # Goobstation - The Slasher
 
 - type: entity
   id: BaseStationEvent
@@ -351,7 +353,7 @@
   - type: StationEvent
     weight: 5
     duration: 1
-    minimumPlayers: 10
+    minimumPlayers: 30 # CorvaxGoob-SpawnRebalance: Changed to from 10
     eventType: Chaotic # Goobstation
   # Goobstation
   - type: GameRule
@@ -430,6 +432,7 @@
     - Diona
     - Abductor
     - Harpy
+    - Plasmaman # EE
     # Goobstation end
   - type: AntagObjectives
     objectives:
@@ -447,6 +450,8 @@
       max: 1
       pickPlayer: false
       startingGear: SpaceNinjaGear
+      skills: # CorvaxGoob-Skills
+      - All
       roleLoadout:
       - RoleSurvivalEVA
       briefing:
@@ -455,14 +460,6 @@
         sound: /Audio/Misc/ninja_greeting.ogg
       components:
       - type: SpaceNinja
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: NpcFactionMember
         factions:
         - Syndicate
@@ -513,6 +510,8 @@
       max: 1
       pickPlayer: false
       startingGear: ParadoxCloneGear
+      skills: # CorvaxGoob-Skills
+      - All
       roleLoadout:
       - RoleSurvivalVoxTank # give vox something to breath in case they don't get a copy
       - RoleSurvivalPlasmaTank # Goobstation
@@ -522,15 +521,6 @@
         sound: /Audio/Misc/paradox_clone_greeting.ogg
       mindRoles:
       - MindRoleParadoxClone
-      components:
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
 
 #- type: entity   Goobstaion start - disabled until rework
 #  parent: BaseGameRule
@@ -868,6 +858,8 @@
     - prefRoles: [ InitialInfected ]
       max: 3
       playerRatio: 10
+      skills: # CorvaxGoob-Skills
+      - All
       blacklist:
         components:
         - BibleUser
@@ -883,14 +875,6 @@
         maxInitialInfectedGrace: 450
       - type: ZombifyOnDeath
       - type: IncurableZombie
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: InitialInfected
       mindRoles:
       - MindRoleInitialInfected
@@ -925,18 +909,12 @@
       pickPlayer: false
       startingGear: SyndicateLoneOperativeGearFull
       unequipOldGear: true
+      skills: # CorvaxGoob-Skills
+      - All
       roleLoadout:
       - RoleSurvivalNukie
       components:
       - type: NukeOperative
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: RandomMetadata
         nameSegments:
         - NamesSyndicatePrefix
@@ -980,19 +958,12 @@
       max: 2
       playerRatio: 10
       chaosScore: 200 # Goobstation - same as roundstart traitor gamerule
+      skills: # CorvaxGoob-Skills
+      - All
       blacklist:
         components:
         - AntagImmune
         - CommandStaff
-      components: # CorvaxGoob-Skills
-      - type: Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       mindRoles:
       - MindRoleTraitorSleeper
 
