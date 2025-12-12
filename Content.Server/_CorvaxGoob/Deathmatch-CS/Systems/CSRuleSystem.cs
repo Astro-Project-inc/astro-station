@@ -1,3 +1,4 @@
+using Content.Server._CorvaxGoob.Deathmatch_CS.Components;
 using Content.Server.Administration.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
@@ -14,7 +15,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using System.Linq;
 
-namespace Content.Server._CorvaxGoob.Deathmatch_CS;
+namespace Content.Server._CorvaxGoob.Deathmatch_CS.Systems;
 
 public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
 {
@@ -34,7 +35,7 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
         SubscribeLocalEvent<RoundRestartCleanupEvent>(RoundEnd);
 
         SubscribeLocalEvent<FighterComponent, MobStateChangedEvent>(OnKillReported);
-        SubscribeLocalEvent<FighterComponent, PlayerDetachedEvent>(PlayerHasDisconnectednected);
+        SubscribeLocalEvent<FighterComponent, PlayerDetachedEvent>(PlayerHasDisconnected);
         SubscribeLocalEvent<FighterComponent, EraseEvent>(EraseАPlayer);
         SubscribeLocalEvent<FighterComponent, EntityTerminatingEvent>(DeleteАPlayer);
     }
@@ -103,10 +104,10 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
         if (MobState.Dead != args.NewMobState)
             return;
 
-        RemovingRromSession(uid, isFighterComp);
+        RemovingFromSession(uid, isFighterComp);
     }
 
-    private void RemovingRromSession(EntityUid uid, FighterComponent isFighterComp)
+    private void RemovingFromSession(EntityUid uid, FighterComponent isFighterComp)
     {
         foreach (var session in _sessions)
         {
@@ -141,32 +142,34 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
         }
     }
 
-    public sealed class Session
-    {
-        public MapId MapId;
-        public List<EntityUid> Players = new();
-    }
     private void RoundStart(ref GameRuleStartedEvent _)
     {
         CreateNewSession();
     }
+
     private void RoundEnd(RoundRestartCleanupEvent _)
     {
         _sessions.Clear();
     }
 
-    private void PlayerHasDisconnectednected(EntityUid uid, FighterComponent isFighterComp, PlayerDetachedEvent args)
+    private void PlayerHasDisconnected(EntityUid uid, FighterComponent isFighterComp, PlayerDetachedEvent args)
     {
-        RemovingRromSession(uid, isFighterComp);
+        RemovingFromSession(uid, isFighterComp);
     }
 
     private void EraseАPlayer(EntityUid uid, FighterComponent isFighterComp, EraseEvent args)
     {
-        RemovingRromSession(uid, isFighterComp);
+        RemovingFromSession(uid, isFighterComp);
     }
 
     private void DeleteАPlayer(EntityUid uid, FighterComponent isFighterComp, EntityTerminatingEvent args)
     {
-        RemovingRromSession(uid, isFighterComp);
+        RemovingFromSession(uid, isFighterComp);
     }
+}
+
+public sealed class Session
+{
+    public MapId MapId;
+    public List<EntityUid> Players = new();
 }

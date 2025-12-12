@@ -1,4 +1,4 @@
-namespace Content.Server._CorvaxGoob.Deathmatch_CS;
+namespace Content.Server._CorvaxGoob.Deathmatch_CS.Components;
 
 [RegisterComponent]
 public sealed partial class FighterComponent : Component
@@ -11,5 +11,4 @@ public sealed partial class FighterComponent : Component
 
     [DataField("command"), ViewVariables(VVAccess.ReadWrite)]
     public int Command = 1;
-
 }

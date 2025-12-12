@@ -1,7 +1,7 @@
-using Content.Server.InteractionVerbs.Actions;
+using Content.Server._CorvaxGoob.Deathmatch_CS.Systems;
 using Content.Shared.Storage;
 
-namespace Content.Server._CorvaxGoob.Deathmatch_CS;
+namespace Content.Server._CorvaxGoob.Deathmatch_CS.Components;
 
 [RegisterComponent, Access(typeof(CSRuleSystem))]
 public sealed partial class CSRuleComponent : Component

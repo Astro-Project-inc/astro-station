@@ -1,10 +1,11 @@
+using Content.Server._CorvaxGoob.Deathmatch_CS.Components;
 using Content.Server.GameTicking;
 using Content.Server.Ghost.Roles.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Systems;
 
-namespace Content.Server._CorvaxGoob.Deathmatch_CS;
+namespace Content.Server._CorvaxGoob.Deathmatch_CS.Systems;
 
 public sealed class CSObserver : EntitySystem
 {
