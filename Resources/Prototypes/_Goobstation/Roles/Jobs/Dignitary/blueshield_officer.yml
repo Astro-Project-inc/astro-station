@@ -48,6 +48,10 @@
       inverted: true
       species:
       - Felinid
+    - !type:SpeciesRequirement # CorvaxGoob-Species
+      inverted: true
+      species:
+      - Abductor
   #goobcoins: 45 Corvax-Goob-coins
   weight: 20
   startingGear: BlueshieldOfficerGear
@@ -83,9 +87,6 @@
       - type: CommandStaff
       - type: Condemned
         soulOwnedNotDevil: true
-  - !type:AddObjectiveSpecial
-    objectives:
-    - BlueshieldRandomCommandAliveObjective
 
 - type: startingGear
   id: BlueshieldOfficerGear
