@@ -5,8 +5,8 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 action-name-hairball = Откашлять шерстяной комок
-action-description-hairball = Очистите часть своего химического потока и получите крутой шерстяной комок, чтобы кидаться в людей.
-hairball-mask = Сначала снимите свою { $mask }.
-hairball-cough = { CAPITALIZE($name) } начинает откашливать шерстяной комок!
+action-description-hairball = Избавьтесь от части своего желудка и получите крутой шерстяной ком, чтобы бросаться им в людей.
+hairball-mask = Сначала снимите { $mask }.
+hairball-cough = { CAPITALIZE($name) } начинает откашливаться!
 action-name-eat-mouse = Съесть мышь
-action-description-eat-mouse = Съешьте мышь в своей руке, получив питательные вещества и заряд для шерстяного комка.
+action-description-eat-mouse = Съешьте мышь в руке, для получение нутриентов и шерстяного комка.
