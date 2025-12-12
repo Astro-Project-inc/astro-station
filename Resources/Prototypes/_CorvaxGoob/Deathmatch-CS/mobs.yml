@@ -1,3 +1,4 @@
+# Этот прототип - рекомендованный шаблон
 - type: startingGear
   id: SyndicateTDMGear
   equipment:
@@ -22,6 +23,8 @@
 ###
 
 - type: randomHumanoidSettings
+  id: SyndicateTDM
+  parent: EventHumanoid
   speciesBlacklist:
   - Chitinid
   - Abductor
@@ -46,8 +49,6 @@
   - Tajaran
   - IPC
   - SlimePerson
-  id: SyndicateTDM
-  parent: EventHumanoid
   components:
   - type: GhostRole
     name: боец команды Синдиката
@@ -64,6 +65,8 @@
     preventSuicide: true
 
 - type: randomHumanoidSettings
+  id: NanoTrasenTDM
+  parent: EventHumanoid
   speciesBlacklist:
   - Chitinid
   - Abductor
@@ -88,8 +91,6 @@
   - Tajaran
   - IPC
   - SlimePerson
-  id: NanoTrasenTDM
-  parent: EventHumanoid
   components:
   - type: GhostRole
     name: боец команды NanoTrasen
@@ -109,7 +110,7 @@
 - type: entity
   id: RandomHumanoidSyndicateTDM
   name: пехотинец Синдиката
-  suffix: КС_
+  suffix: РДМ КС
   components:
   - type: Sprite
     layers:
@@ -129,7 +130,7 @@
 - type: entity
   id: RandomHumanoidNanoTrasenTDM
   name: пехотинец NanoTrasen
-  suffix: КС_
+  suffix: РДМ КС
   components:
   - type: Sprite
     layers:
@@ -152,7 +153,7 @@
   id: ClothingBackpackNanoTrasenTDM
   name: рюкзак
   description: Вы носите это на спине и кладёте в него предметы.
-  suffix: КС
+  suffix: РДМ КС
   components:
   - type: Sprite
     sprite: Clothing/Back/Backpacks/backpack.rsi

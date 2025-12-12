@@ -12,6 +12,9 @@ public sealed partial class CSRuleComponent : Component
     [DataField("rewardSpawns")]
     public List<EntitySpawnEntry> RewardSpawns = new();
 
+    /// <summary>
+    /// The number of simultaneously active arenas.
+    /// </summary>
     [DataField("numberOfSessions"), ViewVariables(VVAccess.ReadWrite)]
     public int NumberOfSessions = 2;
 

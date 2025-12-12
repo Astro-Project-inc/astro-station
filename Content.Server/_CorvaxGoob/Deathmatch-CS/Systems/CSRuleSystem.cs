@@ -16,12 +16,6 @@ using System.Linq;
 
 namespace Content.Server._CorvaxGoob.Deathmatch_CS;
 
-public sealed class Session
-{
-    public MapId MapId;
-    public List<EntityUid> Players = new();
-}
-
 public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
 {
     [Dependency] private readonly MapSystem _map = default!;
@@ -45,15 +39,6 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
         SubscribeLocalEvent<FighterComponent, EntityTerminatingEvent>(DeleteАPlayer);
     }
 
-    private void RoundStart(ref GameRuleStartedEvent _)
-    {
-        CreateNewSession();
-    }
-    private void RoundEnd(RoundRestartCleanupEvent _)
-    {
-        _sessions.Clear();
-    }
-
     public void CreateNewSession()
     {
         var query = EntityQueryEnumerator<CSRuleComponent, GameRuleComponent>();
@@ -62,7 +47,7 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
             if (!GameTicker.IsGameRuleActive(uId, gRuleC))
                 return;
 
-            if ((this._sessions?.Count ?? 0) < csRuleC.NumberOfSessions)
+            if ((_sessions?.Count ?? 0) < csRuleC.NumberOfSessions)
             {
                 Session newSession = new();
                 GameMapPrototype? protoMap;
@@ -75,12 +60,12 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
                     protoMap = _random.Pick(maps);
                 }
 
-                Addmap(out newSession.MapId, protoMap);
+                AddMap(out newSession.MapId, protoMap);
                 _sessions?.Add(newSession);
             }
         }
     }
-    private void Addmap(out MapId mapId, GameMapPrototype? mapProto)
+    private void AddMap(out MapId mapId, GameMapPrototype? mapProto)
     {
         if (mapProto == null)
         {
@@ -113,10 +98,14 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
 
     private void OnKillReported(EntityUid uid, FighterComponent isFighterComp, MobStateChangedEvent args)
     {
-        if (MobState.Dead != args.NewMobState || _sessions == null)
+        if (_sessions == null)
             return;
+        if (MobState.Dead != args.NewMobState)
+            return;
+
         RemovingRromSession(uid, isFighterComp);
     }
+
     private void RemovingRromSession(EntityUid uid, FighterComponent isFighterComp)
     {
         foreach (var session in _sessions)
@@ -134,6 +123,7 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
             }
 
             var query2 = EntityQueryEnumerator<FighterComponent, GhostRoleComponent, TransformComponent, MindContainerComponent>();
+
             // остались ли незанятые роли
             while (query2.MoveNext(out var guid, out var timmFighterComp, out _, out var xform, out var mindContC))
             {
@@ -150,14 +140,31 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
             return;
         }
     }
+
+    public sealed class Session
+    {
+        public MapId MapId;
+        public List<EntityUid> Players = new();
+    }
+    private void RoundStart(ref GameRuleStartedEvent _)
+    {
+        CreateNewSession();
+    }
+    private void RoundEnd(RoundRestartCleanupEvent _)
+    {
+        _sessions.Clear();
+    }
+
     private void PlayerHasDisconnectednected(EntityUid uid, FighterComponent isFighterComp, PlayerDetachedEvent args)
     {
         RemovingRromSession(uid, isFighterComp);
     }
+
     private void EraseАPlayer(EntityUid uid, FighterComponent isFighterComp, EraseEvent args)
     {
         RemovingRromSession(uid, isFighterComp);
     }
+
     private void DeleteАPlayer(EntityUid uid, FighterComponent isFighterComp, EntityTerminatingEvent args)
     {
         RemovingRromSession(uid, isFighterComp);
