@@ -59,7 +59,7 @@
   description: "A monument to one of the pioneers of the frontier, whose deeds will never be forgotten."
   components:
   - type: Sprite
-    drawDepth: Mobs
+    drawdepth: Mobs
     noRot: true
     offset: "0.0,0.5"
     sprite: _CorvaxGoob/Structures/Furniture/Memorials/kingston_myles.rsi
