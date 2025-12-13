@@ -50,6 +50,9 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
 
             if ((_sessions?.Count ?? 0) < csRuleC.NumberOfSessions)
             {
+                if (0 > csRuleC.NumberOfSessions || csRuleC.NumberOfSessions > 20)
+                    csRuleC.NumberOfSessions = 2; //No.
+
                 Session newSession = new();
                 GameMapPrototype? protoMap;
 
