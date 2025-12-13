@@ -40,6 +40,7 @@
     inverted: true
     species:
     - Plasmaman
+    - Abductor # CorvaxGoob-Species
   guides: [ Wizard ]
 
 - type: antag
@@ -60,9 +61,6 @@
     rules: ghost-role-information-antagonist-rules
     mindRoles:
     - MindRoleGhostRoleFreeAgent
-    requirements: # CorvaxGoob-GhostTimeRequirement
-    - !type:GhostTimeRequirement
-      time: 1500 #25 mins
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
