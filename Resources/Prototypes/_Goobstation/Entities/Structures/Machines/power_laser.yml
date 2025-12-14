@@ -47,14 +47,14 @@
     maxCharge: 100000000 # 100MJ
   - type: ExaminableBattery
   - type: BatteryCharger
-    voltage: High
+    voltage: Medium
     node: input
   - type: NodeContainer
     examinable: true
     nodes:
       input:
         !type:CableDeviceNode
-        nodeGroupID: HVPower
+        nodeGroupID: MVPower
   - type: StationInfiniteBatteryTarget
   - type: Damageable
     damageContainer: StructuralInorganic
