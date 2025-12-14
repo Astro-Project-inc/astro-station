@@ -47,14 +47,14 @@
     maxCharge: 100000000 # 100MJ
   - type: ExaminableBattery
   - type: BatteryCharger
-    voltage: Medium
+    voltage: Medium # CorvaxGoob-PTL // High -> Medium
     node: input
   - type: NodeContainer
     examinable: true
     nodes:
       input:
         !type:CableDeviceNode
-        nodeGroupID: MVPower
+        nodeGroupID: MVPower # CorvaxGoob-PTL // HVPower -> MVPower
   - type: StationInfiniteBatteryTarget
   - type: Damageable
     damageContainer: StructuralInorganic
