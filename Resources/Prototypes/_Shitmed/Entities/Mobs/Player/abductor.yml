@@ -78,9 +78,9 @@
         Heat: 0.5
   - type: CollectiveMind
     defaultChannel: AbductormindAntag
+    canUseInCrit: true
     channels:
     - AbductormindAntag
-    - Abductormind
   # Corvax-Goob-GreySpecies-end
 
   - type: Abductor
