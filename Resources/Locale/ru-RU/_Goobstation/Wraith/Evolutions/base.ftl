@@ -1,6 +1,6 @@
 wraith-haunt-show = Вы показали себя.
 wraith-decay-human-alert = Вы внезапно чувствуете сильную усталость!
-wraith-decay-object1 = Энергия { ($target) } угасает!
+wraith-decay-object1 = Энергия { $target } угасает!
 wraith-decay-nothing = Здесь нечего разлагать!
 wraith-absorb-living = Живое сознание, контролирующее это тело, защищает его от поглощения.
 wraith-absorb-too-decomposed = Этот труп уже слишком гнилой.
