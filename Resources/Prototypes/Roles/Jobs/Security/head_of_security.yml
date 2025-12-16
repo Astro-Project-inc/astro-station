@@ -155,6 +155,10 @@
       inverted: true
       species:
       - Felinid
+    - !type:SpeciesRequirement # CorvaxGoob-Species
+      inverted: true
+      species:
+      - Abductor
   #  - !type:StyleRequirement
   #    styles:
   #    - HumanHairFloorlengthBedhead
@@ -166,6 +170,9 @@
   supervisors: job-supervisors-captain
   canBeAntag: false
   #goobcoins: 45 #Goob content Corvax-Goob-coins
+  skills: # CorvaxGoob-Skills
+  - ShuttleControl
+  - Shooting
   access:
   - HeadOfSecurity
   - Command
@@ -184,10 +191,6 @@
     components:
       - type: CommandStaff
       - type: SecurityStaff # goobstation
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
 
 - type: startingGear
   id: HoSGear

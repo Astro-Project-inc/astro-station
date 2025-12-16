@@ -192,7 +192,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
-using Content.Client._CorvaxGoob.TTS; // CorvaxGoob-TTS
+using Content.Client._CorvaxGoob.TTS;
+using Content.Shared._CorvaxGoob; // CorvaxGoob-TTS
 
 namespace Content.Client.Lobby.UI
 {
@@ -381,6 +382,18 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion Gender
+
+            // Goob Station
+            #region Barks
+
+            // CorvaxGoob-Revert : DB conflicts
+/*            if (configurationManager.GetCVar(GoobCVars.BarksEnabled))
+            {
+                BarksContainer.Visible = true;
+                InitializeBarkVoice();
+            }*/
+
+            #endregion
 
             RefreshSpecies();
 
@@ -867,7 +880,7 @@ namespace Content.Client.Lobby.UI
                 var name = Loc.GetString(_species[i].Name);
 
                 if (_species[i].SponsorOnly) // CorvaxGoob-Sponsors
-                    name += " " + Loc.GetString("sponsor-only-text");
+                    name += SponsorUtils.GetSponsorOnlySuffix();
 
                 SpeciesButton.AddItem(name, i);
 
@@ -1025,6 +1038,8 @@ namespace Content.Client.Lobby.UI
             UpdateSaveButton();
             UpdateMarkings();
             UpdateTTSVoicesControls(); // CorvaxGoob-TTS
+            // CorvaxGoob-Revert : DB conflicts
+            // UpdateBarkVoice(); // Goob Station - Barks
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
@@ -1522,6 +1537,8 @@ namespace Content.Client.Lobby.UI
             ReloadPreview();
             /*
             // begin Goobstation: port EE height/width sliders // CorvaxGoob-Clearing
+            UpdateBarkVoice(); // Goob Station - Barks
+            // begin Goobstation: port EE height/width sliders
             // Changing species provides inaccurate sliders without these
             UpdateHeightWidthSliders();
             UpdateWeight();
@@ -1560,6 +1577,12 @@ namespace Content.Client.Lobby.UI
             IsDirty = true;
         }
         // end Goobstation: port EE height/width sliders*/
+        // private void SetBarkVoice(BarkPrototype newVoice)
+        // {
+        //     Profile = Profile?.WithBarkVoice(newVoice);
+        //     IsDirty = true;
+        // }
+        // Goob Station - End
 
         public bool IsDirty
         {

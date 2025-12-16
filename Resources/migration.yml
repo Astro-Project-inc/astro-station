@@ -134,6 +134,7 @@
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 # SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+# SPDX-FileCopyrightText: 2025 korczoczek <danielkorczok+git@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # This is a basic dictionary that maps old entity prototype ids to new ids. This only works for entity prototypes, and
@@ -553,7 +554,7 @@ VehicleSecwayStealObjective: null
 #VehicleKeyJanicart: null Goobstation - Re-add vehicles
 #VehicleKeySecway: null Goobstation - Re-add vehicles
 #VehicleKeyATV: null Goobstation - Re-add vehicles
-VehicleKeySkeleton: null
+VehicleKeySkeleton: null 
 #VehicleKeySyndicateSegway: null Goobstation - Re-add vehicles
 #VehicleKeySkeletonMotorcycle: null Corvax Goobstation - Re-add vehicles
 #VehicleSecway: null Goobstation - Re-add vehicles
@@ -641,8 +642,9 @@ RPED: null
 TraversalDistorterMachineCircuitboard: null
 MachineTraversalDistorter: null
 # These are technically not equivalent, but it probably makes more sense to replace any existing SCAF stuff with SOME kind of armor, instead of just deleting it outright.
-ClothingHeadHelmetScaf: ClothingHeadHelmetBasic
-ClothingOuterArmorScaf: ClothingOuterArmorBasic
+# Commented by CorvaxGoob
+# ClothingHeadHelmetScaf: ClothingHeadHelmetBasic
+# ClothingOuterArmorScaf: ClothingOuterArmorBasic
 
 # 2024-03-31
 ClothingNeckFlowerWreath: ClothingHeadHatFlowerWreath
@@ -1101,3 +1103,6 @@ PlushieBaldzby: null
 PlushieMnwaar: null
 PlushieBoggle: null
 PlushieLehmin: null
+
+# 2025-10-09
+FoodDonutJellySlugcat: FoodDonutJellyScurret

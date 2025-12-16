@@ -39,20 +39,20 @@
       mindRoles:
       - MindRoleWizard
       startingGear: WizardGear
+      skills: # CorvaxGoob-Skills
+      - All
       unequipOldGear: true
       roleLoadout:
       - RoleSurvivalEVA
       components:
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: Wizard
       - type: CanEnchant
+      - type: LanguageKnowledge
+        speaks: []
+        understands: []
+      - type: UniversalLanguageSpeaker
+      - type: TowerOfBabel
+      - type: LanguageSpeaker
       - type: RandomMetadata
         nameSegments:
         - WizardFirst
@@ -65,6 +65,7 @@
     speciesOverride: Human
     speciesOverrideBlacklist:
     - Yowie # Penalized by wearing robes, still should be possible to select them in magic mirror.
+    - Plasmaman # EE
   - type: RuleGrids
   - type: LoadMapRule
     mapPath: /Maps/_Goobstation/Nonstations/wizden.yml
@@ -82,7 +83,7 @@
   components:
   - type: StationEvent
     earliestStart: 35
-    weight: 5.5
+    weight: 4 # CorvaxGoob-SpawnRebalance: Changed to from 5.5
     minimumPlayers: 20
     duration: 1
     chaos: # Goobstation
@@ -103,20 +104,20 @@
       - MindRoleWizard
       startingGear: WizardGear
       unequipOldGear: true
+      skills: # CorvaxGoob-Skills
+      - All
       roleLoadout:
       - RoleSurvivalEVA
       components:
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: Wizard
       - type: RandomMetadata
       - type: CanEnchant
+      - type: LanguageKnowledge
+        speaks: []
+        understands: []
+      - type: UniversalLanguageSpeaker
+      - type: TowerOfBabel
+      - type: LanguageSpeaker
         nameSegments:
         - WizardFirst
         - WizardLast
@@ -148,6 +149,12 @@
       components:
       - type: Apprentice
       - type: CanEnchant
+      - type: LanguageKnowledge
+        speaks: []
+        understands: []
+      - type: UniversalLanguageSpeaker
+      - type: TowerOfBabel
+      - type: LanguageSpeaker
       - type: NpcFactionMember
         factions:
         - Wizard
@@ -203,4 +210,3 @@
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
     - SubGamemodesRule
-    - LavalandStormScheduler # Lavaland Change

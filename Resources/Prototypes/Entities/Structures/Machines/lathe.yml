@@ -338,6 +338,10 @@
     - !type:AutomatedMaterialStorage
       input: AutomationSlotMaterials
       output: null
+    - !type:AutomatedPorts
+      sinks:
+      - LathePrint
+  - type: LatheAutomation # Goobstation
   - type: SpamEmitSound # Goobstation - random lathe sounds
     minInterval: 300
     maxInterval: 900
@@ -525,10 +529,11 @@
     - MedicalMisc
     - MedicalVehiclesAdvanced
     - UpgradeKits
-    - BodyBagsDynamic # Corvax-Goob-AdvancedBodyBags-end
     - ConstructionBagOfHolding
     # Einstein Engines Packs
     - Translators
+    # CorvaxGoob Packs
+    - BodyBagsDynamic # AdvancedBodyBags
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
@@ -540,7 +545,8 @@
     - SecurityWeaponsGoob
     - RestraintTechnology
     - MiningWeapons
-    - SyndicateBodyBagsStatic # Corvax-Goob-AdvancedBodyBag
+    # CorvaxGoob Packs
+    - SyndicateBodyBagsStatic # AdvancedBodyBag
 
 - type: entity
   id: ProtolatheHyperConvection
@@ -592,17 +598,17 @@
     - CargoBoards
     - MedicalBoards
     - ServiceBoards
-    - BluespaceTechnologyBoards # CorvaxGoob BluespaceHarvester
-    - BluespaceHarvesterBoards # CorvaxGoob BluespaceHarvester
     #- ScienceBoards - Goobstation - Moved to Scifab
     - CameraBoards
     #- MechBoards - Goobstation - split between departmental lathes
     - ShuttleBoards
-    - AdvancedRoboticsBoards # CorvaxGoob MutableLaws
     # Goobstation Packs
     - SharedBoards
-    - Cloning # CorvaxGoob Cloning
     - ShuttleBoardsGoob
+    # CorvaxGoob Packs
+    - BluespaceTechnologyBoards # BluespaceHarvester
+    - BluespaceHarvesterBoards # BluespaceHarvester
+    - Cloning # Cloning
   - type: MaterialStorage
     whitelist:
       tags:
@@ -770,6 +776,7 @@
     - GrenadeTriggersStatic
     - SecurityWeaponsStaticGoob
     - SecurityWeaponsNonEmaggableStaticGoob
+    - SecurityAmmoStaticCorvaxGoob # Corvax-Goob-UncleStyopa
     dynamicPacks:
     - SalvageSecurityBoards
     - SalvageSecurityWeapons
@@ -790,6 +797,9 @@
     # - ServiceWeapons
     - SpecOpsGoogles
     - PowerCells
+    # CorvaxGoob Packs
+    - SecurityCaptureDevicePack # WeaponGrapplingGunHunter
+    - WorkBeltsSecDynamic # WorkBelts-Techfab
   - type: EmagLatheRecipes # Goobstation
     emagStaticPacks:
     - SyndicateAmmoLightStatic
@@ -883,7 +893,6 @@
     - SyringeCase
     dynamicPacks:
     - Chemistry
-    - BodyBagsDynamic # Corvax-Goob-AdvancedBodyBag
     # Goobstation Packs
     - Surgery
     - MedicalCybernetics
@@ -897,12 +906,16 @@
     # Einstein Engines Packs
     - Translators # Language
     - TranslatorImplanters # Language
+    # CorvaxGoob Packs
+    - BodyBagsDynamic # AdvancedBodyBag
+    - WorkBeltsMedDynamic # WorkBelts-Techfab
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: EmagLatheRecipes # Goobstation Packs
     emagStaticPacks:
     - SyndicateCatridgesStatic
-    - SyndicateBodyBagsStatic # Corvax-Goob-AdvancedBodyBags
+    # CorvaxGoob Packs
+    - SyndicateBodyBagsStatic # AdvancedBodyBags
   - type: StealTarget
     stealGroup: MedicalTechFabCircuitboard
 
@@ -1037,6 +1050,7 @@
       idleState: icon
       runningState: building
       defaultProductionAmount: 10
+      outputToStorage: true # Goob edit
       staticPacks:
       - OreSmelting
       - RGlassSmelting

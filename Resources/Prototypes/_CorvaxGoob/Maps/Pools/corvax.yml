@@ -11,10 +11,11 @@
   - CorvaxPilgrim
 
   # Midpop 25–55
-  - CorvaxAmber
+  # - CorvaxAmber
   - CorvaxAwesome
   - CorvaxBagel
   #- CorvaxMarathon
+  - CorvaxMascara
   - CorvaxOutpost
   - CorvaxPaper
   #- CorvaxPearl
@@ -26,3 +27,4 @@
   - CorvaxPacked
   - CorvaxSilly
   - CorvaxTushkan
+  - CorvaxCluster

@@ -30,21 +30,21 @@ SPDX-License-Identifier: AGPL-3.0-or-later
             Margin="8 10 8 10">
             <Button
                 Name="BodyButton"
-                Text="Body"
+                Text="{Loc 'health-analyzer-window-body'}"
                 MinWidth="130"
                 MinHeight="30"
                 HorizontalExpand="True"
                 StyleClasses="OpenRight"/>
             <Button
                 Name="OrgansButton"
-                Text="Organs"
+                Text="{Loc 'health-analyzer-window-organs'}"
                 MinWidth="130"
                 MinHeight="30"
                 HorizontalExpand="True"
                 StyleClasses="OpenBoth"/>
             <Button
                 Name="ChemicalsButton"
-                Text="Chemicals"
+                Text="{Loc 'health-analyzer-window-chemicals'}"
                 MinWidth="130"
                 MinHeight="30"
                 HorizontalExpand="True"
@@ -257,6 +257,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                             <Label Name="BloodLabel"/>
                             <Label Name="DamageLabelHeading" Text="{Loc 'health-analyzer-window-entity-damage-total-text'}"/>
                             <Label Name="DamageLabel"/>
+                            <!-- Goobstation start -->
+                            <Label Name="DamageLabelHeadingVital" Text="{Loc 'health-analyzer-window-entity-damage-vital-text'}"/>
+                            <Label Name="DamageLabelVital"/>
+                            <!-- Goobstation end -->
                         </GridContainer>
                     </BoxContainer>
 
@@ -296,7 +300,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                     Orientation="Vertical">
                     <RichTextLabel
                         Name="ConditionsLabel"
-                        Text="Conditions"
+                        Text="{Loc 'health-analyzer-window-conditions'}"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
                         HorizontalExpand="True"/>

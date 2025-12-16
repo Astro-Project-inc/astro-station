@@ -256,6 +256,8 @@
     - MindRoleGhostRoleSoloAntagonist
     raffle:
       settings: default
+    skills: # CorvaxGoob-Skills
+    - Butchering
     requirements: # Goobstation - ghost roles requirements
     - !type:OverallPlaytimeRequirement
       time: 18000 #5 hours
@@ -305,9 +307,6 @@
     coefficient: 0.5
   - type: CombatPower # Goobstation
     factor: 2
-  - type: Skills # CorvaxGoob-Skills
-    skills:
-    - Butchering
   - type: PassiveDamage #passive Healing
     allowedStates:
     - Alive
@@ -425,7 +424,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.2
-        density: 30 #Bulky by mouse standards...
+        density: 15 # Goob edit #Bulky by mouse standards...
         mask:
         - SmallMobMask
         layer:
@@ -444,9 +443,11 @@
         damage: 15
       behaviors:
       - !type:GibBehavior
+        gibContents: Skip # goob - rat servants dont spawn organs.
         recursive: false
   - type: Stamina
     critThreshold: 60
+    animationThreshold: 30 # Goob edit
   - type: MeleeWeapon
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg

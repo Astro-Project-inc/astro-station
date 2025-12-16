@@ -172,6 +172,9 @@
     - id: MailTeleporterMachineCircuitboard # GoobStation port of DeltaV mail
     - id: ClothingHandsKnuckleDustersQM # Goobstation - ROCK THAT MF!!
     - id: SalvageJobBoardComputerCircuitboard # Goobstation - This doesn't really have a use right now but it's there incase it ever gets use again
+    - id: CargoMegaphone # goob - loudspeaker
+    - id: SlotMachineHighRollerFlatPack # Goob - gambling
+    - id: ComputerFundingAllocationFlatpack #CorvaxGoob-QuarterMaster-finance
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -206,6 +209,7 @@
     - id: WeaponDisabler
     #- id: ClothingEyesGlassesCommand Corvax-Goob-CaptainDrobe
     - id: HeadSkeleton # A skull to accompany your skeleton crew
+    - id: SecondSkinSecurity # Goobstation
       conditions:
       - !type:PlayerCountCondition
         max: 15
@@ -288,14 +292,16 @@
     - id: DoorRemoteService
     - id: HoPIDCard
     - id: IDComputerCircuitboard
-    - id: ComputerFundingAllocationFlatpack # Goobstation
-    - id: ComputerCargoRequestServiceFlatpack # Goobstation
+    #- id: ComputerFundingAllocationFlatpack # Goobstation #CorvaxGoob-QuarterMaster-finance
+    - id: ComputerCargoRequestServiceFlatpack # Goobstation 
+    - id: PrinterDocFlatpack #CorvaxGoob-Docprinter
     - id: RubberStampApproved
     - id: RubberStampDenied
     - id: RubberStampHop
     - id: WeaponDisabler
     - id: ClothingEyesHudCommand
     - id: ServiceTechFabCircuitboard # Goobstation - Service Techfab
+    - id: CommandMegaphone # goob - loudspeakers
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -401,6 +407,7 @@
     # - id: MedicalScannerFlatpack
     # - id: ComputerCloningConsoleFlatpack
     # CorvaxGoob-Cloning-end
+    - id: ChemistryHotplateFlatPack
     - id: BiomassReclaimerFlatpack
     - id: Multitool
     - id: MedTekCartridge
@@ -533,6 +540,7 @@
     - id: WantedListCartridge
     - id: DrinkHosFlask
     - id: ClothingBeltSheathHeadOfSecurityFilled # Goobstation - security revamp
+    - id: SecondSkinSecurity # Goobstation
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
