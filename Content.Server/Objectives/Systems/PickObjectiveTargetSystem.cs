@@ -8,12 +8,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Objectives.Components;
+using Content.Server._CorvaxGoob.Objectives.Components;
 using Content.Shared.Mind;
 using Content.Shared.Objectives.Components;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Revolutionary.Components;
 using Robust.Shared.Random;
 using System.Linq;
+using Content.Shared.NukeOps;
 
 namespace Content.Server.Objectives.Systems;
 
@@ -66,6 +68,14 @@ public sealed class PickObjectiveTargetSystem : EntitySystem
             return;
         }
 
+        // CorvaxGoob antag-target-immunity start
+        if (HasComp<AntagObjectiveImmunityComponent>(ent.Owner))
+        {
+            args.Cancelled = true;
+            return;
+        }
+        // CorvaxGoob antag-target-immunity end
+
         _target.SetTarget(ent.Owner, targetComp.Target.Value);
     }
 
@@ -101,6 +111,14 @@ public sealed class PickObjectiveTargetSystem : EntitySystem
             return;
         }
 
+        // CorvaxGoob antag-target-immunity start
+        if (HasComp<AntagObjectiveImmunityComponent>(ent.Owner))
+        {
+            args.Cancelled = true;
+            return;
+        }
+        // CorvaxGoob antag-target-immunity end
+
         _target.SetTarget(ent.Owner, _random.Pick(allHumans), target);
     }
 
@@ -128,9 +146,9 @@ public sealed class PickObjectiveTargetSystem : EntitySystem
         var allHeads = new HashSet<Entity<MindComponent>>();
         foreach (var person in allHumans)
         {
-            if (TryComp<MindComponent>(person, out var mind) && mind.OwnedEntity is { } owned && HasComp<CommandStaffComponent>(owned))
-                allHeads.Add(person);
-        }
+            if (TryComp<MindComponent>(person, out var mind) && mind.OwnedEntity is { } owned && HasComp<CommandStaffComponent>(owned) && !HasComp<NukeOperativeComponent>(owned))
+                allHeads.Add(person); // Goob edit - exclude nuke ops from being selected as heads (bruh why would you even want that)
+        } 
 
         // Goobstation - Cancel if there is no command staff
         if (allHeads.Count == 0)
@@ -138,6 +156,14 @@ public sealed class PickObjectiveTargetSystem : EntitySystem
             args.Cancelled = true;
             return;
         }
+
+        // CorvaxGoob antag-target-immunity start
+        if (HasComp<AntagObjectiveImmunityComponent>(ent.Owner))
+        {
+            args.Cancelled = true;
+            return;
+        }
+        // CorvaxGoob antag-target-immunity end
 
         _target.SetTarget(ent.Owner, _random.Pick(allHeads), target);
     }

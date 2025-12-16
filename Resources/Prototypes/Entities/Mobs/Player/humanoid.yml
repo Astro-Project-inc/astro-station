@@ -150,14 +150,6 @@
       implants:
       - MindShieldImplant
     - type: AntagImmune
-    - type: Skills # CorvaxGoob-Skills
-      skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
 
 # Goobstation start
 - type: randomHumanoidSettings
@@ -169,6 +161,23 @@
   id: EventHumanMindShielded
   parent: EventHumanoidMindShielded
   speciesWhitelist: Human
+
+- type: randomHumanoidSettings
+  id: EventHumanoidLibrarian
+  parent: EventHumanoid
+  components:
+  - type: AutoImplant
+    implants:
+    - LibrarianTranslatorImplant      #Librarians should speak most languages
+
+- type: randomHumanoidSettings
+  id: EventHumanoidChef
+  parent: EventHumanoid
+  components:
+  - type: AutoImplant
+    implants:
+    - SpaceItalianTranslatorImplant   #chefs should speak space italian
+  - type: GrantCqc                    #Chefs should have CqC
 # Goobstation end
 
 - type: randomHumanoidSettings
@@ -643,6 +652,8 @@
       roleLoadout: [ RoleSurvivalExtended ]
     - type: AutoImplant
       implants: [ FreedomImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant ] # Goobstation
+    - type: SurgerySpeedModifier # CorvaxGoob-ERT-Skills
+      speedModifier: 2.5
 
 - type: entity
   id: RandomHumanoidSpawnerERTMedicalEVA

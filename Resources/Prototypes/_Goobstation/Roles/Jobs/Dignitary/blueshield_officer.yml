@@ -23,6 +23,7 @@
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+# SPDX-FileCopyrightText: 2025 Androidonator <33227516+Androidonator@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -47,6 +48,10 @@
       inverted: true
       species:
       - Felinid
+    - !type:SpeciesRequirement # CorvaxGoob-Species
+      inverted: true
+      species:
+      - Abductor
   #goobcoins: 45 Corvax-Goob-coins
   weight: 20
   startingGear: BlueshieldOfficerGear
@@ -54,6 +59,11 @@
   joinNotifyCrew: true
   supervisors: job-supervisors-ntr-centcom
   canBeAntag: false
+  skills: # CorvaxGoob-Skills
+  - ShuttleControl
+  - Shooting
+  - MedicalEquipment
+  - Surgery
   access:
   - Security
   - Brig
@@ -71,18 +81,12 @@
   - Cargo
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, BluespaceLifelineImplant ] # Go big, or go home.
+    implants: [ MindShieldImplant ] # CorvaxGoob-Not-Roundstart-BluespaceLifeline-Implant
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
       - type: Condemned
         soulOwnedNotDevil: true
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - Shooting
-  - !type:AddObjectiveSpecial
-    objectives:
-    - BlueshieldRandomCommandAliveObjective
 
 - type: startingGear
   id: BlueshieldOfficerGear
@@ -97,6 +101,7 @@
     back:
     - Flash
     - ClothingMaskGasSecurity
+    - CombatKnife
 
 - type: chameleonOutfit
   id: BlueshieldOfficerChameleonOutfit

@@ -6,8 +6,8 @@
 reagent-effect-guidebook-remove-delayed-knockdown = Отменяет задержку падения от электрошокера.
 reagent-effect-guidebook-remove-permanentblindness = Лечит слепоту.
 reagent-effect-guidebook-remove-narcolepsy = Лечит нарколепсию.
-reagent-effect-guidebook-remove-unrevivable = Лечит состояние «неоживляемости».
+reagent-effect-guidebook-remove-unrevivable = Лечит состояние "неоживляемости".
 reagent-effect-guidebook-remove-muted = Лечит немоту.
 reagent-effect-guidebook-remove-paracusia = Лечит паракузию.
-reagent-effect-guidebook-remove-painnumbness = Лечит онемение от боли. Больно.
-reagent-effect-guidebook-remove-legsstartparalyzed = Ты больше не нуждаешься в инвалидной коляске.
+reagent-effect-guidebook-remove-painnumbness = Лечит онемение от боли.
+reagent-effect-guidebook-remove-legsstartparalyzed = Вы больше не нуждаетесь в инвалидной коляске.

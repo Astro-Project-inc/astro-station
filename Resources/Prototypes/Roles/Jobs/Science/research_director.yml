@@ -147,12 +147,18 @@
     inverted: true
     species:
     - Felinid
+  - !type:SpeciesRequirement # CorvaxGoob-Species
+    inverted: true
+    species:
+    - Abductor
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
   supervisors: job-supervisors-captain
   canBeAntag: false
   #goobcoins: 40 #Goob content Corvax-Goob-coins
+  skills: # CorvaxGoob-Skills
+  - AdvancedBuilding
   access:
   - Research
   - Command
@@ -167,9 +173,6 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - AdvancedBuilding
 
 - type: startingGear
   id: ResearchDirectorGear

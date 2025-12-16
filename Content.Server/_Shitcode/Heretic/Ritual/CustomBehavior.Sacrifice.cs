@@ -2,6 +2,8 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 // SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
@@ -22,6 +24,7 @@ using Content.Shared.Mind;
 using Content.Shared.Heretic;
 using Content.Server.Heretic.EntitySystems;
 using Content.Shared.Gibbing.Events;
+using Content.Shared.Silicons.Borgs.Components;
 
 namespace Content.Server.Heretic.Ritual;
 
@@ -50,12 +53,21 @@ namespace Content.Server.Heretic.Ritual;
     [DataField]
     public bool OnlyTargets;
 
+    /// <summary>
+    ///     Should we count only humanoids?
+    /// </summary>
+    [DataField]
+    public bool OnlyHumanoid = true;
+
     // this is awful but it works so i'm not complaining
     protected SharedMindSystem _mind = default!;
     protected HereticSystem _heretic = default!;
     protected BodySystem _body = default!;
     protected EntityLookupSystem _lookup = default!;
     [Dependency] protected IPrototypeManager _proto = default!;
+    [Dependency] protected ILogManager _log = default!;
+
+    private ISawmill? _sawmill;
 
     protected List<EntityUid> uids = new();
 
@@ -66,6 +78,7 @@ namespace Content.Server.Heretic.Ritual;
         _body = args.EntityManager.System<BodySystem>();
         _lookup = args.EntityManager.System<EntityLookupSystem>();
         _proto = IoCManager.Resolve<IPrototypeManager>();
+        _log = IoCManager.Resolve<ILogManager>();
 
         uids = new();
 
@@ -86,11 +99,14 @@ namespace Content.Server.Heretic.Ritual;
         foreach (var look in lookup)
         {
             if (!args.EntityManager.TryGetComponent<MobStateComponent>(look, out var mobstate) // only mobs
-            || !args.EntityManager.HasComponent<HumanoidAppearanceComponent>(look) // only humans
-            || OnlyTargets && hereticComp.SacrificeTargets.All(x => x.Entity != args.EntityManager.GetNetEntity(look))) // only targets
+            || OnlyHumanoid && !args.EntityManager.HasComponent<HumanoidAppearanceComponent>(look) // only humans
+            || args.EntityManager.HasComponent<BorgChassisComponent>(look) // no borgs
+            || OnlyTargets
+                && hereticComp.SacrificeTargets.All(x => x.Entity != args.EntityManager.GetNetEntity(look)) // only targets
+                && !args.EntityManager.HasComponent<HereticComponent>(look)) // or other heretics
                 continue;
 
-            if (mobstate.CurrentState == Shared.Mobs.MobState.Dead)
+            if (mobstate.CurrentState != Shared.Mobs.MobState.Alive)
                 uids.Add(look);
         }
 
@@ -112,21 +128,36 @@ namespace Content.Server.Heretic.Ritual;
             return;
         }
 
+        var knowledgeGain = 0f;
         for (var i = 0; i < Max && i < uids.Count; i++)
         {
             if (!args.EntityManager.EntityExists(uids[i]))
                 continue;
 
-            var (isCommand, isSec) = IsCommandOrSec(uids[i], args.EntityManager);
-            var knowledgeGain = heretic.SacrificeTargets.Any(x => x.Entity == args.EntityManager.GetNetEntity(uids[i]))
-                ? isCommand || isSec ? 3f : 2f
-                : 0f;
+            var uid = uids[i];
 
-            // YES!!! GIB!!!
-            _body.GibBody(uids[i], contents: GibContentsOption.Gib);
+            var isCommand = args.EntityManager.HasComponent<CommandStaffComponent>(uid);
+            var isSec = args.EntityManager.HasComponent<SecurityStaffComponent>(uid);
+            var isHeretic = args.EntityManager.HasComponent<HereticComponent>(uid);
+            knowledgeGain +=
+                isHeretic ||
+                heretic.SacrificeTargets.Any(x => x.Entity == args.EntityManager.GetNetEntity(uid))
+                    ? isCommand || isSec || isHeretic ? 3f : 2f
+                    : 0f;
 
-            if (knowledgeGain > 0)
-                _heretic.UpdateKnowledge(args.Performer, heretic, knowledgeGain);
+            try
+            {
+                // YES!!! GIB!!!
+                _body.GibBody(uid);
+            }
+            catch (Exception e)
+            {
+                if (!args.EntityManager.IsQueuedForDeletion(uid) && !args.EntityManager.Deleted(uid))
+                    args.EntityManager.QueueDeleteEntity(uid);
+
+                _sawmill ??= _log.GetSawmill("sacrifice");
+                _sawmill.Error(e.Message);
+            }
 
             // update objectives
             if (_mind.TryGetMind(args.Performer, out var mindId, out var mind))
@@ -143,14 +174,11 @@ namespace Content.Server.Heretic.Ritual;
             }
         }
 
+        if (knowledgeGain > 0)
+            _heretic.UpdateKnowledge(args.Performer, heretic, knowledgeGain);
+
         // reset it because it refuses to work otherwise.
         uids = new();
         args.EntityManager.EventBus.RaiseLocalEvent(args.Performer, new EventHereticUpdateTargets());
-    }
-
-    protected (bool isCommand, bool isSec) IsCommandOrSec(EntityUid uid, IEntityManager entityManager)
-    {
-        return (entityManager.HasComponent<CommandStaffComponent>(uid),
-            entityManager.HasComponent<SecurityStaffComponent>(uid));
     }
 }

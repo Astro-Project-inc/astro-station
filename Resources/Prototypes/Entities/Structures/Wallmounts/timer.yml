@@ -52,7 +52,7 @@
   - type: Sprite
     drawdepth: SmallObjects
     sprite: Structures/Wallmounts/switch.rsi
-    state: on
+    state: dead # CorvaxGoob-ButtonsVisuals
   - type: Appearance
   - type: Rotatable
   - type: SignalTimer
@@ -101,7 +101,7 @@
     color: FloralWhite
     textOffset: 0,6
     timerOffset: 0,6
-    textLength: 5
+    # textLength: 5 This field does not exist. Bug?
     rows: 1
   - type: Sprite
     drawdepth: WallMountedItems

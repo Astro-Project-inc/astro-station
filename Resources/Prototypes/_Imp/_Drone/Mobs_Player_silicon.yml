@@ -95,11 +95,14 @@
   - type: Alerts
   - type: ProtectedFromStepTriggers
   - type: Targeting # Shitmed Change
-  - type: TypingIndicator # Goob
+  # <Goobstation>
+  - type: FlashVulnerable
+  - type: TypingIndicator
     proto: robot
-  - type: Speech # Goob
+  - type: Speech
     speechVerb: Robotic
     speechSounds: Borg
+  # </Goobstation>
 
 - type: entity
   name: drone
@@ -149,7 +152,7 @@
   - type: IntrinsicUI # Goob edit
     uis:
       enum.StationMapUiKey.Key:
-        toggleAction: ActionDroneOpenMap
+        toggleAction: ActionShowStationMap
       enum.InstrumentUiKey.Key:
         toggleAction: ActionDronePlayMidi
   - type: StationMap #imp
@@ -165,6 +168,9 @@
     name: ghost-role-information-drone-name
     description: ghost-role-information-drone-description
     rules: ghost-role-information-drone-rules
+    skills: # CorvaxGoob-Skills
+      - AdvancedBuilding
+      - ShuttleControl
     mindRoles:
     - MindRoleGhostRoleSilicon
   - type: GhostTakeoverAvailable
@@ -182,13 +188,14 @@
     thresholds:
       0: Alive
       60: Dead
-  - type: Flash
+  #- type: Flash # Goobstation - Remove drone flashing.
   - type: NoSlip
   - type: StatusEffects
     allowed:
     - Stun
     - KnockedDown
     - SlowedDown
+    - Flashed # Goobstation - counter to shitter drones
   - type: SlowOnDamage
     speedModifierThresholds:
       30: 0.7
@@ -218,7 +225,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.3
-        density: 50
+        density: 30
         mask:
         - SmallMobMask
         layer:
@@ -257,6 +264,10 @@
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
   - type: ProtectedFromStepTriggers
+  - type: DamageOnInteractProtection # Goobstation - Copied from borgs
+    damageProtection:
+      flatReductions:
+        Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
   - type: InputMover
   - type: MobMover
   - type: ContentEye
@@ -267,6 +278,7 @@
     - EmagImmune
     - CanPilot
     - VimPilot
+    - Bot # Goobstation
   - type: CollectiveMind # Goobstation
     defaultChannel: Dronemind
     channels:

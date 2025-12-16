@@ -11,10 +11,17 @@
     inverted: true
     traits:
     - Muted
+  - !type:SpeciesRequirement # CorvaxGoob-Species
+    inverted: true
+    species:
+    - Abductor
   startingGear: PilotGear
   icon: "JobIconPilot"
   supervisors: job-supervisors-hos
   canBeAntag: false
+  skills: # CorvaxGoob-Skills
+  - ShuttleControl
+  - Shooting
   access:
   - Security
   - Brig
@@ -25,12 +32,6 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
-  - !type:AddComponentSpecial
-    components:
-    - type: Skills # Corvax-Next-Skills
-      skills:
-      - ShuttleControl
-      - Shooting
 
 - type: startingGear
   id: PilotGear
@@ -45,3 +46,20 @@
     back:
     - Flash
     - MagazinePistol
+
+- type: chameleonOutfit
+  id: PilotChameleonOutfit
+  job: Pilot
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatBeretSecurity
+    eyes: ClothingEyesGlassesSecurity
+    mask: ClothingMaskGasSecurity
+    neck: Dinkystar
+    gloves: ClothingHandsGlovesColorBlack
+    ears: ClothingHeadsetSecurity
+    outerClothing: ClothingOuterArmorBasic
+    jumpsuit: ClothingUniformSecurityTrooper
+    id: PilotPDA
+    back: ClothingBackpackSecurity
+    shoes: ClothingShoesBootsJack

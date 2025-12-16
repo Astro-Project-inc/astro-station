@@ -19,11 +19,15 @@
   components:
   - type: StationEvent
     earliestStart: 30
-    weight: 10
+    weight: 8
     minimumPlayers: 15
+    maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
       path: /Audio/Announcements/intercept.ogg
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/intercept.ogg
     duration: null
     occursDuringRoundEnd: false
     chaos:
@@ -38,17 +42,11 @@
     selectionTime: PostPlayerSpawn
     definitions:
     - prefRoles: [ Traitor ]
-      max: 1
+      min: 1
+      max: 2
       playerRatio: 10
-      components:
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
+      skills: # CorvaxGoob-Skills
+      - All
       blacklist:
         components:
         - AntagImmune
@@ -69,9 +67,13 @@
     earliestStart: 20
     weight: 3
     minimumPlayers: 15
+    maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
       path: /Audio/Announcements/intercept.ogg
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/intercept.ogg
     duration: null
     occursDuringRoundEnd: false
     chaos:
@@ -87,17 +89,11 @@
     agentName: changeling-roundend-name
     definitions:
     - prefRoles: [ Changeling ]
-      max: 1
+      min: 1
+      max: 2
       playerRatio: 10
-      components:
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
+      skills: # CorvaxGoob-Skills
+      - All
       blacklist:
         components:
         - CommandStaff
@@ -119,9 +115,13 @@
     earliestStart: 20
     weight: 3
     minimumPlayers: 30
+    maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
       path: /Audio/Announcements/intercept.ogg
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/intercept.ogg
     duration: null
     occursDuringRoundEnd: false
     chaos:
@@ -146,17 +146,10 @@
         - BibleUser
       lateJoinAdditional: true
       jobBlacklist: [ Chaplain ] # GOOBSTATION
+      skills: # CorvaxGoob-Skills
+      - All
       mindRoles:
       - MindRoleHeretic
-      components:
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
   - type: Tag
     tags:
       - MidroundAntag
@@ -168,7 +161,7 @@
   components:
   - type: StationEvent
     earliestStart: 20
-    weight: 3
+    weight: 3.5 # CorvaxGoob Changes: 3 > 3.5
     minimumPlayers: 30
     maxOccurrences: 1
     duration: null
@@ -195,17 +188,11 @@
         color: CornflowerBlue
         sound: "/Audio/Ambience/Antag/headrev_start.ogg"
       startingGear: HeadRevGear
+      skills: # CorvaxGoob-Skills
+      - All
       components:
       - type: Revolutionary
       - type: HeadRevolutionary
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       mindRoles:
       - MindRoleHeadRevolutionary
   - type: Tag
@@ -240,15 +227,15 @@
   id: BlobMidround
   components:
   - type: StationEvent
-    weight: 1.5
-    earliestStart: 80
-    minimumPlayers: 30 # how is that 20 people when rat king is 30??? changed.
+    weight: 1
+    earliestStart: 45
+    minimumPlayers: 50
     duration: null
-    maxOccurrences: 2
+    maxOccurrences: 1
     chaos:
-      Hostile: 300
-      Medical: 300
-      Death: 300
+      Hostile: 400
+      Medical: 400
+      Death: 400
     eventType: HostilesSpawn
   - type: GameRule
     chaosScore: 1000
@@ -260,3 +247,102 @@
   - type: Tag
     tags:
       - MidroundAntag
+
+- type: entity
+  parent: BaseGameRule
+  id: FloorGoblinMidRound
+  components:
+  - type: StationEvent
+    weight: 15
+    earliestStart: 15
+    minimumPlayers: 15
+    maxOccurrences: 2
+    eventType: Neutral
+  - type: GameRule
+    chaosScore: 0
+  - type: VentCrittersRule
+    max: 1
+    table:
+      id: MobFloorGoblin
+  - type: Tag
+    tags:
+    - MidroundAntag
+
+# Slasher
+- type: entity
+  parent: BaseGameRule
+  id: SlasherSpawn
+  components:
+  - type: StationEvent
+    weight: 4 # CorvaxGoob Changes: 3 > 4
+    duration: null
+    earliestStart: 30
+    minimumPlayers: 30
+    chaos:
+      Hostile: 40
+      Combat: 40
+      Death: 40
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 400
+  - type: AntagRandomSpawn
+  - type: AntagLoadProfileRule
+    speciesOverride: Human
+    speciesOverrideBlacklist:
+    - Yowie
+    - IPC
+    - Diona
+    - Harpy
+    - Plasmaman
+  - type: AntagObjectives
+    objectives:
+    - SlasherSurviveObjective
+    - SlasherAbsorbSoulsObjective
+  - type: AntagSelection
+    selectionTime: PostPlayerSpawn
+    agentName: slasher-round-end-agent-name
+    definitions:
+    - spawnerPrototype: SpawnPointGhostSlasher
+      min: 1
+      max: 1
+      pickPlayer: false
+      startingGear: SlasherGear
+      briefing:
+        text: slasher-role-greeting
+        color: Red
+        sound: /Audio/_Goobstation/Effects/Slasher/SlasherIntro.ogg
+      mindRoles:
+      - MindRoleSlasher
+      components:
+      - type: Slasher
+      - type: SlasherSummonMachete
+      - type: SlasherStaggerArea
+      - type: SlasherRegenerate
+      - type: SlasherPossession
+      - type: SlasherBloodTrail
+      - type: SlasherIncorporeal
+      - type: SlasherSoulSteal
+      - type: SlasherSummonMeatSpike
+      - type: BreathingImmunity
+      - type: GunBlocked
+        PopupText: slasher-cannot-use-guns # Seems to be broken inside AntagSelection
+      - type: WeakToHoly
+      - type: NightVision
+        activateSound: null
+        deactivateSound: null
+      - type: Hunger
+        baseDecayRate: 0
+      - type: Thirst
+        baseDecayRate: 0
+      - type: MobThresholds
+        thresholds:
+          0: Alive
+          200: Dead
+      - type: RandomMetadata
+        nameSegments:
+        - NamesSlasherTitle
+        - NamesSlasher
+        nameFormat: name-format-slasher
+  - type: Tag
+    tags:
+    - MidroundAntag

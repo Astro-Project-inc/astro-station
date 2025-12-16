@@ -36,6 +36,11 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 126000 # 35h
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - Plasmaman
+    - Abductor # CorvaxGoob-Species
   guides: [ Wizard ]
 
 - type: antag

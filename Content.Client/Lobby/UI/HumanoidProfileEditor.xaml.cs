@@ -189,8 +189,11 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Enums;
 using Robust.Shared.Physics;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Physics.Systems;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
+using Content.Client._CorvaxGoob.TTS;
+using Content.Shared._CorvaxGoob; // CorvaxGoob-TTS
 
 namespace Content.Client.Lobby.UI
 {
@@ -219,6 +222,8 @@ namespace Content.Client.Lobby.UI
 
         // One at a time.
         private LoadoutWindow? _loadoutWindow;
+
+        private TTSTab? _ttsTab;// CorvaxGoob-TTS
 
         private bool _exporting;
         private bool _imaging;
@@ -260,8 +265,7 @@ namespace Content.Client.Lobby.UI
 
         private bool _isDirty;
 
-        [ValidatePrototypeId<GuideEntryPrototype>]
-        private const string DefaultSpeciesGuidebook = "Species";
+        private static readonly ProtoId<GuideEntryPrototype> DefaultSpeciesGuidebook = "Species";
 
         public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
 
@@ -379,17 +383,17 @@ namespace Content.Client.Lobby.UI
 
             #endregion Gender
 
-            // CorvaxGoob-TTS-Start
-            #region Voice
+            // Goob Station
+            #region Barks
 
-            if (configurationManager.GetCVar(CCCVars.TTSEnabled))
+            // CorvaxGoob-Revert : DB conflicts
+/*            if (configurationManager.GetCVar(GoobCVars.BarksEnabled))
             {
-                TTSContainer.Visible = true;
-                InitializeVoice();
-            }
+                BarksContainer.Visible = true;
+                InitializeBarkVoice();
+            }*/
 
             #endregion
-            // CorvaxGoob-TTS-End
 
             RefreshSpecies();
 
@@ -415,12 +419,14 @@ namespace Content.Client.Lobby.UI
 
             HeightReset.OnPressed += _ =>
             {
+                var prototype = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
                 HeightSlider.Value = prototype.DefaultHeight;
                 UpdateDimensions(SliderUpdate.Height);
             };
 
             WidthReset.OnPressed += _ =>
             {
+                var prototype = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
                 WidthSlider.Value = prototype.DefaultWidth;
                 UpdateDimensions(SliderUpdate.Width);
             };
@@ -436,6 +442,7 @@ namespace Content.Client.Lobby.UI
             };
 
             RgbSkinColorContainer.AddChild(_rgbSkinColorSelector = new ColorSelectorSliders());
+            _rgbSkinColorSelector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV
             _rgbSkinColorSelector.OnColorChanged += _ =>
             {
                 OnSkinColorOnValueChanged();
@@ -610,6 +617,8 @@ namespace Content.Client.Lobby.UI
 
             RefreshTraits();
 
+            TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-traits-tab")); // CorvaxGoob-TTS-Edit
+
             #region Markings
 
             TabContainer.SetTabTitle(4, Loc.GetString("humanoid-profile-editor-markings-tab"));
@@ -622,6 +631,8 @@ namespace Content.Client.Lobby.UI
             #endregion Markings
 
             RefreshFlavorText();
+
+            RefreshVoiceTab(); // CorvaxGoob-TTS
 
             #region Dummy
 
@@ -682,6 +693,56 @@ namespace Content.Client.Lobby.UI
             }
         }
 
+        //CorvaxGoob-TTS-Start
+        #region Voice
+
+        private void RefreshVoiceTab()
+        {
+            if (!_cfgManager.GetCVar(CCCVars.TTSEnabled))
+                return;
+
+            _ttsTab = new TTSTab();
+            var children = new List<Control>();
+            foreach (var child in TabContainer.Children)
+                children.Add(child);
+
+            TabContainer.RemoveAllChildren();
+
+            for (int i = 0; i < children.Count; i++)
+            {
+                if (i == 1) // Set the tab to the 2nd place.
+                {
+                    TabContainer.AddChild(_ttsTab);
+                }
+                TabContainer.AddChild(children[i]);
+            }
+
+            TabContainer.SetTabTitle(1, Loc.GetString("humanoid-profile-editor-voice-tab"));
+
+            _ttsTab.OnVoiceSelected += voiceId =>
+            {
+                SetVoice(voiceId);
+                _ttsTab.SetSelectedVoice(voiceId);
+            };
+
+            _ttsTab.OnPreviewRequested += voiceId =>
+            {
+                _entManager.System<TTSSystem>().RequestPreviewTTS(voiceId);
+            };
+        }
+
+        private void UpdateTTSVoicesControls()
+        {
+            if (Profile is null || _ttsTab is null)
+                return;
+
+            _ttsTab.UpdateControls(Profile, Profile.Sex);
+            _ttsTab.SetSelectedVoice(Profile.Voice);
+        }
+
+        #endregion
+        // CorvaxGoob-TTS-End
+
         /// <summary>
         /// Refreshes traits selector
         /// </summary>
@@ -690,7 +751,7 @@ namespace Content.Client.Lobby.UI
             TraitsList.DisposeAllChildren();
 
             var traits = _prototypeManager.EnumeratePrototypes<TraitPrototype>().OrderBy(t => Loc.GetString(t.Name)).ToList();
-            TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-traits-tab"));
+            //TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-traits-tab")); // CorvaxGoob-TTS-Edit
 
             if (traits.Count < 1)
             {
@@ -709,6 +770,15 @@ namespace Content.Client.Lobby.UI
 
             foreach (var trait in traits)
             {
+                // Begin Goobstation: ported from DeltaV - Species trait exclusion
+                if (Profile?.Species is { } selectedSpecies && (trait.ExcludedSpecies.Contains(selectedSpecies) ||
+                    trait.IncludedSpecies.Count > 0 && !trait.IncludedSpecies.Contains(selectedSpecies)))
+                {
+                    Profile = Profile?.WithoutTraitPreference(trait.ID, _prototypeManager);
+                    continue;
+                }
+                // End Goobstation: ported from DeltaV - Species trait exclusion
+
                 if (trait.Category == null)
                 {
                     defaultTraits.Add(trait.ID);
@@ -810,7 +880,7 @@ namespace Content.Client.Lobby.UI
                 var name = Loc.GetString(_species[i].Name);
 
                 if (_species[i].SponsorOnly) // CorvaxGoob-Sponsors
-                    name += " " + Loc.GetString("sponsor-only-text");
+                    name += SponsorUtils.GetSponsorOnlySuffix();
 
                 SpeciesButton.AddItem(name, i);
 
@@ -968,6 +1038,8 @@ namespace Content.Client.Lobby.UI
             UpdateSaveButton();
             UpdateMarkings();
             UpdateTTSVoicesControls(); // CorvaxGoob-TTS
+            // CorvaxGoob-Revert : DB conflicts
+            // UpdateBarkVoice(); // Goob Station - Barks
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
@@ -1013,9 +1085,9 @@ namespace Content.Client.Lobby.UI
             var species = Profile?.Species ?? SharedHumanoidAppearanceSystem.DefaultSpecies;
             var page = DefaultSpeciesGuidebook;
             if (_prototypeManager.HasIndex<GuideEntryPrototype>(species))
-                page = species;
+                page = new ProtoId<GuideEntryPrototype>(species.Id); // Gross. See above todo comment.
 
-            if (_prototypeManager.TryIndex<GuideEntryPrototype>(DefaultSpeciesGuidebook, out var guideRoot))
+            if (_prototypeManager.TryIndex(DefaultSpeciesGuidebook, out var guideRoot))
             {
                 var dict = new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry>();
                 dict.Add(DefaultSpeciesGuidebook, guideRoot);
@@ -1465,6 +1537,8 @@ namespace Content.Client.Lobby.UI
             ReloadPreview();
             /*
             // begin Goobstation: port EE height/width sliders // CorvaxGoob-Clearing
+            UpdateBarkVoice(); // Goob Station - Barks
+            // begin Goobstation: port EE height/width sliders
             // Changing species provides inaccurate sliders without these
             UpdateHeightWidthSliders();
             UpdateWeight();
@@ -1503,6 +1577,12 @@ namespace Content.Client.Lobby.UI
             IsDirty = true;
         }
         // end Goobstation: port EE height/width sliders*/
+        // private void SetBarkVoice(BarkPrototype newVoice)
+        // {
+        //     Profile = Profile?.WithBarkVoice(newVoice);
+        //     IsDirty = true;
+        // }
+        // Goob Station - End
 
         public bool IsDirty
         {
@@ -1726,13 +1806,18 @@ namespace Content.Client.Lobby.UI
 
             var species = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
 
+            // we increase the min/max values of the sliders before we set their value, just so that we don't accidentally clamp down on a value loaded from a profile when we shouldn't
+            HeightSlider.MinValue = 0;
+            HeightSlider.MaxValue = 2;
+            HeightSlider.SetValueWithoutEvent(Profile?.Height ?? species.DefaultHeight);
             HeightSlider.MinValue = species.MinHeight;
             HeightSlider.MaxValue = species.MaxHeight;
-            HeightSlider.SetValueWithoutEvent(Profile?.Height ?? species.DefaultHeight);
 
+            WidthSlider.MinValue = 0;
+            WidthSlider.MaxValue = 2;
+            WidthSlider.SetValueWithoutEvent(Profile?.Width ?? species.DefaultWidth);
             WidthSlider.MinValue = species.MinWidth;
             WidthSlider.MaxValue = species.MaxWidth;
-            WidthSlider.SetValueWithoutEvent(Profile?.Width ?? species.DefaultWidth);
 
             var height = MathF.Round(species.AverageHeight * HeightSlider.Value);
             HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
@@ -1773,8 +1858,8 @@ namespace Content.Client.Lobby.UI
             heightValue = Math.Clamp(heightValue, species.MinHeight, species.MaxHeight);
             widthValue = Math.Clamp(widthValue, species.MinWidth, species.MaxWidth);
 
-            HeightSlider.Value = heightValue;
-            WidthSlider.Value = widthValue;
+            HeightSlider.SetValueWithoutEvent(heightValue);
+            WidthSlider.SetValueWithoutEvent(widthValue);
 
             SetProfileHeight(heightValue);
             SetProfileWidth(widthValue);
@@ -1795,14 +1880,12 @@ namespace Content.Client.Lobby.UI
 
             var species = _species.Find(x => x.ID == Profile.Species) ?? _species.First();
             //  TODO: Remove obsolete method
-            _prototypeManager.Index(species.Prototype).TryGetComponent<FixturesComponent>(out var fixture);
+            _prototypeManager.Index(species.Prototype).TryGetComponent<FixturesComponent>(out var fixture, _entManager.ComponentFactory);
 
             if (fixture != null)
             {
-                var radius = fixture.Fixtures["fix1"].Shape.Radius;
-                var density = fixture.Fixtures["fix1"].Density;
                 var avg = (Profile.Width + Profile.Height) / 2;
-                var weight = MathF.Round(MathF.PI * MathF.Pow(radius * avg, 2) * density);
+                var weight = FixtureSystem.GetMassData(fixture.Fixtures["fix1"].Shape, fixture.Fixtures["fix1"].Density).Mass * avg;
                 WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) weight));
             }
             else // Whelp, the fixture doesn't exist, guesstimate it instead
@@ -1822,17 +1905,13 @@ namespace Content.Client.Lobby.UI
             {
                 return;
             }
-            var hairMarking = Profile.Appearance.HairStyleId switch
-            {
-                HairStyles.DefaultHairStyle => new List<Marking>(),
-                _ => new() { new(Profile.Appearance.HairStyleId, new List<Color>() { Profile.Appearance.HairColor }) },
-            };
+            var hairMarking = Profile.Appearance.HairStyleId == HairStyles.DefaultHairStyle
+                ? new List<Marking>()
+                : new() { new(Profile.Appearance.HairStyleId, new List<Color>() { Profile.Appearance.HairColor }) };
 
-            var facialHairMarking = Profile.Appearance.FacialHairStyleId switch
-            {
-                HairStyles.DefaultFacialHairStyle => new List<Marking>(),
-                _ => new() { new(Profile.Appearance.FacialHairStyleId, new List<Color>() { Profile.Appearance.FacialHairColor }) },
-            };
+            var facialHairMarking = Profile.Appearance.FacialHairStyleId == HairStyles.DefaultFacialHairStyle
+                ? new List<Marking>()
+                : new() { new(Profile.Appearance.FacialHairStyleId, new List<Color>() { Profile.Appearance.FacialHairColor }) };
 
             HairStylePicker.UpdateData(
                 hairMarking,

@@ -23,6 +23,9 @@
 
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Administration.Logs;
+using Content.Shared.Administration.Logs;
+using Content.Shared.Body.Components;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.Hypospray.Events;
@@ -38,7 +41,7 @@ using Content.Shared.Timing;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Audio.Systems;
-using static Content.Shared.Chemistry.Hypospray.Events.AfterHyposprayInjectsTargetEvent;
+using Content.Shared.Chemistry.EntitySystems.Hypospray;
 
 namespace Content.Shared.Chemistry.EntitySystems;
 
@@ -179,7 +182,8 @@ public sealed class HypospraySystem : EntitySystem
             {
                 BreakOnMove = true,
                 NeedHand = true,
-                BreakOnDamage = true
+                BreakOnDamage = true,
+                Hidden = component.HideDoAfter
             });
 
             if (doAfterCancelled)
@@ -234,11 +238,13 @@ public sealed class HypospraySystem : EntitySystem
         var ev = new TransferDnaEvent { Donor = target, Recipient = entity.Owner };
         RaiseLocalEvent(target, ref ev);
 
-        var injectEvent = new AfterHyposprayInjectsTargetEvent(user, entity.Owner, target);
-        RaiseLocalEvent(entity, injectEvent);
+        var afterinjectev = new AfterHyposprayInjectsEvent { User = user, Target = target }; //Goobedit
+        RaiseLocalEvent(entity, ref afterinjectev);
 
         // same LogType as syringes...
-        _adminLogger.Add(LogType.ForceFeed, $"{EntityManager.ToPrettyString(user):user} injected {EntityManager.ToPrettyString(target):target} with a solution {SharedSolutionContainerSystem.ToPrettyString(removedSolution):removedSolution} using a {EntityManager.ToPrettyString(entity.Owner):using}");
+        _adminLogger.Add(LogType.ForceFeed, $"{ToPrettyString(user):user} injected {ToPrettyString(target):target} with a solution {SharedSolutionContainerSystem.ToPrettyString(removedSolution):removedSolution} using a {ToPrettyString(entity):using}");
+
+        return;
     }
 
     private void TryDoInjectDoAfter(Entity<HyposprayComponent> entity, ref HyposprayTryInjectDoAfterEvent args)

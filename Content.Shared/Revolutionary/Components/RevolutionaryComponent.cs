@@ -80,6 +80,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._EinsteinEngines.Language; // Goob Station - Revolutionary Language
 using Robust.Shared.GameStates;
 using Content.Shared.StatusIcon;
 using Robust.Shared.Prototypes;
@@ -100,10 +101,16 @@ public sealed partial class RevolutionaryComponent : Component
     public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "RevolutionaryFaction";
 
     /// <summary>
+    /// The language revolutionaries can speak
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadOnly)] // Goob Station - Revolutionary Language
+    public ProtoId<LanguagePrototype> Language { get; set; } = "Revolutionary"; // Goob Station - Revolutionary Language
+
+    /// <summary>
     /// Sound that plays when you are chosen as Rev. (Placeholder until I find something cool I guess)
     /// </summary>
     [DataField]
-    public SoundSpecifier RevStartSound = new SoundPathSpecifier("/Audio/_Goobstation/Ambience/Antag/rev_start.ogg"); // Goobstation - custom rev sfx
+    public SoundSpecifier RevStartSound = new SoundCollectionSpecifier("RevolutionaryStart"); // CorvaxGoob-CustomRevSound
 
     public override bool SessionSpecific => true;
 }

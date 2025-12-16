@@ -160,6 +160,7 @@
     - id: GasLeak
     - id: GreytideVirus
     - id: IonStorm # its calm like 90% of the time smh
+    - id: JobDistributionError
     - id: KudzuGrowth
     - id: MassHallucinations
     - id: MimicVendorRule
@@ -174,9 +175,10 @@
     - id: VentClog
 #    - id: TidemindDevelop - Corvax Goob
     - id: MothroachSpawn # DeltaV
-    - id: XenoVents # DeltaV
     - id: DerelictCyborgSyndicateSpawn # Goobstation - usually calm
     - id: RadiationOutburst #Corvax Goob
+    - id: MalignRiftSpawn # DeltaV
+    - id: FloorGoblinMidRound # Goobstation
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -187,7 +189,7 @@
     - id: KingRatMigration
     - id: NinjaSpawn
     - id: ParadoxCloneSpawn
-    - id: RevenantSpawn
+    #- id: RevenantSpawn  # GoobStation - removed till rework
     - id: SleeperAgents
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
@@ -196,6 +198,10 @@
     - id: LoneAbductorSpawn # Shitmed - Starlight Abductors
     - id: DuoAbductorSpawn # Shitmed - Starlight Abductors
     - id: BingleSpawn #Goobstation - Bingle
+    - id: SlaughterDemonMidround # Goobstation - Slaughter Demon
+    - id: XenomorphsInfestation # WD EDIT
+    #- id: WraithMidround # Goobstation - Wraith
+    #TODO When Slasher is ready- id: SlasherSpawn # Goobstation - The Slasher
 
 - type: entity
   id: BaseStationEvent
@@ -235,6 +241,9 @@
     startAnnouncementColor: "#18abf5"
     startAudio:
       path: /Audio/_CorvaxGoob/Announcements/flux.ogg # CorvaxGoob-Announcements
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/flux.ogg # CorvaxGoob-Announcements
     weight: 8
     duration: 35
     chaos: # Goobstation
@@ -258,6 +267,9 @@
     startAnnouncementColor: "#18abf5"
     startAudio:
       path: /Audio/_CorvaxGoob/Announcements/blusp_anomalies.ogg # CorvaxGoob-Announcements
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/blusp_anomalies.ogg
     weight: 8
     duration: 35
     chaos: # Goobstation
@@ -270,7 +282,7 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    weight: 2
+    weight: 2.5 # CorvaxGoob Changes: 2 > 2.5
     reoccurrenceDelay: 5
     earliestStart: 1
     duration: 1
@@ -287,11 +299,16 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
+    startAudio: # CorvaxGoob-Announcements
+      path: /Audio/_CorvaxGoob/Announcements/apc.ogg
     weight: 7
     duration: 1
     minimumPlayers: 15
     chaos: # Goobstation
       Power: 100
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/e-storm.ogg
     eventType: Maintenance # Goobstation
   # Goobstation
   - type: GameRule
@@ -337,7 +354,7 @@
   - type: StationEvent
     weight: 5
     duration: 1
-    minimumPlayers: 10
+    minimumPlayers: 30 # CorvaxGoob-SpawnRebalance: Changed to from 10
     eventType: Chaotic # Goobstation
   # Goobstation
   - type: GameRule
@@ -350,10 +367,11 @@
   id: DragonSpawn
   components:
   - type: StationEvent
-    weight: 3
-    earliestStart: 45
-    reoccurrenceDelay: 20
-    minimumPlayers: 60
+    weight: 3.5 # Goobstation Changes: 3 > 2 # CorvaxGoob Changes: 2 > 3.5
+    earliestStart: 30 # Goobstation was 45
+    #recorruenceDelay: 20 # Goobstation - no longer needed
+    maxOccurrences: 1 # Goobstation
+    minimumPlayers: 50
     duration: null
     chaos: # Goobstation
       Hostile: 20
@@ -389,10 +407,11 @@
   id: NinjaSpawn
   components:
   - type: StationEvent
-    weight: 6
+    weight: 3.5 # Goobstation Changes: 6 > 3 # CorvaxGoob Changes: 3 > 3.5
     duration: null
-    earliestStart: 45
-    reoccurrenceDelay: 20
+    earliestStart: 30 # Goobstation - was 45
+    #reoccurrenceDelay: 20 # Goobstation - no longer needed
+    maxOccurrences: 1 # Goobstation
     minimumPlayers: 30
     chaos: # Goobstation
       Hostile: 20
@@ -414,6 +433,7 @@
     - Diona
     - Abductor
     - Harpy
+    - Plasmaman # EE
     # Goobstation end
   - type: AntagObjectives
     objectives:
@@ -431,6 +451,8 @@
       max: 1
       pickPlayer: false
       startingGear: SpaceNinjaGear
+      skills: # CorvaxGoob-Skills
+      - All
       roleLoadout:
       - RoleSurvivalEVA
       briefing:
@@ -439,14 +461,6 @@
         sound: /Audio/Misc/ninja_greeting.ogg
       components:
       - type: SpaceNinja
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: NpcFactionMember
         factions:
         - Syndicate
@@ -497,6 +511,8 @@
       max: 1
       pickPlayer: false
       startingGear: ParadoxCloneGear
+      skills: # CorvaxGoob-Skills
+      - All
       roleLoadout:
       - RoleSurvivalVoxTank # give vox something to breath in case they don't get a copy
       - RoleSurvivalPlasmaTank # Goobstation
@@ -506,37 +522,28 @@
         sound: /Audio/Misc/paradox_clone_greeting.ogg
       mindRoles:
       - MindRoleParadoxClone
-      components:
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
 
-- type: entity
-  parent: BaseGameRule
-  id: RevenantSpawn
-  components:
-  - type: StationEvent
-    weight: 3.5
-    duration: 1
-    earliestStart: 30
-    minimumPlayers: 20
-    chaos: # Goobstation
-      Hostile: 20
-      Friend: 20
-      Combat: 40
-      Death: 100
-      Medical: 100
-    eventType: HostilesSpawn # Goobstation
-  # Goobstation
-  - type: GameRule
-    chaosScore: 450
-  - type: RandomSpawnRule
-    prototype: MobRevenant
+#- type: entity   Goobstaion start - disabled until rework
+#  parent: BaseGameRule
+#  id: RevenantSpawn
+#  components:
+#  - type: StationEvent
+#    weight: 3.5
+#    duration: 1
+#    earliestStart: 30
+#    minimumPlayers: 20
+#    chaos: # Goobstation
+#      Hostile: 20
+#      Friend: 20
+#      Combat: 40
+#      Death: 100
+#      Medical: 100
+#    eventType: HostilesSpawn # Goobstation
+#  # Goobstation
+#  - type: GameRule
+#    chaosScore: 450
+#  - type: RandomSpawnRule
+#    prototype: MobRevenant      goobstation end
 
 # Goob - wiz of our own
 #- type: entity
@@ -596,6 +603,12 @@
     startAudio:
       path: /Audio/Announcements/gasleak_start.ogg # CorvaxGoob-Announcements
     endAnnouncement: station-event-gas-leak-end-announcement
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/gasleak_start.ogg
+    announcersEndAudio:
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/gasleak_end.ogg
     weight: 8
     chaos:
       Atmos: 100
@@ -641,6 +654,9 @@
       path: /Audio/Announcements/power_off.ogg
       params:
         volume: -4
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        collection: InternEventPowerOff
     duration: 60
     maxDuration: 120
     eventType: Interference # Goobstation
@@ -659,6 +675,9 @@
     endAnnouncement: station-event-solar-flare-end-announcement
     startAudio:
       path: /Audio/_CorvaxGoob/Announcements/comms_blackout.ogg # CorvaxGoob-Announcements
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/comms_blackout.ogg
     duration: 120
     maxDuration: 240
     chaos: # Goobstation
@@ -691,6 +710,9 @@
     startAnnouncement: station-event-vent-clog-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg # CorvaxGoob-Announcements
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/aliens.ogg
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
@@ -711,9 +733,12 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg # CorvaxGoob-Announcements
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/aliens.ogg
     earliestStart: 20
     minimumPlayers: 15
-    weight: 5
+    weight: 7 # Goobstation - was 5
     duration: 30 # DeltaV: was 60, used as a delay now
     chaos: # Goobstation
       Hostile: 20
@@ -737,9 +762,12 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/aliens.ogg
     earliestStart: 20
     minimumPlayers: 15
-    weight: 5
+    weight: 7 # Goobstation - was 5
     duration: 30 # DeltaV: was 60, used as a delay now
     chaos: # Goobstation
       Hostile: 20
@@ -763,9 +791,12 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/aliens.ogg
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/aliens.ogg
     earliestStart: 20
     minimumPlayers: 15
-    weight: 5
+    weight: 7 # Goobstation - was 5
     duration: 30 # DeltaV: was 60, used as a delay now
     chaos: # Goobstation
       Hostile: 20
@@ -786,9 +817,12 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/aliens.ogg
     earliestStart: 45 # DeltaV - was 20
     minimumPlayers: 30 # DeltaV - was 20
-    weight: 1 # DeltaV - was 1.5
+    weight: 4 # Goobstation Changes: 1.5 > 3 # CorvaxGoob Changes: 3 > 4
     duration: 30 # DeltaV: was 60, used as a delay now
     chaos: # Goobstation
       Hostile: 20
@@ -807,9 +841,9 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    earliestStart: 90
+    earliestStart: 60 # Goobstation - was 90 (impossible on goob)
     minimumPlayers: 40
-    weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
+    weight: 1.5 # Zombies was happening basically every single survival round, so now it's super rare # CorvaxGoob Changes: 1 > 1.5
     duration: 1
     chaos: # Goobstation
       Hostile: 100
@@ -825,6 +859,8 @@
     - prefRoles: [ InitialInfected ]
       max: 3
       playerRatio: 10
+      skills: # CorvaxGoob-Skills
+      - All
       blacklist:
         components:
         - BibleUser
@@ -840,14 +876,6 @@
         maxInitialInfectedGrace: 450
       - type: ZombifyOnDeath
       - type: IncurableZombie
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: InitialInfected
       mindRoles:
       - MindRoleInitialInfected
@@ -858,13 +886,13 @@
   components:
   - type: StationEvent
     earliestStart: 35
-    weight: 5.5
-    minimumPlayers: 20
+    weight: 3 # Goobstation Changes: 5.5 > 2.5 # CorvaxGoob Changes: 2.5 > 3
+    minimumPlayers: 50 # Goobstation - was 20
     duration: 1
     chaos: # Goobstation
-      Hostile: 60
-      Medical: 75
-      Death: 100
+      Hostile: 200
+      Medical: 200
+      Death: 200
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
@@ -882,18 +910,12 @@
       pickPlayer: false
       startingGear: SyndicateLoneOperativeGearFull
       unequipOldGear: true
+      skills: # CorvaxGoob-Skills
+      - All
       roleLoadout:
       - RoleSurvivalNukie
       components:
       - type: NukeOperative
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: RandomMetadata
         nameSegments:
         - NamesSyndicatePrefix
@@ -902,9 +924,6 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
-      - type: AutoImplant
-        implants:
-        - DeathAcidifierImplant # Goobstation
       mindRoles:
       - MindRoleNukeops
   - type: AntagLoadProfileRule # Goobstation
@@ -923,6 +942,9 @@
     startAnnouncement: station-event-communication-interception
     startAudio:
       path: /Audio/Announcements/intercept.ogg
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/intercept.ogg
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
     eventType: HostilesSpawn # Goobstation
@@ -937,19 +959,12 @@
       max: 2
       playerRatio: 10
       chaosScore: 200 # Goobstation - same as roundstart traitor gamerule
+      skills: # CorvaxGoob-Skills
+      - All
       blacklist:
         components:
         - AntagImmune
         - CommandStaff
-      components: # CorvaxGoob-Skills
-      - type: Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       mindRoles:
       - MindRoleTraitorSleeper
 
@@ -990,6 +1005,9 @@
     eventType: Chaotic # Goobstation
     startAudio:
       path: /Audio/_CorvaxGoob/Adminbuse/i-storm1.ogg # CorvaxGoob-Announcements
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/i-storm1.ogg
   # Goobstation
   - type: GameRule
     chaosScore: 150
@@ -1020,7 +1038,10 @@
   components:
   - type: StationEvent
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/_CorvaxGoob/Announcements/greytide.ogg # CorvaxGoob-Announcements #base:/Audio/Announcements/attention.ogg
+    announcersStartAudio: # CorvaxGoob-CustomAnnouncers
+      Intern:
+        path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/greytide.ogg
     weight: 5
     minimumPlayers: 25
     reoccurrenceDelay: 20
@@ -1083,24 +1104,3 @@
       min: 1
       max: 1
       pickPlayer: false
-
-- type: entity
-  id: AncientRogueKingSpawn
-  parent: BaseStationEventShortDelay
-  components:
-  - type: StationEvent
-    earliestStart: 20
-    weight: 8
-    duration: 10
-    minimumPlayers: 45
-    chaos: # Goobstation
-      Hostile: 100
-      Friend: 20
-      Combat: 100
-      Death: 100
-      Medical: 100
-    eventType: HostilesSpawn
-  - type: GameRule
-    chaosScore: 400
-  - type: RandomSpawnRule
-    prototype: CMMobXenoRogueKingSentient

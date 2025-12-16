@@ -20,6 +20,8 @@
     inverted: true
     species:
     - IPC
+    - Plasmaman
+    - Abductor # CorvaxGoob-Species
   guides: [ Zombies ]
 
 - type: antag
@@ -33,4 +35,5 @@
     inverted: true
     species:
     - IPC
+    - Plasmaman
   guides: [ Zombies ]

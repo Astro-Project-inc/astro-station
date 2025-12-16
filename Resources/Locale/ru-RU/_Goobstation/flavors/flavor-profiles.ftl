@@ -10,7 +10,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-flavor-base-futuristic = футуристический
+flavor-base-futuristic = футуристичный
 flavor-base-offensive = оскорбительный
 flavor-base-sigma = сигма
 flavor-complex-fentanyl = как горящая смола
@@ -19,3 +19,4 @@ flavor-base-alienblood = инопланетный
 flavor-base-old = старый
 flavor-base-robust = крепкий
 flavor-complex-unicorntears = как слёзы единорога
+flavor-base-chuddy = приятный

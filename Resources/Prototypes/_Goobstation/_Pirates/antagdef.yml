@@ -11,6 +11,14 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-syndicate-agent-objective
+  requirements:
+  - !type:OverallPlaytimeRequirement
+      time: 36000 #10 hrs
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - Plasmaman
+    - Abductor # CorvaxGoob-Species
 
 - type: entity
   parent: BaseMindRoleAntag

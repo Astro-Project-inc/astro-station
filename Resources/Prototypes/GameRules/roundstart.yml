@@ -161,7 +161,9 @@
     - id: Heretic # goob edit
       prob: 0.2
     - id: Devil # Goob
-      prob: 0.1
+      prob: 0.02
+    - id: Shadowling # Goob
+      prob: 0.02
 
 - type: entity
   parent: BaseGameRule
@@ -230,6 +232,7 @@
   - type: NukeopsRule
   - type: RuleGrids
   - type: AntagSelection
+    agentName: nukeops-roundend-name # Goobstation
   - type: AntagLoadProfileRule
     speciesOverride: Human
     speciesOverrideBlacklist:
@@ -238,6 +241,11 @@
     #Balance concerns are not a valid reason to disable a species, except for high-impact Nukie-specific exploits.
     #- Vox
     - Yowie # Goobstation
+    - Plasmaman # EE
+  - type: AntagObjectives # Goobstation
+    objectives:
+    - NukeopsDetonateObjective
+
 
 - type: entity
   parent: BaseNukeopsRule
@@ -256,17 +264,11 @@
       startingGear: SyndicateCommanderGearFull
       unequipOldGear: true
       chaosScore: 300 # Goobstation
+      skills: # CorvaxGoob-Skills
+      - All
       roleLoadout:
       - RoleSurvivalNukie
       components:
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
@@ -283,17 +285,11 @@
       startingGear: SyndicateOperativeMedicFull
       unequipOldGear: true
       chaosScore: 300 # Goobstation
+      skills: # CorvaxGoob-Skills
+      - All
       roleLoadout:
       - RoleSurvivalNukie
       components:
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
@@ -314,17 +310,11 @@
       chaosScore: 300 # Goobstation
       startingGear: SyndicateOperativeGearFull
       unequipOldGear: true
+      skills: # CorvaxGoob-Skills
+      - All
       roleLoadout:
       - RoleSurvivalNukie
       components:
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
@@ -347,15 +337,6 @@
   # TODO: uplink in yml
   - type: AntagSelection
     agentName: traitor-round-end-agent-name
-    components:
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
 
 - type: entity
   abstract: true
@@ -400,21 +381,14 @@
       max: 8
       playerRatio: 10
       chaosScore: 150 # Goobstation
+      skills: # CorvaxGoob-Skills
+      - All
       blacklist:
         components:
         - CommandStaff # Goobstation
         - AntagImmune
         - Changeling # Goobstation
       lateJoinAdditional: true
-      components:
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       mindRoles:
       - MindRoleTraitor
 
@@ -432,6 +406,8 @@
     - prefRoles: [ HeadRev ]
       max: 3
       playerRatio: 15
+      skills: # CorvaxGoob-Skills
+      - All
       blacklist:
         components:
         - CommandStaff # Goobstation
@@ -444,14 +420,6 @@
       components:
       - type: Revolutionary
       - type: HeadRevolutionary
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       mindRoles:
       - MindRoleHeadRevolutionary
 
@@ -540,10 +508,13 @@
       max: 4
       playerRatio: 15
       jobBlacklist: [ Chaplain ] # Goobstation
+      skills: # CorvaxGoob-Skills
+      - All
       blacklist:
         components:
         - CommandStaff # Goobstation
         - ZombieImmune
+        - AntagImmune
       briefing:
         text: zombie-patientzero-role-greeting
         color: Plum
@@ -553,14 +524,6 @@
       - type: ZombifyOnDeath
       - type: IncurableZombie
       - type: InitialInfected
-      - type: Skills # CorvaxGoob-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
       mindRoles:
       - MindRoleInitialInfected
 

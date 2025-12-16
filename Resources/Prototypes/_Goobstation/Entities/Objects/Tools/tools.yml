@@ -186,6 +186,8 @@
     notificationPrefix: prayer-chat-notify-centcom
     verb: prayer-verbs-call
     verbImage: null
+    notificationSound:
+      path: /Audio/_Goobstation/Misc/phone_ring.ogg
   - type: MultiHandedItem
 
 - type: entity
@@ -204,6 +206,8 @@
     notificationPrefix: prayer-chat-notify-centcom
     verb: prayer-verbs-call
     verbImage: null
+    notificationSound:
+      path: /Audio/_Goobstation/Misc/phone_ring.ogg
   - type: Sprite
     sprite: _Goobstation/Objects/Tools/official_fax.rsi
     drawdepth: SmallObjects
@@ -236,3 +240,14 @@
   - type: AutoRecharge
     rechargeDuration: 10
 
+- type: entity
+  parent: RCD
+  id: RCDRechargingCE
+  name: experimental RCD
+  description: Rapid Construction Device which creates compressed matter on the fly using an internal fabricator.
+  suffix: AutoRecharge
+  components:
+  - type: LimitedCharges
+    maxCharges: 20
+  - type: AutoRecharge
+    rechargeDuration: 10

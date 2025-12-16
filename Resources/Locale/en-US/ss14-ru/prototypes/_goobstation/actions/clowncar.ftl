@@ -1,4 +1,6 @@
 ent-ActionThankDriver = Thank Driver
-    .desc = show the driver you enjoy being a passenger
+    .desc = Show the driver you enjoy being a passenger
 ent-ActionQuietBackThere = Quiet back there
-    .desc = tell the passengers to be quiet
+    .desc = Tell the passengers to be quiet
+ent-ActionDrivingWithStyle = JukeBox
+    .desc = Drive with music

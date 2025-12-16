@@ -138,6 +138,7 @@
 # SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 august-sun <45527070+august.sun@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
@@ -160,7 +161,9 @@
     sprite: Clothing/Belt/utility.rsi
   - type: Storage
     maxItemSize: Normal
-    # TODO: Fill this out more.
+    # Don't add more than absolutely needed to this whitelist!
+    # Utility belts shouldn't just be free extra storage.
+    # This is only intended for basic engineering equipment.
     whitelist:
       tags:
         - Powerdrill
@@ -180,12 +183,14 @@
         - JawsOfLife
         - GPS
         - WeldingMask
+        - RemoteSignaller
         - Hammer # Goobstation
         - Nailgun # Goobstation
         - MagazineNailgun # Goobstation
       components:
         - StationMap
         - SprayPainter
+        - SprayPainterAmmo
         - NetworkConfigurator
         - RCD
         - RCDAmmo
@@ -273,6 +278,7 @@
       components:
         - StationMap
         - SprayPainter
+        - SprayPainterAmmo
         - NetworkConfigurator
         - RCD
         - RCDAmmo
@@ -340,6 +346,7 @@
         - EnergySpeedloader # Goobstation
         - Sidearm # Goobstation
         - PepperSpray # Goobstation
+        - BolaEnergy # CorvaxGoob
       components:
         - Stunbaton
         - FlashOnTrigger
@@ -388,6 +395,8 @@
         - WetFloorSign
         - HolosignProjector
         - Plunger
+        - Keyring # Goobstation
+        - WireBrush
       components:
         - LightReplacer
         - SmokeOnTrigger
@@ -406,6 +415,10 @@
         whitelist:
           tags:
           - Wrench
+      keyring: # Goobstation
+        whitelist:
+          tags:
+          - Keyring
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
 
@@ -701,7 +714,7 @@
   - type: ItemSlots
     slots:
       item:
-        name: Sabre
+        # name: Sabre # CorvaxGoob-Loc-in-UI
         insertVerbText: sheath-insert-verb
         ejectVerbText: sheath-eject-verb
         insertSound: /Audio/Items/sheath.ogg
@@ -745,7 +758,7 @@
   - type: ItemSlots
     slots:
       item:
-        name: Handgun
+        # name: Handgun # CorvaxGoob-Loc-in-UI
         whitelist:
           tags:
           - Sidearm
@@ -775,7 +788,7 @@
   - type: ItemSlots
     slots:
       item:
-        name: Gun
+        # name: Gun # CorvaxGoob-Loc-in-UI
         whitelist:
           components:
           - Gun
@@ -847,6 +860,46 @@
     sprite: Clothing/Belt/salvagewebbing.rsi
   - type: Clothing
     sprite: Clothing/Belt/salvagewebbing.rsi
+    # CorvaxGoob-WorkBelts-Techfab-start
+  - type: Storage
+    maxItemSize: Normal
+    whitelist:
+      tags:
+        - Powerdrill
+        - Wirecutter
+        - Crowbar
+        - Screwdriver
+        - Flashlight
+        - Wrench
+        - GeigerCounter
+        - Flare
+        - CableCoil
+        - CigPack
+        - Radio
+        - HolofanProjector
+        - Multitool
+        - AppraisalTool
+        - JawsOfLife
+        - GPS
+        - WeldingMask
+        - RemoteSignaller
+        - Hammer # Goobstation
+        - Nailgun # Goobstation
+        - MagazineNailgun # Goobstation
+      components:
+        - StationMap
+        - SprayPainter
+        - SprayPainterAmmo
+        - NetworkConfigurator
+        - RCD
+        - RCDAmmo
+        - Welder
+        - PowerCell
+        - Geiger
+        - TrayScanner
+        - GasAnalyzer
+        - HandLabeler
+    # CorvaxGoob-WorkBelts-Techfab-end
 
 - type: entity
   parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseSyndicateContraband]

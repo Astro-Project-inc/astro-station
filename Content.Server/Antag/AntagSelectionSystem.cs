@@ -94,7 +94,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Linq;
+using Content.Server._CorvaxGoob.Skills;
 using Content.Server.Antag.Components;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
@@ -132,6 +132,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using System.Linq;
 
 namespace Content.Server.Antag;
 
@@ -150,6 +151,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly InventorySystem _inventory = default!; // Goobstation
     [Dependency] private readonly PlayTimeTrackingManager _playTime = default!; // Goobstation
+    [Dependency] private readonly SkillsSystem _skills = default!; // CorvaxGoob-Skills
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
 
     // arbitrary random number to give late joining some mild interest.
@@ -162,7 +164,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
         Log.Level = LogLevel.Debug;
 
-        SubscribeLocalEvent<GhostRoleAntagSpawnerComponent, TakeGhostRoleEvent>(OnTakeGhostRole);
+        SubscribeLocalEvent<GhostRoleAntagSpawnerComponent, TakeGhostRoleEvent>(OnTakeGhostRole, after: new[] {typeof(GhostRoleSystem)}); // WD EDIT
 
         SubscribeLocalEvent<AntagSelectionComponent, ObjectivesTextGetInfoEvent>(OnObjectivesTextGetInfo);
 
@@ -345,6 +347,22 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         ChooseAntags((uid, component), players, midround: true);
         AssignPreSelectedSessions((uid, component));
     }
+
+    // Goobstation
+/*    public Dictionary<ICommonSession, float> ToWeightsDict(IList<ICommonSession> pool)
+    {
+        Dictionary<ICommonSession, float> weights = new();
+
+        // weight by playtime since last rolled
+        foreach (var se in pool)
+        {
+            var lastRoll = (float)(_playTime.GetOverallPlaytime(se) - _lastRolled.GetLastRolled(se.UserId)).TotalSeconds;
+            //weight clamped between 5 hours and 20 hours
+            weights[se] = float.Clamp(lastRoll, 18000.0f, 72000.0f);
+        }
+
+        return weights;
+    }*/
 
     /// <summary>
     /// Chooses antagonists from the given selection of players
@@ -599,6 +617,9 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         // goob edit - actual pacifism implant
         foreach (var special in def.Special)
             special.AfterEquip(ent);
+
+        if (def.Skills is not null && def.Skills.Count > 0) // CorvaxGoob-Skills
+            _skills.GrantSkill(player, def.Skills);
 
         var afterEv = new AfterAntagEntitySelectedEvent(session, player, ent, def);
         RaiseLocalEvent(ent, ref afterEv, true);
