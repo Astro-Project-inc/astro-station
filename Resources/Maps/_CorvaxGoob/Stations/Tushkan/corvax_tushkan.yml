@@ -2,10 +2,10 @@ meta:
   format: 7
   category: Map
   engineVersion: 264.0.0
-  forkId: syndicate-goob
-  forkVersion: 85768a3337a8ccb00e2e6f5b27b81a4b5c68e36e
-  time: 12/17/2025 19:12:13
-  entityCount: 11678
+  forkId: ""
+  forkVersion: ""
+  time: 12/17/2025 19:48:40
+  entityCount: 11679
 maps:
 - 1
 grids:
@@ -25653,6 +25653,11 @@ entities:
     components:
     - type: Transform
       pos: 33.5,36.5
+      parent: 2
+  - uid: 11643
+    components:
+    - type: Transform
+      pos: 5.5,37.5
       parent: 2
 - proto: CableMVStack
   entities:
