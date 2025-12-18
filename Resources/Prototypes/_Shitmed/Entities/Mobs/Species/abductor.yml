@@ -103,6 +103,9 @@
   - type: Hunger
   - type: Thirst
   - type: FootprintOwner
+  - type: Absorbable # Goobstation - changelings
+  - type: WraithAbsorbable # Goobstation - wraith
+  - type: OfferItem # CorvaxGoob-Offer
   # Corvax-Goob-GraysResprite-end
 
 - type: entity
