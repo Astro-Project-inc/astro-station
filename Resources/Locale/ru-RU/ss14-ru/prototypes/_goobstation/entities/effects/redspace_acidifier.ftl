@@ -1,4 +1,4 @@
-ent-BluespaceLifeline = блюспейс коридор
+ent-RedspaceLifeline = редспейс коридор
     .desc = Телепортирует ваше тело, чтобы спасти жизнь!
-ent-BluespaceLifelineSpawnCore = блюспейс коридор
+ent-RedspaceLifelineSpawnCore = редспейс коридор
     .desc = Телепортирует ваше тело, чтобы спасти жизнь!
