@@ -49,7 +49,6 @@
   - type: SurgeryTarget
   - type: Bloodstream
     bloodReagent: AlienBlood
-  - type: FootprintOwner # CorvaxGoob-Footprints
   - type: Temperature
     heatDamageThreshold: 320
     currentTemperature: 310.15
