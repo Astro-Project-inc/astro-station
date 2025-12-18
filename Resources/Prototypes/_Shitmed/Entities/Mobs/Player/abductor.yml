@@ -20,7 +20,7 @@
   - BaseMobSpecies
   - MobAtmosStandard
   - BaseMobDisgust # Goobstation
-  id: MobAbductorAntag
+  id: MobAbductorAntag 
   abstract: true
   components:
   - type: Absorbable # BLOOD FOR THE BLOOD GOD
