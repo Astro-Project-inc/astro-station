@@ -75,6 +75,7 @@
   icon: "JobIconChaplain"
   supervisors: job-supervisors-hop
   #goobcoins: 25 #Goob content Corvax-Goob-coins
+  guides: [ Chaplain ] # goobstation
   access:
   - Chapel
   - Maintenance
@@ -85,6 +86,7 @@
     - type: Condemned
       soulOwnedNotDevil: true # This just means they won't suffer the effects of being condemned, while still not being able to sell their soul. - Goobstation
     - type: CanEnchant #GoobStation
+    - type: CurseImmune # Immune to curses of wraith plaguebringer - Goobstation
 
 - type: startingGear
   id: ChaplainGear
@@ -97,6 +99,7 @@
     - ChaplainUndeterminedBible
     - RubberStampChaplain
     - Nullrod
+    - ArmamentsBeacon # Goobstation
 
 - type: chameleonOutfit
   id: ChaplainChameleonOutfit
@@ -108,4 +111,3 @@
     neck: ClothingNeckStoleChaplain
     outerClothing: ClothingOuterPlagueSuit
     gloves: ClothingHandsGlovesColorBlack
-
