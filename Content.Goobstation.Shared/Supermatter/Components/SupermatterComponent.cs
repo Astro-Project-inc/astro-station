@@ -126,11 +126,11 @@ public sealed partial class SupermatterComponent : Component
 
     [DataField]
     [ViewVariables(VVAccess.ReadOnly)]
-    public SoundSpecifier AccentSoundsNormal;
+    public SoundSpecifier AccentSoundsNormal = new SoundCollectionSpecifier("SupermatterNormalAccents");
 
     [DataField]
     [ViewVariables(VVAccess.ReadOnly)]
-    public SoundSpecifier AccentSoundsDelam;
+    public SoundSpecifier AccentSoundsDelam = new SoundCollectionSpecifier("SupermatterDelamAccents");
 
     /// <summary>
     /// The time at which the next sound will play.

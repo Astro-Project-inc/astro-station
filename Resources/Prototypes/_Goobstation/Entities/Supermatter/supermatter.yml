@@ -29,12 +29,6 @@
         components:
           - Body
           - Item
-      # CorvaxGoob-SM-Accent-Sounds-Start
-      accentSoundsNormal:
-        collection: SupermatterNormalAccents
-      accentSoundsDelam:
-        collection: SupermatterDelamAccents
-      # CorvaxGoob-SM-Accent-Sounds-End
     - type: RadiationSource
     - type: AmbientSound
       range: 5

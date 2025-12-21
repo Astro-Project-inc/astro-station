@@ -527,18 +527,16 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
         if (comp.Activated == false)
             return;
 
-        // Chooses what sound to play, based on damage of the SM
+        if (_gameTiming.CurTime < comp.NextAccentSound)
+            return;
+
+        // Chooses what sound to play, based on damage to the SM
         var randomSound = comp.Damage > comp.WarningPoint
             ? comp.AccentSoundsDelam
             : comp.AccentSoundsNormal;
 
-        if (_gameTiming.CurTime >= comp.NextAccentSound)
-        {
-            _audio.PlayPredicted(randomSound, uid, uid);
-            ResetAccentSounds(uid);
-        }
-
-        Dirty(uid, comp);
+        _audio.PlayPredicted(randomSound, uid, uid);
+        ResetAccentSounds(uid);
     }
 
     /// <summary>
@@ -553,9 +551,6 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
         comp.NextAccentSound = _gameTiming.CurTime +
                                TimeSpan.FromSeconds(_rand.Next(comp.MinSoundPlaytime.Seconds,
                                    comp.MaxSoundPlaytime.Seconds));
-
-        Dirty(uid, comp);
-
     }
     // CorvaxGoob-SM-Accent-Sounds-End
 
