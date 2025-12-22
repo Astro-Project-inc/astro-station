@@ -13,7 +13,7 @@ alerts-changeling-biomass-desc = Это твоё здоровье. Если до
 alerts-changeling-fleshmend-name = Восстановить плоть
 alerts-changeling-fleshmend-desc = Ушибы быстро залечиваются! Ожоги и удушье лечатся медленнее. [color=red]Исцеление прекратится в случае поджога.[/color]
 alerts-changeling-adrenaline-name = Резерв адреналина
-alerts-changeling-adrenaline-desc = Оглушение, сбивание с ног и большинство способов обездвиживания не оказывают эффекта!
+alerts-changeling-adrenaline-desc = Иммунитет к оглушению, сбиванию с ног и большинству эффектов обездвиживания!
 alerts-changeling-panacea-name = Панацея
 alerts-changeling-panacea-desc = Нефизический урон исцеляется! Болезни, химикаты и воздействия наркотиков очищаются. [color=red]Эффекты прекратятся после контакта с огнём или смерти.[/color]
 alerts-changeling-voidadapt-name = Вакуумная адаптация
