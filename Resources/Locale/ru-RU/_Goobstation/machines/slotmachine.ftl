@@ -12,6 +12,6 @@ advertisement-slotmachine-4 = ДАЙ ЕЩЁ! ДАЙ ЕЩЁ! ДАЙ ЕЩЁ!!!
 advertisement-slotmachine-5 = ЧТООООООООО!!! Эй, это мало. А, так это супер мало...
 advertisement-slotmachine-6 = Единственная рука, которая тебе даёт.
 coinflipper-win = Победа! Вы выиграли { $amount } кредитов!
-clawmachine-fail-self = Вы облажались и выронили плюшку!
+clawmachine-fail-self = Вы облажались и выронили игрушку!
 clawmachine-fail-other = { $user } облажался и выронил плюшку!
 clawmachine-fail-generic = Плюшка выпала из когтей. Какая жалость...
