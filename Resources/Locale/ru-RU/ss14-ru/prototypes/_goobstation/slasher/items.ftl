@@ -7,6 +7,6 @@ ent-ClothingOuterSlasherApron = фартук мясника
 ent-ClothingHandsSlasherGloves = перчатки мясника
     .desc = Тяжелые чёрные перчатки, запятнанные кровью.
 ent-ClothingShoesSlasher = ботинки мясника
-    .desc = Старые кожаные ботинки, знававшие лучшие времена.
+    .desc = Старые кожаные ботинки, знавшие лучшие времена.
 ent-SlasherMeatSpike = зловещий мясной крюк
     .desc = Возможно, вам стоит бежать.
