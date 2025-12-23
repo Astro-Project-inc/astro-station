@@ -3,7 +3,7 @@ signal-port-description-powered = Этот порт активируется с 
 signal-port-name-plumbing-input = Труба: Вход
 signal-port-description-plumbing-input = Слот автоматизации трубы для подачи жидкостей.
 signal-port-name-plumbing-output = Труба: Выход
-signal-port-description-plumbing-output = Слот автоматизации трубы для вывод жидкостей.
+signal-port-description-plumbing-output = Слот автоматизации трубы для вывода жидкостей.
 signal-port-name-plumbing-dispenser = Труба: Раздатчик
 signal-port-description-plumbing-dispenser = Слот автоматизации трубы для подачи жидкостей в колбу раздатчик или из неё.
 
