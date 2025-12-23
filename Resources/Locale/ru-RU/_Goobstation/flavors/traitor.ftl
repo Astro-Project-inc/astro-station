@@ -20,7 +20,7 @@ traitor-cybersunindustries-allies = Доверяйте только другим
 traitor-cybersunindustries-uplink = Вам выдали инструменты для выполнения задания — аплинк Синдиката в вашем КПК.
 traitor-cybersunindustries-roundend = [color=yellow]специалист из Cybersun Industries[/color]
 traitor-corporateclimber-intro = Вы — Корпоративная крыса.
-traitor-corporateclimber-goal = Killing needlessly would make you some kind of traitor, or at least definitely seen as one. This is all just a means to an end.
+traitor-corporateclimber-goal = Бессмысленные убийства сделают тебя предателем или, как минимум, тебя именно так и воспримут. Всё это лишь средство достижения цели.
 traitor-corporateclimber-allies = Death to the Syndicate.
 traitor-corporateclimber-uplink = You have connections to the black market for the deeds. Your uplink is located in your PDA. Knock off a few loose weights, and your climb will be so much smoother.
 traitor-corporateclimber-roundend = [color=yellow]a corporate climber.[/color]
