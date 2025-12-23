@@ -13,7 +13,7 @@ apprentice-roundend-name = подмастерье
 roles-wizard-name = Маг
 roles-wizard-objective = Семь бед и разрушений на станции.
 dynamic-gamerule-wizard-title = [color=cyan]Маг[/color]
-objective-issuer-wizard-federation = [color=cyan]Федерация Space Wizard[/color]
+objective-issuer-wizard-federation = [color=cyan]Конфедерация магов[/color]
 wizard-role-greeting = Вы — могущественный космический маг. Ваша цель — сеять хаос и разрушения на { $station } и выжить. Федерация Space Wizard предоставила вам волшебный гримуар, с помощью которого вы можешь изучать разрушительные заклинания.
 wizard-role-briefing = Вы — могущественный космический маг. Выживи и посей хаос на станции.
 apprentice-role-briefing = Вы — подмастерье космического мага. Сохраняй в живых того, кто тебя призвал.
