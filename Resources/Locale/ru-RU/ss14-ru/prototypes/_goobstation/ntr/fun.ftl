@@ -1,6 +1,6 @@
 ent-Marlen = марлен
     .desc = Стильный, изящный сувенир из прочной дюраткани от "NanoFashion". Выглядит дорого.
-ent-VendingMachineCigsDeluxe = ShadyCigs Ultra Premium Pro DLC Deluxe
+ent-VendingMachineCigsDeluxe = ShadyCigs Ультра Премиум DLC Делюкс
     .desc = Если у вас дома нет такой штуки, то вы не можете называть себя курильщиком.
 ent-SoapGold = золотое мыло
     .desc = Наконец-то, вы заставили поскользнуться 1000 человек и разблокировали золотое мыло. Пахнет виски.
