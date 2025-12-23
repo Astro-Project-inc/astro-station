@@ -1,5 +1,5 @@
 signal-port-name-powered = Запитан
-signal-port-description-powered = Этот порт задействуется с высоким или низким уровнем, в зависимости от питания.
+signal-port-description-powered = Этот порт активируется с высоким или низким уровнем, в зависимости от питания.
 signal-port-name-plumbing-input = Труба: Вход
 signal-port-description-plumbing-input = Слот автоматизации трубы для подачи жидкостей.
 signal-port-name-plumbing-output = Труба: Выход
