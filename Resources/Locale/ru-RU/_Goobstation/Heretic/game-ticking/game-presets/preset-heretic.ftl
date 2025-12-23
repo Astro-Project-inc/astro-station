@@ -36,7 +36,7 @@ heretic-ghoul-greeting-noname =
     Вы были призван из бездны.
     Подчиняйтесь приказам своих хозяев во что бы то ни стало.
 heretic-ghoul-briefing-start = Вы были призваны в этот мир { CAPITALIZE($ent) }!
-heretic-ghoul-briefing-start-noname = Вы были призваны в этот мир эльдрической силой.
+heretic-ghoul-briefing-start-noname = Вы были призваны в этот мир сверхъестественной силой.
 heretic-ghoul-briefing-end =
     Подчиняйтесь воле своего призывателя, не смотря ни на что.
     

@@ -1,1 +1,1 @@
-objective-condition-teach-lesson-title = Преподайте урок { $targetName }, { CAPITALIZE($job) }
+objective-condition-teach-lesson-title = Проучите { $targetName }, { CAPITALIZE($job) }

@@ -50,4 +50,4 @@ job-description-zookeeper = Устройте весёлое шоу с милым
 # event-restricted jobs, Goobstation
 job-description-command-maid = Прибирайтесь в бриге, на мостике, и в остальных местах, в которых вам прикажет командование.
 job-description-security-clown = Выполняйте работу сотрудников Службы Безопасности, но с щепоткой клоунской натуры.
-job-description-party-maker = Устройте на станции тотальный расколбас!
+job-description-party-maker = Устройте на станции тотальный расколбас. Шейкер-шейкер!
