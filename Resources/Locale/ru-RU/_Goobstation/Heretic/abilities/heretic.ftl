@@ -27,7 +27,7 @@ mansus-grasp-trigger-fail = Что-то мешает вам активирова
 ## blade
 
 heretic-blade-examine = [color=yellow]Использование этого предмета в руке разрушит клинок и телепортирует вас подальше от опасности.[/color]
-heretic-blade-break-fail-acended-message = Вы не можете сломать клинок во время вознесения!
+heretic-blade-break-fail-acended-message = Вы не можете сломать клинок после вознесения!
 heretic-blade-use = Клинок рассыпается, и вы чувствуете, как голоса утаскивают вас.
 heretic-riposte-used = Контратака применена!
 heretic-riposte-available = Контратака доступна!
