@@ -23,7 +23,7 @@ traitor-corporateclimber-intro = Вы — Корпоративная крыса.
 traitor-corporateclimber-goal = Бессмысленные убийства сделают тебя предателем или, как минимум, тебя именно так и воспримут. Всё это лишь средство достижения цели.
 traitor-corporateclimber-allies = Смерть Синдикату.
 traitor-corporateclimber-uplink = У тебя есть связи на чёрном рынке для подобных дел. Аплинк в твоем КПК. Сбрось пару якорей, и твой подъём по карьерной лестнице будет куда приятнее.
-traitor-corporateclimber-roundend = [color=yellow]a corporate climber.[/color]
+traitor-corporateclimber-roundend = [color=yellow]корпоративная крыса.[/color]
 traitor-donkcorporation-intro = Вы — внедрённый агент Donk Co.
 traitor-donkcorporation-goal = Мы не одобряем бессмысленные убийства невинных работников. Наш девиз: прийти, сделать дело, уйти.
 traitor-donkcorporation-allies = Убивайте сотрудников Waffle Co. на месте. Пока мы здесь, им не место на станции.
