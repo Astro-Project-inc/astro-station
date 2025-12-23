@@ -40,7 +40,7 @@ ghost-role-information-special-operations-officer-name = Офицер Спецо
 ghost-role-information-special-operations-officer-description = Отправляйте, инструктируйте и управляйте отрядами быстрого реагирования и другими силами NanoTrasen.
 ghost-role-information-special-operations-officer-rules = Доставьте представителя NanoTrasen живым, остальные — цифра в статистике. Приказы [color=#yellow][bold]Капитана ВМС[/bold][/color] могут изменить это.
 ghost-role-information-navy-officer-name = Офицер ВМС
-ghost-role-information-navy-officer-description = Отвечайте на факсы и радиосообщения Центрального Командования. Проводите станционные и расследования экипажа.
+ghost-role-information-navy-officer-description = Отвечайте на факсы и радиосообщения Центрального Командования. Проводите расследования над станцией и её экипажем.
 ghost-role-information-navy-officer-rules = Следуйте приказам [color=#yellow][bold]Капитана ВМС[/bold][/color]. При его отсутствии принимайте решения самостоятельно.
 ghost-role-information-navy-officer-undercover-name = Офицер ВМС под прикрытием
 ghost-role-information-navy-officer-undercover-description = Выполняйте задачи и ликвидируйте назначенные цели. Слава NanoTrasen!
