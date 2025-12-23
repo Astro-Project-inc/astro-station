@@ -53,6 +53,6 @@ JobNavyCaptain = капитан ВКФ
 JobDiplomat = дипломат NanoTrasen
 JobRoboticist = робототехник
 JobGovernmentMan = G-Man
-JobConquest = конквест
+JobConquest = Конквест
 JobInspector = инспектор ЦК
 JobMercenaryCaptain = капитан Наёмников
