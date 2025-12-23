@@ -24,5 +24,5 @@ ent-ClothingShoesBootsWinterSnowjackBso = зимние ботинки блюши
     .desc = Для тех случаев, когда нужно спасти разум от испытаний на исследовательской станции в Антарктиде.
 ent-ClothingShoesWinterCombatBoots = боевые снежные ботинки
     .desc = Боевые ботинки службы безопасности NanoTrasen для боевых ситуаций. Теперь в зимнем исполнении.
-ent-ClothingShoesBootsCowboyBrownRobust = аутентичные коричневые ковбойские ботинки
+ent-ClothingShoesBootsCowboyBrownRobust = истинные коричневые ковбойские ботинки
     .desc = Для настоящих ковбоев.
