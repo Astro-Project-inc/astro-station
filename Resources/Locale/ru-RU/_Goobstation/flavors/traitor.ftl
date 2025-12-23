@@ -22,7 +22,7 @@ traitor-cybersunindustries-roundend = [color=yellow]специалист из Cy
 traitor-corporateclimber-intro = Вы — Корпоративная крыса.
 traitor-corporateclimber-goal = Бессмысленные убийства сделают тебя предателем или, как минимум, тебя именно так и воспримут. Всё это лишь средство достижения цели.
 traitor-corporateclimber-allies = Смерть Синдикату.
-traitor-corporateclimber-uplink = You have connections to the black market for the deeds. Your uplink is located in your PDA. Knock off a few loose weights, and your climb will be so much smoother.
+traitor-corporateclimber-uplink = У тебя есть связи на чёрном рынке для подобных дел. Аплинк в твоем КПК. Сбрось пару якорей, и твой подъём по карьерной лестнице будет куда приятнее.
 traitor-corporateclimber-roundend = [color=yellow]a corporate climber.[/color]
 traitor-donkcorporation-intro = Вы — внедрённый агент Donk Co.
 traitor-donkcorporation-goal = Мы не одобряем бессмысленные убийства невинных работников. Наш девиз: прийти, сделать дело, уйти.
