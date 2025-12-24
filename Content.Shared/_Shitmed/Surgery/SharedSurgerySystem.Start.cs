@@ -1,6 +1,9 @@
 using Content.Shared._Shitmed.CCVar;
 using Content.Shared._Shitmed.Medical.Surgery.Tools;
-using Content.Shared.Popups;
+// CorvaxGoob-SelfOperate-for-IPC-and-Antag-start
+using Content.Shared.Mind.Components;
+using Content.Shared.Roles;
+// CorvaxGoob-SelfOperate-for-IPC-and-Antag-stop
 using Content.Shared.Verbs;
 using Robust.Shared.Configuration;
 using Robust.Shared.Utility;
@@ -10,6 +13,7 @@ namespace Content.Shared._Shitmed.Medical.Surgery;
 public abstract partial class SharedSurgerySystem
 {
     [Dependency] private readonly IConfigurationManager _config = default!;
+    [Dependency] private readonly SharedRoleSystem _roleSystem = default!; // CorvaxGoob-SelfOperate-for-IPC-and-Antag
 
     private EntityQuery<SurgeryTargetComponent> _targetQuery;
 
@@ -30,7 +34,12 @@ public abstract partial class SharedSurgerySystem
         if (!IsLyingDown(target, user))
             return;
 
-        if (_noSelfOperate && user == target)
+        if (_noSelfOperate && user == target
+            // CorvaxGoob-SelfOperate-for-IPC-and-Antag-start
+            && EntityManager.GetComponent<MetaDataComponent>(user).EntityPrototype!.ID != "MobIPC"
+            && (!TryComp<MindContainerComponent>(user, out var mindCont)
+            || !_roleSystem.MindIsAntagonist(mindCont.Mind)))
+            // CorvaxGoob-SelfOperate-for-IPC-and-Antag-stop
         {
             _popup.PopupClient(Loc.GetString("surgery-error-self-surgery"), user, user);
             return;

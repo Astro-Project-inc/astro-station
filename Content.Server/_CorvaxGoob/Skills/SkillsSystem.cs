@@ -3,6 +3,7 @@ using Content.Shared.Implants;
 using Content.Shared.Mind;
 using Content.Shared.Tag;
 using Robust.Shared.Configuration;
+using SkillTypes = Content.Shared._CorvaxGoob.Skills.Skills;
 
 namespace Content.Server._CorvaxGoob.Skills;
 
@@ -43,7 +44,7 @@ public sealed class SkillsSystem : EntitySystem
         return _skillsEnabled;
     }
 
-    public bool HasSkill(EntityUid entity, Shared._CorvaxGoob.Skills.Skills skill)
+    public bool HasSkill(EntityUid entity, SkillTypes skill)
     {
         if (!_skillsEnabled)
             return true;
@@ -54,7 +55,7 @@ public sealed class SkillsSystem : EntitySystem
         if (!_mind.TryGetMind(entity, out _, out var mind))
             return false;
 
-        if (mind.Skills.Contains(Shared._CorvaxGoob.Skills.Skills.All))
+        if (mind.Skills.Contains(SkillTypes.All))
             return true;
 
         return mind.Skills.Contains(skill);
@@ -66,18 +67,18 @@ public sealed class SkillsSystem : EntitySystem
             return;
 
         mind.Skills.Clear();
-        mind.Skills.Add(Shared._CorvaxGoob.Skills.Skills.All);
+        mind.Skills.Add(SkillTypes.All);
     }
 
-    public void GrantSkill(EntityUid entity, HashSet<Shared._CorvaxGoob.Skills.Skills> skills)
+    public void GrantSkill(EntityUid entity, HashSet<SkillTypes> skills)
     {
         if (!_mind.TryGetMind(entity, out _, out var mind))
             return;
 
-        if (skills.Contains(Shared._CorvaxGoob.Skills.Skills.All))
+        if (skills.Contains(SkillTypes.All))
         {
             mind.Skills.Clear();
-            mind.Skills.Add(Shared._CorvaxGoob.Skills.Skills.All);
+            mind.Skills.Add(SkillTypes.All);
         }
         else
             mind.Skills.UnionWith(skills);
@@ -86,21 +87,21 @@ public sealed class SkillsSystem : EntitySystem
     /// <summary>
     /// Revokes all skills and grant new on target mind.
     /// </summary>
-    public void UpdateSkills(EntityUid entity, HashSet<Shared._CorvaxGoob.Skills.Skills> skills)
+    public void UpdateSkills(EntityUid entity, HashSet<SkillTypes> skills)
     {
         if (_mind.TryGetMind(entity, out _, out var mind))
             UpdateSkills((entity, mind), skills);
     }
 
-    public void UpdateSkills(Entity<MindComponent> entity, HashSet<Shared._CorvaxGoob.Skills.Skills>? skills)
+    public void UpdateSkills(Entity<MindComponent> entity, HashSet<SkillTypes>? skills)
     {
         entity.Comp.Skills.Clear();
 
         if (skills is null)
             return;
 
-        if (entity.Comp.Skills.Contains(Shared._CorvaxGoob.Skills.Skills.All))
-            entity.Comp.Skills.Add(Shared._CorvaxGoob.Skills.Skills.All);
+        if (entity.Comp.Skills.Contains(SkillTypes.All))
+            entity.Comp.Skills.Add(SkillTypes.All);
         else
             entity.Comp.Skills.UnionWith(skills);
     }
