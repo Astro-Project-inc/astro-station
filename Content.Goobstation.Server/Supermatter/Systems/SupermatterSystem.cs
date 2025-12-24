@@ -56,6 +56,7 @@ using Robust.Shared.IoC;
 using Robust.Shared.Maths;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Events;
+using Robust.Shared.Random; // CorvaxGoob-SM-Accent-Sound
 using Robust.Shared.Timing;
 
 namespace Content.Goobstation.Server.Supermatter.Systems;
@@ -76,9 +77,9 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
+    [Dependency] private readonly IRobustRandom _rand = default!; // CorvaxGoob-SM-Accent-Sound
 
     private DelamType _delamType = DelamType.Explosion;
-    private Random _rand = new(); // CorvaxGoob-SM-Accent-Sound
 
     public override void Initialize()
     {
