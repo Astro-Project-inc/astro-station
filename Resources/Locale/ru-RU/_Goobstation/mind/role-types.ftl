@@ -7,4 +7,4 @@ role-subtype-pirate = Пират
 role-subtype-changeling = Генокрад
 role-subtype-brainwashed = Порабощённый
 role-subtype-slaughter-demon = Демон резни
-role-subtype-slasher = Мясник
+role-subtype-slasher = Маньяк
