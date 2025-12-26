@@ -1095,6 +1095,7 @@
   minLimit: 0
   loadouts:
   - AtmosphericTechnicianWintercoat
+  - AtmosOveralls # CorvaxGoob
 
 - type: loadoutGroup
   id: AtmosphericTechnicianBackpack
