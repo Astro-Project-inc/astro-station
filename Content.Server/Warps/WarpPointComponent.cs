@@ -26,6 +26,10 @@ namespace Content.Server.Warps
     [RegisterComponent]
     public sealed partial class WarpPointComponent : Component
     {
+        // Corvax-Next-Warper-Start: Unique (across all loaded maps) identifier for teleporting to warp points.
+        [ViewVariables(VVAccess.ReadWrite)] [DataField("id")]
+        public string? Id { get; set; }
+
         [ViewVariables(VVAccess.ReadWrite), DataField]
         public string? Location;
 

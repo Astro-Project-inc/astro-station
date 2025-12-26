@@ -5,6 +5,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using System.Linq;
 using Content.Shared.Examine;
 using Content.Shared.Ghost;
 
@@ -12,6 +13,8 @@ namespace Content.Server.Warps;
 
 public sealed class WarpPointSystem : EntitySystem
 {
+    private Dictionary<string, EntityUid> _warpPoints = new(); // CorvaxGoob-Warper
+
     public override void Initialize()
     {
         base.Initialize();
@@ -26,4 +29,15 @@ public sealed class WarpPointSystem : EntitySystem
         var loc = component.Location == null ? "<null>" : $"'{component.Location}'";
         args.PushText(Loc.GetString("warp-point-component-on-examine-success", ("location", loc)));
     }
+
+    // CorvaxGoob-Warper-Start
+    public EntityUid? FindWarpPoint(string id)
+    {
+        return IoCManager.Resolve<IEntityManager>()
+            .EntityQuery<WarpPointComponent>(true)
+            .FirstOrDefault(p => p.Id == id)
+            ?.Owner;
+    }
+    // CorvaxGoob-Warper-End
+
 }
