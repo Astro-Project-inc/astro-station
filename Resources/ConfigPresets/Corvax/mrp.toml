@@ -27,3 +27,6 @@ restart_enabled = false
 
 [surgery]
 can_operate_on_self = false
+
+[ragequit]
+notify = false
