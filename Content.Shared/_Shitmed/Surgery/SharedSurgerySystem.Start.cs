@@ -36,7 +36,7 @@ public abstract partial class SharedSurgerySystem
 
         if (_noSelfOperate && user == target
             // CorvaxGoob-SelfOperate-for-IPC-and-Antag-start
-            && MetaData(user).EntityPrototype is { not null, ID != "MobIPC" }
+            && MetaData(user).EntityPrototype is { ID not "MobIPC" }
             && (!TryComp<MindContainerComponent>(user, out var mindCont)
             || !_roleSystem.MindIsAntagonist(mindCont.Mind)))
             // CorvaxGoob-SelfOperate-for-IPC-and-Antag-stop
