@@ -34,16 +34,16 @@ public abstract partial class SharedSurgerySystem
         if (!IsLyingDown(target, user))
             return;
 
-    if (_noSelfOperate && user == target  
-        // CorvaxGoob-SelfOperate-for-IPC-and-Antag-start  
-        && MetaData(user).EntityPrototype is { not null; ID != "MobIPC" }  
-        && (!TryComp<MindContainerComponent>(user, out var mindCont)  
-        || !_roleSystem.MindIsAntagonist(mindCont.Mind)))  
-        // CorvaxGoob-SelfOperate-for-IPC-and-Antag-stop  
-    {  
-        _popup.PopupClient(Loc.GetString("surgery-error-self-surgery"), user, user);  
-        return;  
-    }
+        if (_noSelfOperate && user == target
+            // CorvaxGoob-SelfOperate-for-IPC-and-Antag-start
+            && MetaData(user).EntityPrototype is { not null; ID != "MobIPC" }
+            && (!TryComp<MindContainerComponent>(user, out var mindCont)
+            || !_roleSystem.MindIsAntagonist(mindCont.Mind)))
+            // CorvaxGoob-SelfOperate-for-IPC-and-Antag-stop
+        {
+            _popup.PopupClient(Loc.GetString("surgery-error-self-surgery"), user, user);
+            return;
+        }
 
         _ui.OpenUi(target, SurgeryUIKey.Key, user);
         RefreshUI(target);
