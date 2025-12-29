@@ -3,7 +3,7 @@ using Content.Shared._Shitmed.Medical.Surgery.Tools;
 // CorvaxGoob-SelfOperate-for-IPC-and-Antag-start
 using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
-// CorvaxGoob-SelfOperate-for-IPC-and-Antag-stop
+// CorvaxGoob-SelfOperate-for-IPC-and-Antag-end
 using Content.Shared.Verbs;
 using Robust.Shared.Configuration;
 using Robust.Shared.Utility;
@@ -39,7 +39,7 @@ public abstract partial class SharedSurgerySystem
             && MetaData(user).EntityPrototype is { ID: not "MobIPC" }
             && (!TryComp<MindContainerComponent>(user, out var mindCont)
             || !_roleSystem.MindIsAntagonist(mindCont.Mind)))
-            // CorvaxGoob-SelfOperate-for-IPC-and-Antag-stop
+            // CorvaxGoob-SelfOperate-for-IPC-and-Antag-end
         {
             _popup.PopupClient(Loc.GetString("surgery-error-self-surgery"), user, user);
             return;
