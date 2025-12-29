@@ -341,3 +341,79 @@
         Slash: 0.7
         Piercing: 0.7
         Heat: 0.8
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetSilverMusician
+  name: musician's silver helmet
+  description: An old silver helmet of a famous duo of musicians. One more time?
+  components:
+  - type: Sprite
+    sprite: _CorvaxGoob/Clothing/Head/Hats/daft_punk_silver.rsi
+  - type: Clothing
+    quickEquip: false
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+  - type: Instrument
+    program: 27
+  - type: SwappableInstrument
+    instrumentList:
+      "Clean": {27: 0}
+      "Jazz": {25: 0}
+      "Muted": {28: 0}
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
+  - type: ActivatableUI
+    inHandsOnly: false
+    singleUser: true
+    verbText: verb-instrument-openui
+    key: enum.InstrumentUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetGoldenMusician
+  name: musician's golden helmet
+  description: An old golden helmet of a famous duo of musicians. Harder, better, faster, stronger.
+  components:
+  - type: Sprite
+    sprite: _CorvaxGoob/Clothing/Head/Hats/daft_punk_golden.rsi
+  - type: Clothing
+    quickEquip: false
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+  - type: Instrument
+    program: 62
+  - type: SwappableInstrument
+    instrumentList:
+      "Electro": {62: 0}
+      "Bubbles": {63: 0}
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
+  - type: ActivatableUI
+    inHandsOnly: false
+    singleUser: true
+    verbText: verb-instrument-openui
+    key: enum.InstrumentUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
+
