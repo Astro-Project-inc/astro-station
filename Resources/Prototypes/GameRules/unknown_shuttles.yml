@@ -69,7 +69,7 @@
     announcersStartAudio: # CorvaxGoob-CustomAnnouncers
       Intern:
         collection: InternCommandReport
-    weight: 0.5 #Common, but not every round  # CorvaxGoob-SecretPlusRework : from 4 to 0.5
+    weight: 0.5 #Common, but not every round # CorvaxGoob-SecretPlusRework : 4 -> 0.5
     reoccurrenceDelay: 30
     earliestStart: 20 # Goobstation
     duration: 1
