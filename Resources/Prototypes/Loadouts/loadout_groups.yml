@@ -818,7 +818,7 @@
   id: MusicianHelmet
   name: loadout-group-musician-helmet
   minLimit: 0
-  maxLimit: 1
+  maxLimit: 2
   loadouts:
   - MusicianHelmetGolden
   - MusicianHelmetSilver
