@@ -1,1 +1,1 @@
-comp-other-unremovable-clothing = Это может снять только владелец.
+comp-other-unremovable-clothing = Только владелец может снять это.
