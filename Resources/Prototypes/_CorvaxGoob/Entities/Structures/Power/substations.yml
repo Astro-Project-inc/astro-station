@@ -4,7 +4,7 @@
   name: bluespace T.R.A.N.S.I.T.O.R.
   components:
   - type: Battery
-	maxCharge: 5000000000
+    maxCharge: 5000000000
     startingCharge: 2500000
   - type: PowerNetworkBattery
     maxSupply: 3000000000
