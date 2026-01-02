@@ -6,3 +6,4 @@ marking-TailShadowkinMedium = Тенекин (средний)
 marking-TailShadowkinBigFluff = Тенекин (большой и пушистый)
 marking-EarsShadowkin = Тенекин
 marking-EarsShadowkinStriped = Тенекин (полосатый)
+marking-ShadowkinGlowingEyes = Глаза Тенекина (свечение)

@@ -8,3 +8,5 @@ marking-TailShadowkinBigFluff = Shadowkin (Big and Fluffy)
 
 marking-EarsShadowkin = Shadowkin
 marking-EarsShadowkinStriped = Shadowkin (Striped)
+
+marking-ShadowkinGlowingEyes = Shadowkin Glowing Eyes
