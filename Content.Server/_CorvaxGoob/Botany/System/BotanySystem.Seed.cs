@@ -17,7 +17,7 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Kitchen.Components;
 
-namespace Content.Server.Botany.Systems;
+namespace Content.Server._CorvaxGoob.Botany.Systems;
 
 public sealed partial class BotanySystem : EntitySystem
 {

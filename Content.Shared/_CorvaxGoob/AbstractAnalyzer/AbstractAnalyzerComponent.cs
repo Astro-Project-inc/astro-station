@@ -1,6 +1,6 @@
 using Robust.Shared.Audio;
 
-namespace Content.Shared.AbstractAnalyzer;
+namespace Content.Shared._CorvaxGoob.AbstractAnalyzer;
 
 /// <summary>
 /// After scanning, retrieves the target Uid to use with its related UI.

@@ -2,9 +2,9 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Botany.Components;
 using Content.Server.Popups;
-using Content.Shared.AbstractAnalyzer;
-using Content.Shared.Botany.Components;
-using Content.Shared.Botany.PlantAnalyzer;
+using Content.Shared._CorvaxGoob.AbstractAnalyzer;
+using Content.Shared._CorvaxGoob.Botany.Components;
+using Content.Shared._CorvaxGoob.Botany.PlantAnalyzer;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Labels.EntitySystems;
@@ -14,7 +14,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
 
-namespace Content.Server.Botany.Systems;
+namespace Content.Server._CorvaxGoob.Botany.Systems;
 
 public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<PlantAnalyzerComponent, PlantAnalyzerDoAfterEvent>
 {

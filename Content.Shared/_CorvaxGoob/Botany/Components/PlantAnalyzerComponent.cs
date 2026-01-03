@@ -1,11 +1,11 @@
-using Content.Shared.AbstractAnalyzer;
+using Content.Shared._CorvaxGoob.AbstractAnalyzer;
 using Content.Shared.Paper;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Shared.Botany.Components;
+namespace Content.Shared._CorvaxGoob.Botany.Components;
 
 /// <inheritdoc/>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentPause]
