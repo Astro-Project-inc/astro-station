@@ -14,11 +14,11 @@ plant-analyzer-component-unviable = [color=red]НЕПРИГОДНОЕ[/color]
 plant-analyzer-component-mutating = [color=#00ff5f]МУТИРУЕТ[/color]
 plant-analyzer-component-kudzu = [color=red]КУДЗУ[/color]
 
-plant-analyzer-soil = В этом {$holder} находится [color=white]{$chemicals}[/color], {$count ->
-    [one]который не был поглощён
-    *[other]которые не были поглощены
+plant-analyzer-soil = В {$holder} находится [color=white]{$chemicals}[/color], {$count ->
+    [one]который впитывается в растение
+    *[other]которые впитываются в растение
 }.
-plant-analyzer-soil-empty = В этом {$holder} нет непоглощённых химикатов.
+plant-analyzer-soil-empty = В {$holder} сейчас ничего не впитывается из химикатов.
 
 plant-analyzer-component-environemt = Это растение [color=green]{$seedName}[/color] требует атмосферу с уровнем давления [color=lightblue]{$kpa}кПа ± {$kpaTolerance}кПа[/color], температуру [color=lightsalmon]{$temp}°К ± {$tempTolerance}°К[/color] и уровень освещения [color=white]{$lightLevel} ± {$lightTolerance}[/color].
 plant-analyzer-component-environemt-void = Это растение [color=green]{$seedName}[/color] должно выращиваться [bolditalic]в вакууме космоса[/bolditalic] при уровне освещения [color=white]{$lightLevel} ± {$lightTolerance}[/color].
@@ -31,14 +31,14 @@ plant-analyzer-output = {$yield ->
         *[other]Единственное, что оно делает - превращает воду и питательные вещества в [bold]{$gases}[/bold].
     }
     *[other]Имеет [color=lightgreen]{$yield} {$potency}[/color]{$seedless ->
-        [true]{" "}но [color=red]бессемянное[/color]
+        [true]{" "}но [color=red]бессемянных[/color]
         *[false]{$nothing}
     }{" "}{$yield ->
-        [one]цветок
-        [2]цветка
-        [3]цветка
-        [4]цветка
-        *[other]цветков
+        [one]плода
+        [2]плода
+        [3]плода
+        [4]плода
+        *[other]плодов
     }, {$yield ->
         [one]который
         *[other]которые
@@ -57,18 +57,18 @@ plant-analyzer-output = {$yield ->
     }
 }
 
-plant-analyzer-potency-tiny = крошечные
-plant-analyzer-potency-small = маленькие
+plant-analyzer-potency-tiny = крошечных
+plant-analyzer-potency-small = маленьких
 plant-analyzer-potency-below-average = ниже среднего размера
 plant-analyzer-potency-average = среднего размера
 plant-analyzer-potency-above-average = выше среднего размера
-plant-analyzer-potency-large = довольно крупные
-plant-analyzer-potency-huge = огромные
-plant-analyzer-potency-gigantic = гигантские
-plant-analyzer-potency-ludicrous = невероятно большие
-plant-analyzer-potency-immeasurable = неизмеримо большие
+plant-analyzer-potency-large = довольно крупных
+plant-analyzer-potency-huge = огромных
+plant-analyzer-potency-gigantic = гигантских
+plant-analyzer-potency-ludicrous = невероятно больших
+plant-analyzer-potency-immeasurable = неизмеримо больших
 
-plant-analyzer-print = Печать
+plant-analyzer-print = Распечатать отчёт
 plant-analyzer-printout-missing = Н/Д
 plant-analyzer-printout =
     {"[color=#9FED58][head=2]Отчёт анализатора растений[/head][/color]"}
