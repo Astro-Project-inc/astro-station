@@ -65,6 +65,7 @@
   access:
   - Service
   - Maintenance
+  - Journalism # goob
 
 - type: startingGear
   id: ReporterGear
@@ -79,6 +80,7 @@
     - CassetteTape
     - MicrophoneInstrument # Goobstation
     - PhotoCameraFilled # CorvaxGoob-PhotoCamera
+    - PhotoAlbum # CorvaxGoob-PhotoCamera
 
 - type: chameleonOutfit
   id: ReporterChameleonOutfit

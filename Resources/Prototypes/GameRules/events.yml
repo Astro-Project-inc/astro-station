@@ -172,12 +172,14 @@
     - id: SnakeSpawn
     - id: SpiderClownSpawn
     - id: SpiderSpawn
-    - id: VentClog
+    # - id: VentClog  # CorvaxGoob-SecretPlusRework : the stupidest gamerule ever
 #    - id: TidemindDevelop - Corvax Goob
     - id: MothroachSpawn # DeltaV
     - id: DerelictCyborgSyndicateSpawn # Goobstation - usually calm
     - id: MalignRiftSpawn # DeltaV
     - id: FloorGoblinMidRound # Goobstation
+    - id: ClownGoblinMigration # Goobstation - New Midrounds
+    - id: SantaClausSpawn # Goobstation, remove after new year
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -190,6 +192,8 @@
     - id: ParadoxCloneSpawn
     #- id: RevenantSpawn  # GoobStation - removed till rework
     - id: SleeperAgents
+    - id: HereticMidround # Goob
+    - id: ChangelingMidround # Goob
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: DerelictCyborgSpawn
@@ -199,8 +203,16 @@
     - id: BingleSpawn #Goobstation - Bingle
     - id: SlaughterDemonMidround # Goobstation - Slaughter Demon
     - id: XenomorphsInfestation # WD EDIT
+    #- id: GreyTideAntagMidround # Goobstation - New Midrounds
+    #- id: SingulothKnightsMidround # Goobstation - New Midrounds
+    #- id: DarkLordMidround # Goobstation - New Midrounds
+    #- id: MimeAssassinMidround # Goobstation - New Midrounds
+    #- id: DarkPriestMidround # Goobstation - New Midrounds
+    #- id: VoxRaidersMidround # Goobstation - New Midrounds
+    #- id: TunnelClownMidround # Goobstation
     #- id: WraithMidround # Goobstation - Wraith
-    #TODO When Slasher is ready- id: SlasherSpawn # Goobstation - The Slasher
+    #TODO when midrounds are "reviewed" by the chudmins add them back
+    #TODO When Slasher is Ready - id: SlasherSpawn # Goobstation - The Slasher
 
 - type: entity
   id: BaseStationEvent
@@ -250,7 +262,7 @@
     eventType: Chaotic # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 70
+    chaosScore: -50 # CorvaxGoob-SecretPlusRework : 70 -> -50
   - type: AnomalySpawnRule
 
 - type: entity
@@ -261,7 +273,7 @@
     delay:
       min:  30
       max:  30
-    chaosScore: 40 # Goobstation
+    chaosScore: -70 # Goobstation && CorvaxGoob-SecretPlusRework : 40 -> -70
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
@@ -281,7 +293,7 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    weight: 2
+    weight: 2.5 # CorvaxGoob Changes: 2 > 2.5
     reoccurrenceDelay: 5
     earliestStart: 1
     duration: 1
@@ -290,7 +302,7 @@
     eventType: Neutral # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 40
+    chaosScore: -100 # CorvaxGoob-SecretPlusRework : 40 -> -100
   - type: BluespaceLockerRule
 
 - type: entity
@@ -311,7 +323,7 @@
     eventType: Maintenance # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 60
+    chaosScore: -70 # CorvaxGoob-SecretPlusRework : 60 -> -70
   - type: BreakerFlipRule
 
 - type: entity
@@ -326,7 +338,7 @@
     eventType: Neutral # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 50
+    chaosScore: -100 # CorvaxGoob-SecretPlusRework : 50 -> -100
   - type: BureaucraticErrorRule
     ignoredJobs:
     - StationAi
@@ -343,7 +355,7 @@
     eventType: Chaotic # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 30
+    chaosScore: -100 # CorvaxGoob-SecretPlusRework : 30 -> -100
   - type: ClericalErrorRule
 
 - type: entity
@@ -366,7 +378,7 @@
   id: DragonSpawn
   components:
   - type: StationEvent
-    weight: 2 # Goobstation - was 3
+    weight: 3.5 # Goobstation Changes: 3 > 2 # CorvaxGoob Changes: 2 > 3.5
     earliestStart: 30 # Goobstation was 45
     #recorruenceDelay: 20 # Goobstation - no longer needed
     maxOccurrences: 1 # Goobstation
@@ -406,7 +418,7 @@
   id: NinjaSpawn
   components:
   - type: StationEvent
-    weight: 3 # Goobstation - was 6
+    weight: 3.5 # Goobstation Changes: 6 > 3 # CorvaxGoob Changes: 3 > 3.5
     duration: null
     earliestStart: 30 # Goobstation - was 45
     #reoccurrenceDelay: 20 # Goobstation - no longer needed
@@ -619,7 +631,7 @@
         volume: -4
   # Goobstation
   - type: GameRule
-    chaosScore: 80 # most of the time scrubbers just clean it
+    chaosScore: -60 # most of the time scrubbers just clean it # CorvaxGoob-SecretPlusRework : 80 -> -60
   - type: GasLeakRule
 
 - type: entity
@@ -638,7 +650,7 @@
     eventType: Maintenance # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 80
+    chaosScore: -80 # CorvaxGoob-SecretPlusRework : 80 -> -80
   - type: KudzuGrowthRule
 
 - type: entity
@@ -661,7 +673,7 @@
     eventType: Interference # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 80
+    chaosScore: -90 # CorvaxGoob-SecretPlusRework : 80 -> -90
   - type: PowerGridCheckRule
 
 - type: entity
@@ -684,7 +696,7 @@
     eventType: Interference # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 60
+    chaosScore: -90 # CorvaxGoob-SecretPlusRework : 60 -> -90
   - type: SolarFlareRule
     onlyJamHeadsets: true
     affectedChannels:
@@ -721,7 +733,7 @@
     eventType: Interference # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 70
+    chaosScore: -60 # CorvaxGoob-SecretPlusRework : 70 -> -60
   - type: VentClogRule
 
 - type: entity
@@ -749,9 +761,7 @@
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
-      - id: MobAdultSlimesBlueAngry
-      - id: MobAdultSlimesGreenAngry
-      - id: MobAdultSlimesYellowAngry
+      - id: XenobioSlimeBabySpawner # goob edit - nuke wizden slimes in favor of xenobio
 
 - type: entity
   id: SnakeSpawn
@@ -821,7 +831,7 @@
         path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/aliens.ogg
     earliestStart: 45 # DeltaV - was 20
     minimumPlayers: 30 # DeltaV - was 20
-    weight: 3 # Goobstation - was 1.5
+    weight: 4 # Goobstation Changes: 1.5 > 3 # CorvaxGoob Changes: 3 > 4
     duration: 30 # DeltaV: was 60, used as a delay now
     chaos: # Goobstation
       Hostile: 20
@@ -842,7 +852,7 @@
   - type: StationEvent
     earliestStart: 60 # Goobstation - was 90 (impossible on goob)
     minimumPlayers: 40
-    weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
+    weight: 1.5 # Zombies was happening basically every single survival round, so now it's super rare # CorvaxGoob Changes: 1 > 1.5
     duration: 1
     chaos: # Goobstation
       Hostile: 100
@@ -885,7 +895,7 @@
   components:
   - type: StationEvent
     earliestStart: 35
-    weight: 2.5 # Goobstation - was 5.5
+    weight: 3 # Goobstation Changes: 5.5 > 2.5 # CorvaxGoob Changes: 2.5 > 3
     minimumPlayers: 50 # Goobstation - was 20
     duration: 1
     chaos: # Goobstation
@@ -981,7 +991,7 @@
     eventType: Chaotic # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 30
+    chaosScore: -100 # CorvaxGoob-SecretPlusRework : 30 -> -100
   - type: MassHallucinationsRule
     minTimeBetweenIncidents: 0.1
     maxTimeBetweenIncidents: 300
@@ -1009,7 +1019,7 @@
         path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/i-storm1.ogg
   # Goobstation
   - type: GameRule
-    chaosScore: 150
+    chaosScore: -80 # CorvaxGoob-SecretPlusRework : 150 -> -80
   - type: IonStormRule
 
 - type: entity
@@ -1028,7 +1038,7 @@
     eventType: Neutral # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 20
+    chaosScore: -100 # CorvaxGoob-SecretPlusRework : 20 -> -100
   - type: MobReplacementRule
 
 - type: entity
@@ -1050,7 +1060,7 @@
     eventType: Maintenance # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 160
+    chaosScore: -70 # CorvaxGoob-SecretPlusRework : 160 -> -70
   - type: GreytideVirusRule
     accessGroups:
     - Cargo
@@ -1092,7 +1102,7 @@
     eventType: Chaotic # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 80
+    chaosScore: -70 # CorvaxGoob-SecretPlusRework : 80 -> -70
   - type: SpaceSpawnRule
     spawnDistance: 0
   - type: AntagSpawner

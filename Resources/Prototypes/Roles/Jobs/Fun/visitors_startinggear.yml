@@ -1038,6 +1038,7 @@
     pocket2: FoodSnackEnergy
   inhand:                 #goobstation
   - Nullrod               #goobstation
+  - ArmamentsBeacon       #goobstation
 
 - type: startingGear
   id: VisitorChaplainAlt
@@ -1053,6 +1054,7 @@
     pocket2: DrinkCoconutWaterCarton
   inhand:                 #goobstation
   - Nullrod               #goobstation
+  - ArmamentsBeacon       #goobstation
 
 - type: startingGear
   id: VisitorChef
@@ -1083,7 +1085,7 @@
     back: ClothingBackpack
     belt: ClothingBeltChefFilled
     ears: ClothingHeadsetService
-    outerClothing: ClothingOuterWinterChef 
+    outerClothing: ClothingOuterWinterChef
     pocket1: RollingPin
     pocket2: BookHowToCookForFortySpaceman
   inhand:
@@ -1143,7 +1145,7 @@
     neck: ClothingNeckLawyerbadge
     id: VisitorPDA
     back: ClothingBackpackSatchelLeather
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetLawyer # CorvaxGoob: ClothingHeadsetSecurity > ClothingHeadsetLawyer
     pocket1: RubberStampLawyer
     pocket2: LuxuryPen
   inhand:
@@ -1158,7 +1160,7 @@
     neck: ClothingNeckLawyerbadge
     id: VisitorPDA
     back: ClothingBackpackSatchelLeather
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetLawyer # CorvaxGoob: ClothingHeadsetSecurity > ClothingHeadsetLawyer
     pocket1: RubberStampLawyer
     pocket2: SmokingPipeFilledTobacco
   inhand:
@@ -1174,7 +1176,7 @@
     id: VisitorPDA
     back: ClothingBackpackSatchelLeather
     belt: ClothingBeltStorageWaistbag
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetLawyer # CorvaxGoob: ClothingHeadsetSecurity > ClothingHeadsetLawyer
     pocket1: RubberStampLawyer
     pocket2: SmokingPipeFilledTobacco
   inhand:
@@ -1191,7 +1193,7 @@
     mask: CigarGold
     id: VisitorPDA
     back: ClothingBackpackSatchelLeather
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetLawyer # CorvaxGoob: ClothingHeadsetSecurity > ClothingHeadsetLawyer
     outerClothing: ClothingOuterCoatExpensive
     pocket1: RubberStampLawyer
     pocket2: LuxuryPen
@@ -1208,7 +1210,7 @@
     id: VisitorPDA
     back: ClothingBackpackSatchelLeather
     belt: ClothingBeltStorageWaistbag
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetLawyer # CorvaxGoob: ClothingHeadsetSecurity > ClothingHeadsetLawyer
     pocket1: RubberStampLawyer
     pocket2: LuxuryPen
   inhand:
