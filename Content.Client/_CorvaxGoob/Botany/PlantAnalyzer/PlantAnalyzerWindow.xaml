@@ -1,8 +1,8 @@
 <controls:FancyWindow
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-    MinWidth="320"
-    MaxWidth="320">
+    MinWidth="324"
+    MaxWidth="324">
     <ScrollContainer
         Margin="5 5 5 5"
         ReturnMeasure="True"
@@ -97,15 +97,15 @@
                 </GridContainer>
                 <PanelContainer Name="ContainerDivider" Visible="false" StyleClasses="LowDivider" />
                 <BoxContainer Name="ChemicalsInWaterBox" Visible="false" Orientation="Horizontal" Margin="5">
-                    <RichTextLabel Name="ChemicalsInWaterLabel" SetWidth="290" />
+                    <RichTextLabel Name="ChemicalsInWaterLabel" SetWidth="294" />
                 </BoxContainer>
                 <PanelContainer Name="ChemicalsInWaterDivider" Visible="false" StyleClasses="LowDivider" />
                 <BoxContainer Name="EnvironmentBox" Visible="false" Orientation="Horizontal" Margin="5">
-                    <RichTextLabel Name="EnvironmentLabel" SetWidth="290" />
+                    <RichTextLabel Name="EnvironmentLabel" SetWidth="294" />
                 </BoxContainer>
                 <PanelContainer Name="EnvironmentDivider" Visible="false" StyleClasses="LowDivider" />
                 <BoxContainer Name="ProduceBox" Visible="false" Orientation="Horizontal" Margin="5">
-                    <RichTextLabel Name="ProduceLabel" SetWidth="290" />
+                    <RichTextLabel Name="ProduceLabel" SetWidth="294" />
                 </BoxContainer>
                 <PanelContainer Name="ProduceDivider" Visible="false" StyleClasses="LowDivider" />
                 <Button Name="Print"
