@@ -10,7 +10,7 @@ plant-analyzer-component-weeds = Сорняки:
 
 plant-analyzer-component-alive = [color=green]ЖИВОЕ[/color]
 plant-analyzer-component-dead = [color=red]МЁРТВОЕ[/color]
-plant-analyzer-component-unviable = [color=red]НЕПРИГОДНОЕ[/color]
+plant-analyzer-component-unviable = [color=red]ПОГИБАЕТ[/color]
 plant-analyzer-component-mutating = [color=#00ff5f]МУТИРУЕТ[/color]
 plant-analyzer-component-kudzu = [color=red]КУДЗУ[/color]
 
@@ -20,9 +20,9 @@ plant-analyzer-soil = В {$holder} находится [color=white]{$chemicals}[
 }.
 plant-analyzer-soil-empty = В {$holder} сейчас ничего не впитывается из химикатов.
 
-plant-analyzer-component-environemt = Это растение [color=green]{$seedName}[/color] требует атмосферу с уровнем давления [color=lightblue]{$kpa}кПа ± {$kpaTolerance}кПа[/color], температуру [color=lightsalmon]{$temp}°К ± {$tempTolerance}°К[/color] и уровень освещения [color=white]{$lightLevel} ± {$lightTolerance}[/color].
-plant-analyzer-component-environemt-void = Это растение [color=green]{$seedName}[/color] должно выращиваться [bolditalic]в вакууме космоса[/bolditalic] при уровне освещения [color=white]{$lightLevel} ± {$lightTolerance}[/color].
-plant-analyzer-component-environemt-gas = Это растение [color=green]{$seedName}[/color] требует атмосферу, содержащую [bold]{$gases}[/bold], с уровнем давления [color=lightblue]{$kpa}кПа ± {$kpaTolerance}кПа[/color], температуру [color=lightsalmon]{$temp}°К ± {$tempTolerance}°К[/color] и уровень освещения [color=white]{$lightLevel} ± {$lightTolerance}[/color].
+plant-analyzer-component-environemt = Растение [color=green]{$seedName}[/color] требует атмосферу с уровнем давления [color=lightblue]{$kpa}кПа ± {$kpaTolerance}кПа[/color], температуру [color=lightsalmon]{$temp}°К ± {$tempTolerance}°К[/color] и уровень освещения [color=white]{$lightLevel} ± {$lightTolerance}[/color].
+plant-analyzer-component-environemt-void = Растение [color=green]{$seedName}[/color] должно выращиваться [bolditalic]в вакууме космоса[/bolditalic] при уровне освещения [color=white]{$lightLevel} ± {$lightTolerance}[/color].
+plant-analyzer-component-environemt-gas = Растение [color=green]{$seedName}[/color] требует атмосферу, содержащую [bold]{$gases}[/bold], с уровнем давления [color=lightblue]{$kpa}кПа ± {$kpaTolerance}кПа[/color], температуру [color=lightsalmon]{$temp}°К ± {$tempTolerance}°К[/color] и уровень освещения [color=white]{$lightLevel} ± {$lightTolerance}[/color].
 
 plant-analyzer-produce-plural = {$thing}
 plant-analyzer-output = {$yield ->
@@ -34,11 +34,11 @@ plant-analyzer-output = {$yield ->
         [true]{" "}но [color=red]бессемянных[/color]
         *[false]{$nothing}
     }{" "}{$yield ->
-        [one]плода
-        [2]плода
-        [3]плода
-        [4]плода
-        *[other]плодов
+        [one]цветка
+        [2]цветка
+        [3]цветка
+        [4]цветка
+        *[other]цветков
     }, {$yield ->
         [one]который
         *[other]которые
