@@ -13,5 +13,5 @@ ent-ClothingHeadsetDeathsquad = полноразмерная гарнитура 
     .desc = { ent-ClothingHeadsetAlt.desc }
 ent-ClothingHeadsetAltSecurityRegular = полноразмерная гарнитура службы безопасности
     .desc = { ent-ClothingHeadsetAlt.desc }
-ent-ClothingHeadsetAltBlueshield = полноразмерная гарнитура офицера синего щита
+ent-ClothingHeadsetAltBlueshield = полноразмерная гарнитура офицера Синего Щита
     .desc = { ent-ClothingHeadsetAlt.desc }

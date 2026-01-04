@@ -134,10 +134,10 @@ loadout-group-ntr-envirosuit = экокостюм представителя Nan
 loadout-group-ntr-envirogloves = экоперчатки представителя NanoTrasen
 loadout-group-ntr-gloves = перчатки представителя NanoTrasen
 # Blueshield Officer
-loadout-group-bso-envirohelm = экошлем офицера синего щита
-loadout-group-bso-envirosuit = экокостюм офицера синего щита
-loadout-group-bso-envirogloves = экоперчатки офицера синего щита
-loadout-group-bso-gloves = перчатки офицера синего щита
+loadout-group-bso-envirohelm = экошлем офицера Синего Щита
+loadout-group-bso-envirosuit = экокостюм офицера Синего Щита
+loadout-group-bso-envirogloves = экоперчатки офицера Синего Щита
+loadout-group-bso-gloves = перчатки офицера Синего Щита
 # Reporter
 loadout-group-reporter-envirohelm = экошлем репортера
 loadout-group-reporter-envirosuit = экокостюм репортера
