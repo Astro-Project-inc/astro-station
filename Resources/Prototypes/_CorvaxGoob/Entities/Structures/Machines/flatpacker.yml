@@ -5,7 +5,7 @@
   description: The predecessor of the "Flatpacker 1001", which is currently being produced. It is intended for civilian use and is not focused on industrial work.
   components:
   - type: FlatpackCreator
-    packDuration: 18
+    packDuration: 12
     baseMachineCost:
       Steel: 1250
     baseComputerCost:
