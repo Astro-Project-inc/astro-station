@@ -172,7 +172,7 @@
     - id: SnakeSpawn
     - id: SpiderClownSpawn
     - id: SpiderSpawn
-    - id: VentClog
+#    - id: VentClog # reverted by CorvaxGoob
 #    - id: TidemindDevelop - Corvax Goob
     - id: MothroachSpawn # DeltaV
     - id: DerelictCyborgSyndicateSpawn # Goobstation - usually calm
