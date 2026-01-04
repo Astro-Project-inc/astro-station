@@ -1,5 +1,7 @@
 plant-analyzer-component-no-seed = растение не обнаружено
 
+plant-analyzer-and = и
+
 plant-analyzer-component-health = Здоровье:
 plant-analyzer-component-age = Возраст:
 plant-analyzer-component-water = Вода:
