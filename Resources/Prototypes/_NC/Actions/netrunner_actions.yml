@@ -19,7 +19,7 @@
   description: Вызывает мощный электрический разряд в кибернетике цели, нанося урон и оглушая её.
   components:
   - type: Action
-    useDelay: 10.0
+    useDelay: 60.0
     icon: 
       sprite: Interface/Actions/actions_ai.rsi
       state: manifest
@@ -36,7 +36,7 @@
   description: Вызывает перегрев кибернетики цели, поджигая её.
   components:
   - type: Action
-    useDelay: 15.0
+    useDelay: 120.0
     icon: 
       sprite: Interface/Actions/actions_ai.rsi
       state: manifest
