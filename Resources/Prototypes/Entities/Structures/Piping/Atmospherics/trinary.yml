@@ -42,6 +42,7 @@
     mode: SnapgridCenter
   components:
     - type: AtmosDevice
+    - type: StationAiWhitelist
     - type: Tag
       tags:
         - Unstackable
