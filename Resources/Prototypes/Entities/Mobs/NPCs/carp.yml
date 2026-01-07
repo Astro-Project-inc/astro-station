@@ -187,7 +187,7 @@
         types:
           Blunt: 5
           Slash: 7
-          Structural: 10 # CorvaxGoob
+          Structural: 11 # CorvaxGoob
     - type: TypingIndicator
       proto: alien
     - type: Tag
