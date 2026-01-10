@@ -14,7 +14,7 @@ shadowling-role-greeting =
     Загляни в руководство, чтобы узнать больше.
 shadowling-role-greeting-short = Вы — Тенеморф, пробудившийся в теле { $name }.
 thrall-role-greeting =
-    Ты — Тралл. Раб своего хозяина.
+    Вы — Тралл. Раб своего хозяина.
     Помоги тенеморфу вознестись любыми средствами.
 shadowling-briefing = Отринь эту низшую форму и начни путь к вознесению.
 thrall-briefing =
