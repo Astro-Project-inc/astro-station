@@ -7,7 +7,7 @@ shadowling-ascension-not-shadowling = Вы не тот, кого он ищет. 
 shadowling-ascension-not-creator = Только создатель этого кокона может вознестись в нём.
 shadowling-ascension-ascending = Другой тенеморф находится в процессе вылупления. Помогите ему!
 shadowling-ascension-already-ascended = Вознесение уже завершено.
-shadowling-ascension-start-warning = Это твой кокон. Тебе следует начать вознесение как можно скорее.
+shadowling-ascension-start-warning = Это ваш кокон. Вам следует начать вознесение как можно скорее.
 shadowling-ascension-message =
     Неопознанная форма жизни завершает своё развитие на { $location }.
     Всем оставшимся членам экипажа приказано устранить источник любой ценой.
