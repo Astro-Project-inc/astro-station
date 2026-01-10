@@ -1,7 +1,7 @@
 ent-ClothingBeltMilitaryWebbingCMOFilled = { ent-ClothingBeltMilitaryWebbingCMO }
     .suffix = Заполненный, НЕ ДЛЯ КАРТЫ
     .desc = { ent-ClothingBeltMilitaryWebbingCMO.desc }
-ent-ClothingBeltDeathsquadWebbingFilled = разгрузка оперативника Эскадрона Смерти
+ent-ClothingBeltDeathsquadWebbingFilled = РПС Эскадрона Смерти
     .desc = Прочная и надёжная разгрузка, содержащая всё необходимое для боя. Возможно, тебе она даже не пригодится.
     .suffix = Заполненный, НЕ ДЛЯ КАРТЫ
 ent-ClothingBeltHolsterFilledCentComm = { ent-ClothingBeltHolster }
