@@ -93,7 +93,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Changeling;
-using Content.Server._CorvaxGoob.Skills;
 using Content.Goobstation.Shared.Changeling.Components;
 using Content.Server.Administration.Logs;
 using Content.Server.Body.Systems;
@@ -139,7 +138,7 @@ namespace Content.Server.Kitchen.EntitySystems
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly MetaDataSystem _metaData = default!;
         [Dependency] private readonly SharedSuicideSystem _suicide = default!;
-        [Dependency] private readonly SkillsSystem _skills = default!; // CorvaxGoob-Skills
+        [Dependency] private readonly SharedSkillsSystem _skills = default!; // CorvaxGoob-Skills
 
         private const float ButcherDelayModifierWithoutSkill = 5; // CorvaxGoob-Skills
 

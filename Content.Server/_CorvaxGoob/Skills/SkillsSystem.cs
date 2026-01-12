@@ -2,7 +2,6 @@ using Content.Shared._CorvaxGoob.CCCVars;
 using Content.Shared.Implants;
 using Content.Shared.Mind;
 using Content.Shared.Tag;
-using Robust.Shared.Configuration;
 using SkillTypes = Content.Shared._CorvaxGoob.Skills.Skills;
 
 namespace Content.Server._CorvaxGoob.Skills;
@@ -10,20 +9,13 @@ namespace Content.Server._CorvaxGoob.Skills;
 public sealed class SkillsSystem : EntitySystem
 {
     [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
 
     [ValidatePrototypeId<TagPrototype>]
     public const string SkillsTag = "Skills";
-
-    private bool _skillsEnabled = true;
-
     public override void Initialize()
     {
         base.Initialize();
-
-        _skillsEnabled = _cfg.GetCVar(CCCVars.SkillsEnabled);
-        Subs.CVar(_cfg, CCCVars.SkillsEnabled, value => _skillsEnabled = value);
 
         SubscribeLocalEvent<ImplantImplantedEvent>(OnImplantImplanted);
     }
@@ -37,28 +29,6 @@ public sealed class SkillsSystem : EntitySystem
             return;
 
         GrantAllSkills(e.Implanted.Value);
-    }
-
-    public bool IsSkillsEnabled()
-    {
-        return _skillsEnabled;
-    }
-
-    public bool HasSkill(EntityUid entity, SkillTypes skill)
-    {
-        if (!_skillsEnabled)
-            return true;
-
-        if (HasComp<IgnoreSkillsComponent>(entity))
-            return true;
-
-        if (!_mind.TryGetMind(entity, out _, out var mind))
-            return false;
-
-        if (mind.Skills.Contains(SkillTypes.All))
-            return true;
-
-        return mind.Skills.Contains(skill);
     }
 
     public void GrantAllSkills(EntityUid entity)

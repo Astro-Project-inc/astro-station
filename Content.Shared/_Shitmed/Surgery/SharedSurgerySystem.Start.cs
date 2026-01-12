@@ -1,9 +1,6 @@
+using Content.Shared._CorvaxGoob.Skills;
 using Content.Shared._Shitmed.CCVar;
 using Content.Shared._Shitmed.Medical.Surgery.Tools;
-// CorvaxGoob-SelfOperate-for-IPC-and-Antag-start
-using Content.Shared.Mind.Components;
-using Content.Shared.Roles;
-// CorvaxGoob-SelfOperate-for-IPC-and-Antag-end
 using Content.Shared.Verbs;
 using Robust.Shared.Configuration;
 using Robust.Shared.Utility;
@@ -13,7 +10,7 @@ namespace Content.Shared._Shitmed.Medical.Surgery;
 public abstract partial class SharedSurgerySystem
 {
     [Dependency] private readonly IConfigurationManager _config = default!;
-    [Dependency] private readonly SharedRoleSystem _roleSystem = default!; // CorvaxGoob-SelfOperate-for-IPC-and-Antag
+    [Dependency] private readonly SharedSkillsSystem _skills = default!; // CorvaxGoob
 
     private EntityQuery<SurgeryTargetComponent> _targetQuery;
 
@@ -35,15 +32,16 @@ public abstract partial class SharedSurgerySystem
             return;
 
         if (_noSelfOperate && user == target
-            // CorvaxGoob-SelfOperate-for-IPC-and-Antag-start
+            // CorvaxGoob-start: SelfOperate for IPC and who has SelfSurgery skill
             && MetaData(user).EntityPrototype is { ID: not "MobIPC" }
-            && (!TryComp<MindContainerComponent>(user, out var mindCont)
-            || !_roleSystem.MindIsAntagonist(mindCont.Mind)))
-            // CorvaxGoob-SelfOperate-for-IPC-and-Antag-end
+            && !_skills.HasSkill(user, Skills.SelfSurgery)) // when this is on client, check doesn't pass because client can't take HashSet<Skills>.
+                                                            // This is why I put _net.IsServer for popup
         {
-            _popup.PopupClient(Loc.GetString("surgery-error-self-surgery"), user, user);
+            if (_net.IsServer)
+                _popup.PopupEntity(Loc.GetString("surgery-error-self-surgery"), user, user);
             return;
         }
+        // CorvaxGoob-end
 
         _ui.OpenUi(target, SurgeryUIKey.Key, user);
         RefreshUI(target);
