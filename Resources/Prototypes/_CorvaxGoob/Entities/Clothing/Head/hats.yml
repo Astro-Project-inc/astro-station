@@ -383,7 +383,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHelmetGoldenMusician
-  name: musician's golden helmet
+  name: golden DJ helmet
   description: An old golden helmet belonging to the member of famous musical duo. Harder, better, faster, stronger.
   components:
   - type: Sprite
