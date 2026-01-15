@@ -345,7 +345,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHelmetSilverMusician
-  name: musician's silver helmet
+  name: silver DJ helmet
   description: An old silver helmet of a famous duo of musicians. One more time?
   components:
   - type: Sprite
