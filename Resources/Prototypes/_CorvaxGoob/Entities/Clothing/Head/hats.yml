@@ -346,7 +346,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHelmetSilverMusician
   name: silver DJ helmet
-  description: An old silver helmet of a famous duo of musicians. One more time?
+  description: An old silver helmet belonging to the member of famous musical duo. One more time?
   components:
   - type: Sprite
     sprite: _CorvaxGoob/Clothing/Head/Hats/daft_punk_silver.rsi
