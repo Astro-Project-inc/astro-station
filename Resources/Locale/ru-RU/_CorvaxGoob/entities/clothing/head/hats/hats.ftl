@@ -1,4 +1,4 @@
-ent-ClothingHeadHelmetSilverMusician = серебрянный шлем музыканта
+ent-ClothingHeadHelmetSilverMusician = серебряный шлем музыканта
     .desc = Старый серебрянный шлем известного дуэта музыкантов. Ещё один разок?
 ent-ClothingHeadHelmetGoldenMusician = золотой шлем музыканта
     .desc = Старый золотой шлем известного дуэта музыкантов. Усердней, лучше, быстрее, сильнее.
