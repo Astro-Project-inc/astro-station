@@ -525,4 +525,10 @@ public abstract partial class SharedSurgerySystem : EntitySystem
             if (entity.HasComponent<SurgeryComponent>())
                 _allSurgeries.Add(new EntProtoId(entity.ID));
     }
+
+    // CorvaxGoob-IPC
+    protected bool IsIPC(EntityUid user)
+    {
+        return MetaData(user).EntityPrototype is { ID: "MobIPC" };
+    }
 }

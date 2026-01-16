@@ -49,6 +49,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared._Shitmed.Surgery;
+using Content.Shared._CorvaxGoob.Skills;
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
 
@@ -885,7 +886,17 @@ public abstract partial class SharedSurgerySystem
         var duration = GetSurgeryDuration(step, user, body, speed);
 
         if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
-            duration = duration / surgerySpeedMod.SpeedModifier;
+        {
+            // CorvaxGoob-start: you need Surgery skill for anyone modifier, if you haven't skill, take debufff
+            if (_skills.HasSkill(user, Skills.Surgery) || IsIPC(user))
+            {
+                duration /= surgerySpeedMod.SpeedModifier;
+            }
+            // CorvaxGoob-end
+        }
+
+        if (!_skills.HasSkill(user, Skills.Surgery))
+            duration /= 0.5f;
 
         var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(duration), ev, body, part)
         {
@@ -925,11 +936,16 @@ public abstract partial class SharedSurgerySystem
             return 2f; // Shouldnt really happen but just a failsafe.
 
         var speed = toolSpeed;
-        if(TryComp<BuckleComponent>(target, out var buckleComp)) // Get buckle component from target.
-            if(TryComp<OperatingTableComponent>(buckleComp.BuckledTo, out var operatingTableComponent))  // If they are buckled to entity with operating table component
-                speed *= operatingTableComponent.SpeedModifier; // apply surgery speed modifier
-        if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
-            speed *= surgerySpeedMod.SpeedModifier;
+        if (_skills.HasSkill(user, Skills.Surgery) || IsIPC(user))
+        {
+            if (TryComp<BuckleComponent>(target, out var buckleComp)) // Get buckle component from target.
+                if (TryComp<OperatingTableComponent>(buckleComp.BuckledTo, out var operatingTableComponent))  // If they are buckled to entity with operating table component
+                    speed *= operatingTableComponent.SpeedModifier; // apply surgery speed modifier
+            if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
+                speed *= surgerySpeedMod.SpeedModifier;
+        }
+        else
+            speed *= 0.5f;
 
         return stepComp.Duration / speed;
     }

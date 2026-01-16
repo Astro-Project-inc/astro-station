@@ -33,17 +33,16 @@ public sealed class SkillsSystem : EntitySystem
 
     public void GrantAllSkills(EntityUid entity)
     {
-        if (!_mind.TryGetMind(entity, out _, out var mind))
-            return;
-
-        mind.Skills.Clear();
-        mind.Skills.Add(SkillTypes.All);
+        GrantSkill(entity, new HashSet<SkillTypes>() { SkillTypes.All });
     }
 
-    public void GrantSkill(EntityUid entity, HashSet<SkillTypes> skills)
+    public void GrantSkill(EntityUid entity, HashSet<SkillTypes> skills, bool clearSkills = false)
     {
         if (!_mind.TryGetMind(entity, out _, out var mind))
             return;
+
+        if (clearSkills)
+            mind.Skills.Clear();
 
         if (skills.Contains(SkillTypes.All))
         {
@@ -59,20 +58,6 @@ public sealed class SkillsSystem : EntitySystem
     /// </summary>
     public void UpdateSkills(EntityUid entity, HashSet<SkillTypes> skills)
     {
-        if (_mind.TryGetMind(entity, out _, out var mind))
-            UpdateSkills((entity, mind), skills);
-    }
-
-    public void UpdateSkills(Entity<MindComponent> entity, HashSet<SkillTypes>? skills)
-    {
-        entity.Comp.Skills.Clear();
-
-        if (skills is null)
-            return;
-
-        if (entity.Comp.Skills.Contains(SkillTypes.All))
-            entity.Comp.Skills.Add(SkillTypes.All);
-        else
-            entity.Comp.Skills.UnionWith(skills);
+        GrantSkill(entity, skills, true);
     }
 }
