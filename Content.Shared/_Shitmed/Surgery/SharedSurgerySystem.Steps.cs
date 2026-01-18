@@ -885,17 +885,16 @@ public abstract partial class SharedSurgerySystem
         var ev = new SurgeryDoAfterEvent(surgeryId, stepId, toolUsed);
         var duration = GetSurgeryDuration(step, user, body, speed);
 
-        if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
+        if (_skills.HasSkill(user, Skills.SelfSurgery))
         {
             // CorvaxGoob-start: you need Surgery skill for anyone modifier, if you haven't skill, take debufff
-            if (_skills.HasSkill(user, Skills.Surgery) || IsIPC(user))
+            if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
             {
                 duration /= surgerySpeedMod.SpeedModifier;
             }
             // CorvaxGoob-end
         }
-
-        if (!_skills.HasSkill(user, Skills.Surgery))
+        else
             duration /= 0.5f;
 
         var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(duration), ev, body, part)
