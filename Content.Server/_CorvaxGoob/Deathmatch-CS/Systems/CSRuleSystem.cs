@@ -138,7 +138,6 @@ public sealed class CSRuleSystem : GameRuleSystem<CSRuleComponent>
                         return;
             }
 
-            //_map.SetPaused(session.MapId, true);
             _sessions.Remove(session);
             CreateNewSession();
 
