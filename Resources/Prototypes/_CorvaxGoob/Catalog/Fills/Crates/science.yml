@@ -2,7 +2,7 @@
   id: CrateScienceGreyExtract
   parent: CrateScienceSecure
   name: grey extract crate
-  description: Contains box of extra grey extracts for your slime ranch. Requires Science access to open.
+  description: Contains box of grey extracts for your slime ranch. Requires Science access to open.
   components:
   - type: StorageFill
     contents:
