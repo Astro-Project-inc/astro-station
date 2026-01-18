@@ -2,7 +2,7 @@
   name: box of grey extracts
   parent: BoxCardboard
   id: BoxCardboardGreyExtracts
-  description: A box full with grey extracts. Sticky...
+  description: A box full of grey extracts. Sticky...
   components:
   - type: Sprite
     layers:
