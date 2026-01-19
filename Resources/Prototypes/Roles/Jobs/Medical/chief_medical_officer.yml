@@ -138,10 +138,10 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobChemist
-      time: 9000 #2.5 hrs
+      time: 18000 #5 hrs
     - !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 18000 #5 hrs
+      time: 28000 #8 hrs
     - !type:DepartmentTimeRequirement
       department: Medical
       time: 36000 #10 hrs
@@ -161,6 +161,13 @@
   skills: # CorvaxGoob-Skills
   - Surgery
   - MedicalEquipment
+  guides: # goobstation
+  - Medical
+  # - ChiefMedicalOfficer SOP Hidden by CorvaxGoob
+  # - Medical SOP Hidden by CorvaxGoob
+  - Command
+  - Chemicals
+  - Virology
   weight: 10 #Goob Edit
   access:
   - Medical

@@ -436,16 +436,26 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
             return;
         var userName = Identity.Entity(user, EntityManager);
         var targetName = Identity.Entity(target, EntityManager);
+        // CorvaxGoob-Localization-start
+        string locComboName;
+        if (Loc.TryGetString(comboName, out var name))
+            locComboName = name;
+        else if (comboName.Contains(' '))
+            locComboName = Loc.GetString("martial-arts-combo-" + comboName.Replace(" ", ""));
+        else
+            locComboName = Loc.GetString("martial-arts-combo-" + comboName);
         _popupSystem.PopupEntity(Loc.GetString("martial-arts-action-sender",
-            ("name", targetName),
-            ("move", comboName)),
-            user,
-            user);
+                    ("user", userName), // added
+                    ("name", targetName),
+                    ("move", locComboName)), // comboName -> locComboName
+                    user,
+                    user);
         _popupSystem.PopupEntity(Loc.GetString("martial-arts-action-receiver",
             ("name", userName),
-            ("move", comboName)),
+            ("move", locComboName)), // comboName -> locComboName
             target,
             target);
+        // CorvaxGoob-Localization-end
     }
 
     #endregion
@@ -519,6 +529,9 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
                 EnsureComp<NinjutsuSneakAttackComponent>(user);
                 break;
             case MartialArtsForms.CloseQuartersCombat:
+                var itcryeverytime =
+                    new CanDoCQCEvent();
+                  /*  
                 var riposte = EnsureComp<RiposteeComponent>(user);
                 riposte.Data.TryAdd("CQC",
                     new(0.1f,
@@ -533,6 +546,7 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
                     null,
                     null,
                     new CanDoCQCEvent()));
+                    */
                 break;
         }
 

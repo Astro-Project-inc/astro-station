@@ -121,6 +121,8 @@
       - EnergySpeedloader
       - MilitaryPowerCell
       - HandGrenade
+      - TelescopicBaton # CorvaxGoob
+      - TelescopicShield # CorvaxGoob
       components:
       - FlashOnTrigger
       - SmokeOnTrigger
@@ -159,6 +161,8 @@
         - Bloodpack
         - Gauze
         - Ointment
+        - CigPack
+        - Cigarette
       components:
         - Pill
         - Hypospray
@@ -167,7 +171,6 @@
         - Defibrillator
         - SolutionTransfer
         - GunApplySolution # Dart gun
-
 
 - type: entity
   parent: ClothingBeltSheath
@@ -185,7 +188,7 @@
   - type: ItemSlots
     slots:
       item:
-        name: Sabre
+        # name: Sabre # CorvaxGoob-Loc-in-UI
         insertVerbText: sheath-insert-verb
         ejectVerbText: sheath-eject-verb
         insertSound: /Audio/Items/sheath.ogg
@@ -234,10 +237,45 @@
   - type: ItemSlots
     slots:
       item:
-        name: Handgun
+        # name: Handgun # CorvaxGoob-Loc-in-UI
         whitelist:
           tags:
           - Sidearm
+
+- type: entity
+  parent: ChemBag
+  id: ClothingBeltChemBagXenobiology
+  name: xenobiology pouch
+  description: A slime-resistant pouch intended for use by Xenobiologists. Smells of.. plasma?
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Belt/xenobag.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Belt/xenobag.rsi
+  - type: Storage
+    whitelist:
+      tags:
+      - Syringe
+      - Dropper
+      components:
+      - SyringeGun
+      - SurgeryTool
+      - SolutionTransfer
+      - SlimeExtract
+      
+- type: entity
+  parent: ClothingBeltChemBagXenobiology
+  id: ClothingBeltChemBagXenobiologyHolding
+  name: xenobiology pouch of holding
+  description: A larger slime-resistant pouch intended for use by Xenobiologists. Smells of bluespace extract and monkey hair.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Belt/xenobag_holding.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Belt/xenobag_holding.rsi
+  - type: Storage
+    grid:
+    - 0,0,19,9
 
 - type: entity
   parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseCentcommContraband]
@@ -265,3 +303,10 @@
       amount: 1
     - id: EbifinlLazideChemistryVial
       amount: 1
+
+- type: entity
+  parent: ClothingBeltUtilityFilled
+  id: ClothingBeltUtilityFilledUnremoveable
+  suffix: Unremoveable
+  components:
+  - type: Unremoveable

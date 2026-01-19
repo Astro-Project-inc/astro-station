@@ -136,10 +136,10 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobAtmosphericTechnician
-      time: 9000 #2.5 hrs
+      time: 18000 #5 hrs
     - !type:RoleTimeRequirement
       role: JobStationEngineer
-      time: 18000 #5 hrs
+      time: 21600 #6 hrs
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 36000 #10 hrs
@@ -160,6 +160,14 @@
   skills: # CorvaxGoob-Skills
   - ShuttleControl
   - AdvancedBuilding
+  #canBeAntag: false
+  antagAdvantage: 75 # Goobstation
+  guides: # goobstation
+  - Engineering
+  # - ChiefEngineer SOP Hidden by CorvaxGoob
+  # - Engineering SOP Hidden by CorvaxGoob
+  - Command
+  # - Emergencies SOP Hidden by CorvaxGoob
   access:
   - Maintenance
   - Engineering

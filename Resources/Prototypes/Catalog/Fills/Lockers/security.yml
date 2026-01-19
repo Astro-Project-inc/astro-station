@@ -249,6 +249,8 @@
     - id: BloodTrak # Goobstation
     - id: Betty # Goobstation
     - id: BoxTapeRecorder # DeltaV
+    - id: PhotoCameraFilled # CorvaxGoob
+    - id: ClothingOuterHardsuitDetective # CorvaxGoob Чтобы мапперам не пришлось перемапливать шкафы на те что со скафом
 
 - type: entity
   id: ClosetBombFilled

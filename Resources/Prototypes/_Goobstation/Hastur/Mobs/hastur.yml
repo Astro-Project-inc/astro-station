@@ -27,12 +27,10 @@
           Asphyxiation: -100
     - type: HasturLash
     - type: HasturVeil
-    - type: MassWhisper
     - type: ActionGrant
       actions:
       - ActionHasturDevour
       - ActionInsanityAura
-      - ActionMassWhisper
       - ActionVeilOfTheVoid
       - ActionOmnipresence
       - ActionHasturLash
@@ -144,8 +142,6 @@
       tags:
       - DoorBumpOpener
       - FootstepSound
-    - type: Megafauna
-      loot: ClothingOuterHasturRobes
     - type: Sprinter
     - type: CombatPower
       factor: 10 # times more dangerous than a crew-member
