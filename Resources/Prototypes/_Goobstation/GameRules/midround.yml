@@ -466,6 +466,8 @@
       min: 1
       max: 1
       pickPlayer: false
+      skills: # CorvaxGoob-Skills
+      - All
       mindRoles:
       - MindRoleGhostRoleSoloAntagonist
       briefing:
@@ -556,6 +558,8 @@
       min: 3
       max: 4
       pickPlayer: false
+      skills: # CorvaxGoob-Skills
+      - All
       mindRoles:
       - MindRoleGhostRoleTeamAntagonist
       briefing:
@@ -620,6 +624,8 @@
       min: 1
       max: 1
       pickPlayer: false
+      skills: # CorvaxGoob-Skills
+      - All
       startingGear: SlasherGear
       briefing:
         text: slasher-role-greeting
@@ -661,21 +667,21 @@
     tags:
     - MidroundAntag
 
-# Santa
+# Santa # CorvaxGoob: commented, New Year already passed only Shit spawn
 
-- type: entity
-  id: SantaClausSpawn
-  parent: BaseGameRule
-  components:
-  - type: StationEvent
-    weight: 25 # Tune down after Christmas
-    earliestStart: 3
-    minimumPlayers: 10
-    maxOccurrences: 1
-    eventType: Neutral
-  - type: GameRule
-    chaosScore: 100
-  - type: VentCrittersRule # like a chimney
-    max: 1
-    table:
-      id: SantaClaus
+# - type: entity
+#   id: SantaClausSpawn
+#   parent: BaseGameRule
+#   components:
+#   - type: StationEvent
+#     weight: 25 # Tune down after Christmas
+#     earliestStart: 3
+#     minimumPlayers: 10
+#     maxOccurrences: 1
+#     eventType: Neutral
+#   - type: GameRule
+#     chaosScore: 100
+#   - type: VentCrittersRule # like a chimney
+#     max: 1
+#     table:
+#       id: SantaClaus
