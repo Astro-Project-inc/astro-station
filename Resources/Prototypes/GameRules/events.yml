@@ -160,6 +160,7 @@
     - id: GasLeak
     - id: GreytideVirus
     - id: IonStorm # its calm like 90% of the time smh
+    - id: JobDistributionError
     - id: KudzuGrowth
     - id: MassHallucinations
     - id: MimicVendorRule
@@ -171,13 +172,14 @@
     - id: SnakeSpawn
     - id: SpiderClownSpawn
     - id: SpiderSpawn
-    - id: VentClog
+#    - id: VentClog # reverted by CorvaxGoob
 #    - id: TidemindDevelop - Corvax Goob
     - id: MothroachSpawn # DeltaV
     - id: DerelictCyborgSyndicateSpawn # Goobstation - usually calm
     - id: MalignRiftSpawn # DeltaV
-    - id: FloorGoblinSpawn # Goobstation
-    - id: HellGooseSpawn # Goobstation
+    - id: FloorGoblinMidRound # Goobstation
+    - id: ClownGoblinMigration # Goobstation - New Midrounds
+    - id: SantaClausSpawn # Goobstation, remove after new year
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -190,6 +192,8 @@
     - id: ParadoxCloneSpawn
     #- id: RevenantSpawn  # GoobStation - removed till rework
     - id: SleeperAgents
+    - id: HereticMidround # Goob
+    - id: ChangelingMidround # Goob
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: DerelictCyborgSpawn
@@ -199,6 +203,16 @@
     - id: BingleSpawn #Goobstation - Bingle
     - id: SlaughterDemonMidround # Goobstation - Slaughter Demon
     - id: XenomorphsInfestation # WD EDIT
+    #- id: GreyTideAntagMidround # Goobstation - New Midrounds
+    #- id: SingulothKnightsMidround # Goobstation - New Midrounds
+    #- id: DarkLordMidround # Goobstation - New Midrounds
+    #- id: MimeAssassinMidround # Goobstation - New Midrounds
+    #- id: DarkPriestMidround # Goobstation - New Midrounds
+    #- id: VoxRaidersMidround # Goobstation - New Midrounds
+    #- id: TunnelClownMidround # Goobstation
+    #- id: WraithMidround # Goobstation - Wraith
+    #TODO when midrounds are "reviewed" by the chudmins add them back
+    #TODO When Slasher is Ready - id: SlasherSpawn # Goobstation - The Slasher
 
 - type: entity
   id: BaseStationEvent
@@ -279,7 +293,7 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    weight: 2
+    weight: 2.5 # CorvaxGoob Changes: 2 > 2.5
     reoccurrenceDelay: 5
     earliestStart: 1
     duration: 1
@@ -351,7 +365,7 @@
   - type: StationEvent
     weight: 5
     duration: 1
-    minimumPlayers: 10
+    minimumPlayers: 30 # CorvaxGoob-SpawnRebalance: Changed to from 10
     eventType: Chaotic # Goobstation
   # Goobstation
   - type: GameRule
@@ -364,7 +378,7 @@
   id: DragonSpawn
   components:
   - type: StationEvent
-    weight: 2 # Goobstation - was 3
+    weight: 3.5 # Goobstation Changes: 3 > 2 # CorvaxGoob Changes: 2 > 3.5
     earliestStart: 30 # Goobstation was 45
     #recorruenceDelay: 20 # Goobstation - no longer needed
     maxOccurrences: 1 # Goobstation
@@ -404,7 +418,7 @@
   id: NinjaSpawn
   components:
   - type: StationEvent
-    weight: 3 # Goobstation - was 6
+    weight: 3.5 # Goobstation Changes: 6 > 3 # CorvaxGoob Changes: 3 > 3.5
     duration: null
     earliestStart: 30 # Goobstation - was 45
     #reoccurrenceDelay: 20 # Goobstation - no longer needed
@@ -430,6 +444,7 @@
     - Diona
     - Abductor
     - Harpy
+    - Plasmaman # EE
     # Goobstation end
   - type: AntagObjectives
     objectives:
@@ -746,9 +761,7 @@
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
-      - id: MobAdultSlimesBlueAngry
-      - id: MobAdultSlimesGreenAngry
-      - id: MobAdultSlimesYellowAngry
+      - id: XenobioSlimeBabySpawner # goob edit - nuke wizden slimes in favor of xenobio
 
 - type: entity
   id: SnakeSpawn
@@ -818,7 +831,7 @@
         path: /Audio/_CorvaxGoob/Announcements/Announcers/Intern/aliens.ogg
     earliestStart: 45 # DeltaV - was 20
     minimumPlayers: 30 # DeltaV - was 20
-    weight: 3 # Goobstation - was 1.5
+    weight: 4 # Goobstation Changes: 1.5 > 3 # CorvaxGoob Changes: 3 > 4
     duration: 30 # DeltaV: was 60, used as a delay now
     chaos: # Goobstation
       Hostile: 20
@@ -839,7 +852,7 @@
   - type: StationEvent
     earliestStart: 60 # Goobstation - was 90 (impossible on goob)
     minimumPlayers: 40
-    weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
+    weight: 1.5 # Zombies was happening basically every single survival round, so now it's super rare # CorvaxGoob Changes: 1 > 1.5
     duration: 1
     chaos: # Goobstation
       Hostile: 100
@@ -882,7 +895,7 @@
   components:
   - type: StationEvent
     earliestStart: 35
-    weight: 2.5 # Goobstation - was 5.5
+    weight: 3 # Goobstation Changes: 5.5 > 2.5 # CorvaxGoob Changes: 2.5 > 3
     minimumPlayers: 50 # Goobstation - was 20
     duration: 1
     chaos: # Goobstation

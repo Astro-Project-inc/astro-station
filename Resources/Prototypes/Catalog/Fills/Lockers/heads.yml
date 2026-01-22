@@ -173,6 +173,8 @@
     - id: ClothingHandsKnuckleDustersQM # Goobstation - ROCK THAT MF!!
     - id: SalvageJobBoardComputerCircuitboard # Goobstation - This doesn't really have a use right now but it's there incase it ever gets use again
     - id: CargoMegaphone # goob - loudspeaker
+    - id: SlotMachineHighRollerFlatPack # Goob - gambling
+    - id: ComputerFundingAllocationFlatpack #CorvaxGoob-QuarterMaster-finance
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -289,8 +291,9 @@
     - id: DoorRemoteService
     - id: HoPIDCard
     - id: IDComputerCircuitboard
-    - id: ComputerFundingAllocationFlatpack # Goobstation
-    - id: ComputerCargoRequestServiceFlatpack # Goobstation
+    #- id: ComputerFundingAllocationFlatpack # Goobstation #CorvaxGoob-QuarterMaster-finance
+    - id: ComputerCargoRequestServiceFlatpack # Goobstation 
+    - id: PrinterDocFlatpack #CorvaxGoob-Docprinter
     - id: RubberStampApproved
     - id: RubberStampDenied
     - id: RubberStampHop
@@ -404,6 +407,7 @@
     # - id: MedicalScannerFlatpack
     # - id: ComputerCloningConsoleFlatpack
     # CorvaxGoob-Cloning-end
+    - id: ChemistryHotplateFlatPack
     - id: BiomassReclaimerFlatpack
     - id: Multitool
     - id: MedTekCartridge
@@ -413,6 +417,9 @@
     - id: ClothingBackpackDuffelSurgeryFilled
     # Shitmed
     - id: MedicalBiofabricatorFlatpack
+    # Virology
+    - id: DiseaseDiagnoserFlatPack
+    - id: VaccinatorFlatPack
     # Goobstation End
 
 # Hardsuit table, used for suit storage as well
@@ -473,6 +480,7 @@
       prob: 0.15 # GoobStation - RD needs cigs for uhh... science...
     - id: ScienceTechFabCircuitboard # Goobstation - Science Techfab
     - id: ClothingBeltGeminiHoloProjector # Goobstation - Who better to do science with than yourself?
+    - id: XenobiologyBountyComputerCircuitboard # Goobstation
     - id: MMI # Goobstation
 
 # Hardsuit table, used for suit storage as well
@@ -588,4 +596,3 @@
     - id: SpaceCash1000
     - id: BeachBall
     - id: BikeHorn
-

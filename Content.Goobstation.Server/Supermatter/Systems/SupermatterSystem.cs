@@ -56,6 +56,7 @@ using Robust.Shared.IoC;
 using Robust.Shared.Maths;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Events;
+using Robust.Shared.Random; // CorvaxGoob-SM-Accent-Sound
 using Robust.Shared.Timing;
 
 namespace Content.Goobstation.Server.Supermatter.Systems;
@@ -76,6 +77,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
+    [Dependency] private readonly IRobustRandom _rand = default!; // CorvaxGoob-SM-Accent-Sound
 
     private DelamType _delamType = DelamType.Explosion;
 
@@ -146,6 +148,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
             HandleDelamination(uid, sm);
 
         HandleSoundLoop(uid, sm);
+        TryPlaySupermatterAccentSound(uid); // CorvaxGoob-SM-Accent-Sound
 
         if (sm.ZapAccumulator >= sm.ZapTimer)
         {
@@ -513,6 +516,45 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
         return DelamType.Explosion;
     }
 
+    // CorvaxGoob-SM-Accent-Sounds-Start
+    /// <summary>
+    /// Tries to play accent sound. Sounds will be different if Supermatter is delamming or not.
+    /// </summary>
+    /// <param name="uid">uid of the SM</param>
+    private void TryPlaySupermatterAccentSound(EntityUid uid)
+    {
+        if (!TryComp<SupermatterComponent>(uid, out var comp))
+            return;
+        if (comp.Activated == false)
+            return;
+
+        if (_gameTiming.CurTime < comp.NextAccentSound)
+            return;
+
+        // Chooses what sound to play, based on damage to the SM
+        var randomSound = comp.Damage > comp.WarningPoint
+            ? comp.AccentSoundsDelam
+            : comp.AccentSoundsNormal;
+
+        _audio.PlayPredicted(randomSound, uid, uid);
+        ResetAccentSounds(uid);
+    }
+
+    /// <summary>
+    /// Resets the timer when to play accent sound
+    /// </summary>
+    /// <param name="uid">uid of the SM</param>
+    private void ResetAccentSounds(EntityUid uid)
+    {
+        if (!TryComp<SupermatterComponent>(uid, out var comp))
+            return;
+
+        comp.NextAccentSound = _gameTiming.CurTime +
+                               TimeSpan.FromSeconds(_rand.Next(comp.MinSoundPlaytime.Seconds,
+                                   comp.MaxSoundPlaytime.Seconds));
+    }
+    // CorvaxGoob-SM-Accent-Sounds-End
+
     /// <summary>
     ///     Handle the end of the station.
     /// </summary>
@@ -586,19 +628,31 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
 
     private void OnCollideEvent(EntityUid uid, SupermatterComponent sm, ref StartCollideEvent args)
     {
-        if (!sm.Activated)
-        {
-            _adminLog.Add(LogType.Supermatter,
-                          HasComp<MobStateComponent>(args.OtherEntity) ? LogImpact.Extreme : LogImpact.High, // for mice activating it
-                          $"{ToPrettyString(args.OtherEntity):actor} activated Supermatter {ToPrettyString(uid):subject}");
-            sm.Activated = true;
-        }
-
         var target = args.OtherEntity;
+
+        // Stop immune entities from activating the sm.
         if (args.OtherBody.BodyType == BodyType.Static
             || HasComp<SupermatterImmuneComponent>(target)
             || _container.IsEntityInContainer(uid))
             return;
+
+        if (!sm.Activated)
+        {
+            // Extra logging for supermatter
+            var activator = ToPrettyString(args.OtherEntity);
+            var isMob = HasComp<MobStateComponent>(args.OtherEntity);
+            var impact = isMob ? LogImpact.Extreme : LogImpact.High;
+
+            // Original log entry
+            _adminLog.Add(LogType.Supermatter, impact,
+                $"{activator:actor} activated Supermatter {ToPrettyString(uid):subject}");
+
+            // New admin alert
+            _adminLog.Add(LogType.AdminMessage, LogImpact.Extreme,
+                $"SUPERMATTER ACTIVATED BY {activator} AT {Transform(uid).Coordinates}");
+
+            sm.Activated = true;
+        }
 
         if (TryComp<SupermatterFoodComponent>(target, out var food))
             sm.Power += food.Energy;
@@ -621,13 +675,13 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
 
     private void OnHandInteract(EntityUid uid, SupermatterComponent sm, ref InteractHandEvent args)
     {
-        if (!sm.Activated)
-            sm.Activated = true;
-
         var target = args.User;
 
         if (HasComp<SupermatterImmuneComponent>(target))
             return;
+
+        if (!sm.Activated)
+            sm.Activated = true;
 
         sm.MatterPower += 200;
 
@@ -638,6 +692,9 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
 
     private void OnItemInteract(EntityUid uid, SupermatterComponent sm, ref InteractUsingEvent args)
     {
+        if (!HasComp<SupermatterImmuneComponent>(args.User))
+            return;
+
         if (!sm.Activated)
             sm.Activated = true;
 

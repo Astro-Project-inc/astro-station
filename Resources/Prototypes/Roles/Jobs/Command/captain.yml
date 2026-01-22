@@ -150,18 +150,27 @@
       time: 14400 # 4 hours
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 14400 # 4 hours
+      time: 21600 # 6 hours
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 14400 # 4 hours
+      time: 28000 # 8 hours
     - !type:SpeciesRequirement # Goob - None Felinid
       inverted: true
       species:
       - Felinid
+    - !type:SpeciesRequirement # CorvaxGoob-Species
+      inverted: true
+      species:
+      - Abductor
       #any MRP using our code might eventually want to use it
     # - !type:SaturationRequirement # MisandryBox - no neon hair on captain
     #   hairColorSaturation: 0.30
   #goobcoins: 50 #Goob content Corvax-Goob-coins
+  guides: # goobstation
+  - Command
+  # - Succession Hidden by CorvaxGoob
+  # - StandardProcedures SOP Hidden by CorvaxGoob
+  # - Captain SOP Hidden by CorvaxGoob
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"

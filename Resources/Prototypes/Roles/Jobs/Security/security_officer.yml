@@ -92,6 +92,10 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 9000 #2.5 hrs
+    - !type:SpeciesRequirement # CorvaxGoob-Species
+      inverted: true
+      species:
+      - Abductor
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
@@ -99,6 +103,12 @@
   #goobcoins: 30 #Goob content Corvax-Goob-coins
   skills: # CorvaxGoob-Skills
   - Shooting
+  guides: # goobstation
+  - Security
+  # - Legal SOP Hidden by CorvaxGoob
+  # - OfficerCadet SOP Hidden by CorvaxGoob
+  - CorporateJudo
+  # - Alert Levels Hidden by CorvaxGoob
   access:
   - Security
   - Brig

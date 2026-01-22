@@ -180,9 +180,9 @@
     - !type:GroupSelector
       children:
       - id: ClothingBeltSecurityFilled
-        weight: 0.7
+        weight: 0.5
       - id: ClothingBeltCorporateJudoFilled
-        weight: 0.3
+        weight: 0.5
     # Goobstation - Martial Arts - end
 
 - type: entity
@@ -210,10 +210,11 @@
     - id: MedkitOxygenFilled
     - id: MedkitAdvancedFilled
     #Corvax-Goob-brigmedic-loadout-update-start
-    - id: BoxBodyBag
     - id: Defibrillator
     - id: ClothingMaskSecurityMedicalRespirator
     #Corvax-Goob-brigmedic-loadout-update-end
+    - id: BoxSyringe
+    - id: BoxBodyBag # Goob Station
 
 - type: entity
   id: LockerDetectiveFilled
@@ -248,6 +249,8 @@
     - id: BloodTrak # Goobstation
     - id: Betty # Goobstation
     - id: BoxTapeRecorder # DeltaV
+    - id: PhotoCameraFilled # CorvaxGoob
+    - id: ClothingOuterHardsuitDetective # CorvaxGoob Чтобы мапперам не пришлось перемапливать шкафы на те что со скафом
 
 - type: entity
   id: ClosetBombFilled

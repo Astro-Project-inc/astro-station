@@ -74,7 +74,9 @@
   #goobcoins: 20 #Goob content Corvax-Goob-coins
   skills: # CorvaxGoob-Skills
   - ShuttleControl
-  - Shooting
+  - AdvancedBuilding
+  guides: # goobstation
+  - Atmospherics
   access:
   - Maintenance
   - Engineering

@@ -42,6 +42,7 @@ using Content.Shared._Goobstation.Wizard.Refund; // Goob
 using Content.Shared.Actions;
 using Content.Shared.Database;
 using Content.Goobstation.Maths.FixedPoint;
+using Content.Goobstation.Shared.ManifestListings;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Heretic; // Goob
 using Content.Shared.Heretic.Prototypes; // Goob
@@ -54,7 +55,8 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing; // Goob
+using Robust.Shared.Timing;
+using Content.Goobstation.Common.Effects; // Goob
 
 namespace Content.Server.Store.Systems;
 
@@ -73,6 +75,7 @@ public sealed partial class StoreSystem
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly HereticKnowledgeSystem _heretic = default!; // goobstation - heretics
     [Dependency] private readonly IGameTiming _timing = default!; // goobstation - ntr update
+    [Dependency] private readonly SparksSystem _sparks = default!; // CorvaxGoob
 
     private void InitializeUi()
     {
@@ -213,6 +216,14 @@ public sealed partial class StoreSystem
             RaiseLocalEvent(uid, new NtrListingPurchaseEvent(listing.Cost.First().Value));
         OnPurchase(listing); // Goob edit - ntr shittery
 
+        // Goobstation start
+        if (_mind.TryGetMind(buyer, out var mindId, out _))
+        {
+            var ev = new ListingPurchasedEvent(buyer, uid, listing);
+            RaiseLocalEvent(mindId, ref ev);
+        }
+        // Goobstation end
+
         // if (!IsOnStartingMap(uid, component)) // Goob edit
         //     component.RefundAllowed = false;
 
@@ -329,11 +340,14 @@ public sealed partial class StoreSystem
                 RaiseLocalEvent(buyer, listing.ProductEvent);
         }
 
+        if (component.PlaySparksEffect) // CorvaxGoob-SparkleEffects
+            _sparks.DoSparks(Transform(uid).Coordinates, playSound: false);
+
         // Goob edit start
-        /* if (listing.DisableRefund)
-        {
-            component.RefundAllowed = false;
-        } */
+            /* if (listing.DisableRefund)
+            {
+                component.RefundAllowed = false;
+            } */
         if (listing.BlockRefundListings.Count > 0)
         {
             foreach (var listingData in component.Listings.Where(x => listing.BlockRefundListings.Contains(x.ID)))
