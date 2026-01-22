@@ -2,6 +2,7 @@ using Content.Shared.Clothing.Components;
 using Content.Shared.Examine;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
+using Content.Shared.Mobs.Systems;
 
 namespace Content.Shared._CorvaxGoob.Clothing;
 
@@ -10,6 +11,7 @@ namespace Content.Shared._CorvaxGoob.Clothing;
 /// </summary>
 public sealed class OtherUnremovableClothingSystem : EntitySystem
 {
+    [Dependency] private readonly MobStateSystem _state = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -23,7 +25,7 @@ public sealed class OtherUnremovableClothingSystem : EntitySystem
         if (TryComp<ClothingComponent>(otherUnremovableClothing, out var clothing) && (clothing.Slots & args.SlotFlags) == SlotFlags.NONE)
             return;
 
-        if (args.UnEquipTarget != args.Unequipee)
+        if (args.UnEquipTarget != args.Unequipee || _state.IsDead(args.UnEquipTarget))
         {
             args.Cancel();
         }
