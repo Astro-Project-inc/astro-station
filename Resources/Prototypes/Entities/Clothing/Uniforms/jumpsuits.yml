@@ -923,7 +923,7 @@
     sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicatepink.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicatepink.rsi
-  # - type: ScannableForPoints # goob edit
+  # - type: ScannableForPoints # goob edit # CorvaxGoob-Contraband : deleted contra label
   #   points: 1
 
 - type: entity
@@ -936,7 +936,7 @@
     sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicatered.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicatered.rsi
-  # - type: ScannableForPoints # goob edit
+  # - type: ScannableForPoints # goob edit # CorvaxGoob-Contraband : deleted contra label
   #   points: 1
 
 - type: entity

@@ -197,7 +197,7 @@
       sprite: Clothing/Neck/Scarfs/syndiered.rsi
     - type: StaticPrice
       price: 500
-    # - type: ScannableForPoints # goob edit
+    # - type: ScannableForPoints # goob edit # CorvaxGoob-Contraband : deleted contra label
     #   points: 1
 
 - type: entity
