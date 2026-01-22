@@ -61,6 +61,7 @@ public abstract partial class SharedSurgerySystem
     private EntityQuery<SurgeryToolComponent> _toolQuery;
 
     private readonly List<EntityUid> _nextStepList = new();
+    private const float SpeedWithoutSurgerySkill = 0.25f;
 
     private void InitializeSteps()
     {
@@ -895,7 +896,7 @@ public abstract partial class SharedSurgerySystem
             // CorvaxGoob-end
         }
         else
-            duration /= 0.5f;
+            duration /= SpeedWithoutSurgerySkill;
 
         var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(duration), ev, body, part)
         {
@@ -944,7 +945,7 @@ public abstract partial class SharedSurgerySystem
                 speed *= surgerySpeedMod.SpeedModifier;
         }
         else
-            speed *= 0.5f;
+            speed *= SpeedWithoutSurgerySkill;
 
         return stepComp.Duration / speed;
     }
