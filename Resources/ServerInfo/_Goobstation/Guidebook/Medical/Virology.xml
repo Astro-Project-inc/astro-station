@@ -67,7 +67,7 @@
 <Box>
 <GuideEntityEmbed Entity="ClothingEyesHudViro" Caption="вирусный визор"/>
 <GuideEntityEmbed Entity="VirologistPDA"/>
-<GuideEntityEmbed Entity="ClothingOuterBioVirology" Caption="костюм биозащиты"/>
+<GuideEntityEmbed Entity="ClothingOuterBioVirology" Caption="костюм биологической защиты"/>
 <GuideEntityEmbed Entity="Syringe"/>
 <GuideEntityEmbed Entity="HandheldHealthAnalyzer"/>
 </Box>
