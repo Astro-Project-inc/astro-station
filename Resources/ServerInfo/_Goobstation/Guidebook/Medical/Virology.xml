@@ -65,7 +65,7 @@
 - И, конечно же, ваши вирусологические установки.
 
 <Box>
-<GuideEntityEmbed Entity="ClothingEyesHudViro" Caption="вирусный визор"/>
+<GuideEntityEmbed Entity="ClothingEyesHudViro" Caption="вирусологический визор"/>
 <GuideEntityEmbed Entity="VirologistPDA"/>
 <GuideEntityEmbed Entity="ClothingOuterBioVirology" Caption="костюм биологической защиты"/>
 <GuideEntityEmbed Entity="Syringe"/>
