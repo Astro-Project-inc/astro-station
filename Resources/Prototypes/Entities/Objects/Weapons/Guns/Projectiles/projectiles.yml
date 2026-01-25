@@ -1412,7 +1412,7 @@
     impactEffect: BulletImpactEffectOrangeDisabler  
     damage:  
       types:  
-        Heat: 14  
+        Heat: 14  #CorvaxGoob-laser-buff 13->14
   - type: BlurryVisionProjectile
     duration: 5 #CorvaxGoob-laser-buff
 
