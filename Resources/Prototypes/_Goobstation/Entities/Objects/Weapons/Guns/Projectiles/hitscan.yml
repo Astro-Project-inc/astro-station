@@ -17,7 +17,7 @@
   impactFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: impact_beam_light
-blurryVisionDuration: 5 #CorvaxGoob-laser-buff
+  blurryVisionDuration: 5 #CorvaxGoob-laser-buff
 
 - type: hitscan
   id: SmallIonLaser
@@ -49,7 +49,7 @@ blurryVisionDuration: 5 #CorvaxGoob-laser-buff
   impactFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: impact_beam_light_xray
-blurryVisionDuration: 5 #CorvaxGoob-laser-buff
+  blurryVisionDuration: 5 #CorvaxGoob-laser-buff
 
 - type: hitscan
   id: SmallOverchargedLaser
@@ -97,7 +97,7 @@ blurryVisionDuration: 5 #CorvaxGoob-laser-buff
   impactFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: impact_beam_light
-blurryVisionDuration: 5 #CorvaxGoob-laser-buff
+  blurryVisionDuration: 5 #CorvaxGoob-laser-buff
 
 - type: hitscan
   id: MediumIonLaser
@@ -129,7 +129,7 @@ blurryVisionDuration: 5 #CorvaxGoob-laser-buff
   impactFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: impact_beam_light_xray
-blurryVisionDuration: 5 #CorvaxGoob-laser-buff
+  blurryVisionDuration: 5 #CorvaxGoob-laser-buff
 
 - type: hitscan
   id: MediumOverchargedLaser
@@ -177,4 +177,4 @@ blurryVisionDuration: 5 #CorvaxGoob-laser-buff
   impactFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: impact_beam_heavy
-blurryVisionDuration: 5 #CorvaxGoob-laser-buff
+  blurryVisionDuration: 5 #CorvaxGoob-laser-buff
