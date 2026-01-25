@@ -74,4 +74,7 @@ public sealed partial class HitscanPrototype : IPrototype, IShootable
     // Goobstation
     [DataField]
     public float FireStacks;
+
+    [DataField("blurryVisionDuration")]  
+public float? BlurryVisionDuration = null;
 }
