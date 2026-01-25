@@ -76,5 +76,5 @@ public sealed partial class HitscanPrototype : IPrototype, IShootable
     public float FireStacks;
     
     [DataField("blurryVisionDuration")]  
-public float? BlurryVisionDuration = null;
-}
+public float? BlurryVisionDuration = null; 
+} // CorvaxGoob-laser-buff
