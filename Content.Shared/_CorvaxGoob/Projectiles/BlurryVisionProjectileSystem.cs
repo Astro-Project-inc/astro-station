@@ -2,7 +2,7 @@ using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.StatusEffect;  
 using Content.Shared.Weapons.Ranged.Systems;  
 
-namespace Content.Shared.Projectiles;  
+namespace Content.Shared._CorvaxGoob.Projectiles; 
 
 public sealed class BlurryVisionProjectileSystem : EntitySystem  
 {  
