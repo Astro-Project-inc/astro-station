@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;  
   
-namespace Content.Shared.Projectiles;  
+namespace Content.Shared._CorvaxGoob.Projectiles;
   
 /// <summary>  
 /// Applies blurry vision status effect when this projectile hits a target  
