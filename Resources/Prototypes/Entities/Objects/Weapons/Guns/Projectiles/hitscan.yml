@@ -64,7 +64,7 @@
   impactFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: impact_laser
-blurryVisionDuration: 5 #CorvaxGoob-laser-buff
+  blurryVisionDuration: 5 #CorvaxGoob-laser-buff
 
 - type: hitscan
   id: RedLaserPractice
@@ -95,7 +95,7 @@ blurryVisionDuration: 5 #CorvaxGoob-laser-buff
   impactFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: impact_laser
-blurryVisionDuration: 5 #CorvaxGoob-laser-buff
+  blurryVisionDuration: 5 #CorvaxGoob-laser-buff
 
 - type: hitscan
   id: RedLightLaser
@@ -128,7 +128,7 @@ blurryVisionDuration: 5 #CorvaxGoob-laser-buff
   impactFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: impact_xray
-blurryVisionDuration: 5 #CorvaxGoob-laser-buff
+  blurryVisionDuration: 5 #CorvaxGoob-laser-buff
 
 - type: hitscan
   id: RedHeavyLaser
@@ -144,7 +144,7 @@ blurryVisionDuration: 5 #CorvaxGoob-laser-buff
   impactFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: impact_beam_heavy
-blurryVisionDuration: 5 #CorvaxGoob-laser-buff
+  blurryVisionDuration: 5 #CorvaxGoob-laser-buff
 
 - type: hitscan
   id: Pulse
@@ -178,4 +178,4 @@ blurryVisionDuration: 5 #CorvaxGoob-laser-buff
   impactFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: impact_beam_heavy2
-blurryVisionDuration: 5 #CorvaxGoob-laser-buff
+  blurryVisionDuration: 5 #CorvaxGoob-laser-buff
