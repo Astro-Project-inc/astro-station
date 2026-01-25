@@ -1413,8 +1413,8 @@
     damage:  
       types:  
         Heat: 14  #CorvaxGoob-laser-buff 13->14
-  - type: BlurryVisionProjectile
-    duration: 5 #CorvaxGoob-laser-buff
+  - type: BlurryVisionProjectile #CorvaxGoob-laser-buff
+    duration: 5 
 
 - type: entity
   name: wide laser barrage
