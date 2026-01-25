@@ -1377,42 +1377,44 @@
     muzzleFlash: null
   - type: SmartLinkBlacklist  # Goobstation
 
-- type: entity
-  name: laser bolt
-  id: BulletLaser
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Reflective
-    reflective:
-    - Energy
-  - type: FlyBySound
-    sound:
-      collection: EnergyMiss
-      params:
-        volume: 5
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-    layers:
-    - state: heavylaser
-      shader: unshaded
-  - type: Physics
-  - type: Fixtures
-    fixtures:
-      projectile:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.15,-0.3,0.15,0.3"
-        hard: false
-        mask:
-        - Opaque # Goob edit
-      fly-by: *flybyfixture
-  - type: Ammo
-  - type: Projectile
-    impactEffect: BulletImpactEffectOrangeDisabler
-    damage:
-      types:
-        Heat: 13
+- type: entity  
+  name: laser bolt  
+  id: BulletLaser  
+  parent: BaseBullet  
+  categories: [ HideSpawnMenu ]  
+  components:  
+  - type: Reflective  
+    reflective:  
+    - Energy  
+  - type: FlyBySound  
+    sound:  
+      collection: EnergyMiss  
+      params:  
+        volume: 5  
+  - type: Sprite  
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi  
+    layers:  
+    - state: heavylaser  
+      shader: unshaded  
+  - type: Physics  
+  - type: Fixtures  
+    fixtures:  
+      projectile:  
+        shape:  
+          !type:PhysShapeAabb  
+          bounds: "-0.15,-0.3,0.15,0.3"  
+        hard: false  
+        mask:  
+        - Opaque # Goob edit  
+      fly-by: *flybyfixture  
+  - type: Ammo  
+  - type: Projectile  
+    impactEffect: BulletImpactEffectOrangeDisabler  
+    damage:  
+      types:  
+        Heat: 13  
+  - type: BlurryVisionProjectile 
+    duration: 5
 
 - type: entity
   name: wide laser barrage
@@ -1424,6 +1426,8 @@
     proto: BulletLaser
     count: 5 #65 heat damage if you hit all your shots, but wide spread
     spread: 30
+    - type: BlurryVisionProjectile 
+    duration: 5
 
 - type: entity
   name: narrow laser barrage
