@@ -7,7 +7,7 @@
   id: SmallRedLaser
   damage:
     types:
-      Heat: 9 #CorvaxGoob-laser-buff 7->9
+      Heat: 9 # CorvaxGoob-laser-buff 7->9
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: muzzle_beam_light
@@ -17,7 +17,7 @@
   impactFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: impact_beam_light
-  blurryVisionDuration: 5 #CorvaxGoob-laser-buff
+  blurryVisionDuration: 5 # CorvaxGoob-laser-buff
 
 - type: hitscan
   id: SmallIonLaser
@@ -49,7 +49,7 @@
   impactFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: impact_beam_light_xray
-  blurryVisionDuration: 5 #CorvaxGoob-laser-buff
+  blurryVisionDuration: 5 # CorvaxGoob-laser-buff
 
 - type: hitscan
   id: SmallOverchargedLaser
@@ -87,7 +87,7 @@
   id: MediumRedLaser
   damage:
     types:
-      Heat: 12 #CorvaxGoob-laser-buff 10->12
+      Heat: 12 # CorvaxGoob-laser-buff 10->12
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: muzzle_beam_light
@@ -97,7 +97,7 @@
   impactFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: impact_beam_light
-  blurryVisionDuration: 5 #CorvaxGoob-laser-buff
+  blurryVisionDuration: 5 # CorvaxGoob-laser-buff
 
 - type: hitscan
   id: MediumIonLaser
@@ -129,7 +129,7 @@
   impactFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: impact_beam_light_xray
-  blurryVisionDuration: 5 #CorvaxGoob-laser-buff
+  blurryVisionDuration: 5 # CorvaxGoob-laser-buff
 
 - type: hitscan
   id: MediumOverchargedLaser
@@ -166,8 +166,8 @@
   id: HeavyRedLaser
   damage:
     types:
-      Heat: 19 #CorvaxGoob-laser-buff 17->19
-      Shock: 3 #CorvaxGoob-laser-buff 4->3
+      Heat: 19 # CorvaxGoob-laser-buff 17->19
+      Shock: 3 # CorvaxGoob-laser-buff 4->3
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_beam_heavy
