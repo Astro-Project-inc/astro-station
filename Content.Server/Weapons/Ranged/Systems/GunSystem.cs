@@ -158,6 +158,7 @@ using Content.Shared.Body.Components;
 using Robust.Shared.Random; // Lavaland Change
 using Content.Shared.StatusEffect;
 using Content.Shared.Eye.Blinding.Components;
+using Content.Shared.Inventory;
 
 namespace Content.Server.Weapons.Ranged.Systems;
 
@@ -174,6 +175,7 @@ public sealed partial class GunSystem : SharedGunSystem
     // CorvaxGoob
     [Dependency] private readonly SkillsSystem _skills = default!; // Skills
     [Dependency] private readonly StatusEffectsSystem _status = default!; // lasers update
+    [Dependency] private readonly InventorySystem _inventory = default!; // lasers update
 
     // Goobstation
     [Dependency] private readonly FlammableSystem _flammable = default!;
@@ -406,12 +408,28 @@ public sealed partial class GunSystem : SharedGunSystem
                                 // CorvaxGoob-lasers-update-start
                                 if (hitscan.BlurryVisionDuration.HasValue)
                                 {
-                                    _status.TryAddStatusEffect<BlurryVisionComponent>(
-                                        hitEntity,
-                                        "BlurryVision",
-                                        TimeSpan.FromSeconds(hitscan.BlurryVisionDuration.Value),
-                                        true
-                                    );
+                                    var duration = TimeSpan.FromSeconds(hitscan.BlurryVisionDuration.Value);
+                                    bool hasProtect = false;
+                                    var slotEnumerator = _inventory.GetSlotEnumerator(hitEntity, SlotFlags.HEAD | SlotFlags.EYES | SlotFlags.MASK);
+                                    while (slotEnumerator.MoveNext(out var slot) && !hasProtect)
+                                    {
+                                        if (slot.ContainedEntity is not { } item
+                                            || !TryComp<EyeProtectionComponent>(item, out var eyeProtection)
+                                            || eyeProtection.ProtectionTime < duration)
+                                            continue;
+
+                                        hasProtect = true;
+                                    }
+
+                                    if (!hasProtect)
+                                    {
+                                        _status.TryAddStatusEffect<BlurryVisionComponent>(
+                                            hitEntity,
+                                            "BlurryVision",
+                                            duration,
+                                            true
+                                        );
+                                    }
                                 }
                                 // CorvaxGoob-lasers-update-end
                             }

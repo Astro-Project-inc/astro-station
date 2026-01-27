@@ -23,5 +23,5 @@ public sealed partial class EyeProtectionComponent : Component
     /// </summary>
     [DataField("protectionTime")]
     [AutoNetworkedField]
-    public TimeSpan ProtectionTime = TimeSpan.FromSeconds(10);
+    public TimeSpan ProtectionTime = TimeSpan.FromSeconds(5); // CorvaxGoob // 10 -> 5
 }
