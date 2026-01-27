@@ -156,6 +156,8 @@ using Content.Goobstation.Common.Weapons.Ranged;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Body.Components;
 using Robust.Shared.Random; // Lavaland Change
+using Content.Shared.StatusEffect;
+using Content.Shared.Eye.Blinding.Components;
 
 namespace Content.Server.Weapons.Ranged.Systems;
 
@@ -167,8 +169,11 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly PowerCellSystem _powerCell = default!;
-    [Dependency] private readonly SkillsSystem _skills = default!; // CorvaxGoob-Skills
     [Dependency] private readonly SharedMapSystem _map = default!;
+
+    // CorvaxGoob
+    [Dependency] private readonly SkillsSystem _skills = default!; // Skills
+    [Dependency] private readonly StatusEffectsSystem _status = default!; // lasers update
 
     // Goobstation
     [Dependency] private readonly FlammableSystem _flammable = default!;
@@ -397,17 +402,29 @@ public sealed partial class GunSystem : SharedGunSystem
 
                                 // TODO get fallback position for playing hit sound.
                                 PlayImpactSound(hitEntity, dmg, hitscan.Sound, hitscan.ForceSound);
+
+                                // CorvaxGoob-lasers-update-start
+                                if (hitscan.BlurryVisionDuration.HasValue)
+                                {
+                                    _status.TryAddStatusEffect<BlurryVisionComponent>(
+                                        hitEntity,
+                                        "BlurryVision",
+                                        TimeSpan.FromSeconds(hitscan.BlurryVisionDuration.Value),
+                                        true
+                                    );
+                                }
+                                // CorvaxGoob-lasers-update-end
                             }
 
                             if (user != null)
                             {
                                 Logs.Add(LogType.HitScanHit,
-                                    $"{ToPrettyString(user.Value):user} hit {hitName:target} using hitscan and dealt {dmg.GetTotal():damage} damage");
+                                    $"{ToPrettyString(user.Value):user} hit {hitName:target} using hitscan and dealt {dmg.GetTotal():damage} damage{(hitscan.BlurryVisionDuration.HasValue ? $", added effect BlurryVision with duration {hitscan.BlurryVisionDuration}" : "")}"); // CorvaxGoob-lasers-update
                             }
                             else
                             {
                                 Logs.Add(LogType.HitScanHit,
-                                    $"{hitName:target} hit by hitscan dealing {dmg.GetTotal():damage} damage");
+                                    $"{hitName:target} hit by hitscan dealing {dmg.GetTotal():damage} damage{(hitscan.BlurryVisionDuration.HasValue ? $", added effect BlurryVision with duration {hitscan.BlurryVisionDuration}" : "")}"); // CorvaxGoob-lasers-update
                             }
                         }
                     }
