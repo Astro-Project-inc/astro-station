@@ -12,5 +12,5 @@ public sealed partial class BlurryVisionProjectileComponent : Component
     /// Duration of the blurry vision effect in seconds
     /// </summary>
     [DataField("duration")]
-    public float Duration = 5f;
+    public float Duration = 7.5f;
 }
