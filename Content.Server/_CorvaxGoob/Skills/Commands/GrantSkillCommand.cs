@@ -19,7 +19,7 @@ public sealed class GrantSkillCommand : IConsoleCommand
 
     public string Description => Loc.GetString("cmd-grantskill-desc");
 
-    public string Help => Loc.GetString("cmd-grantskill-help", ("command", Command));//"grantskill <entityuid> <skill>";
+    public string Help => Loc.GetString("cmd-grantskill-help", ("command", Command));
 
     public void Execute(IConsoleShell shell, string arg, string[] args)
     {
