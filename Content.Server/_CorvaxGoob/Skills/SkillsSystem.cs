@@ -20,44 +20,113 @@ public sealed class SkillsSystem : EntitySystem
         SubscribeLocalEvent<ImplantImplantedEvent>(OnImplantImplanted);
     }
 
-    private void OnImplantImplanted(ref ImplantImplantedEvent e)
+    private void OnImplantImplanted(ref ImplantImplantedEvent ev)
     {
-        if (e.Implanted is null)
+        if (ev.Implanted is null)
             return;
 
-        if (!_tag.HasTag(e.Implant, SkillsTag))
+        if (!_tag.HasTag(ev.Implant, SkillsTag))
             return;
 
-        GrantAllSkills(e.Implanted.Value);
-    }
-
-    public void GrantAllSkills(EntityUid entity)
-    {
-        GrantSkill(entity, new HashSet<SkillTypes>() { SkillTypes.All });
-    }
-
-    public void GrantSkill(EntityUid entity, HashSet<SkillTypes> skills, bool clearSkills = false)
-    {
-        if (!_mind.TryGetMind(entity, out _, out var mind))
-            return;
-
-        if (clearSkills)
-            mind.Skills.Clear();
-
-        if (skills.Contains(SkillTypes.All))
-        {
-            mind.Skills.Clear();
-            mind.Skills.Add(SkillTypes.All);
-        }
-        else
-            mind.Skills.UnionWith(skills);
+        GrantAllSkills(ev.Implanted.Value);
     }
 
     /// <summary>
-    /// Revokes all skills and grant new on target mind.
+    /// Grant all skills on tarteg mind.
     /// </summary>
-    public void UpdateSkills(EntityUid entity, HashSet<SkillTypes> skills)
+    /// <param name="entity">Entity with target mind</param>
+    public void GrantAllSkills(EntityUid entity)
     {
-        GrantSkill(entity, skills, true);
+        GrantSkill(entity, SkillTypes.All);
+    }
+
+    /// <summary>
+    /// Grant new skills on target mind. Can full clear skills on mind if clearSkills set to true
+    /// </summary>
+    /// <param name="entity">Entity with target mind</param>
+    /// <param name="skills">What skills we grant</param>
+    /// <param name="clearSkills">Does we need to clear all skills before grant new</param>
+    public void GrantSkill(EntityUid entity, HashSet<SkillTypes> skills, bool clearSkills = false)
+    {
+        if (!_mind.TryGetMind(entity, out var mind, out var mindComp))
+            return;
+
+        if (clearSkills)
+            mindComp.Skills.Clear();
+
+        if (skills.Contains(SkillTypes.All))
+        {
+            mindComp.Skills.Clear();
+            mindComp.Skills.Add(SkillTypes.All);
+        }
+        else
+            mindComp.Skills.UnionWith(skills);
+
+        Dirty(mind, mindComp);
+    }
+
+    /// <summary>
+    /// Grant new skills on target mind. Can full clear skills on mind if clearSkills set to true
+    /// </summary>
+    /// <param name="entity">Entity with target mind</param>
+    /// <param name="skills">What skills we grant</param>
+    /// <param name="clearSkills">Does we need to clear all skills before grant new</param>
+    public void GrantSkill(EntityUid entity, bool clearSkills = false, params SkillTypes[] skills)
+    {
+        GrantSkill(entity, new HashSet<SkillTypes>(skills), clearSkills);
+    }
+
+    /// <summary>
+    /// Grant new skill on target mind. Can full clear skills on mind if clearSkills set to true
+    /// </summary>
+    /// <param name="entity">Entity with target mind</param>
+    /// <param name="skill">What skill we grant</param>
+    /// <param name="clearSkills">Does we need to clear all skills before grant new</param>
+    public void GrantSkill(EntityUid entity, SkillTypes skill, bool clearSkills = false)
+    {
+        GrantSkill(entity, new HashSet<SkillTypes>() { skill }, clearSkills);
+    }
+
+    /// <summary>
+    /// Revoke skills on target mind. If skill is Skills.All - clear all mind skills
+    /// </summary>
+    /// <param name="entity">Entity with target mind</param>
+    /// <param name="skills">What skills we revoke</param>
+    public void RevokeSkill(EntityUid entity, HashSet<SkillTypes> skills)
+    {
+        if (!_mind.TryGetMind(entity, out var mind, out var mindComp))
+            return;
+
+        if (skills.Contains(SkillTypes.All))
+            mindComp.Skills.Clear();
+        else
+        {
+            foreach (var skill in skills)
+            {
+                mindComp.Skills.Remove(skill);
+            }
+        }
+
+        Dirty(mind, mindComp);
+    }
+
+    /// <summary>
+    /// Revoke skills on target mind. If skill is Skills.All - clear all mind skills
+    /// </summary>
+    /// <param name="entity">Entity with target mind</param>
+    /// <param name="skills">What skills we revoke</param>
+    public void RevokeSkill(EntityUid entity, params SkillTypes[] skills)
+    {
+        RevokeSkill(entity, new HashSet<SkillTypes>(skills));
+    }
+
+    /// <summary>
+    /// Revoke skills on target mind. If skill is Skills.All - clear all mind skills
+    /// </summary>
+    /// <param name="entity">Entity with target mind</param>
+    /// <param name="skill">What skill we revoke</param>
+    public void RevokeSkill(EntityUid entity, SkillTypes skill)
+    {
+        RevokeSkill(entity, new HashSet<SkillTypes>() { skill });
     }
 }

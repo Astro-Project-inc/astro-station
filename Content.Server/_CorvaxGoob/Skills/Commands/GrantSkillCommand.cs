@@ -1,8 +1,11 @@
 using System.Linq;
 using Content.Server.Administration;
 using Content.Server.Mind;
+using SkillTypes = Content.Shared._CorvaxGoob.Skills.Skills;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
+using Content.Shared.Mobs;
+using Content.Shared.Mind.Components;
 
 namespace Content.Server._CorvaxGoob.Skills.Commands;
 
@@ -14,13 +17,13 @@ public sealed class GrantSkillCommand : IConsoleCommand
 
     public string Command => "grantskill";
 
-    public string Description => "Grants skill to given entity.";
+    public string Description => Loc.GetString("cmd-grantskill-desc");
 
-    public string Help => "grantskill <entityuid> <skill>";
+    public string Help => Loc.GetString("cmd-grantskill-help", ("command", Command));//"grantskill <entityuid> <skill>";
 
     public void Execute(IConsoleShell shell, string arg, string[] args)
     {
-        if (args.Length != 2)
+        if (args.Length < 2)
         {
             shell.WriteError(_localization.GetString("shell-wrong-arguments-number"));
             return;
@@ -38,37 +41,61 @@ public sealed class GrantSkillCommand : IConsoleCommand
             return;
         }
 
-        if (!Enum.TryParse<Shared._CorvaxGoob.Skills.Skills>(args[1], out var skill))
+        HashSet<SkillTypes> skills = new HashSet<SkillTypes>();
+
+        for (int i = 1; i < args.Length - 1; i++)
         {
-            shell.WriteError("No such skill.");
-            return;
+            if (!Enum.TryParse<SkillTypes>(args[i], out var skill))
+            {
+                shell.WriteError(Loc.GetString("cmd-grantskill-not-a-skill-type", ("args", args[i])));
+                return;
+            }
+
+            skills.Add(skill);
         }
 
-        if (!_entity.System<MindSystem>().TryGetMind(entity.Value, out _, out var mind))
-            return;
-
-        mind.Skills.Add(skill);
+        _entity.System<SkillsSystem>().GrantSkill(entity.Value, skills);
     }
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
     {
-        if (args.Length == 2)
+        if (args.Length == 1)
         {
-            var component = int.TryParse(args[0], out var id)
-                ? _entity.TryGetEntity(new(id), out var entity)
-                    ? _entity.System<MindSystem>().TryGetMind(entity.Value, out _, out var comp)
-                        ? comp
-                        : null
-                    : null
-                : null;
-
-            return CompletionResult.FromOptions(Enum.GetValues<Shared._CorvaxGoob.Skills.Skills>()
-                .Where(value => component?.Skills.Contains(value) != true)
-                .Select(value => value.ToString())
-                .Where(name => name.ToString().StartsWith(args[1], true, null))
-                .Select(value => new CompletionOption(value.ToString())));
+            return CompletionResult.FromHintOptions(
+                CompletionHelper.Components<MindContainerComponent>(args[0]),
+                "Entity UID");
         }
 
-        return CompletionResult.Empty;
+        var component = int.TryParse(args[0], out var id)
+            ? _entity.TryGetEntity(new(id), out var entity)
+                ? _entity.System<MindSystem>().TryGetMind(entity.Value, out _, out var comp)
+                    ? comp
+                    : null
+                : null
+            : null;
+
+        var existingSkills = component?.Skills ?? new HashSet<SkillTypes>();
+
+        var alreadyEnteredSkills = new HashSet<SkillTypes>();
+        for (int i = 1; i < args.Length - 1; i++)
+        {
+            if (Enum.TryParse<SkillTypes>(args[i], out var skill))
+                alreadyEnteredSkills.Add(skill);
+        }
+
+        var allExcludedSkills = new HashSet<SkillTypes>(existingSkills);
+        allExcludedSkills.UnionWith(alreadyEnteredSkills);
+
+        var currentInput = args[^1];
+        return GetSkillCompletion(currentInput, allExcludedSkills);
+    }
+
+    private CompletionResult GetSkillCompletion(string currentInput, HashSet<SkillTypes> existingSkills)
+    {
+        return CompletionResult.FromOptions(Enum.GetValues<SkillTypes>()
+            .Where(skill => !existingSkills.Contains(skill))
+            .Select(skill => skill.ToString())
+            .Where(name => name.StartsWith(currentInput, StringComparison.OrdinalIgnoreCase))
+            .Select(name => new CompletionOption(name)));
     }
 }

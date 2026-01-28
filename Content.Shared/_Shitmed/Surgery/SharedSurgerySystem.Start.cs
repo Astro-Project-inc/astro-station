@@ -33,15 +33,13 @@ public abstract partial class SharedSurgerySystem
 
         if (_noSelfOperate && user == target
             // CorvaxGoob-start: SelfOperate for IPC and who has SelfSurgery skill
-            && MetaData(user).EntityPrototype is { ID: "MobIPC" }
-            && !_skills.HasSkill(user, Skills.SelfSurgery)) // when this is on client, check doesn't pass because client can't take HashSet<Skills>.
-                                                            // This is why I put _net.IsServer for popup
+            && MetaData(user).EntityPrototype is { ID: not "MobIPC" }
+            && !_skills.HasSkill(user, Skills.SelfSurgery))
+            // CorvaxGoob-end
         {
-            if (_net.IsServer)
-                _popup.PopupEntity(Loc.GetString("surgery-error-self-surgery"), user, user);
+            _popup.PopupClient(Loc.GetString("surgery-error-self-surgery"), user, user);
             return;
         }
-        // CorvaxGoob-end
 
         _ui.OpenUi(target, SurgeryUIKey.Key, user);
         RefreshUI(target);

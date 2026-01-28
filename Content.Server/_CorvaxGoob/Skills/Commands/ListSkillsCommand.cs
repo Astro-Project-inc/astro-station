@@ -3,6 +3,7 @@ using System.Text;
 using Content.Server.Administration;
 using Content.Server.Mind;
 using Content.Shared.Administration;
+using Content.Shared.Mind.Components;
 using Robust.Shared.Console;
 
 namespace Content.Server._CorvaxGoob.Skills.Commands;
@@ -15,9 +16,9 @@ public sealed class ListSkillsCommand : IConsoleCommand
 
     public string Command => "listskills";
 
-    public string Description => "List skills of given entity.";
+    public string Description => Loc.GetString("cmd-listskills-desc");
 
-    public string Help => "listskills <entityuid>";
+    public string Help => Loc.GetString("cmd-listskills-help", ("command", Command));
 
     public void Execute(IConsoleShell shell, string arg, string[] args)
     {
@@ -52,5 +53,16 @@ public sealed class ListSkillsCommand : IConsoleCommand
         builder.Append('\n');
 
         shell.WriteLine(builder.ToString());
+    }
+
+    public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+    {
+        if (args.Length == 1)
+        {
+            return CompletionResult.FromHintOptions(
+                CompletionHelper.Components<MindContainerComponent>(args[0]),
+                "Entity UID");
+        }
+        return CompletionResult.Empty;
     }
 }
