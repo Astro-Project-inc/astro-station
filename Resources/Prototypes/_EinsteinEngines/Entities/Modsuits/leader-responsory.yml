@@ -93,6 +93,7 @@
     - type: FlashSoundSuppression # Goobstation
       protectionRange: 0
     - type: EyeProtection
+      protectionTime: 10 # CorvaxGoob
     - type: ShowHealthBars
       damageContainers:
         - Biological

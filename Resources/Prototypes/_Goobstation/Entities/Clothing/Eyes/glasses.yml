@@ -139,7 +139,7 @@
     sprite: _Goobstation/Clothing/Eyes/Glasses/deathsquad.rsi
   - type: FlashImmunity
   - type: EyeProtection
-    protectionTime: 5
+    protectionTime: 10 # CorvaxGoob # 5 -> 10
   - type: IdentityBlocker
     coverage: EYES
   - type: ThermalVision
@@ -172,7 +172,7 @@
     sprite: _Goobstation/Clothing/Eyes/Glasses/centcommglasses.rsi
   - type: FlashImmunity
   - type: EyeProtection
-    protectionTime: 5
+    protectionTime: 10 # CorvaxGoob # 5 -> 10
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -196,7 +196,7 @@
     sprite: _Goobstation/Clothing/Eyes/Glasses/centcommglasses.rsi
   - type: FlashImmunity
   - type: EyeProtection
-    protectionTime: 5
+    protectionTime: 10 # CorvaxGoob # 5 -> 10
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -249,7 +249,7 @@
     sprite: _Goobstation/Clothing/Eyes/Glasses/hos-expi.rsi
   - type: FlashImmunity
   - type: EyeProtection
-    protectionTime: 5
+    protectionTime: 10 # CorvaxGoob # 5 -> 10
   - type: Tag
     tags:
     - WhitelistChameleon

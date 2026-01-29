@@ -629,6 +629,7 @@
   - type: Clothing
     sprite: Clothing/Head/Helmets/ert_engineer.rsi
   - type: EyeProtection # goob - it literally has them in the sprite.
+    protectionTime: 10 # CorvaxGoob
  # - type: HideLayerClothing  #Goobstation
  #   layers:
  #     Hair: HEAD
