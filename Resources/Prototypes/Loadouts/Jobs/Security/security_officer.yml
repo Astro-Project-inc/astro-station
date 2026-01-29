@@ -162,6 +162,11 @@
     jumpsuit: ClothingUniformJumpskirtSecGrey
 
 
+- type: loadout # GoobStation
+  id: UniformJumpsuitDSS
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitDSS
+
 - type: loadout
   id: TrooperUniform
   equipment:
