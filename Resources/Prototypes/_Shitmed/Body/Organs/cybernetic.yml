@@ -64,6 +64,7 @@
     - type: ShowCriminalRecordIcons
     - type: FlashImmunity
     - type: EyeProtection
+      protectionTime: 10 # CorvaxGoob
 
 - type: entity
   parent: BasicCyberneticEyes

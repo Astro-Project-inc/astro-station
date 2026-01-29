@@ -310,7 +310,7 @@
     sprite: Clothing/Eyes/Glasses/secglasses.rsi
   - type: FlashImmunity
   - type: EyeProtection
-    protectionTime: 5
+    protectionTime: 10 # CorvaxGoob 5 -> 10
   - type: Construction
     graph: GlassesSecHUD
     node: glassesSec
@@ -353,7 +353,7 @@
     sprite: Clothing/Eyes/Glasses/commandglasses.rsi
   - type: FlashImmunity
   - type: EyeProtection
-    protectionTime: 5
+    protectionTime: 10 # CorvaxGoob 5 -> 10
   - type: Tag
     tags:
     - HamsterWearable
@@ -492,7 +492,7 @@
     coverage: EYES
   - type: FlashImmunity
   - type: EyeProtection
-    protectionTime: 5
+    protectionTime: 10 # CorvaxGoob 5 -> 10
   - type: NoirOverlay
   - type: Tag
     tags:

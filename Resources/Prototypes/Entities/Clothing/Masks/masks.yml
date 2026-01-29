@@ -240,6 +240,7 @@
     sprite: Clothing/Mask/gassyndicate.rsi
   - type: FlashImmunity
   - type: EyeProtection
+    protectionTime: 10 # CorvaxGoob
   - type: Armor
     coverage:
     - Head
@@ -734,6 +735,7 @@
     hideOnToggle: true
   - type: FlashImmunity
   - type: EyeProtection
+    protectionTime: 10 # CorvaxGoob
   - type: Armor
     coverage:
     - Head
@@ -1067,6 +1069,7 @@
   - type: Item
     storedRotation: -90
   - type: EyeProtection
+    protectionTime: 10 # CorvaxGoob
   - type: BreathMask
   - type: IdentityBlocker
   - type: Tag

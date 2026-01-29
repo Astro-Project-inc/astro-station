@@ -33,6 +33,7 @@
   - type: Clothing
     sprite: _Shitmed/Clothing/Head/Helmets/abductor.rsi
   - type: EyeProtection
+    protectionTime: 10 # CorvaxGoob
   - type: HideLayerClothing
     layers:
       HeadTop : HEAD
