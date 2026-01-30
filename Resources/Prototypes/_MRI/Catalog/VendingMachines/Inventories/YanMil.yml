@@ -1,0 +1,6 @@
+- type: vendingMachineInventory
+  id: MaysonYanInventory
+  startingInventory:
+    DrinkFourteenLokoPlusCan: 5
+    DrinkLukin: 5
+    FoodSnackMaysonEnergy: 5
