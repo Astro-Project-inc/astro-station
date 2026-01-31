@@ -16,6 +16,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Speech;
 using Content.Shared.Speech.Components;
+using Content.Shared.Tools.Components;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
@@ -70,16 +71,14 @@ public sealed class AppearanceConverterSystem : EntitySystem
             || !HasComp<DnaComponent>(args.Target))
             return;
 
-        var doAfterArgs = new DoAfterArgs(EntityManager, args.User, ent.Comp.ScanningDoAfterTime, new AppearanceConverterDoAfterEvent(), ent, args.Target, ent)
+        var doAfterArgs = new DoAfterArgs(EntityManager, args.User, ent.Comp.ScanningDoAfterTime, new AppearanceConverterDoAfterEvent(), ent, target: args.Target, used: ent)
         {
             BreakOnDamage = true,
             BreakOnMove = true,
             BreakOnWeightlessMove = false,
-            Hidden = true,
-            BreakOnHandChange = true,
             BreakOnDropItem = true,
-            BlockDuplicate = true,
-            CancelDuplicate = true
+            NeedHand = true,
+            AttemptFrequency = AttemptFrequency.EveryTick
         };
 
         _doAfter.TryStartDoAfter(doAfterArgs);
