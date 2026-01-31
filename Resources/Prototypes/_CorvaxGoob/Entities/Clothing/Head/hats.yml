@@ -379,6 +379,9 @@
     interfaces:
       enum.InstrumentUiKey.Key:
         type: InstrumentBoundUserInterface
+  - type: Tag
+    tags:
+    - WhitelistChameleon
 
 - type: entity
   parent: ClothingHeadBase
@@ -416,4 +419,6 @@
     interfaces:
       enum.InstrumentUiKey.Key:
         type: InstrumentBoundUserInterface
-
+  - type: Tag
+    tags:
+    - WhitelistChameleon
