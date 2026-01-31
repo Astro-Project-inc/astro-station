@@ -227,11 +227,13 @@ public sealed partial class ZombieSystem
             _autoEmote.AddEmote(target, "ZombieGroan");
         }
 
+        // CorvaxGoob-AppearanceConverter-Start
         //This is specifically here to combat insuls, because frying zombies on grilles is funny as shit.
         _inventory.TryUnequip(target, "gloves", true, true);
 
         //Should prevent instances of zombies using comms for information they shouldnt be able to have.
         _inventory.TryUnequip(target, "ears", true, true);
+        // CorvaxGoob-AppearanceConverter-End
 
         //We have specific stuff for humanoid zombies because they matter more
         if (TryComp<HumanoidAppearanceComponent>(target, out var huApComp)) //huapcomp

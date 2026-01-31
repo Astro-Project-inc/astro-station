@@ -60,6 +60,7 @@ public sealed partial class GeneralRecord : Control
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
+        // CorvaxGoob-Locale-Start
         var age = record.Age.ToString();
         var locSex = record.Sex.ToString();
         var locJob = Loc.GetString(record.JobTitle);
@@ -107,6 +108,7 @@ public sealed partial class GeneralRecord : Control
             if (record.DNA is not null)
                 _clipboard.SetText(record.DNA);
         };
+        // CorvaxGoob-Locale-End
 
         if (canDelete && id != null )
         {

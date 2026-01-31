@@ -200,6 +200,7 @@ public sealed class AppearanceConverterSystem : EntitySystem
 
         bool isWeared = false;
 
+        // Проверяем на наличия устройства в слотах
         while (inventorySlotEnumerator.NextItem(out var item))
         {
             if (item == ent.Owner)

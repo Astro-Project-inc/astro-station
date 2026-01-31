@@ -124,7 +124,7 @@ public sealed partial class StationRecordsSystem : SharedStationRecordsSystem
         TryComp<FingerprintComponent>(player, out var fingerprintComponent);
         TryComp<DnaComponent>(player, out var dnaComponent);
 
-        CreateGeneralRecord(station, idUid.Value, profile.Name, profile.Age, profile.Species, profile.Sex, jobId, fingerprintComponent?.Fingerprint, dnaComponent?.DNA, profile, records);
+        CreateGeneralRecord(station, idUid.Value, profile.Name, profile.Age, profile.Species, profile.Sex, jobId, fingerprintComponent?.Fingerprint, dnaComponent?.DNA, profile, records); // CorvaxGoob-Locale
     }
 
 
@@ -161,7 +161,7 @@ public sealed partial class StationRecordsSystem : SharedStationRecordsSystem
         string name,
         int age,
         string species,
-        Sex sex,
+        Sex sex, // CorvaxGoob-Locale
         string jobId,
         string? mobFingerprint,
         string? dna,
@@ -187,7 +187,7 @@ public sealed partial class StationRecordsSystem : SharedStationRecordsSystem
             JobIcon = jobPrototype.Icon,
             JobPrototype = jobId,
             Species = _prototypeManager.Index<SpeciesPrototype>(species).Name, // CorvaxGoob-Locale
-            Sex = sex,
+            Sex = sex, // CorvaxGoob-Locale
             DisplayPriority = jobPrototype.RealDisplayWeight,
             Fingerprint = mobFingerprint,
             DNA = dna

@@ -423,7 +423,7 @@ public partial class InventorySystem : EntitySystem
     }
     // Shitmed Change End
 
-    // CorvaxGoob-Changes
+    // CorvaxGoob-AppearanceConverter-Start
     public void SetSpeciesId(Entity<InventoryComponent> entity, string? speciesId) =>
         entity.Comp.SpeciesId = speciesId;
 
@@ -441,4 +441,5 @@ public partial class InventorySystem : EntitySystem
         if (femaleDisplacements is not null)
             entity.Comp.FemaleDisplacements = femaleDisplacements;
     }
+    // CorvaxGoob-AppearanceConverter-End
 }

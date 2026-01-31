@@ -1,21 +1,9 @@
 - type: entity
-  id: DeviceDNAStealer
-  parent: WristwatchGold
-  name: AppearanceConverter
-  description: This is the future in the world of cloaking devices. The "appearance converter" is able to completely copy the appearance based on DNA alone, down to vocal features and speech.
-  components:
-  - type: ActivatableUI
-    key: enum.DNAStealerUiKey.Key
-  - type: UserInterface
-    interfaces:
-      enum.DNAStealerUiKey.Key:
-        type: DNAStealerUserInterface
-  - type: DNAStealer
-
-- type: entity
-  id: DeviceDNAStealerDebug
-  parent: DeviceDNAStealer
-  suffix: DEBUG
+  id: ClothingHandsAppearanceConverter
+  parent: ClothingHandsChameleon
+  name: black gloves
+  description: Regular black gloves that do not keep you from frying.
+  suffix: Appearance converter
   components:
   - type: ActivatableUI
     key: enum.AppearanceConverterUiKey.Key
@@ -23,6 +11,15 @@
     interfaces:
       enum.AppearanceConverterUiKey.Key:
         type: AppearanceConverterUserInterface
+      enum.ChameleonUiKey.Key:
+        type: ChameleonBoundUserInterface
+  - type: AppearanceConverter
+
+- type: entity
+  id: ClothingHandsAppearanceConverterDebug
+  parent: ClothingHandsAppearanceConverter
+  suffix: Appearance converter, DEBUG
+  components:
   - type: AppearanceConverter
     transformDelay: 0
     scanningDoAfterTime: 0
