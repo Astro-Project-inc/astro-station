@@ -1,6 +1,9 @@
-using Content.Shared._CorvaxGoob.CCCVars;
+using System.Linq;
+using Content.Server.Administration.Logs;
+using Content.Shared.Database;
 using Content.Shared.Implants;
 using Content.Shared.Mind;
+using Content.Shared.PDA;
 using Content.Shared.Tag;
 using SkillTypes = Content.Shared._CorvaxGoob.Skills.Skills;
 
@@ -10,6 +13,7 @@ public sealed class SkillsSystem : EntitySystem
 {
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly IAdminLogManager _adminLog = default!;
 
     [ValidatePrototypeId<TagPrototype>]
     public const string SkillsTag = "Skills";
@@ -62,6 +66,8 @@ public sealed class SkillsSystem : EntitySystem
         else
             mindComp.Skills.UnionWith(skills);
 
+        _adminLog.Add(LogType.AdminCommands, $"Grant {(skills.Contains(SkillTypes.All) ? $"{SkillTypes.All.GetType()}" : $"{string.Join(", ", skills.Select(s => s.GetType()))}")} skills to entity {entity.Id} with mind {mind.Id}. Clear skills: {clearSkills}");
+
         Dirty(mind, mindComp);
     }
 
@@ -106,6 +112,8 @@ public sealed class SkillsSystem : EntitySystem
                 mindComp.Skills.Remove(skill);
             }
         }
+
+        _adminLog.Add(LogType.AdminCommands, $"Revoke {(skills.Contains(SkillTypes.All) ? $"{SkillTypes.All.GetType()}" : $"{string.Join(", ", skills.Select(s => s.GetType()))}")} from entity {entity.Id} with mind {mind.Id}");
 
         Dirty(mind, mindComp);
     }
