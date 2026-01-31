@@ -227,6 +227,12 @@ public sealed partial class ZombieSystem
             _autoEmote.AddEmote(target, "ZombieGroan");
         }
 
+        //This is specifically here to combat insuls, because frying zombies on grilles is funny as shit.
+        _inventory.TryUnequip(target, "gloves", true, true);
+
+        //Should prevent instances of zombies using comms for information they shouldnt be able to have.
+        _inventory.TryUnequip(target, "ears", true, true);
+
         //We have specific stuff for humanoid zombies because they matter more
         if (TryComp<HumanoidAppearanceComponent>(target, out var huApComp)) //huapcomp
         {
@@ -270,11 +276,6 @@ public sealed partial class ZombieSystem
         _bloodstream.SetBloodLossThreshold(target, 0f);
         //Give them zombie blood
         _bloodstream.ChangeBloodReagent(target, zombiecomp.NewBloodReagent);
-
-        //This is specifically here to combat insuls, because frying zombies on grilles is funny as shit.
-        _inventory.TryUnequip(target, "gloves", true, true);
-        //Should prevent instances of zombies using comms for information they shouldnt be able to have.
-        _inventory.TryUnequip(target, "ears", true, true);
 
         //popup
         _popup.PopupEntity(Loc.GetString("zombie-transform", ("target", target)), target, PopupType.LargeCaution);

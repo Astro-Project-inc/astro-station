@@ -1,0 +1,28 @@
+- type: entity
+  id: DeviceDNAStealer
+  parent: WristwatchGold
+  name: AppearanceConverter
+  description: This is the future in the world of cloaking devices. The "appearance converter" is able to completely copy the appearance based on DNA alone, down to vocal features and speech.
+  components:
+  - type: ActivatableUI
+    key: enum.DNAStealerUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.DNAStealerUiKey.Key:
+        type: DNAStealerUserInterface
+  - type: DNAStealer
+
+- type: entity
+  id: DeviceDNAStealerDebug
+  parent: DeviceDNAStealer
+  suffix: DEBUG
+  components:
+  - type: ActivatableUI
+    key: enum.AppearanceConverterUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.AppearanceConverterUiKey.Key:
+        type: AppearanceConverterUserInterface
+  - type: AppearanceConverter
+    transformDelay: 0
+    scanningDoAfterTime: 0

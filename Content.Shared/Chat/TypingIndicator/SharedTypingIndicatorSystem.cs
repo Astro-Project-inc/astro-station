@@ -100,4 +100,9 @@ public abstract class SharedTypingIndicatorSystem : EntitySystem
 
         _appearance.SetData(uid, TypingIndicatorVisuals.State, state, appearance);
     }
+
+    public void SetTypingIndicator(Entity<TypingIndicatorComponent> entity, ProtoId<TypingIndicatorPrototype> typingIndicatorPrototype)
+    {
+        entity.Comp.TypingIndicatorPrototype = typingIndicatorPrototype;
+    }
 }

@@ -111,7 +111,7 @@ public sealed partial class WantedListUiFragment : BoxContainer
         ));
         TargetGender.SetMessage(GetLoc(
             "wanted-list-gender-label",
-            ("gender", record.TargetInfo.Gender)
+            ("gender", record.TargetInfo.Sex)
         ));
 
         // Set reason
