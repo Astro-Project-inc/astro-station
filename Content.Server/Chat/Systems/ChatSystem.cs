@@ -287,10 +287,11 @@ public sealed partial class ChatSystem : SharedChatSystem
         ICommonSession? player = null, string? nameOverride = null,
         bool checkRadioPrefix = true,
         bool ignoreActionBlocker = false,
-        Color? colorOverride = null // Goobstation
+        Color? colorOverride = null, // Goobstation
+        bool forced = false // goobstation
         )
     {
-        TrySendInGameICMessage(source, message, desiredType, hideChat ? ChatTransmitRange.HideChat : ChatTransmitRange.Normal, hideLog, shell, player, nameOverride, checkRadioPrefix, ignoreActionBlocker, colorOverride); // Goob edit
+        TrySendInGameICMessage(source, message, desiredType, hideChat ? ChatTransmitRange.HideChat : ChatTransmitRange.Normal, hideLog, shell, player, nameOverride, checkRadioPrefix, ignoreActionBlocker, colorOverride, forced: forced); // Goob edit
     }
 
     /// <summary>
@@ -316,7 +317,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         bool checkRadioPrefix = true,
         bool ignoreActionBlocker = false,
         Color? colorOverride = null, // Goobstation
-        LanguagePrototype? languageOverride = null // Einstein Engines - Language
+        LanguagePrototype? languageOverride = null, // Einstein Engines - Language
+        bool forced = false // goobstation
         )
     {
         if (HasComp<GhostComponent>(source))
@@ -377,7 +379,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         // Was there an emote in the message? If so, send it.
         if (player != null && emoteStr != message && emoteStr != null)
         {
-            SendEntityEmote(source, emoteStr, range, nameOverride, language, ignoreActionBlocker); // Einstein Engines - Language
+            SendEntityEmote(source, emoteStr, range, nameOverride, language, ignoreActionBlocker, forced: forced); // Einstein Engines - Language
         }
 
         // This can happen if the entire string is sanitized out.
@@ -432,7 +434,7 @@ public sealed partial class ChatSystem : SharedChatSystem
                 SendEntityWhisper(source, message, range, null, nameOverride, language, hideLog, ignoreActionBlocker, colorOverride); // Goob edit & Einstein Engines - Language
                 break;
             case InGameICChatType.Emote:
-                SendEntityEmote(source, message, range, nameOverride, language, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker); // Einstein Engines - Language
+                SendEntityEmote(source, message, range, nameOverride, language, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker, forced: forced); // Einstein Engines - Language
                 break;
             case InGameICChatType.Telepathic:
                 _telepath.SendTelepathicChat(source, message, range == ChatTransmitRange.HideChat);
@@ -520,8 +522,12 @@ public sealed partial class ChatSystem : SharedChatSystem
             }
             // CorvaxGoob-CustomAnnouncers-End
 
-            // CorvaxGoob-Announcements-Volume
-            SendGlobalSound(announcementSound ?? new SoundPathSpecifier(DefaultAnnouncementSound), Filter.Broadcast(), AudioParams.Default.WithVolume(-2f));
+            // CorvaxGoob-Announcements-Volume-Start
+            var sound = announcementSound ?? new SoundPathSpecifier(DefaultAnnouncementSound);
+            sound.Params = sound.Params.WithVolume(-2);
+            SendGlobalSound(sound, Filter.Broadcast());
+            // CorvaxGoob-Announcements-Volume-End
+
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Global station announcement from {sender}: {message}");
     }
@@ -551,8 +557,11 @@ public sealed partial class ChatSystem : SharedChatSystem
         _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source ?? default, false, true, colorOverride);
         if (playSound)
         {
-            // CorvaxGoob-Announcements-Volume
-            SendGlobalSound(announcementSound ?? new SoundPathSpecifier(DefaultAnnouncementSound), filter, AudioParams.Default.WithVolume(-2f));
+            // CorvaxGoob-Announcements-Volume-Start
+            var sound = announcementSound ?? new SoundPathSpecifier(DefaultAnnouncementSound);
+            sound.Params = sound.Params.WithVolume(-2);
+            SendGlobalSound(sound, Filter.Broadcast());
+            // CorvaxGoob-Announcements-Volume-End
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement from {sender}: {message}");
     }
@@ -592,18 +601,21 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         if (playDefaultSound)
         {
-            // CorvaxGoob-Announcements-Volume
-            SendGlobalSound(announcementSound ?? new SoundPathSpecifier(DefaultAnnouncementSound), filter, AudioParams.Default.WithVolume(-2f));
+            // CorvaxGoob-Announcements-Volume-Start
+            var sound = announcementSound ?? new SoundPathSpecifier(DefaultAnnouncementSound);
+            sound.Params = sound.Params.WithVolume(-2);
+            SendGlobalSound(sound, filter);
+            // CorvaxGoob-Announcements-Volume-End
         }
 
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement on {station} from {sender}: {message}");
     }
 
     // CorvaxGoob-AnnouncementsVolume
-    public void SendGlobalSound(SoundSpecifier sound, Filter playerFilter, AudioParams? audioParams = null)
+    public void SendGlobalSound(SoundSpecifier sound, Filter playerFilter)
     {
         foreach (var recipient in playerFilter.Recipients)
-            RaiseNetworkEvent(new PlayGlobalSoundEvent(sound, audioParams), recipient);
+            RaiseNetworkEvent(new PlayGlobalSoundEvent(sound), recipient);
     }
 
     #endregion
@@ -925,7 +937,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         bool hideLog = false,
         bool checkEmote = true,
         bool ignoreActionBlocker = false,
-        NetUserId? author = null
+        NetUserId? author = null,
+        bool forced = false // goobstation
         )
     {
         if (!_actionBlocker.CanEmote(source) && !ignoreActionBlocker)
@@ -941,8 +954,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("entity", ent),
             ("message", FormattedMessage.RemoveMarkupOrThrow(action)));
 
-        if (checkEmote &&
-            !TryEmoteChatInput(source, action))
+        if (checkEmote && !TryEmoteChatInput(source, action, forced)) // goob edit
             return;
 
         SendInVoiceRange(
