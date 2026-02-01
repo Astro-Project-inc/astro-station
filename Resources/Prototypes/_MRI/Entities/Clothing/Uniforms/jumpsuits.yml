@@ -9,3 +9,42 @@
       sprite: _MRI/Clothing/Uniforms/Jumpsuit/mri_base.rsi
     - type: Clothing
       sprite: _MRI/Clothing/Uniforms/Jumpsuit/mri_base.rsi
+
+
+#СССП, Прототипы - SenyaZloy
+
+- type: entity
+  parent: ClothingUniformBase
+  id: USSPParadForma
+  name: Парадная униформа Офицера "СССП"
+  description: Эта форма пропитана кровью монархистов, слава СССП!
+  suffix: USSP
+  components:
+    - type: Sprite
+      sprite: _MRI/Clothing/Uniforms/Jumpsuit/officerUSSP.rsi
+    - type: Clothing
+      sprite: _MRI/Clothing/Uniforms/Jumpsuit/officerUSSP.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: USSPBaseForma
+  name: Режимная униформа "СССП"
+  description: Эта форма пропитана кровью монархистов, слава СССП!
+  suffix: USSP
+  components:
+    - type: Sprite
+      sprite: _MRI/Clothing/Uniforms/Jumpsuit/BaseFormaUSSP.rsi
+    - type: Clothing
+      sprite: _MRI/Clothing/Uniforms/Jumpsuit/BaseFormaUSSP.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: USSPBaseOfficerForma
+  name: Режимная униформа офицера "СССП"
+  description: Эта форма пропитана кровью монархистов, слава СССП!
+  suffix: USSP
+  components:
+    - type: Sprite
+      sprite: _MRI/Clothing/Uniforms/Jumpsuit/BaseFormaOfficerUSSP.rsi
+    - type: Clothing
+      sprite: _MRI/Clothing/Uniforms/Jumpsuit/BaseFormaOfficerUSSP.rsi

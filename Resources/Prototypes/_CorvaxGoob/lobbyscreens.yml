@@ -283,3 +283,9 @@
   name: "Замечательный шаттл"
   artist: qulezza
   background: /Textures/_CorvaxGoob/LobbyScreens/awesome-shuttle.webp
+
+- type: lobbyBackground
+  id: Senyaresized
+  name: "Млечный путь"
+  artist: Minlixxx
+  background: /Textures/_CorvaxGoob/LobbyScreens/Senya_resized.webp

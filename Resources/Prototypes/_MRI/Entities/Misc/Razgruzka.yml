@@ -1,0 +1,13 @@
+# МРИ
+
+- type: entity
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseSyndicateContraband]
+  id: ClothingBeltMilitaryWebbingMRIOrUSSP
+  name: Армейский РПС
+  description: виднеется бирка "Сшито на заводе им. Фембоя Сени"
+  suffix: USSPorMRI
+  components:
+  - type: Sprite
+    sprite: _MRI/Clothing/Belt/beltbase.rsi
+  - type: Clothing
+    sprite: _MRI/Clothing/Belt/beltbase.rsi

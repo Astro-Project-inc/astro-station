@@ -1,0 +1,26 @@
+
+# СССП, прототипы - Senyazloy
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatVKVDUSSP
+  name: Берет ВКВД СССП
+  description: Внутри берета виднеется бирка "Сшито на заводе им. Фембоя Сени"
+  suffix: USSP
+  components:
+  - type: Sprite
+    sprite: _MRI/Clothing/Head/USSP/BeretNKVD.rsi
+  - type: Clothing
+    sprite: _MRI/Clothing/Head/USSP/BeretNKVD.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadFurazhkaVKVDUSSP
+  name: Фуражка ВКВД СССП
+  description: Внутри фуражки виднеется бирка "Сшито на заводе им. Фембоя Сени"
+  suffix: USSP
+  components:
+  - type: Sprite
+    sprite: _MRI/Clothing/Head/USSP/FurazhkaNKVD.rsi
+  - type: Clothing
+    sprite: _MRI/Clothing/Head/USSP/FurazhkaNKVD.rsi

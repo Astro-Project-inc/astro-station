@@ -549,3 +549,148 @@
     state: tape40
   - type: MusicTape
     sound: "/Audio/_MRI/TapePlayer/Tracks/DolgayaSchastlivayaShizn.ogg"
+
+- type: entity
+  parent: BaseMusicTape
+  id: MusicTape52
+  name: Кассета (Ugory-Zurawie)
+  suffix: "MVD"
+  description:
+  components:
+  - type: Sprite
+    state: tape26
+  - type: MusicTape
+    sound: "/Audio/_MRI/TapePlayer/Tracks/UgoryZurawie.ogg"
+
+- type: entity
+  parent: BaseMusicTape
+  id: MusicTape53
+  name: Кассета (LocuraGadit.ogg)
+  suffix: "MVD"
+  description:
+  components:
+  - type: Sprite
+    state: tape28
+  - type: MusicTape
+    sound: "/Audio/_MRI/TapePlayer/Tracks/LocuraGadit.ogg"
+
+
+- type: entity
+  parent: BaseMusicTape
+  id: MusicTape54
+  name: Кассета (Akemi - yandere)
+  suffix: "MVD"
+  description:
+  components:
+  - type: Sprite
+    state: tape8
+  - type: MusicTape
+    sound: "/Audio/_MRI/TapePlayer/Tracks/akemitruth.ogg"
+
+- type: entity
+  parent: BaseMusicTape
+  id: MusicTape55
+  name: Кассета (AngelGrind - Не в сети)
+  suffix: "MVD"
+  description:
+  components:
+  - type: Sprite
+    state: tape10
+  - type: MusicTape
+    sound: "/Audio/_MRI/TapePlayer/Tracks/AngelGrind.ogg"
+
+- type: entity
+  parent: BaseMusicTape
+  id: MusicTape56
+  name: Кассета (ivycraft - люблю москву но снится london)
+  suffix: "MVD"
+  description:
+  components:
+  - type: Sprite
+    state: tape11
+  - type: MusicTape
+    sound: "/Audio/_MRI/TapePlayer/Tracks/london.ogg"
+
+- type: entity
+  parent: BaseMusicTape
+  id: MusicTape57
+  name: Кассета (lavcraft - Людвиг ван тейк)
+  suffix: "MVD"
+  description:
+  components:
+  - type: Sprite
+    state: tape29
+  - type: MusicTape
+    sound: "/Audio/_MRI/TapePlayer/Tracks/Vanteik.ogg"
+
+- type: entity
+  parent: BaseMusicTape
+  id: MusicTape58
+  name: Кассета (У него)
+  suffix: "MVD"
+  description:
+  components:
+  - type: Sprite
+    state: tape8
+  - type: MusicTape
+    sound: "/Audio/_MRI/TapePlayer/Tracks/ynego.ogg"
+
+- type: entity
+  parent: BaseMusicTape
+  id: MusicTape59
+  name: Кассета (Mick Gordon - Meathook)
+  suffix: "MVD"
+  description:
+  components:
+  - type: Sprite
+    state: tape27
+  - type: MusicTape
+    sound: "/Audio/_MRI/TapePlayer/Tracks/MickMeathGordon.ogg"
+
+- type: entity
+  parent: BaseMusicTape
+  id: MusicTape60
+  name: Кассета (Mick Gordon - Meathook)
+  suffix: "MVD"
+  description:
+  components:
+  - type: Sprite
+    state: tape27
+  - type: MusicTape
+    sound: "/Audio/_MRI/TapePlayer/Tracks/MickMeathGordon.ogg"
+
+- type: entity
+  parent: BaseMusicTape
+  id: MusicTape61
+  name: Кассета (Mick Gordon - RipTear)
+  suffix: "MVD"
+  description:
+  components:
+  - type: Sprite
+    state: tape27
+  - type: MusicTape
+    sound: "/Audio/_MRI/TapePlayer/Tracks/RipTear.ogg"
+
+- type: entity
+  parent: BaseMusicTape
+  id: MusicTape62
+  name: Кассета (ximora - статус Vk0ntakt3)
+  suffix: "MVD"
+  description:
+  components:
+  - type: Sprite
+    state: tape22
+  - type: MusicTape
+    sound: "/Audio/_MRI/TapePlayer/Tracks/vk.ogg"
+
+- type: entity
+  parent: BaseMusicTape
+  id: MusicTape63
+  name: Кассета (Mick Gordon - The Only Thing They Fear Is You)
+  suffix: "MVD"
+  description:
+  components:
+  - type: Sprite
+    state: tape25
+  - type: MusicTape
+    sound: "/Audio/_MRI/TapePlayer/Tracks/TheOnly.ogg"

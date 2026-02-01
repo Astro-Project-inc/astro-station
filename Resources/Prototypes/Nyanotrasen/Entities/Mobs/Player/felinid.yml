@@ -11,7 +11,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  save: false
+  save: true
   name: Urist McFelinid
   parent: MobFelinidBase
   id: MobFelinid
