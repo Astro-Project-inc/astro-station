@@ -43,7 +43,7 @@ public sealed class GrantSkillCommand : IConsoleCommand
 
         HashSet<SkillTypes> skills = new HashSet<SkillTypes>();
 
-        for (int i = 1; i < args.Length - 1; i++)
+        for (int i = 1; i < args.Length; i++)
         {
             if (!Enum.TryParse<SkillTypes>(args[i], out var skill))
             {

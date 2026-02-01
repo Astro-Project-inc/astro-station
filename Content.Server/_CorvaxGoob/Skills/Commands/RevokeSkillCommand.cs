@@ -50,7 +50,7 @@ public sealed class RevokeSkillCommand : IConsoleCommand
 
         for (int i = 1; i < args.Length; i++)
         {
-            if (!Enum.TryParse<SkillTypes>(args[1], out var skill))
+            if (!Enum.TryParse<SkillTypes>(args[i], out var skill))
             {
                 shell.WriteError(Loc.GetString("cmd-revokeskill-not-a-skill-type", ("args", args[i])));
                 return;
