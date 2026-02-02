@@ -1,9 +1,6 @@
 using System.Linq;
-using Content.Server.Administration.Logs;
-using Content.Shared.Database;
 using Content.Shared.Implants;
 using Content.Shared.Mind;
-using Content.Shared.PDA;
 using Content.Shared.Tag;
 using SkillTypes = Content.Shared._CorvaxGoob.Skills.Skills;
 
@@ -13,12 +10,9 @@ public sealed class SkillsSystem : EntitySystem
 {
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly IAdminLogManager _adminLog = default!;
-
 
     [ValidatePrototypeId<TagPrototype>]
     public const string SkillsTag = "Skills";
-    string _skillAll = SkillTypes.All.ToString();
     public override void Initialize()
     {
         base.Initialize();
@@ -54,14 +48,17 @@ public sealed class SkillsSystem : EntitySystem
     /// <param name="clearSkills">Does we need to clear all skills before grant new</param>
     public void GrantSkill(EntityUid entity, HashSet<SkillTypes> skills, bool clearSkills = false)
     {
+        if (!_mind.TryGetMind(entity, out var mind, out var mindComp))
+        {
+            Log.Error($"Can't get mind from entity {entity.Id}");
+            return;
+        }
+
         if (skills.Count() < 1)
         {
             Log.Error($"HashSet<Skills> skills is empty, entity {entity.Id}");
             return;
         }
-
-        if (!_mind.TryGetMind(entity, out var mind, out var mindComp))
-            return;
 
         HashSet<SkillTypes> oldSkills = new HashSet<SkillTypes>(mindComp.Skills);
 
@@ -71,29 +68,24 @@ public sealed class SkillsSystem : EntitySystem
         if (skills.Contains(SkillTypes.All))
         {
             mindComp.Skills.Clear();
-            mindComp.Skills.Add(SkillTypes.All);
+            mindComp.Skills.UnionWith(new HashSet<SkillTypes>() { SkillTypes.AdvancedBuilding, SkillTypes.Butchering, SkillTypes.MedicalEquipment, SkillTypes.SelfSurgery, SkillTypes.Shooting, SkillTypes.ShuttleControl, SkillTypes.Surgery });
         }
         else
             mindComp.Skills.UnionWith(skills);
 
-        HashSet<SkillTypes> addedSkills = new HashSet<SkillTypes>();
+        HashSet<SkillTypes> newSkills = new HashSet<SkillTypes>(mindComp.Skills);
+        newSkills.ExceptWith(oldSkills);
 
-        foreach (var addSkill in skills)
+        if (newSkills.Count() < 1)
         {
-            if ((!oldSkills.Contains(addSkill) && !oldSkills.Contains(SkillTypes.All)) || clearSkills)
-                addedSkills.Add(addSkill);
-        }
-
-        if (addedSkills.Count() < 1)
-        {
-            _adminLog.Add(LogType.AdminCommands, $"No new skills added to entity {entity.Id} with mind {mind.Id}. Clear skills: {clearSkills}");
+            Log.Info($"No new skills added to entity {entity.Id} with mind {mind.Id}. Clear skills: {clearSkills}");
             Dirty(mind, mindComp);
             return;
         }
 
-        string skillsMassive = string.Join(", ", skills.Select(s => s.ToString()));
+        string skillsMassive = string.Join(", ", newSkills.Select(s => s.ToString()));
 
-        _adminLog.Add(LogType.AdminCommands, $"Grant {(skills.Contains(SkillTypes.All) ? $"{_skillAll}" : $"{skillsMassive}")} skills to entity {entity.Id} with mind {mind.Id}. Clear skills: {clearSkills}");
+        Log.Info($"Grant {(skills.Contains(SkillTypes.All) ? $"{SkillTypes.All.ToString()}" : $"{skillsMassive}")} skills to entity {entity.Id} with mind {mind.Id}. Clear skills: {clearSkills}");
 
         Dirty(mind, mindComp);
     }
@@ -127,14 +119,19 @@ public sealed class SkillsSystem : EntitySystem
     /// <param name="skills">What skills we revoke</param>
     public void RevokeSkill(EntityUid entity, HashSet<SkillTypes> skills)
     {
+        if (!_mind.TryGetMind(entity, out var mind, out var mindComp))
+        {
+            Log.Error($"Can't get mind from entity {entity.Id}");
+            return;
+        }
+
         if (skills.Count() < 1)
         {
             Log.Error($"HashSet<Skills> skills is empty, entity {entity}");
             return;
         }
 
-        if (!_mind.TryGetMind(entity, out var mind, out var mindComp))
-            return;
+        HashSet<SkillTypes> oldSkills = new HashSet<SkillTypes>(mindComp.Skills);
 
         if (skills.Contains(SkillTypes.All))
             mindComp.Skills.Clear();
@@ -146,9 +143,19 @@ public sealed class SkillsSystem : EntitySystem
             }
         }
 
-        string skillsMassive = string.Join(", ", skills.Select(s => s.ToString()));
+        HashSet<SkillTypes> revokedSkills = new HashSet<SkillTypes>(oldSkills);
+        revokedSkills.ExceptWith(mindComp.Skills);
 
-        _adminLog.Add(LogType.AdminCommands, $"Revoke {(skills.Contains(SkillTypes.All) ? $"{_skillAll}" : $"{skillsMassive}")} skills from entity {entity.Id} with mind {mind.Id}");
+        if (revokedSkills.Count() < 1)
+        {
+            Log.Info($"No skills revoked from entity {entity.Id} with mind {mind.Id}");
+            Dirty(mind, mindComp);
+            return;
+        }
+
+        string skillsMassive = string.Join(", ", revokedSkills.Select(s => s.ToString()));
+
+        Log.Info($"Revoke {(skills.Contains(SkillTypes.All) ? $"{SkillTypes.All.ToString()}" : $"{skillsMassive}")} skills from entity {entity.Id} with mind {mind.Id}");
 
         Dirty(mind, mindComp);
     }
