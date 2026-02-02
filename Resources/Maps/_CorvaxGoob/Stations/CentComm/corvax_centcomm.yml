@@ -88769,8 +88769,6 @@ entities:
       pos: 33.5,100.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 9378
   - uid: 9379
@@ -88780,8 +88778,6 @@ entities:
       pos: 36.5,92.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 9378
   - uid: 9380
@@ -88791,8 +88787,6 @@ entities:
       pos: 30.5,92.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 9378
   - uid: 9381
