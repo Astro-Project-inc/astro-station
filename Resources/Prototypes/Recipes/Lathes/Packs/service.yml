@@ -58,18 +58,6 @@
   - SodaDispenserMachineCircuitboard
   - PrinterDocMachineCircuitboard # Corvax-Goob-PrinterDoc
 
-# CorvaxGoob-start
-- type: latheRecipePack
-  id: HydroponicsStatic
-  recipes:
-  - HydroponicsToolMiniHoe
-  - HydroponicsToolScythe
-  - HydroponicsToolHatchet
-  - HydroponicsToolSpade
-  - HydroponicsToolClippers
-  - PlantAnalyzer
-# CorvaxGoob-end
-
 ## Dynamic
 
 - type: latheRecipePack
