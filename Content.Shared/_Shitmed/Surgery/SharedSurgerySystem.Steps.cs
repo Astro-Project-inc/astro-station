@@ -60,7 +60,7 @@ public abstract partial class SharedSurgerySystem
     private EntityQuery<SurgeryToolComponent> _toolQuery;
 
     private readonly List<EntityUid> _nextStepList = new();
-    private const float SpeedWithoutSurgerySkill = 0.25f;
+    private const float SpeedWithoutSurgerySkill = 0.25f; // CorvaxGoob-Skills
 
     private void InitializeSteps()
     {
@@ -884,17 +884,17 @@ public abstract partial class SharedSurgerySystem
         var ev = new SurgeryDoAfterEvent(surgeryId, stepId, toolUsed);
         var duration = GetSurgeryDuration(step, user, body, speed);
 
+        // CorvaxGoob-Skills-start: you need Surgery skill for anyone modifier, if you haven't skill, take debufff
         if (_skills.HasSkill(user, Skills.SelfSurgery))
         {
-            // CorvaxGoob-start: you need Surgery skill for anyone modifier, if you haven't skill, take debufff
             if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
             {
                 duration /= surgerySpeedMod.SpeedModifier;
             }
-            // CorvaxGoob-end
         }
         else
             duration /= SpeedWithoutSurgerySkill;
+        // CorvaxGoob-Skills-end
 
         var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(duration), ev, body, part)
         {
@@ -934,6 +934,7 @@ public abstract partial class SharedSurgerySystem
             return 2f; // Shouldnt really happen but just a failsafe.
 
         var speed = toolSpeed;
+        // CorvaxGoob-Skills-start: you need Surgery skill for anyone modifier, if you haven't skill, take debufff
         if (_skills.HasSkill(user, Skills.Surgery))
         {
             if (TryComp<BuckleComponent>(target, out var buckleComp)) // Get buckle component from target.
@@ -944,6 +945,7 @@ public abstract partial class SharedSurgerySystem
         }
         else
             speed *= SpeedWithoutSurgerySkill;
+        // CorvaxGoob-Skills-end
 
         return stepComp.Duration / speed;
     }
