@@ -55,10 +55,3 @@
   parent: BaseHydroToolRecipe
   id: HydroponicsToolClippers
   result: HydroponicsToolClippers
-
-# CorvaxGoob-start
-- type: latheRecipe
-  parent: HandheldHealthAnalyzer
-  id: PlantAnalyzer
-  result: PlantAnalyzer
-# CorvaxGoob-end
