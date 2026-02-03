@@ -7,7 +7,7 @@
 # Language spoken by Harpies and Squackroaches.
 # Based on Polish, Greek, Serbian, Turkish.
 - type: language
-  id: ValyrianStandard # NOT WORKING
+  id: ValyrianStandard
   isVisibleLanguage: true
   speech:
     # CorvaxGoob - Font do not support russian

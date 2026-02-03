@@ -18,7 +18,7 @@
     minSyllables: 1
     maxSyllables: 4
     replacement:
-    - caы
+    - ca
     - ra
     - ma
     - sa
