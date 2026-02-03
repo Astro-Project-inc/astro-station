@@ -10,14 +10,15 @@
   isVisibleLanguage: true
   speech:
     color: "#a489a0"
-    fontId: ChelseaMarket
+    # CorvaxGoob - Font do not support russian
+    # fontId: ChelseaMarket
     fontSize: 12
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 4
     replacement:
-    - ca
+    - caы
     - ra
     - ma
     - sa
