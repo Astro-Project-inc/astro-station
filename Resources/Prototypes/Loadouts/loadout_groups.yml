@@ -265,11 +265,13 @@
   - Mouse
   - Mothroach
   - Goldfish
-  - Cockroach # CorvaxGoob-loadouts
-  - Butterfly # CorvaxGoob-loadouts
-  - Homunculus # CorvaxGoob-loadouts
-  - Hamster # CorvaxGoob-loadouts
-  - Moproach # CorvaxGoob-loadouts
+  # CorvaxGoob-loadouts-start
+  - Cockroach
+  - Butterfly
+  - Homunculus
+  - Hamster
+  - Moproach
+  # CorvaxGoob-loadouts-end
 
 - type: loadoutGroup
   id: GroupTankHarness
