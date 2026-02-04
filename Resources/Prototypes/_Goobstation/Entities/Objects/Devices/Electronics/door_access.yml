@@ -20,7 +20,7 @@
   suffix: NanotrasenRepresentative, Locked
   components:
   - type: AccessReader
-    access: [["NanotrasenRepresentative"]]
+    access: [["NanotrasenRepresentative"], [Captain]] #CorvaxGoob
 
 - type: entity
   parent: DoorElectronics
@@ -28,7 +28,7 @@
   suffix: BlueshieldOfficer, Locked
   components:
   - type: AccessReader
-    access: [["BlueshieldOfficer"]]
+    access: [["BlueshieldOfficer"], [Captain]] #CorvaxGoob
 
 - type: entity
   parent: DoorElectronics
