@@ -35,15 +35,18 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 90000 # 25 hours
+      time: 126000 # CorvaxGoob 25 hours -> 35 hours
     - !type:DepartmentTimeRequirement
       department: Medical
       time: 54000 # 15 hours
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 90000 # 25 hours
+      time: 180000 # CorvaxGoob 25 hours -> 50 hours
     - !type:AgeRequirement
       requiredAge: 21
+    - !type:RoleTimeRequirement  # CorvaxGoob
+      role: JobSurgeon  
+      time: 18000 # CorvaxGoob 5 hours
     - !type:SpeciesRequirement # Goob - None Felinid
       inverted: true
       species:
