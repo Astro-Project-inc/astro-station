@@ -17,4 +17,4 @@ lathe-recipe-NewKinPidginTranslatorImplanter-subname = Ка'ракк
 lathe-recipe-ChevalTranslatorImplanter-subname = Парнокопытный
 lathe-recipe-YowKriolTranslatorImplanter-subname = Йовикрол
 lathe-recipe-GruntishTranslatorImplanter-subname = Грунтич
-lathe-recipe-XenoCompatibilityImplanter = имплантер (Ксено совместимость)
+lathe-recipe-XenoCompatibilityImplanter = Ксено совместимость
