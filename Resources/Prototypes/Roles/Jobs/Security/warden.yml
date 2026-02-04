@@ -141,6 +141,9 @@
     - !type:RoleTimeRequirement
       role: JobBrigmedic
       time: 18000 #5 hrs
+    - !type:RoleTimeRequirement  
+      role: JobWardenHelper  
+      time: 18000 # CorvaxGoob 5 hours
     - !type:DepartmentTimeRequirement
       department: Security
       time: 36000 # 10 hrs
