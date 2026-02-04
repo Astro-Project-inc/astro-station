@@ -141,13 +141,13 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 18000 #5 hr
+      time: 36000 # CorvaxGoob 5 hours -> 10 hours
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 36000 #10 hrs
+      time: 54000 # CorvaxGoob 10 hours -> 15 hours
     - !type:RoleTimeRequirement
       role: JobDetective
-      time: 3600 #1 hrs
+      time: 7200 # CorvaxGoob 1 hour -> 2 hour
     - !type:DepartmentTimeRequirement
       department: Security
       time: 36000 # 10 hrs
