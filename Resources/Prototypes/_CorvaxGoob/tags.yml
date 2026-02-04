@@ -92,3 +92,6 @@
 
 - type: Tag
   id: TelescopicShield
+
+- type: Tag
+  id: HandHeldMassScanner
