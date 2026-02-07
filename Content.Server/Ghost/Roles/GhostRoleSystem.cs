@@ -85,7 +85,6 @@ using Content.Server.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Collections;
 using Content.Shared.Ghost.Roles.Components;
-using Content.Shared.Roles.Components;
 using System.Linq;
 
 namespace Content.Server.Ghost.Roles;
@@ -521,6 +520,9 @@ public sealed class GhostRoleSystem : EntitySystem
         if (player.AttachedEntity is not { Valid: true } attached) // Goobstation
             return;
 
+        if (!_ghostRoles.TryGetValue(identifier, out var roleEnt))
+            return;
+
         TryPrototypes(roleEnt, out var antags, out var jobs);
 
         // Check role bans
@@ -540,8 +542,6 @@ public sealed class GhostRoleSystem : EntitySystem
         if (HasComp<GhostBarPlayerComponent>(player.AttachedEntity) // CorvaxGoob-GhostBar
             || EntityManager.TryGetComponent<GhostComponent>(attached, out var ghost) && ghost.CanTakeGhostRoles)
         {
-            if (!_ghostRoles.TryGetValue(identifier, out var roleEnt))
-                return;
 
             if (roleEnt.Comp.RaffleConfig is not null)
             {
@@ -573,9 +573,9 @@ public sealed class GhostRoleSystem : EntitySystem
         if (TryComp<MindContainerComponent>(roleEnt, out var mindCont)
             && TryComp<MindComponent>(mindCont.Mind, out var mind))
         {
-            foreach (var role in mind.MindRoleContainer.ContainedEntities)
+            foreach (var role in mind.MindRoles)
             {
-                if(!TryComp<MindRoleComponent>(role, out var comp))
+                if (!TryComp<MindRoleComponent>(role, out var comp))
                     continue;
 
                 if (comp.JobPrototype is not null)
