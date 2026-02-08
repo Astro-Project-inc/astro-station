@@ -71,6 +71,9 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 72000 # CorvaxGoob 5 hours -> 20 hours
+    - !type:DepartmentTimeRequirement # CorvaxGoob
+      department: Security
+      time: 36000 # CorvaxGoob 10 hours
   startingGear: ChaplainGear
   icon: "JobIconChaplain"
   supervisors: job-supervisors-hop

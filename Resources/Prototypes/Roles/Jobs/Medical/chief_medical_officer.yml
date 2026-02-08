@@ -147,7 +147,7 @@
       time: 36000 #10 hrs
     - !type:RoleTimeRequirement  # CorvaxGoob
       role: JobSurgeon  
-      time: 18000 # CorvaxGoob 5 hours
+      time: 7200 # CorvaxGoob 2 hrs
     - !type:SpeciesRequirement # Goob - None Felinid
       inverted: true
       species:

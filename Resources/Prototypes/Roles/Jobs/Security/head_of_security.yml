@@ -141,16 +141,16 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 36000 # CorvaxGoob 5 hours -> 10 hours
+      time: 21600 # CorvaxGoob 5 hrs -> 6 hrs
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 54000 # CorvaxGoob 10 hours -> 15 hours
+      time: 36000 # 10 hrs
     - !type:RoleTimeRequirement
       role: JobDetective
       time: 7200 # CorvaxGoob 1 hour -> 2 hour
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 36000 # 10 hrs
+      time: 72000 # CorvaxGoob 10 hrs -> 20 hrs
     - !type:SpeciesRequirement # Goob - None Felinid
       inverted: true
       species:

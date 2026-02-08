@@ -139,7 +139,7 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobScientist
-    time: 36000 # CorvaxGoob 6 hours -> 10 hours
+    time: 21600 #6 hrs
   - !type:DepartmentTimeRequirement
     department: Science
     time: 36000 #10 hrs

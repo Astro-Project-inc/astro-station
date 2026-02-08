@@ -141,19 +141,19 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 18000 # CorvaxGoob 4 hours -> 5 hours
+      time: 14400 # 4 hours
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 18000 # CorvaxGoob 4 hours -> 5 hours
+      time: 14400 # 4 hours
     - !type:DepartmentTimeRequirement
       department: Science
-      time: 18000 # CorvaxGoob 4 hours -> 5 hours
+      time: 14400 # 4 hours
     - !type:DepartmentTimeRequirement
       department: Security
       time: 21600 # 6 hours
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 54000 # CorvaxGoob 8 hours -> 15 hours
+      time: 50400 # CorvaxGoob 8 hours -> 14 hours
     - !type:SpeciesRequirement # Goob - None Felinid
       inverted: true
       species:
