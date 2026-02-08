@@ -224,13 +224,6 @@
       mindRoles:
       - MindRoleGhostRoleFamiliar
       job: DeathSquad
-      requirements:
-      - !type:DepartmentTimeRequirement
-        department: Security
-        time: 48000 # Goobstation
-      - !type:DepartmentTimeRequirement
-        department: Command
-        time: 18000 # Goobstation
     - type: Loadout
       prototypes: [ DeathSquadGear ]
       roleLoadout: [ RoleSurvivalEVA ]

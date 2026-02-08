@@ -1,3 +1,19 @@
+- type: antag
+  id: Hastur
+  name: ghost-role-information-hastur-name
+  objective: ""
+  antagonist: true
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 54000 # 15 hours.
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleHastur
+  components:
+  - type: MindRole
+    antagPrototype: Hastur
+
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
   parent: BaseAntagSpawner
@@ -8,10 +24,7 @@
     description: ghost-role-information-hastur-description
     rules: ghost-role-information-hastur-rules
     mindRoles:
-    - MindRoleGhostRoleSoloAntagonist
-    requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 54000 # 15 hours.
+    - MindRoleHastur
     raffle:
       settings: default
   - type: Sprite

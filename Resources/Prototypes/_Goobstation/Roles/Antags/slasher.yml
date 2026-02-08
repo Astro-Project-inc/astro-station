@@ -5,6 +5,9 @@
   setPreference: false
   objective: roles-antag-slasher-objectives
   guides: [ Slasher ]
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 18000 #5 hours
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
@@ -16,12 +19,9 @@
     description: ghost-role-information-slasher-description
     rules: ghost-role-information-antagonist-rules
     mindRoles:
-    - MindRoleGhostRoleSoloAntagonist
+    - MindRoleSlasher
     raffle:
       settings: default
-    requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hours
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -50,7 +50,7 @@
     description: ghost-role-information-description-token-generic
     rules: ghost-role-information-antagonist-rules
     mindRoles:
-    - MindRoleGhostRoleSoloAntagonist
+    - MindRoleSlasher
     raffle:
       settings: short
   - type: Sprite

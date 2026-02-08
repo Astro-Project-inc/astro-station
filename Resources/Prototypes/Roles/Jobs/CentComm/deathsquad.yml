@@ -34,8 +34,16 @@
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant, DeathRattleImplantCentcomm ]
   - !type:AddComponentSpecial
-    components:
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 48000 # Goobstation
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 18000 # Goobstation
+  components:
     - type: DeathSquadMember # Goobstation
+
 
   # Goobstation Start - I basically re-did all of deathsquads stuff so. - Sol
 - type: startingGear

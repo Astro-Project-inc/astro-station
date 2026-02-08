@@ -129,9 +129,7 @@
     - MindRoleGhostRoleFreeAgent
     raffle:
       settings: default
-    requirements: # Goobstation - ghost roles requirements
-    - !type:OverallPlaytimeRequirement
-      time: 3600 #1 hour
+    job: TechnicalAssistant # Goobstation - ghost roles requirements CorvaxGoob-RTupstreamfix 1 час
   - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [LimitedPassengerGear]
