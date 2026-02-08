@@ -47,7 +47,7 @@
     - !type:RoleTimeRequirement  # CorvaxGoob
       role: JobSurgeon  
       time: 7200 # CorvaxGoob 2 hrs
-      !type:RoleTimeRequirement  # CorvaxGoob
+    - !type:RoleTimeRequirement  # CorvaxGoob
       role: JobCaptain  
       time: 7200 # CorvaxGoob 2 hrs
     - !type:SpeciesRequirement # Goob - None Felinid
