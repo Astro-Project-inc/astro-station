@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using System.Numerics;
 using Content.Client.Atmos.EntitySystems;
 using Content.Client.Stylesheets;
 using Content.Goobstation.Shared.Supermatter.Components;

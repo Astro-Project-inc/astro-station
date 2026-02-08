@@ -2,6 +2,7 @@ using Content.Goobstation.Shared.EatToGrow;
 using Content.Server.Nutrition.Components;
 using Content.Shared.Mobs; // mobstate changed event
 using Content.Shared.Nutrition; // before fully eaten event
+using Content.Shared.Sprite;
 using Robust.Server.GameObjects;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Collision.Shapes;

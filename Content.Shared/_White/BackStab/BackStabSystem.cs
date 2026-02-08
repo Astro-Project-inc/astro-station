@@ -6,6 +6,7 @@
 
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Content.Shared.Standing;
@@ -14,6 +15,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
+using System.Numerics;
 
 namespace Content.Shared._White.BackStab;
 
@@ -73,7 +75,8 @@ public sealed class BackStabSystem : EntitySystem
         var userXform = Transform(user);
         var v1 = -_transform.GetWorldRotation(xform).ToWorldVec();
         var v2 = _transform.GetWorldPosition(userXform) - _transform.GetWorldPosition(xform);
-        var angle = Vector3.CalculateAngle(new Vector3(v1), new Vector3(v2));
+        float dot = Vector2.Dot(Vector2.Normalize(v1), Vector2.Normalize(v2));
+        var angle = Math.Acos(Math.Clamp(dot, -1f, 1f));
 
         if (angle > tolerance.Theta)
             return false;
