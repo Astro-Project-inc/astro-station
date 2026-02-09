@@ -24,7 +24,7 @@ gun-upgrade-space-name = [color=#ff00bf][bold]пространство[/bold][/c
 gun-upgrade-bayonet-name = [bold]штык[/bold]
 gun-upgrade-flashlight-name = [bold]фонарь[/bold]
 gun-upgrade-crusher-kinetic-marker-name = [color=#4269eb][bold]кинетический маркер[/bold][/color]
-gun-upgrade-crusher-rude-buster-name = [color=#ae00ff][bold]грубый разрушитель[/bold][/color]
+gun-upgrade-crusher-rude-buster-name = [color=#ae00ff][bold]грубый крушитель[/bold][/color]
 gun-upgrade-crusher-lava-aspect = [bold]лава[/bold] лезвие
 gun-upgrade-crusher-ice-frost = [bold]морозное[/bold] лезвие
 gun-upgrade-crusher-sharpness = [bold]острое[/bold] лезвие
