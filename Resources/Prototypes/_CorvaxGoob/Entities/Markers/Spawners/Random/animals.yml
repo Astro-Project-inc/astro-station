@@ -15,7 +15,11 @@
         - MobChicken1
         - MobChicken2
         - MobCockroach
-        - MobMothroach
+        - MobMothroach ##corvax-Goob-edit-start
+        - MobMothroachMustard
+        - MobMothroachLeopard
+        - MobMothroachCecropia
+        - MobMothroachLunar #corvax-Goob-edit-end
         - MobDuckMallard
         - MobDuckWhite
         - MobDuckBrown
