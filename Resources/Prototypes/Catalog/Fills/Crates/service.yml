@@ -368,14 +368,14 @@
           prob: 0.05
         - id: MobMothroach
           prob: 0.03
-        - id: MobMothroachMustard
+        - id: MobMothroachMustard #corvax-Goob-edit-start
           prob: 0.03
         - id: MobMothroachLeopard
           prob: 0.03
         - id: MobMothroachCecropia
           prob: 0.03
         - id: MobMothroachLunar
-          prob: 0.03
+          prob: 0.03 #corvax-Goob-edit-end
         - id: MobMouse
           prob: 0.05
         - id: MobLootbug # Goobstation
