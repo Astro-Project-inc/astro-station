@@ -12,5 +12,5 @@ ent-MindRoleSlasher = Роль Мясника
     .desc = { ent-BaseMindRoleAntag.desc }
 ent-MindRoleGhostRoleSentientAnimal = Роль разумного животного
     .desc = { ent-BaseMindRoleAntag.desc }
-ent-MindRoleContractor = Роль Наёмника
+ent-MindRoleContractor = Роль Наёмника Синдиката
     .desc = { ent-BaseMindRoleAntag.desc }
