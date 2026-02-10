@@ -20,4 +20,4 @@ miner-weapon-selector-glaive-description =
 miner-weapon-selector-hammer-name = Молот-крушитель
 miner-weapon-selector-hammer-description =
     Монструозное оружие, наносящее огромное количество урона ушибами
-    своими медленными атаками. Неэффективно для раскопок.
+    своими медленными атаками. Неэффективен для раскопок.
