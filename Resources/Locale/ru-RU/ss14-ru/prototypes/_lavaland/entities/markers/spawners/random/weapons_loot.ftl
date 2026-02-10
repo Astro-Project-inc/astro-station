@@ -1,5 +1,5 @@
 ent-CrusherWeaponLootSpawner = спавнер случайный оружие крушитель
-    .suffix = Лаваленд 
+    .suffix = Лаваленд
     .desc = { ent-MarkerBase.desc }
 ent-CrusherUpgradeLootSpawner = спавнер случайный улучшение крушитель
     .suffix = Лаваленд
