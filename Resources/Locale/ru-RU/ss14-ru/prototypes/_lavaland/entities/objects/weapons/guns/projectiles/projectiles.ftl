@@ -1,5 +1,5 @@
 ent-BulletKinetic = кинетический снаряд
-    .desc = Не так уж плохо, но вы всё равно не хотите, чтобы это попало по вам.
+    .desc = Не так уж и больно, но вы всё равно не хотите, чтобы это попало по вам.
 ent-BulletKineticShuttle = { ent-BaseBullet }
     .desc = { ent-BaseBullet.desc }
 ent-RapidBulletKinetic = снаряд
