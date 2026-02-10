@@ -1,5 +1,5 @@
-reagent-name-potassium-sulfate = potassium sulfate
-reagent-desc-potassium-sulfate = Калий в водорастворимой форме, обеспечивающий одновременно и калий, и серу. Используется преимущественно как удобрение для растений.
+reagent-name-potassium-sulfate = сульфат калия
+reagent-desc-potassium-sulfate = Калий в водорастворимой форме, обеспечивающий одновременно и калий и серу. Используется преимущественно как удобрение для растений.
 reagent-name-sodium-bicarbonate = бикарбонат натрия
 reagent-desc-sodium-bicarbonate = Белая, не имеющая запаха, водорастворимая соль с широким спектром применения. Также известна как пищевая сода.
 reagent-name-sodium-acetate = ацетат натрия

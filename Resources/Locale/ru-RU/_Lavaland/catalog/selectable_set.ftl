@@ -5,7 +5,7 @@ miner-weapon-selector-pka-description =
 miner-weapon-selector-repeater-name = Протокинетический повторитель
 miner-weapon-selector-repeater-description =
     Оружие для средних расстояний, стреляющее очередями из трёх пуль,
-    благодаря этому нанося серьёзный урон.
+    нанося серьёзный урон.
 miner-weapon-selector-pistols-name = Протокинетические пистолеты
 miner-weapon-selector-pistols-description =
     Пара пистолетов, которые можно использовать для стрельбы с двух рук. Как на Диком Западе...
@@ -20,4 +20,4 @@ miner-weapon-selector-glaive-description =
 miner-weapon-selector-hammer-name = Молот-крушитель
 miner-weapon-selector-hammer-description =
     Монструозное оружие, наносящее огромное количество урона ушибами
-    своими медленными атаками. Неэффективно для раскопок.
+    своими медленными атаками. Неэффективен для раскопок.
