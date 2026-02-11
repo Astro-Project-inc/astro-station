@@ -64,18 +64,9 @@
         description: abductor-lone-ghost-role-desc
         rules: abductors-ghost-role-rules
         mindRoles:
-        - MindRoleGhostRoleSoloAntagonist
+        - MindRoleLoneAbductorGameRule
         raffle:
           settings: default
-        requirements:
-        - !type:OverallPlaytimeRequirement
-          time: 180000 #50 hours
-        - !type:DepartmentTimeRequirement
-          department: Medical
-          time: 7200 #2 hours
-        - !type:DepartmentTimeRequirement
-          department: Security
-          time: 7200 #2 hours
       - type: GhostTakeoverAvailable
       - type: NpcFactionMember
         factions:

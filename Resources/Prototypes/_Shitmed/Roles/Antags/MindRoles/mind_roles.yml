@@ -54,3 +54,14 @@
     antagPrototype: AbductorVictimAntag
     subtype: role-subtype-abductor-victim
   - type: AbductorVictim
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleLoneAbductorGameRule
+  name: Lone Abductor Role
+  components:
+  - type: MindRole
+    antagPrototype: AbductorScientistAntagGameRule
+    roleType: TeamAntagonist
+    subtype: role-subtype-abductor
+  - type: Abductor
