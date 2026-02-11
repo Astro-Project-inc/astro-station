@@ -15,7 +15,7 @@ public sealed class GrantAllSkillsCommand : IConsoleCommand
 
     public string Description => Loc.GetString("cmd-grantallskills-desc");
 
-    public string Help => Loc.GetString("cmd=grantallskills-help", ("command", Command));
+    public string Help => Loc.GetString("cmd-grantallskills-help", ("command", Command));
 
     public void Execute(IConsoleShell shell, string arg, string[] args)
     {
