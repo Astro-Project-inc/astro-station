@@ -167,6 +167,7 @@
       - ShuttleControl
     mindRoles:
     - MindRoleGhostRoleSilicon
+    job: Borg
   - type: GhostTakeoverAvailable
   - type: SiliconLawBound
   - type: SiliconLawProvider
