@@ -1,3 +1,19 @@
+- type: antag
+  id: Wraith
+  name: ghost-role-information-wraith-name
+  antagonist: true
+  objective: ""
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 54000 # 15 hours
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleWraith
+  components:
+  - type: MindRole
+    antagPrototype: Wraith
+
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
   parent: BaseAntagSpawner
@@ -8,10 +24,7 @@
     description: ghost-role-information-wraith-description
     rules: ghost-role-information-wraith-rules
     mindRoles:
-    - MindRoleGhostRoleSoloAntagonist
-    requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 54000 # 15 hours
+    - MindRoleWraith
     raffle:
       settings: default
   - type: Sprite

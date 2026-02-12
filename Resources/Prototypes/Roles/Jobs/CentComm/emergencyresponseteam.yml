@@ -119,6 +119,13 @@
   name: job-name-ertleader
   description: job-description-ertleader
   playTimeTracker: JobERTLeader
+  requirements: # Goobstation - ghost roles requirements
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 36000 # ten hours
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 18000 # five hours
   setPreference: false
   startingGear: ERTLeaderGearEVA
   icon: "JobIconNanotrasen"
@@ -303,6 +310,13 @@
   name: job-name-ertengineer
   description: job-description-ertengineer
   playTimeTracker: JobERTEngineer
+  requirements: # Goobstation - ghost roles requirements
+  - !type:DepartmentTimeRequirement
+    department: Engineering
+    time: 36000 # ten hours
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 18000 # five hours
   setPreference: false
   startingGear: ERTEngineerGearEVA
   icon: "JobIconNanotrasen"
@@ -498,6 +512,13 @@
   name: job-name-ertmedic
   description: job-description-ertmedic
   playTimeTracker: JobERTMedical
+  requirements: # Goobstation - ghost roles requirements
+  - !type:DepartmentTimeRequirement
+    department: Medical
+    time: 36000 # ten hours
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 18000 # five hours
   setPreference: false
   startingGear: ERTMedicalGearEVA
   icon: "JobIconNanotrasen"

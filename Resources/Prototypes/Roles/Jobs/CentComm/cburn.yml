@@ -14,6 +14,13 @@
   name: job-name-cburn
   description: job-description-cburn
   playTimeTracker: JobCBURN
+  requirements: # Goobstation - ghost roles requirements
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 36000 # ten hours
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 18000 # five hours
   setPreference: false
   startingGear: CBURNGear
   icon: "JobIconNanotrasen"

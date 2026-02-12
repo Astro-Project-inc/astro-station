@@ -76,3 +76,9 @@
 
 - type: playTimeTracker
   id: JobVirologist
+
+- type: playTimeTracker
+  id: PlayTimeBlueShield
+
+- type: playTimeTracker
+  id: JobIntern

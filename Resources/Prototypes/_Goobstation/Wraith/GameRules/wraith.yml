@@ -10,7 +10,7 @@
       max: 1
       pickPlayer: false
       mindRoles:
-      - MindRoleGhostRoleSoloAntagonist
+      - MindRoleWraith
       briefing:
         text: wraith-role-greeting
         sound: /Audio/_Goobstation/Wraith/Ambience/Void_Calls.ogg
@@ -58,7 +58,7 @@
       max: 1
       pickPlayer: false
       mindRoles:
-      - MindRoleGhostRoleSoloAntagonist
+      - MindRoleWraith
       briefing:
         text: wraith-role-greeting
         sound: /Audio/_Goobstation/Wraith/Ambience/Void_Calls.ogg

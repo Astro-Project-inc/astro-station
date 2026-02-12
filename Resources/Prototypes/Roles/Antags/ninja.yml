@@ -84,6 +84,8 @@
   objective: roles-antag-space-ninja-objective
   guides: [ SpaceNinja ]
   requirements:
+  - !type:OverallPlaytimeRequirement # Goobstation - ghost roles requirements
+    time: 18000 #5 hours
   - !type:SpeciesRequirement
     inverted: true
     species:

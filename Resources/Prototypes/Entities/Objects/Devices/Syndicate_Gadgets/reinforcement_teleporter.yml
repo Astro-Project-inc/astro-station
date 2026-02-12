@@ -103,9 +103,6 @@
     - MindRoleGhostRoleFamiliar
     raffle:
       settings: default
-    requirements: # Goobstation - ghost roles requirements
-    - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hours
   - type: GhostRoleMobSpawner
     prototype: MobHumanSyndicateAgentSpy
     selectablePrototypes: ["SyndicateAgentMedic", "SyndicateAgentSpy", "SyndicateAgentThief"]
@@ -143,9 +140,6 @@
     - MindRoleGhostRoleFamiliar
     raffle:
       settings: default
-    requirements: # Goobstation - ghost roles requirements
-    - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hours
   - type: GhostRoleMobSpawner
     prototype: MobMonkeySyndicateAgent
     selectablePrototypes: ["SyndicateMonkey", "SyndicateKobold"]
@@ -175,9 +169,6 @@
     - MindRoleGhostRoleFamiliar
     raffle:
       settings: default
-    requirements: # Goobstation - ghost roles requirements
-    - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hours
   - type: GhostRoleMobSpawner
     prototype: MobCatSyndy
   - type: EmitSoundOnUse
@@ -199,8 +190,5 @@
       raffle:
         settings: default
       job: Borg
-      requirements: # Goobstation - ghost roles requirements
-      - !type:OverallPlaytimeRequirement
-        time: 18000 #5 hours
     - type: GhostRoleMobSpawner
       prototype: PlayerBorgSyndicateAssaultBattery

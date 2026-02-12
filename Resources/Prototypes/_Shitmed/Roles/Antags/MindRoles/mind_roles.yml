@@ -65,3 +65,14 @@
     roleType: TeamAntagonist
     subtype: role-subtype-abductor
   - type: Abductor
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleAbductorScientistDuoGameRule
+  name: Abductor Scientist (Duo) Role
+  components:
+  - type: MindRole
+    antagPrototype: AbductorScientistAntagDuoGameRule
+    roleType: TeamAntagonist
+    subtype: role-subtype-abductor
+  - type: Abductor

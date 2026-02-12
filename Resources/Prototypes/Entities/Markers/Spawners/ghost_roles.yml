@@ -114,11 +114,7 @@
     description: ghost-role-information-loneop-description
     rules: ghost-role-information-loneop-rules
     mindRoles:
-    - MindRoleGhostRoleSoloAntagonist
-    requirements: # Goobstation - ghost roles requirements
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 18000 #5 hours
+    - MindRoleNukeops
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -172,10 +168,7 @@
     description: ghost-role-information-space-dragon-description
     rules: ghost-role-information-space-dragon-rules
     mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
-    requirements: # Goobstation - ghost roles requirements
-    - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hours
+    - MindRoleDragon # Goobstation
   - type: Sprite
     layers:
     - state: green
@@ -195,9 +188,6 @@
     - MindRoleNinja
     raffle:
       settings: default
-    requirements: # Goobstation - ghost roles requirements
-    - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hours
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -238,10 +228,7 @@
     - MindRoleGhostRoleSilicon
     raffle:
       settings: default
-    requirements: # Goobstation - ghost roles requirements
-    - !type:RoleTimeRequirement
-      role: JobBorg
-      time: 3600 #1 hour
+    job: Borg # Goobstation - ghost roles requirements
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:

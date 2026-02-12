@@ -30,18 +30,18 @@
   # Goobstation
   - NanotrasenRepresentative
   - BlueshieldOfficer
-  special: # Goobstation Start - I basically re-did all of deathsquads stuff so. - Sol
-  - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant, DeathRattleImplantCentcomm ]
-  - !type:AddComponentSpecial
-  requirements:
+  requirements: # Goobstation
     - !type:DepartmentTimeRequirement
       department: Security
       time: 48000 # Goobstation
     - !type:DepartmentTimeRequirement
       department: Command
       time: 18000 # Goobstation
-  components:
+  special: # Goobstation Start - I basically re-did all of deathsquads stuff so. - Sol
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant, DeathRattleImplantCentcomm ]
+  - !type:AddComponentSpecial
+    components:
     - type: DeathSquadMember # Goobstation
 
 
