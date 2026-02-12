@@ -5,5 +5,5 @@
   markingCategory: Head
   speciesRestriction: [ Moth ]
   sprites:
-  - sprite: _CorvaxGoob\Mobs\Customization\Moth\eyes.rsi
+  - sprite: _CorvaxGoob/Mobs/Customization/Moth/eyes.rsi
     state: smaller
