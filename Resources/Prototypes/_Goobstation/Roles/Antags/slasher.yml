@@ -19,7 +19,7 @@
     description: ghost-role-information-slasher-description
     rules: ghost-role-information-antagonist-rules
     mindRoles:
-    - MindRoleSlasher
+    - MindRoleSlasher # CorvaxGoob-UpstreamRT
     raffle:
       settings: default
   - type: Sprite
@@ -50,7 +50,7 @@
     description: ghost-role-information-description-token-generic
     rules: ghost-role-information-antagonist-rules
     mindRoles:
-    - MindRoleSlasher
+    - MindRoleSlasher # CorvaxGoob-UpstreamRT
     raffle:
       settings: short
   - type: Sprite

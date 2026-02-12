@@ -25,7 +25,7 @@
       description: ghost-role-information-blob-description
       rules: You are an antagonist, destroy the station!
       mindRoles:
-      - MindRoleBlob
+      - MindRoleBlob # CorvaxGoob-UpstreamRT
       raffle:
         settings: default
     - type: Sprite
@@ -110,7 +110,7 @@
     description: ghost-role-information-blob-description
     rules: You are an antagonist, destroy the station!
     mindRoles:
-    - MindRoleBlob
+    - MindRoleBlob # CorvaxGoob-UpstreamRT
     reregister: false
     raffle:
       settings: default

@@ -167,7 +167,7 @@
       - ShuttleControl
     mindRoles:
     - MindRoleGhostRoleSilicon
-    job: Borg
+    job: Borg # CorvaxGoob-UpstreamRT
   - type: GhostTakeoverAvailable
   - type: SiliconLawBound
   - type: SiliconLawProvider

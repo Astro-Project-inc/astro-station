@@ -114,7 +114,7 @@
     description: ghost-role-information-loneop-description
     rules: ghost-role-information-loneop-rules
     mindRoles:
-    - MindRoleNukeops
+    - MindRoleNukeops # CorvaxGoob-UpstreamRT
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -168,7 +168,7 @@
     description: ghost-role-information-space-dragon-description
     rules: ghost-role-information-space-dragon-rules
     mindRoles:
-    - MindRoleDragon # Goobstation
+    - MindRoleDragon # CorvaxGoob-UpstreamRT
   - type: Sprite
     layers:
     - state: green
@@ -228,7 +228,7 @@
     - MindRoleGhostRoleSilicon
     raffle:
       settings: default
-    job: Borg # Goobstation - ghost roles requirements
+    job: Borg # Goobstation - ghost roles requirements # CorvaxGoob-UpstreamRT
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:

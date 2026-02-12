@@ -63,7 +63,7 @@
       description: blob-carrier-role-desc
       rules: blob-carrier-role-rules
       mindRoles:
-      - MindRoleBlob
+      - MindRoleBlob # CorvaxGoob-UpstreamRT
       raffle:
         settings: default
     - type: Sprite

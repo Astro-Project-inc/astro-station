@@ -14,7 +14,7 @@
   name: job-name-cburn
   description: job-description-cburn
   playTimeTracker: JobCBURN
-  requirements: # Goobstation - ghost roles requirements
+  requirements: # Goobstation - ghost roles requirements # CorvaxGoob-UpstreamRT
   - !type:DepartmentTimeRequirement
     department: Security
     time: 36000 # ten hours

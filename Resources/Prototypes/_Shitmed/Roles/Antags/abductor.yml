@@ -13,7 +13,7 @@
   name: abductor-lone-ghost-role-name
   antagonist: true
   objective: roles-antag-abductor-objective
-  requirements:
+  requirements: # CorvaxGoob-UpstreamRT
     - !type:OverallPlaytimeRequirement
       time: 18000 #5 hours
     - !type:DepartmentTimeRequirement
@@ -28,7 +28,7 @@
   name: abductor-agent-ghost-role-name
   antagonist: true
   objective: roles-antag-abductor-objective
-  requirements:
+  requirements: # CorvaxGoob-UpstreamRT
     - !type:OverallPlaytimeRequirement
       time: 18000 #5 hours
     - !type:DepartmentTimeRequirement
@@ -40,7 +40,7 @@
   name: abductor-scientist-ghost-role-name
   antagonist: true
   objective: roles-antag-abductor-objective
-  requirements:
+  requirements: # CorvaxGoob-UpstreamRT
     - !type:OverallPlaytimeRequirement
       time: 18000 #5 hours
     - !type:DepartmentTimeRequirement
@@ -64,7 +64,7 @@
   name: abductor-lone-ghost-role-name
   antagonist: true
   objective: roles-antag-abductor-objective
-  requirements:
+  requirements: # CorvaxGoob-UpstreamRT
   - !type:OverallPlaytimeRequirement
     time: 180000 #50 hours
   - !type:DepartmentTimeRequirement
@@ -79,7 +79,7 @@
   name: abductor-scientist-ghost-role-name
   antagonist: true
   objective: roles-antag-abductor-objective
-  requirements:
+  requirements: # CorvaxGoob-UpstreamRT
   - !type:OverallPlaytimeRequirement
     time: 180000 #50 hours
   - !type:DepartmentTimeRequirement

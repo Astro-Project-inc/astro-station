@@ -71,7 +71,7 @@
     rules: ghost-role-information-bsd-rules
     raffle:
       settings: default
-    job: BlueShieldDeputy
+    job: BlueShieldDeputy # CorvaxGoob-UpstreamRT
   - type: GhostRoleMobSpawner
     prototype: BlueShieldDeputy
 

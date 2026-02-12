@@ -1,4 +1,4 @@
-- type: antag
+- type: antag # CorvaxGoob-UpstreamRT
   id: Wraith
   name: ghost-role-information-wraith-name
   antagonist: true
@@ -7,7 +7,7 @@
     - !type:OverallPlaytimeRequirement
       time: 54000 # 15 hours
 
-- type: entity
+- type: entity # CorvaxGoob-UpstreamRT
   parent: BaseMindRoleAntag
   id: MindRoleWraith
   components:
@@ -24,7 +24,7 @@
     description: ghost-role-information-wraith-description
     rules: ghost-role-information-wraith-rules
     mindRoles:
-    - MindRoleWraith
+    - MindRoleWraith # CorvaxGoob-UpstreamRT
     raffle:
       settings: default
   - type: Sprite

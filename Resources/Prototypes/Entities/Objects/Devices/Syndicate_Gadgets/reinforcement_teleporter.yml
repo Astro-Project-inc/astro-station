@@ -120,7 +120,7 @@
     description: ghost-role-information-nukeop-reinforcement-description
     rules: ghost-role-information-nukeop-reinforcement-rules
     mindRoles:
-    - MindRoleNukeops
+    - MindRoleNukeops # CorvaxGoob-UpstreamRT
     raffle:
       settings: default
   - type: GhostRoleMobSpawner

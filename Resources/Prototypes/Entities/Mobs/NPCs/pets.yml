@@ -1105,7 +1105,7 @@
     rules: ghost-role-information-nonantagonist-rules
     raffle:
       settings: default
-    job: Borg # Goobstation - ghost roles requirements CorvaxGoob-RTupstreamfix 4 часа
+    job: Borg # Goobstation - ghost roles requirements # CorvaxGoob-UpstreamRT 4 часа
     mindRoles:
     - MindRoleGhostRoleNeutral
   - type: GhostTakeoverAvailable

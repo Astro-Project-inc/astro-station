@@ -67,7 +67,7 @@
     name: abductor-lone-ghost-role-name
     description: abductor-lone-ghost-role-desc
     mindRoles:
-    - MindRoleLoneAbductor
+    - MindRoleLoneAbductor # CorvaxGoob-UpstreamRT
   - type: AbductorScientist
   - type: SurgeryIgnoreClothing
   - type: Sanitized
@@ -86,7 +86,7 @@
     name: abductor-scientist-ghost-role-name
     description: abductor-scientist-ghost-role-desc
     mindRoles:
-    - MindRoleAbductorScientist
+    - MindRoleAbductorScientist # CorvaxGoob-UpstreamRT
   - type: AbductorScientist
   - type: SurgeryIgnoreClothing
   - type: Sanitized
@@ -105,7 +105,7 @@
     name: abductor-agent-ghost-role-name
     description: abductor-agent-ghost-role-desc
     mindRoles:
-    - MindRoleAbductorAgent
+    - MindRoleAbductorAgent # CorvaxGoob-UpstreamRT
   - type: RandomMetadata
     nameSegments:
       - AbductorAgentPrefix
@@ -192,7 +192,7 @@
     description: abductor-lone-ghost-role-desc
     rules: abductors-ghost-role-rules
     mindRoles:
-    - MindRoleLoneAbductor
+    - MindRoleLoneAbductor # CorvaxGoob-UpstreamRT
     raffle:
       settings: default
   - type: Sprite
@@ -225,7 +225,7 @@
     description: abductor-agent-ghost-role-desc
     rules: abductors-ghost-role-rules
     mindRoles:
-    - MindRoleAbductorAgent
+    - MindRoleAbductorAgent # CorvaxGoob-UpstreamRT
     raffle:
       settings: default
   - type: Sprite
@@ -258,7 +258,7 @@
     description: abductor-scientist-ghost-role-desc
     rules: abductors-ghost-role-rules
     mindRoles:
-    - MindRoleAbductorScientist
+    - MindRoleAbductorScientist # CorvaxGoob-UpstreamRT
     raffle:
       settings: default
   - type: Sprite

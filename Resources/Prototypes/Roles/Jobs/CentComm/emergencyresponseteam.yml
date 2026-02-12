@@ -119,7 +119,7 @@
   name: job-name-ertleader
   description: job-description-ertleader
   playTimeTracker: JobERTLeader
-  requirements: # Goobstation - ghost roles requirements
+  requirements: # Goobstation - ghost roles requirements # CorvaxGoob-UpstreamRT
   - !type:DepartmentTimeRequirement
     department: Security
     time: 36000 # ten hours
@@ -310,7 +310,7 @@
   name: job-name-ertengineer
   description: job-description-ertengineer
   playTimeTracker: JobERTEngineer
-  requirements: # Goobstation - ghost roles requirements
+  requirements: # Goobstation - ghost roles requirements # CorvaxGoob-UpstreamRT
   - !type:DepartmentTimeRequirement
     department: Engineering
     time: 36000 # ten hours
@@ -512,7 +512,7 @@
   name: job-name-ertmedic
   description: job-description-ertmedic
   playTimeTracker: JobERTMedical
-  requirements: # Goobstation - ghost roles requirements
+  requirements: # Goobstation - ghost roles requirements # CorvaxGoob-UpstreamRT
   - !type:DepartmentTimeRequirement
     department: Medical
     time: 36000 # ten hours

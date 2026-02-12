@@ -13,7 +13,7 @@
     name: ghost-role-lead-intern-name
     description: ghost-role-intern-desc
     rules: ghost-role-lead-intern-rules
-    job: Intern
+    job: Intern # CorvaxGoob-UpstreamRT
   - type: GhostRoleMobSpawner
     prototype: LeadIntern
 
@@ -44,7 +44,7 @@
     name: ghost-role-intern-name
     description: ghost-role-intern-desc
     rules: ghost-role-intern-rules
-    job: Intern
+    job: Intern # CorvaxGoob-UpstreamRT
   - type: GhostRoleMobSpawner
     prototype: NTIntern
 
@@ -62,7 +62,7 @@
     name: ghost-role-nerd-intern-name
     description: ghost-role-intern-desc
     rules: ghost-role-intern-rules
-    job: Intern
+    job: Intern # CorvaxGoob-UpstreamRT
   - type: GhostRoleMobSpawner
     prototype: NTNerdIntern
 

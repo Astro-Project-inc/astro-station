@@ -84,7 +84,7 @@
   objective: roles-antag-space-ninja-objective
   guides: [ SpaceNinja ]
   requirements:
-  - !type:OverallPlaytimeRequirement # Goobstation - ghost roles requirements
+  - !type:OverallPlaytimeRequirement # Goobstation - ghost roles requirements # CorvaxGoob-UpstreamRT
     time: 18000 #5 hours
   - !type:SpeciesRequirement
     inverted: true

@@ -120,7 +120,7 @@
     rules: ghost-role-information-silicon-rules
     raffle:
       settings: default
-    job: Borg
+    job: Borg # CorvaxGoob-UpstreamRT
   - type: GhostTakeoverAvailable
 
 # Mining

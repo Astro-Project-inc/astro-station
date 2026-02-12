@@ -24,7 +24,7 @@
     description: ghost-role-information-hastur-description
     rules: ghost-role-information-hastur-rules
     mindRoles:
-    - MindRoleHastur
+    - MindRoleHastur # CorvaxGoob-UpstreamRT
     raffle:
       settings: default
   - type: Sprite

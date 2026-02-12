@@ -9,6 +9,6 @@
   name: roles-antag-dragon-name
   antagonist: true
   objective: roles-antag-dragon-objective
-  requirements: # Goobstation - ghost roles requirements
+  requirements: # Goobstation - ghost roles requirements # CorvaxGoob-UpstreamRT
   - !type:OverallPlaytimeRequirement
     time: 18000 #5 hours

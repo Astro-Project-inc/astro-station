@@ -13,7 +13,7 @@
     description: ghost-role-information-slaughter-demon-description
     rules: ghost-role-information-slaughter-demon-rules
     mindRoles:
-    - MindRoleSlaughterDemon
+    - MindRoleSlaughterDemon # CorvaxGoob-UpstreamRT
     raffle:
       settings: default
   - type: Sprite
@@ -30,6 +30,6 @@
     description: ghost-role-information-laughter-demon-description
     rules: ghost-role-information-slaughter-demon-rules
     mindRoles:
-    - MindRoleSlaughterDemon
+    - MindRoleSlaughterDemon # CorvaxGoob-UpstreamRT
     raffle:
       settings: default

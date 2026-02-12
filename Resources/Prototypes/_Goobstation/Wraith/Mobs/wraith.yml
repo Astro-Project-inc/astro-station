@@ -145,7 +145,7 @@
     description: ghost-role-information-wraith-description
     rules: ghost-role-information-wraith-rules
     mindRoles:
-    - MindRoleWraith
+    - MindRoleWraith # CorvaxGoob-UpstreamRT
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
