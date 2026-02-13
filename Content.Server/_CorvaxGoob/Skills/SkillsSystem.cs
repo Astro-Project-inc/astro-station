@@ -56,7 +56,7 @@ public sealed class SkillsSystem : EntitySystem
 
         if (skills.Count() < 1)
         {
-            Log.Error($"HashSet<Skills> skills is empty, entity {entity.Id}");
+            Log.Info($"HashSet<Skills> skills is empty, entity {entity.Id}, clearskills: {clearSkills}");
             return;
         }
 
@@ -127,7 +127,7 @@ public sealed class SkillsSystem : EntitySystem
 
         if (skills.Count() < 1)
         {
-            Log.Error($"HashSet<Skills> skills is empty, entity {entity}");
+            Log.Info($"HashSet<Skills> skills is empty, entity {entity}");
             return;
         }
 
