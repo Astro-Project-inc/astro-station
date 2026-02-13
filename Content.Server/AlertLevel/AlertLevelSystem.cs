@@ -178,6 +178,7 @@ public sealed class AlertLevelSystem : EntitySystem
         if (!force)
         {
             if (!detail.Selectable
+                && !detail.EmagSelectable // Goobstation
                 || component.CurrentDelay > 0
                 || component.IsLevelLocked)
             {
@@ -224,7 +225,7 @@ public sealed class AlertLevelSystem : EntitySystem
             {
                 var filter = _stationSystem.GetInOwningStation(station);
 
-                _chatSystem.SendGlobalSound(audio, filter, audio.Params);
+                _chatSystem.SendGlobalSound(audio, filter);
             } // CorvaxGoob-CustomAnnouncers-End
             else
             {

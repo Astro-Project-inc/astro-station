@@ -440,6 +440,7 @@
     - GrenadeTriggersStatic
     - TapeRecorderStatic
     - MiscSignallersStatic
+    - HydroponicsStatic # CorvaxGoob
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityWeaponsStatic
@@ -776,7 +777,6 @@
     - ScienceExplosives
     - GrenadeTriggersStatic
     - SecurityWeaponsStaticGoob
-    - SecurityWeaponsNonEmaggableStaticGoob
     - SecurityAmmoStaticCorvaxGoob # Corvax-Goob-UncleStyopa
     dynamicPacks:
     - SalvageSecurityBoards

@@ -19,12 +19,14 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Linq;
 using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared._CorvaxGoob.Events;
+using Content.Shared._CorvaxGoob.Events.StatusEffects;
 using Content.Shared.Heretic.Prototypes; // Goob
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
+using System.Linq;
 
 namespace Content.Shared.Store;
 

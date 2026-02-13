@@ -19,9 +19,12 @@ maximum_width = 26
 [game]
 lobbyduration = 240
 map_pool = "CorvaxMapPool"
-round_restart_time = 240
-fallbackpreset = "secretpluscustom"
-defaultpreset = "secretpluscustom"
+round_restart_time = 180
+fallbackpreset = "secret"
+defaultpreset = "secret"
+
+[events]
+enabled = true
 
 [server]
 rules_file = "CorvaxRuleset"
@@ -32,3 +35,9 @@ rich_main_icon_id = "corvax"
 [admin]
 see_own_notes = true
 admins_count_in_playercount = true
+
+[contraband]
+icons_enabled = true
+
+[misc]
+space_whale_spawn = false
