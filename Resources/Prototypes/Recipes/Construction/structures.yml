@@ -148,6 +148,37 @@
     - !type:TileNotBlocked
 
 - type: construction
+  id: GirderDiagonal
+  name: construction-recipe-diagonal-girder
+  graph: GirderDiagonal
+  startNode: start
+  targetNode: girderDiagonal
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+      failIfSpace: false
+
+- type: construction
+  id: ReinforcedGirderDiagonal
+  name: construction-recipe-diagonal-reinforced-girder
+  graph: GirderDiagonal
+  startNode: start
+  targetNode: reinforcedGirderDiagonal
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+      failIfSpace: false
+
+
+- type: construction
   id: ClockworkGirder
   graph: ClockworkGirder
   startNode: start
@@ -291,11 +322,11 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: DiagonalShuttleWall
-  name: construction-recipe-diagonal-shuttle-wall
-  graph: Girder
+  id: WallSolidDiagonal
+  name: construction-recipe-diagonal-wall
+  graph: GirderDiagonal
   startNode: start
-  targetNode: diagonalshuttleWall
+  targetNode: wallDiagonal
   category: construction-category-structures
   objectType: Structure
   placementMode: SnapgridCenter
@@ -303,6 +334,37 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+      failIfSpace: false
+
+- type: construction
+  id: WallReinforcedDiagonal
+  name: construction-recipe-diagonal-reinforced-wall
+  graph: GirderDiagonal
+  startNode: start
+  targetNode: reinforcedWallDiagonal
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+      failIfSpace: false
+
+- type: construction
+  id: DiagonalShuttleWall
+  name: construction-recipe-diagonal-shuttle-wall
+  graph: GirderDiagonal
+  startNode: start
+  targetNode: shuttleWallDiagonal
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+      failIfSpace: false
 
 - type: construction
   id: ClownWall
@@ -1456,3 +1518,18 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+- type: construction
+  id: ShuttleWindowDiagonal
+  name: construction-recipe-shuttle-window-diagonal
+  graph: WindowDiagonal
+  startNode: start
+  targetNode: shuttleWindowDiagonal
+  category: construction-category-structures
+  canBuildInImpassable: true
+  placementMode: SnapgridCenter
+  conditions:
+    - !type:EmptyOrWindowValidInTile
+    - !type:NoWindowsInTile
+  objectType: Structure
+  

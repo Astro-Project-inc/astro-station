@@ -1,3 +1,7 @@
+construction-recipe-diagonal-girder = каркас (диагональ)
+construction-recipe-diagonal-reinforced-girder = укреплённый каркас (диагональ)
+construction-recipe-diagonal-wall = стена (диагональ)
+construction-recipe-diagonal-reinforced-wall = укреплённая стена (диагональ)
 construction-recipe-diagonal-shuttle-wall = стена шаттла (диагональ)
 construction-window-diagonal = окно (диагональ)
 construction-recipe-reinforced-window-diagonal = бронированное окно (диагональ)
@@ -6,6 +10,7 @@ construction-recipe-plasma-window-diagonal = плазменное окно (ди
 construction-recipe-reinforced-plasma-window-diagonal = плазменное бронеокно (диагональ)
 construction-recipe-uranium-window-diagonal = урановое окно (диагональ)
 construction-recipe-reinforced-uranium-window-diagonal = урановое бронеокно (диагональ)
+construction-recipe-shuttle-window-diagonal = окно шаттла (диагональ)
 construction-recipe-firelock-edge = направленный пожарный шлюз
 construction-recipe-fence-metal-corner = сетка-рабица (угол)
 construction-recipe-fence-metal-end = сетка-рабица (конец)
