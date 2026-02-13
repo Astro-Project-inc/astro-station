@@ -10,18 +10,14 @@ using Content.Shared.Mind.Components;
 namespace Content.Server._CorvaxGoob.Skills.Commands;
 
 [AdminCommand(AdminFlags.Admin)]
-public sealed class GrantSkillCommand : IConsoleCommand
+public sealed class GrantSkillCommand : LocalizedCommands
 {
     [Dependency] private readonly ILocalizationManager _localization = default!;
     [Dependency] private readonly IEntityManager _entity = default!;
 
-    public string Command => "grantskill";
+    public override string Command => "grantskill";
 
-    public string Description => Loc.GetString("cmd-grantskill-desc");
-
-    public string Help => Loc.GetString("cmd-grantskill-help", ("command", Command));
-
-    public void Execute(IConsoleShell shell, string arg, string[] args)
+    public override void Execute(IConsoleShell shell, string arg, string[] args)
     {
         if (args.Length < 2)
         {
@@ -57,7 +53,7 @@ public sealed class GrantSkillCommand : IConsoleCommand
         _entity.System<SkillsSystem>().GrantSkill(entity.Value, skills);
     }
 
-    public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+    public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
     {
         if (args.Length == 1)
         {

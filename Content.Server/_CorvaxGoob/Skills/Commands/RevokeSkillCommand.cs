@@ -9,18 +9,14 @@ using Robust.Shared.Console;
 namespace Content.Server._CorvaxGoob.Skills.Commands;
 
 [AdminCommand(AdminFlags.Admin)]
-public sealed class RevokeSkillCommand : IConsoleCommand
+public sealed class RevokeSkillCommand : LocalizedCommands
 {
     [Dependency] private readonly ILocalizationManager _localization = default!;
     [Dependency] private readonly IEntityManager _entity = default!;
 
-    public string Command => "revokeskill";
+    public override string Command => "revokeskill";
 
-    public string Description => Loc.GetString("cmd-revokeskill-desc");
-
-    public string Help => Loc.GetString("cmd-revokeskill-help", ("command", Command));
-
-    public void Execute(IConsoleShell shell, string arg, string[] args)
+    public override void Execute(IConsoleShell shell, string arg, string[] args)
     {
         if (args.Length < 2)
         {
@@ -63,7 +59,7 @@ public sealed class RevokeSkillCommand : IConsoleCommand
         _entity.System<SkillsSystem>().RevokeSkill(entity.Value, skills);
     }
 
-    public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+    public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
     {
         if (args.Length == 1)
         {

@@ -6,18 +6,14 @@ using Robust.Shared.Console;
 namespace Content.Server._CorvaxGoob.Skills.Commands;
 
 [AdminCommand(AdminFlags.Admin)]
-public sealed class GrantAllSkillsCommand : IConsoleCommand
+public sealed class GrantAllSkillsCommand : LocalizedCommands
 {
     [Dependency] private readonly ILocalizationManager _localization = default!;
     [Dependency] private readonly IEntityManager _entity = default!;
 
-    public string Command => "grantallskills";
+    public override string Command => "grantallskills";
 
-    public string Description => Loc.GetString("cmd-grantallskills-desc");
-
-    public string Help => Loc.GetString("cmd-grantallskills-help", ("command", Command));
-
-    public void Execute(IConsoleShell shell, string arg, string[] args)
+    public override void Execute(IConsoleShell shell, string arg, string[] args)
     {
         if (args.Length != 1)
         {
@@ -40,7 +36,7 @@ public sealed class GrantAllSkillsCommand : IConsoleCommand
         _entity.System<SkillsSystem>().GrantAllSkills(entity.Value);
     }
 
-    public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+    public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
     {
         if (args.Length == 1)
         {
