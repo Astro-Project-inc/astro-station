@@ -1,6 +1,6 @@
 ent-MobMothroachMustard = Mustard Mothroach
     .desc = A delightful result of the world's chefs crossing meat with sauce.
-ent-MobMothroachLeopard = леопардовая Mothroach
+ent-MobMothroachLeopard = Leopard Mothroach
     .desc = A charming result of numerous attempts to crossbreed insects with predators.
 ent-MobMothroachCecropia = Cecropia Mothroach
     .desc = A charming result of numerous attempts to cross a genus of the nettle family with cockroaches.

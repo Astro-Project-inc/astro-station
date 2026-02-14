@@ -108,14 +108,14 @@
       children:
       - id: MobCockroach
         weight: 0.79
-      - id: MobMothroachMustard #corvax-Goob-edit-start
+      - id: MobMothroachMustard # СorvaxGoob-Mothroaches-Start
         weight: 0.20
       - id: MobMothroachLeopard
         weight: 0.20
       - id: MobMothroachCecropia
         weight: 0.20
       - id: MobMothroachLunar
-        weight: 0.20 #corvax-Goob-edit-end
+        weight: 0.20 # СorvaxGoob-Mothroaches-End
       - id: MobSquackroach # Goobstation
         weight: 0.1
       - id: MobLootbug # Goobstation
