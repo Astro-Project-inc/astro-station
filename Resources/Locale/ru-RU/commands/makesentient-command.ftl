@@ -1,2 +1,2 @@
-cmd-makesentient-desc = Делает объект разумным (способным управляться игроком).
+cmd-makesentient-desc = Делает объект разумным (дает игрокам способность управления).
 cmd-makesentient-help = Использование: makesentient <entityUid>

@@ -10,7 +10,7 @@ admin-verbs-freeze-and-mute = Заморозить и заглушить
 admin-verbs-unfreeze = Разморозить
 admin-verbs-erase = Стереть
 admin-verbs-camera = Открыть камеру
-admin-verbs-camera-description = Открывает окно камеры, которое следует за выбранной сущностью.
+admin-verbs-camera-description = Открыть окно камеры, следящее за выбранной сущностью.
 admin-verbs-erase-description =
     Удаляет игрока из раунда и манифеста членов экипажа, а также удаляет все его сообщения в чате.
     Их вещи упадут на землю.

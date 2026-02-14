@@ -1,5 +1,5 @@
-admin-camera-window-title = Наблюдение { $name }
+admin-camera-window-title = Наблюдение за { $name }
 admin-camera-window-title-placeholder = Наблюдение
-admin-camera-window-follow = Следование
-admin-camera-window-pop-out = Отделить
-admin-camera-window-pop-in = Встроить
+admin-camera-window-follow = Следить
+admin-camera-window-pop-out = В окно
+admin-camera-window-pop-in = В игру
