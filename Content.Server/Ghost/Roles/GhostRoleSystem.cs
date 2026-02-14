@@ -706,7 +706,7 @@ public sealed class GhostRoleSystem : EntitySystem
             _roleSystem.MindAddJobRole(args.Mind, args.Mind, silent:false,ghostRole.JobProto);
         }
 
-        _skillsSystem.GrantSkill(args.Mind, ghostRole.Skills, true); // CorvaxGoob-Skills
+        _skillsSystem.GrantSkill(uid, ghostRole.Skills, true); // CorvaxGoob-Skills
 
         ghostRole.Taken = true;
         UnregisterGhostRole((uid, ghostRole));

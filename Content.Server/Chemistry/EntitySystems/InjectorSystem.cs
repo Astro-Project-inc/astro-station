@@ -41,10 +41,10 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Stacks;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared._CorvaxGoob.Skills;
+using Content.Server._CorvaxGoob.Skills;
 using Robust.Shared.Timing; // Goobstation
 using System.Linq; // Goobstation
-using Content.Shared.Chemistry.Reagent;
-using Content.Server._CorvaxGoob.Skills; // Goobstation
+using Content.Shared.Chemistry.Reagent; // Goobstation
 
 namespace Content.Server.Chemistry.EntitySystems;
 
