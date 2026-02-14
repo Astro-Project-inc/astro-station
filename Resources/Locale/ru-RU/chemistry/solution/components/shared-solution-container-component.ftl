@@ -32,7 +32,12 @@ examinable-solution-on-examine-volume-puddle =
     }
 -solution-vague-fill-level =
     { $fillLevel ->
-        [full] [color=white]Полная[/color]
+        [full] [color=white]заполнена[/color]
+        [mostlyfull] [color=#DFDFDF]почти заполнена[/color]
+        [halffull] [color=#C8C8C8]наполовину полная[/color]
+        [halfempty] [color=#C8C8C8]наполовину пустая[/color]
+        [mostlyempty] [color=#A4A4A4]почти пустая[/color]
+       *[empty] [color=gray]пустая[/color]
         [mostlyfull] [color=#DFDFDF]Почти полная[/color]
         [halffull] [color=#C8C8C8]Больше полная[/color]
         [halfempty] [color=#C8C8C8]Больше пустая[/color]
