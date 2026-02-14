@@ -94,7 +94,7 @@ ui-options-vp-integer-scaling-tooltip =
 ui-options-vp-vertical-fit = Подгон окна просмотра по вертикали
 ui-options-filter-label = Фильтр масштабирования:
 ui-options-filter-nearest = По соседним пикселям (без сглаживания)
-ui-options-filter-bilinear = Билинейное (плавное)
+ui-options-filter-bilinear = Билинейный (сглаживание)
 ui-options-vp-vertical-fit-tooltip =
     Когда функция включена, основное окно просмотра не будет учитывать горизонтальную ось
     при подгонке под ваш экран. Если ваш экран меньше, чем окно просмотра,
