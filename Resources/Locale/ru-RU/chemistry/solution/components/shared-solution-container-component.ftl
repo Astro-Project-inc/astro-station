@@ -15,6 +15,14 @@ examinable-solution-on-examine-volume-no-max = Содержимое раство
 examinable-solution-on-examine-volume-puddle =
     Лужа { $fillLevel ->
         [exact] содержит [color=white]{ $current }u[/color].
+        [full] огромная и разливается через край!
+        [mostlyfull] огромная и разливается через край!
+        [halffull] глубокая и растекающаяся.
+        [halfempty] средняя.
+       *[mostlyempty] собирается в одну.
+        [empty] превращается в несколько маленьких луж.
+    Лужа { $fillLevel ->
+        [exact] содержит [color=white]{ $current }u[/color].
         [full] огромная и льётся через край!
         [mostlyfull] огромная и льётся через край!
         [halffull] глубокая и растекается.
