@@ -15,4 +15,4 @@ ent-BladedUraniumFlatcapGrey = { ent-BladedPlasmaFlatcapGrey }
     .suffix = Урановое лезвие
 ent-BladedUraniumFlatcapBrown = { ent-BladedPlasmaFlatcapBrown }
     .desc = { ent-BladedPlasmaFlatcapBrown.desc }
-    .suffix = Ураниумное лезвие
+    .suffix = Урановое лезвие
