@@ -30,7 +30,7 @@ examinable-solution-on-examine-volume-puddle =
        *[mostlyempty] скапливается в лужицы.
         [empty] образует несколько маленьких луж.
     }
--solution-vague-fill-level =
+solution-vague-fill-level =
     { $fillLevel ->
         [full] [color=white]заполнена[/color]
         [mostlyfull] [color=#DFDFDF]почти заполнена[/color]
