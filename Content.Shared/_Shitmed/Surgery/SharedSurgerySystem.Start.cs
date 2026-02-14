@@ -1,4 +1,5 @@
 using Content.Shared._CorvaxGoob.Skills;
+using Content.Shared._EinsteinEngines.Silicon.Components;
 using Content.Shared._Shitmed.CCVar;
 using Content.Shared._Shitmed.Medical.Surgery.Tools;
 using Content.Shared.Verbs;
@@ -33,11 +34,11 @@ public abstract partial class SharedSurgerySystem
 
         if (_noSelfOperate && user == target
             // CorvaxGoob-start: SelfOperate for IPC and who has SelfSurgery skill
-            && MetaData(user).EntityPrototype is { ID: not "MobIPC" }
+            && !HasComp<SiliconComponent>(user)
             && !_skills.HasSkill(user, Skills.SelfSurgery))
-            // CorvaxGoob-end
         {
-            _popup.PopupClient(Loc.GetString("surgery-error-self-surgery"), user, user);
+            _popup.PopupEntity(Loc.GetString("surgery-error-self-surgery"), user, user); // Client -> Entity
+            // CorvaxGoob-end
             return;
         }
 

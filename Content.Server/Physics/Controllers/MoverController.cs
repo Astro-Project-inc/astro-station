@@ -69,6 +69,7 @@ using DroneConsoleComponent = Content.Server.Shuttles.DroneConsoleComponent;
 using DependencyAttribute = Robust.Shared.IoC.DependencyAttribute;
 using Robust.Shared.Map.Components;
 using Content.Shared._CorvaxGoob.Skills;
+using Content.Server._CorvaxGoob.Skills;
 
 namespace Content.Server.Physics.Controllers;
 
@@ -76,7 +77,7 @@ public sealed class MoverController : SharedMoverController
 {
     [Dependency] private readonly ThrusterSystem _thruster = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
-    [Dependency] private readonly SharedSkillsSystem _skills = default!; // CorvaxGoob-Skills
+    [Dependency] private readonly SkillsSystem _skills = default!; // CorvaxGoob-Skills
 
     private Dictionary<EntityUid, (ShuttleComponent, List<(EntityUid, PilotComponent, InputMoverComponent, TransformComponent)>)> _shuttlePilots = new();
 

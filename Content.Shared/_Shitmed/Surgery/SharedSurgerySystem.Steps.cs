@@ -885,7 +885,7 @@ public abstract partial class SharedSurgerySystem
         var duration = GetSurgeryDuration(step, user, body, speed);
 
         // CorvaxGoob-Skills-start: you need Surgery skill for anyone modifier, if you haven't skill, take debufff
-        if (_skills.HasSkill(user, Skills.SelfSurgery))
+        if (_skills.HasSkill(user, Skills.Surgery))
         {
             if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
             {

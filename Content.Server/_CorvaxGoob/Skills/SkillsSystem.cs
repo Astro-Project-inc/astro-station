@@ -1,23 +1,60 @@
 using System.Linq;
+using Content.Shared._CorvaxGoob.CCCVars;
+using Content.Shared._CorvaxGoob.Skills;
+using SkillTypes = Content.Shared._CorvaxGoob.Skills.Skills;
 using Content.Shared.Implants;
 using Content.Shared.Mind;
 using Content.Shared.Tag;
-using SkillTypes = Content.Shared._CorvaxGoob.Skills.Skills;
+using Robust.Shared.Configuration;
 
 namespace Content.Server._CorvaxGoob.Skills;
 
-public sealed class SkillsSystem : EntitySystem
+public sealed partial class SkillsSystem : SharedSkillsSystem
 {
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
 
     [ValidatePrototypeId<TagPrototype>]
     public const string SkillsTag = "Skills";
+    private bool _skillsEnabled = true;
+
     public override void Initialize()
     {
         base.Initialize();
 
+        _skillsEnabled = _cfg.GetCVar(CCCVars.SkillsEnabled);
+        Subs.CVar(_cfg, CCCVars.SkillsEnabled, value => _skillsEnabled = value);
+
         SubscribeLocalEvent<ImplantImplantedEvent>(OnImplantImplanted);
+    }
+
+    public bool IsSkillsEnabled()
+    {
+        return _skillsEnabled;
+    }
+
+    /// <summary>
+    /// Check does entity has current skill
+    /// </summary>
+    /// <param name="entity"></param>
+    /// <param name="skill"></param>
+    /// <returns>true if has, else false</returns>
+    public override bool HasSkill(EntityUid entity, SkillTypes skill)
+    {
+        if (!_skillsEnabled)
+            return true;
+
+        if (HasComp<IgnoreSkillsComponent>(entity))
+            return true;
+
+        if (!_mind.TryGetMind(entity, out _, out var mind))
+            return false;
+
+        if (mind.Skills.Contains(SkillTypes.All))
+            return true;
+
+        return mind.Skills.Contains(skill);
     }
 
     private void OnImplantImplanted(ref ImplantImplantedEvent ev)
@@ -86,8 +123,6 @@ public sealed class SkillsSystem : EntitySystem
         string skillsMassive = string.Join(", ", newSkills.Select(s => s.ToString()));
 
         Log.Info($"Grant {(skills.Contains(SkillTypes.All) ? $"{SkillTypes.All.ToString()}" : $"{skillsMassive}")} skills to entity {entity.Id} with mind {mind.Id}. Clear skills: {clearSkills}");
-
-        Dirty(mind, mindComp);
     }
 
     /// <summary>
@@ -149,15 +184,12 @@ public sealed class SkillsSystem : EntitySystem
         if (revokedSkills.Count() < 1)
         {
             Log.Info($"No skills revoked from entity {entity.Id} with mind {mind.Id}");
-            Dirty(mind, mindComp);
             return;
         }
 
         string skillsMassive = string.Join(", ", revokedSkills.Select(s => s.ToString()));
 
         Log.Info($"Revoke {(skills.Contains(SkillTypes.All) ? $"{SkillTypes.All.ToString()}" : $"{skillsMassive}")} skills from entity {entity.Id} with mind {mind.Id}");
-
-        Dirty(mind, mindComp);
     }
 
     /// <summary>
