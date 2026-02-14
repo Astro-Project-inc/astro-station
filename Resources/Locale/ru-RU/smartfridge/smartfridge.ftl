@@ -5,4 +5,4 @@ smart-fridge-component-search-filter = Поиск...
 smart-fridge-component-title = УмныйХолодильник
 smart-fridge-list-item = { $item } [{ $amount }]
 smart-fridge-request-generic = Возвраты не принимаются
-smart-fridge-request-chemistry = Запросить пополнение у химиков
+smart-fridge-request-chemistry = Запрашивайте пополнения у химиков
