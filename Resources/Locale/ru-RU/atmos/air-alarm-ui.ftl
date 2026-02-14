@@ -42,6 +42,14 @@ air-alarm-ui-mode-none = Нет
 
 ## Widgets
 
+air-alarm-ui-pump-direction-siphoning = Всасывание
+air-alarm-ui-pump-direction-scrubbing = Очистка
+air-alarm-ui-pump-direction-releasing = Выпуск
+air-alarm-ui-pressure-bound-nobound = Без ограничений
+air-alarm-ui-pressure-bound-internalbound = Внутреннее ограничение
+air-alarm-ui-pressure-bound-externalbound = Внешнее ограничение
+air-alarm-ui-pressure-bound-both = Оба ограничения
+air-alarm-ui-widget-gas-filters = Газовая фильтрация
 
 ### General
 
@@ -66,6 +74,8 @@ air-alarm-ui-scrubber-wide-net-label = ШирокаяСеть
 
 ### Thresholds
 
+air-alarm-ui-scrubber-select-all-gases-label = Выбрать все
+air-alarm-ui-scrubber-deselect-all-gases-label = Снять весь выбор
 air-alarm-ui-sensor-gases = Газы
 air-alarm-ui-sensor-thresholds = Границы
 air-alarm-ui-thresholds-pressure-title = Границы (кПа)
