@@ -5,8 +5,8 @@
   description: Tactical jumpsuit for real CQB lovers.
   components:
   - type: Sprite
-    sprite: _ADT/Clothing/Uniforms/Jumpsuit/turtleneck_tactick.rsi
+    sprite: _CorvaxGoob/Clothing/Uniforms/Jumpsuit/turtleneck_tactick.rsi
   - type: Clothing
-    sprite: _ADT/Clothing/Uniforms/Jumpsuit/turtleneck_tactick.rsi
+    sprite: _CorvaxGoob/Clothing/Uniforms/Jumpsuit/turtleneck_tactick.rsi
   - type: StaticPrice
     price: 15
