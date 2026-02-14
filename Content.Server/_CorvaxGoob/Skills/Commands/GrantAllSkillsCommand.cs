@@ -42,7 +42,7 @@ public sealed class GrantAllSkillsCommand : LocalizedCommands
         {
             return CompletionResult.FromHintOptions(
                 CompletionHelper.Components<MindContainerComponent>(args[0]),
-                "Entity UID");
+                _localization.GetString("shell-argument-uid"));
         }
         return CompletionResult.Empty;
     }

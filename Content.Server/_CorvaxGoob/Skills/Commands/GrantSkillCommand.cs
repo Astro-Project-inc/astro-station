@@ -59,7 +59,7 @@ public sealed class GrantSkillCommand : LocalizedCommands
         {
             return CompletionResult.FromHintOptions(
                 CompletionHelper.Components<MindContainerComponent>(args[0]),
-                "Entity UID");
+                _localization.GetString("shell-argument-uid"));
         }
 
         var component = int.TryParse(args[0], out var id)
