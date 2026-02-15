@@ -7,7 +7,7 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared.DisplacementMap;
 
-[DataDefinition, Serializable, NetSerializable] // CorvaxGoob-AppearanceConverter : added serialization
+[DataDefinition, Serializable, NetSerializable]
 public sealed partial class DisplacementData
 {
     /// <summary>

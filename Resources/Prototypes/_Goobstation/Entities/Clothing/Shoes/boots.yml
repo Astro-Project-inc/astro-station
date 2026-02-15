@@ -66,6 +66,9 @@
   name: tactical response magboots
   description: Look! An emergency responder, we're saved!
   components:
+  - type: ContainerContainer # CorvaxGoob edit
+    containers:
+      item: !type:ContainerSlot
   - type: Sprite
     sprite: _Goobstation/Clothing/Shoes/Boots/emergencyresponseteam.rsi
     state: icon
@@ -105,6 +108,9 @@
   name: deathsquad magboots
   description: The sound of these boots are iconic; the sound of terror.
   components:
+  - type: ContainerContainer # CorvaxGoob edit
+    containers:
+      item: !type:ContainerSlot
   - type: Sprite
     sprite: _Goobstation/Clothing/Shoes/Boots/deathsquad.rsi
     state: icon
@@ -140,6 +146,7 @@
 - type: entity
   parent: [ClothingShoesBootsMagBase, BaseMajorContraband]
   id: ClothingShoesRealJordans
+  suffix: Magboots
   name: air jordans
   description: State-of-the-art, official, uncreased Jordans that protect you from slipping when turned on.
   components:
@@ -224,6 +231,7 @@
 - type: entity
   parent: [ClothingShoesBootsMagBase, BaseMajorContraband]
   id: ClothingShoesRealJordansAutographed
+  suffix: Devil
   name: air jordans
   description: These aren't just any Jordans, these were signed my Micheal Jordan himself. These must be worth a FORTUNE.
   components:
