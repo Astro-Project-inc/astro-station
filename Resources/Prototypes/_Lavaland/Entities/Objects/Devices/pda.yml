@@ -24,7 +24,7 @@
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
-      - NanoTaskCartridge
+      #- NanoTaskCartridge Corvax-Goob-RemoveRoundStartNanoTask
       - NewsReaderCartridge
       - AstroNavCartridge
       - NanoChatCartridge # DeltaV
