@@ -402,6 +402,7 @@
 
 - type: construction
   id: GasPipeStraight
+  neme: construction-recipe-gas-pipe-straight
   graph: GasPipe
   startNode: start
   targetNode: straight
