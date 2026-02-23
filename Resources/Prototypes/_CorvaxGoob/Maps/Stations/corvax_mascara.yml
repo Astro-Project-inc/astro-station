@@ -25,7 +25,8 @@
             NanotrasenRepresentative: [ 1, 1 ]
             # cargo
             Quartermaster: [ 1, 1 ]
-            SalvageSpecialist: [ 3, 3 ]
+            SalvageSpecialist: [ 2, 2 ]
+            ShaftMiner: [ 2, 2 ]
             CargoTechnician: [ 3, 3 ]
             # engineering
             ChiefEngineer: [ 1, 1 ]
@@ -40,6 +41,7 @@
             Paramedic: [ 1, 1 ]
             Chemist: [ 2, 2 ]
             Surgeon: [ 2, 2 ]
+            Virologist: [ 1, 2 ]
             # science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 4, 4 ]
@@ -69,6 +71,7 @@
             Musician: [ 1, 2 ]
             ServiceWorker: [ 2, 2 ]
             Passenger: [ -1, -1 ]
+            RadioHost: [ 1, 1 ]
             # silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]

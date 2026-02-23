@@ -92,6 +92,18 @@
       quickEquip: true
 
 - type: entity
+  parent: ClothingOuterWizardCentCommReal
+  id: WhiteRobes
+  name: robes of the chosen one
+  description: theses white robes are worn by only the finest of Nanotrasen's special operations department.
+  suffix: chosen one
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/OuterClothing/Misc/robesjedi.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/OuterClothing/Misc/robesjedi.rsi
+
+- type: entity
   parent: ClothingOuterBase
   id: ClothingOuterSuitHotDog
   name: hotdog costume
@@ -124,3 +136,86 @@
     - Hair
     - HeadTop
     - HeadSide
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterSuitTutu
+  name: tutu
+  description: Why?..
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/OuterClothing/Misc/tutu.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/OuterClothing/Misc/tutu.rsi
+    quickEquip: true
+
+- type: entity
+  parent: ClothingOuterBaseToggleable
+  id: ClothingOuterArmorHereticCostume
+  name: occult robes
+  description: A ragged, dusty set of robes. Strange smudgy eyes line the inside.
+  components:
+  - type: Sprite
+    sprite: _CorvaxGoob/Clothing/OuterClothing/HereticRobes/rust_armor.rsi # CorvaxGoob
+    state: icon
+  - type: Clothing
+    sprite: _CorvaxGoob/Clothing/OuterClothing/HereticRobes/rust_armor.rsi # CorvaxGoob
+  - type: ToggleableClothing # Goobstation - Modsuits change
+    clothingPrototypes:
+      head: ClothingHeadHatHoodHereticCostume
+
+- type: entity
+  parent: ClothingOuterArmorHereticCostume
+  id: ClothingOuterArmorHereticVoidCostume
+  suffix: Void
+  components:
+  - type: Sprite
+    sprite: _CorvaxGoob/Clothing/OuterClothing/HereticRobes/void_armor.rsi # CorvaxGoob
+    state: icon
+  - type: Clothing
+    sprite: _CorvaxGoob/Clothing/OuterClothing/HereticRobes/void_armor.rsi # CorvaxGoob
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: ClothingHeadHatHoodHereticVoidCostume
+
+- type: entity
+  parent: ClothingOuterArmorHereticCostume
+  id: ClothingOuterArmorHereticAshCostume
+  suffix: Ash
+  components:
+  - type: Sprite
+    sprite: _CorvaxGoob/Clothing/OuterClothing/HereticRobes/ashen_armor.rsi # CorvaxGoob
+    state: icon
+  - type: Clothing
+    sprite: _CorvaxGoob/Clothing/OuterClothing/HereticRobes/ashen_armor.rsi # CorvaxGoob
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: ClothingHeadHatHoodHereticAshCostume
+
+- type: entity
+  parent: ClothingOuterArmorHereticCostume
+  id: ClothingOuterArmorHereticFleshCostume
+  suffix: Flesh
+  components:
+  - type: Sprite
+    sprite: _CorvaxGoob/Clothing/OuterClothing/HereticRobes/flesh_armor.rsi # CorvaxGoob
+    state: icon
+  - type: Clothing
+    sprite: _CorvaxGoob/Clothing/OuterClothing/HereticRobes/flesh_armor.rsi # CorvaxGoob
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: ClothingHeadHatHoodHereticFleshCostume
+
+- type: entity
+  parent: ClothingOuterArmorHereticCostume
+  id: ClothingOuterArmorHereticBladeCostume
+  suffix: Blade
+  components:
+  - type: Sprite
+    sprite: _CorvaxGoob/Clothing/OuterClothing/HereticRobes/blade_armor.rsi # CorvaxGoob
+    state: icon
+  - type: Clothing
+    sprite: _CorvaxGoob/Clothing/OuterClothing/HereticRobes/blade_armor.rsi # CorvaxGoob
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: ClothingHeadHatHoodHereticBladeCostume

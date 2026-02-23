@@ -80,10 +80,10 @@
   startingGear: LawyerGear
   icon: "JobIconLawyer"
   supervisors: job-supervisors-hop
-  #goobcoins: 10 #Goob content Corvax-Goob-coins
   # guides: # goobstation Hidden by CorvaxGoob
   # - SpaceLaw
   # - Legal SOP
+  #goobcoins: 10 #Goob content Corvax-Goob-coins
   access:
   - Service
   - Lawyer
@@ -100,7 +100,7 @@
   equipment:
     shoes: ClothingShoesBootsLaceup
     id: LawyerPDA
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetLawyer # CorvaxGoob: ClothingHeadsetSecurity > ClothingHeadsetLawyer
   inhand:
     - BriefcaseBrownFilled
   storage:
@@ -118,3 +118,4 @@
     neck: ClothingNeckLawyerbadge
     outerClothing: ClothingOuterWinterColorBlack
     gloves: ClothingHandsGlovesColorBlack
+    ears: ClothingHeadsetLawyer # CorvaxGoob

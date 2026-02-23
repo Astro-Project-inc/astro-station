@@ -138,13 +138,16 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobChemist
-      time: 9000 #2.5 hrs
+      time: 18000 #5 hrs
     - !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 18000 #5 hrs
+      time: 28000 #8 hrs
     - !type:DepartmentTimeRequirement
       department: Medical
       time: 36000 #10 hrs
+    - !type:RoleTimeRequirement  # CorvaxGoob
+      role: JobSurgeon  
+      time: 7200 # CorvaxGoob 2 hrs
     - !type:SpeciesRequirement # Goob - None Felinid
       inverted: true
       species:
@@ -167,6 +170,7 @@
   # - Medical SOP Hidden by CorvaxGoob
   - Command
   - Chemicals
+  - Virology
   weight: 10 #Goob Edit
   access:
   - Medical

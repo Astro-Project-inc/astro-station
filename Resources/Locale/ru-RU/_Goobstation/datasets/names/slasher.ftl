@@ -26,7 +26,6 @@ names-slasher-title-dataset-25 = Научный
 names-slasher-title-dataset-26 = Генетический
 names-slasher-title-dataset-27 = Роботехнический
 names-slasher-title-dataset-28 = Химический
-
 names-slasher-dataset-1 = Мясник
 names-slasher-dataset-2 = Резчик
 names-slasher-dataset-3 = Потрошитель
@@ -51,7 +50,7 @@ names-slasher-dataset-21 = Хряк
 names-slasher-dataset-22 = Разрез
 names-slasher-dataset-23 = Стукальщик
 names-slasher-dataset-24 = Сдиратель
-names-slasher-dataset-25 = Полотёр
+names-slasher-dataset-25 = Чикатило
 names-slasher-dataset-26 = МУЛ-титул
 names-slasher-dataset-27 = Запугиватель
 names-slasher-dataset-28 = Шугатель

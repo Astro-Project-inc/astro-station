@@ -9,9 +9,10 @@
 
 job-name-futureagent = агент будущего
 job-name-salvagediver = спасатель
-job-name-ntr = представитель Nanotrasen
+job-name-ntr = представитель NanoTrasen
 job-name-bs = офицер Синего Щита
 job-name-overall = общее
+job-name-tider = грейтайд
 job-name-exec = служебный доступ
 
 # Navy Stuff
@@ -33,8 +34,8 @@ job-name-highcommander = Офицер Синдиката
 # Half Life
 
 job-name-hecu = агент HECU
-job-name-governmentman = The G-Man
-job-name-gman = G-Man
+job-name-governmentman = G-Man
+job-name-radiohost = радиоведущий
 
 # Misc
 
@@ -51,7 +52,10 @@ JobNavyOfficer = офицер ЦК
 JobNavyOfficerUndercover = офицер под прикрытием
 JobNavyCaptain = капитан ВКФ
 JobDiplomat = дипломат NanoTrasen
+JobRoboticist = робототехник
 JobGovernmentMan = G-Man
+JobRadioHost = радиоведущий
+JobVirologist = вирусолог
 JobConquest = конквест
 JobInspector = инспектор ЦК
 JobMercenaryCaptain = капитан Наёмников

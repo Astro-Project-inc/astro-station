@@ -12,3 +12,23 @@
     whitelist:
       tags:
       - NukeOpsUplink
+
+- type: listing
+  id: UplinkCatMaidBundle
+  name: uplink-cat-maid-bundle-name
+  description: uplink-cat-maid-bundle-desc
+  productEntity: ClothingBackpackDuffelSyndicateCatMaidBundle
+  cost:
+    Telecrystal: 135
+  categories:
+  - UplinkPointless
+
+- type: listing
+  id: UplinkClothingHandsAppearanceConverter
+  name: uplink-appearance-converter-name
+  description: uplink-appearance-converter-desc
+  productEntity: ClothingHandsAppearanceConverter
+  cost:
+    Telecrystal: 40
+  categories:
+  - UplinkWearables
