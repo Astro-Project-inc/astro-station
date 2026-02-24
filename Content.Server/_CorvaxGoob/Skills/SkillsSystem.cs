@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Diagnostics;
 using Content.Shared._CorvaxGoob.CCCVars;
 using Content.Shared._CorvaxGoob.Skills;
 using SkillTypes = Content.Shared._CorvaxGoob.Skills.Skills;
@@ -6,6 +7,7 @@ using Content.Shared.Implants;
 using Content.Shared.Mind;
 using Content.Shared.Tag;
 using Robust.Shared.Configuration;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._CorvaxGoob.Skills;
 
@@ -15,8 +17,7 @@ public sealed partial class SkillsSystem : SharedSkillsSystem
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
 
-    [ValidatePrototypeId<TagPrototype>]
-    public const string SkillsTag = "Skills";
+    public static readonly ProtoId<TagPrototype> SkillsTag = "Skills";
     private bool _skillsEnabled = true;
 
     public override void Initialize()
@@ -93,7 +94,8 @@ public sealed partial class SkillsSystem : SharedSkillsSystem
 
         if (skills.Count() < 1)
         {
-            Log.Info($"HashSet<Skills> skills is empty, entity {entity.Id}, clearskills: {clearSkills}");
+            var callerInfo = GetCallerInfo();
+            Log.Info($"HashSet<Skills> skills is empty, entity {entity.Id}, clearskills: {clearSkills}. Called from {callerInfo}");
             return;
         }
 
@@ -115,8 +117,8 @@ public sealed partial class SkillsSystem : SharedSkillsSystem
 
         if (newSkills.Count() < 1)
         {
-            Log.Info($"No new skills added to entity {entity.Id} with mind {mind.Id}. Clear skills: {clearSkills}");
-            Dirty(mind, mindComp);
+            var callerInfo = GetCallerInfo();
+            Log.Info($"No new skills added to entity {entity.Id} with mind {mind.Id}. Clear skills: {clearSkills}. Called from {callerInfo}");
             return;
         }
 
@@ -162,7 +164,8 @@ public sealed partial class SkillsSystem : SharedSkillsSystem
 
         if (skills.Count() < 1)
         {
-            Log.Info($"HashSet<Skills> skills is empty, entity {entity}");
+            var callerInfo = GetCallerInfo();
+            Log.Info($"HashSet<Skills> skills is empty, entity {entity}. Called from {callerInfo}");
             return;
         }
 
@@ -210,5 +213,44 @@ public sealed partial class SkillsSystem : SharedSkillsSystem
     public void RevokeSkill(EntityUid entity, SkillTypes skill)
     {
         RevokeSkill(entity, new HashSet<SkillTypes>() { skill });
+    }
+
+    /// <summary>
+    /// Get information about the calling method from stack trace
+    /// </summary>
+    /// <returns>string with name of method and system.
+    /// Example: "method GrantAllSkills, system SkillsSystem"</returns>
+    private string GetCallerInfo()
+    {
+        var stackTrace = new StackTrace(true);
+
+        // Skip zero frame (GetCallerInfo) and frame where it's called (GrantSkill/RevokeSkill)
+        for (int i = 2; i < stackTrace.FrameCount; i++)
+        {
+            var frame = stackTrace.GetFrame(i);
+            if (frame == null)
+                continue;
+
+            var method = frame.GetMethod();
+
+            if (method == null)
+                continue;
+
+            var declaringType = method.DeclaringType;
+
+            if (declaringType == null)
+                continue;
+
+            // Skip frames from this class
+            if (declaringType.FullName == "Content.Server._CorvaxGoob.Skills.SkillsSystem")
+                continue;
+
+            var methodName = method.Name;
+            var systemName = declaringType.Name;
+
+            return $"method {methodName}, system {systemName})";
+        }
+
+        return "Unknown";
     }
 }
