@@ -51,8 +51,9 @@ public sealed partial class SlimeLatchSystem : EntitySystem
         SubscribeLocalEvent<SlimeDamageOvertimeComponent, MobStateChangedEvent>(OnMobStateChangedSOD);
         SubscribeLocalEvent<SlimeComponent, MobStateChangedEvent>(OnMobStateChangedSlime);
         SubscribeLocalEvent<SlimeComponent, PullAttemptEvent>(OnPullAttempt);
-        SubscribeLocalEvent<SlimeComponent, EntRemovedFromContainerMessage>(OnEntRemovedFromContainer);
-        SubscribeLocalEvent<SlimeComponent, EntInsertedIntoContainerMessage>(OnEntInsertedIntoContainer);
+        SubscribeLocalEvent<SlimeComponent, EntGotRemovedFromContainerMessage>(OnEntGotRemovedFromContainer); // CorvaxGoob edit start
+        SubscribeLocalEvent<SlimeComponent, EntGotInsertedIntoContainerMessage>(OnEntGotInsertedIntoContainer);
+        SubscribeLocalEvent<SlimeComponent, SlimeMitosisEvent>(OnSlimeMitosis); // CorvaxGoob edit end
     }
 
     public override void Update(float frameTime)
@@ -107,21 +108,20 @@ public sealed partial class SlimeLatchSystem : EntitySystem
         Unlatch(ent);
     }
 
-    private void OnEntRemovedFromContainer(Entity<SlimeComponent> ent, ref EntRemovedFromContainerMessage args)
+    // CorvaxGoob edit start, events changed
+    private void OnEntGotRemovedFromContainer(Entity<SlimeComponent> ent, ref EntGotRemovedFromContainerMessage args)
     {
-        // these checks are probably useless but jic
-        if (!HasComp<XenoVacuumTankComponent>(args.Container.Owner))
-            return;
-
         Unlatch(ent);
     }
 
-    private void OnEntInsertedIntoContainer(Entity<SlimeComponent> ent, ref EntInsertedIntoContainerMessage args)
+    private void OnEntGotInsertedIntoContainer(Entity<SlimeComponent> ent, ref EntGotInsertedIntoContainerMessage args)
     {
-        // these checks are probably useless but jic
-        if (!HasComp<XenoVacuumTankComponent>(args.Container.Owner))
-            return;
+        Unlatch(ent);
+    }
+    // CorvaxGoob edit end
 
+    private void OnSlimeMitosis(Entity<SlimeComponent> ent, ref SlimeMitosisEvent args) // CorvaxGoob add
+    {
         Unlatch(ent);
     }
 
@@ -255,7 +255,10 @@ public sealed partial class SlimeLatchSystem : EntitySystem
         RemCompDeferred<BeingLatchedComponent>(target);
         RemCompDeferred<SlimeDamageOvertimeComponent>(target);
 
-        _xform.SetParent(ent, _xform.GetParentUid(target)); // deparent it. probably.
+        if (TryComp<TransformComponent>(target, out var targetXform) // CorvaxGoob edit start
+            && _xform.IsParentOf(targetXform, ent.Owner))
+            _xform.SetParent(ent.Owner, _xform.GetParentUid(target)); // CorvaxGoob edit end
+
         if (TryComp<InputMoverComponent>(ent, out var inpm))
             inpm.CanMove = true;
 
