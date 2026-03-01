@@ -28,10 +28,10 @@
   skinColoration: HumanToned
   # begin Goobstation: port EE height/width sliders
   minHeight: 0.80
-  defaultHeight: 0.80
+  defaultHeight: 1 # CorvaxGoob edit 0.80
   maxHeight: 1.2
   minWidth: 0.80
-  defaultWidth: 0.80
+  defaultWidth: 1 # CorvaxGoob edit 0.80
   maxWidth: 1.2
   # end Goobstation: port EE height/width sliders
 
