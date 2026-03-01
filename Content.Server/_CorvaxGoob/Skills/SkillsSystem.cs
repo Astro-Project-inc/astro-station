@@ -92,17 +92,17 @@ public sealed partial class SkillsSystem : SharedSkillsSystem
             return;
         }
 
+        HashSet<SkillTypes> oldSkills = new HashSet<SkillTypes>(mindComp.Skills);
+
+        if (clearSkills)
+            mindComp.Skills.Clear();
+
         if (skills.Count() < 1)
         {
             var callerInfo = GetCallerInfo();
             Log.Info($"HashSet<Skills> skills is empty, entity {entity.Id}, clearskills: {clearSkills}. Called from {callerInfo}");
             return;
         }
-
-        HashSet<SkillTypes> oldSkills = new HashSet<SkillTypes>(mindComp.Skills);
-
-        if (clearSkills)
-            mindComp.Skills.Clear();
 
         if (skills.Contains(SkillTypes.All))
         {
