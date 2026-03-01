@@ -1,15 +1,18 @@
+using System.Linq;
 using Content.Server.Administration;
 using Content.Shared.Administration;
+using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Robust.Shared.Console;
 
 namespace Content.Server._CorvaxGoob.Skills.Commands;
 
 [AdminCommand(AdminFlags.Admin)]
-public sealed class GrantAllSkillsCommand : LocalizedCommands
+public sealed class GrantAllSkillsCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly ILocalizationManager _localization = default!;
-    [Dependency] private readonly IEntityManager _entity = default!;
+    [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly SkillsSystem _skills = default!;
 
     public override string Command => "grantallskills";
 
@@ -27,13 +30,19 @@ public sealed class GrantAllSkillsCommand : LocalizedCommands
             return;
         }
 
-        if (!_entity.TryGetEntity(id, out var entity))
+        if (!EntityManager.TryGetEntity(id, out var entity))
         {
             shell.WriteError(_localization.GetString("shell-invalid-entity-id"));
             return;
         }
 
-        _entity.System<SkillsSystem>().GrantAllSkills(entity.Value);
+        if (!_mind.TryGetMind(entity.Value, out _, out _))
+        {
+            shell.WriteError(_localization.GetString("shell-invalid-entity-id"));
+            return;
+        }
+
+        _skills.GrantAllSkills(entity.Value);
     }
 
     public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
@@ -41,7 +50,9 @@ public sealed class GrantAllSkillsCommand : LocalizedCommands
         if (args.Length == 1)
         {
             return CompletionResult.FromHintOptions(
-                CompletionHelper.Components<MindContainerComponent>(args[0]),
+                CompletionHelper.Components<MindContainerComponent>(args[0], EntityManager, 1000).Where(option =>
+                !EntityManager.HasComponent<MindComponent>(new EntityUid(int.Parse(option.Value))) &&
+                EntityManager.GetComponent<MindContainerComponent>(new EntityUid(int.Parse(option.Value))).HasMind),
                 _localization.GetString("shell-argument-uid"));
         }
         return CompletionResult.Empty;

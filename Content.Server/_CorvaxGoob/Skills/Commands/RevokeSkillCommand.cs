@@ -1,18 +1,19 @@
 using System.Linq;
 using Content.Server.Administration;
-using Content.Server.Mind;
 using SkillTypes = Content.Shared._CorvaxGoob.Skills.Skills;
 using Content.Shared.Administration;
 using Content.Shared.Mind.Components;
 using Robust.Shared.Console;
+using Content.Shared.Mind;
 
 namespace Content.Server._CorvaxGoob.Skills.Commands;
 
 [AdminCommand(AdminFlags.Admin)]
-public sealed class RevokeSkillCommand : LocalizedCommands
+public sealed class RevokeSkillCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly ILocalizationManager _localization = default!;
-    [Dependency] private readonly IEntityManager _entity = default!;
+    [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly SkillsSystem _skills = default!;
 
     public override string Command => "revokeskill";
 
@@ -30,13 +31,13 @@ public sealed class RevokeSkillCommand : LocalizedCommands
             return;
         }
 
-        if (!_entity.TryGetEntity(id, out var entity))
+        if (!EntityManager.TryGetEntity(id, out var entity))
         {
             shell.WriteError(_localization.GetString("shell-invalid-entity-id"));
             return;
         }
 
-        if (!_entity.System<MindSystem>().TryGetMind(entity.Value, out _, out var _))
+        if (!_mind.TryGetMind(entity.Value, out _, out var _))
         {
             shell.WriteError(_localization.GetString("shell-invalid-entity-id"));
             return;
@@ -54,9 +55,7 @@ public sealed class RevokeSkillCommand : LocalizedCommands
             skills.Add(skill);
         }
 
-
-
-        _entity.System<SkillsSystem>().RevokeSkill(entity.Value, skills);
+        _skills.RevokeSkill(entity.Value, skills);
     }
 
     public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
@@ -64,13 +63,15 @@ public sealed class RevokeSkillCommand : LocalizedCommands
         if (args.Length == 1)
         {
             return CompletionResult.FromHintOptions(
-                CompletionHelper.Components<MindContainerComponent>(args[0]),
+                CompletionHelper.Components<MindContainerComponent>(args[0], EntityManager, 1000).Where(option =>
+                !EntityManager.HasComponent<MindComponent>(new EntityUid(int.Parse(option.Value))) &&
+                EntityManager.GetComponent<MindContainerComponent>(new EntityUid(int.Parse(option.Value))).HasMind),
                 _localization.GetString("shell-argument-uid"));
         }
 
         var component = int.TryParse(args[0], out var id)
-            ? _entity.TryGetEntity(new(id), out var entity)
-                ? _entity.System<MindSystem>().TryGetMind(entity.Value, out _, out var comp)
+            ? EntityManager.TryGetEntity(new(id), out var entity)
+                ? _mind.TryGetMind(entity.Value, out _, out var comp)
                     ? comp
                     : null
                 : null
@@ -85,12 +86,10 @@ public sealed class RevokeSkillCommand : LocalizedCommands
                 alreadyEnteredSkills.Add(skill);
         }
 
-        var availableSkills = existingSkills.Where(skill => !alreadyEnteredSkills.Contains(skill));
-        var currentInput = args[^1];
-
-        return CompletionResult.FromOptions(availableSkills
+        return CompletionResult.FromOptions(existingSkills
+            .Where(skill => !alreadyEnteredSkills.Contains(skill))
             .Select(skill => skill.ToString())
-            .Where(name => name.StartsWith(currentInput, StringComparison.OrdinalIgnoreCase))
+            .Where(name => name.StartsWith(args[^1], StringComparison.OrdinalIgnoreCase))
             .Select(name => new CompletionOption(name)));
     }
 }
