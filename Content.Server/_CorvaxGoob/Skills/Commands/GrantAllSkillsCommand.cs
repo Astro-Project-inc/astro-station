@@ -53,7 +53,7 @@ public sealed class GrantAllSkillsCommand : LocalizedEntityCommands
                 CompletionHelper.Components<MindContainerComponent>(args[0], EntityManager, 1000).Where(option =>
                 !EntityManager.HasComponent<MindComponent>(new EntityUid(int.Parse(option.Value))) &&
                 EntityManager.GetComponent<MindContainerComponent>(new EntityUid(int.Parse(option.Value))).HasMind),
-                _localization.GetString("shell-argument-uid"));
+                _localization.GetString("shell-argument-net-entity"));
         }
         return CompletionResult.Empty;
     }

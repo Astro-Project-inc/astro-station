@@ -67,7 +67,7 @@ public sealed class GrantSkillCommand : LocalizedEntityCommands
                 CompletionHelper.Components<MindContainerComponent>(args[0], EntityManager, 1000).Where(option =>
                 !EntityManager.HasComponent<MindComponent>(new EntityUid(int.Parse(option.Value))) &&
                 EntityManager.GetComponent<MindContainerComponent>(new EntityUid(int.Parse(option.Value))).HasMind),
-                _localization.GetString("shell-argument-uid"));
+                _localization.GetString("shell-argument-net-entity"));
         }
 
         var component = int.TryParse(args[0], out var id)
