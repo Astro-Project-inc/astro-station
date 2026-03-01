@@ -2,9 +2,9 @@ using System.Linq;
 using Content.Server.Administration;
 using SkillTypes = Content.Shared._CorvaxGoob.Skills.Skills;
 using Content.Shared.Administration;
+using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Robust.Shared.Console;
-using Content.Shared.Mind;
 
 namespace Content.Server._CorvaxGoob.Skills.Commands;
 
