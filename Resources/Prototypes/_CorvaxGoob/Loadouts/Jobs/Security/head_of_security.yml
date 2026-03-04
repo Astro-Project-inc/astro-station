@@ -14,7 +14,7 @@
   id: ClothingNeckMantleHOSShoulder
   equipment:
     neck: ClothingNeckMantleHOSShoulder
-   effects:
+  effects:
   - !type:GroupLoadoutEffect
     proto: MasterHoS
 
