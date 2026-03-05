@@ -136,11 +136,11 @@
   source: "https://www.youtube.com/watch?v=3HC3igtVzuc"
 
 - files: ["nuclearoperations.ogg"]
-  license: "CC0 1.0 Universal"
-  copyright: "Created by A-Guy"
+  license: "Custom"
+  copyright: "CC0 1.0 Universal, Created by A-Guy""
   source: "https://www.youtube.com/watch?v=axv8O5Ekwp0&list=RDaxv8O5Ekwp0&start_radio=1"
   
 - files: ["nuclearoperations_remake_def.ogg"]
-  license: "CC0 1.0 Universal"
-  copyright: "Created by A-Guy"
+  license: "Custom"
+  copyright: "CC0 1.0 Universal, Created by A-Guy""
   source: "https://www.youtube.com/watch?v=vG3c5CQchOY&list=RDvG3c5CQchOY&start_radio=1"
