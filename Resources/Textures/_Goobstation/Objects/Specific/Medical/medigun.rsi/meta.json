@@ -11,6 +11,9 @@
       "name": "active_gun"
     },
     {
+      "name": "icon"
+    },
+    {
       "name": "beam",
       "delays": [
         [
