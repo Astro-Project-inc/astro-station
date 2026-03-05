@@ -83,7 +83,8 @@
     - /Audio/StationEvents/countdown.ogg
     - /Audio/StationEvents/sound_station_14.ogg
     - /Audio/_CorvaxGoob/StationEvents/level.ogg # CorvaxGoob-NukeMusic
-
+    - /Audio/_CorvaxGoob/StationEvents/nuclearoperations.ogg #CorvaxGoob-NukeMusic
+    - /Audio/_CorvaxGoob/StationEvents/nuclearoperations_remake_def.ogg #CorvaxGoob-NukeMusic
     # Goobstation
     - /Audio/StationEvents/blatantly_nuclear.ogg
     - /Audio/StationEvents/last_call.ogg

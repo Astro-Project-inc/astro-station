@@ -2,3 +2,13 @@
   license: "CC-BY-3.0"
   copyright: "Created by Dapper Husky"
   source: "https://www.youtube.com/watch?v=Lyj-MZSAA9o"
+  
+- files: ["nuclearoperations.ogg"]
+  license: "Custom"
+  copyright: "CC0 1.0 Universal, Created by A-Guy"
+  source: "https://www.youtube.com/watch?v=axv8O5Ekwp0"
+  
+- files: ["nuclearoperations_remake_def.ogg"]
+  license: "Custom"
+  copyright: "CC0 1.0 Universal, Created by A-Guy"
+  source: "https://www.youtube.com/watch?v=vG3c5CQchOY"

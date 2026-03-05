@@ -1,0 +1,5 @@
+- type: soundCollection
+  id: WarDeclaration
+  files:
+  - /Audio/_Goobstation/Announcements/war.ogg
+  - /Audio/_CorvaxGoob/Announcements/nuclearoperations_remake_infil_war.ogg
