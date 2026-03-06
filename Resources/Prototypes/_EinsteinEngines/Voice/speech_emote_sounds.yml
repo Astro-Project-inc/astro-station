@@ -88,7 +88,7 @@
     Scream:
       collection: SlimeMaleScreams
     Laugh:
-      collection: MaleLaugh
+      collection: FemaleLaugh
     Sneeze:
       collection: MaleSneezes
     Cough:
