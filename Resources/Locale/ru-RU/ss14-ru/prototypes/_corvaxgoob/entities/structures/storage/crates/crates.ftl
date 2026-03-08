@@ -13,3 +13,6 @@ ent-CrateDestructionSecure = блюспейс оружейный ящик
 ent-CrateLimitedSecure = блюспейс ограниченный ящик
     .suffix = Защищённый
     .desc = { ent-CrateBaseSecure.desc }
+ent-Crateholographic = голографический ящик
+    .suffix = голографический
+    .desc = { ent-CrateGeneric.desc }
