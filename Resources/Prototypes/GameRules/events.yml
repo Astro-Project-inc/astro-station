@@ -176,6 +176,7 @@
 #    - id: TidemindDevelop - Corvax Goob
     - id: MothroachSpawn # DeltaV
     - id: DerelictCyborgSyndicateSpawn # Goobstation - usually calm
+    - id: RadiationOutburst #Corvax Goob
     - id: MalignRiftSpawn # DeltaV
     - id: FloorGoblinMidRound # Goobstation
     - id: ClownGoblinMigration # Goobstation - New Midrounds
