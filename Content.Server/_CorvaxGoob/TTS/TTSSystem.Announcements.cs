@@ -55,7 +55,8 @@ public sealed partial class TTSSystem
 
         if (!_isEnabled ||
             ev.Text.Length > MaxMessageChars ||
-            voiceId == null)
+            voiceId == null ||
+            voiceId == "")
             return;
 
         if (!_prototypeManager.TryIndex<TTSVoicePrototype>(voiceId, out var protoVoice))

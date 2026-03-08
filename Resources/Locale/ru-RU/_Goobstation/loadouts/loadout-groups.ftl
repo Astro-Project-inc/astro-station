@@ -155,6 +155,7 @@ loadout-group-captain-gloves = Капитан, перчатки
 loadout-group-salvage-envirohelm = Экошлем утилизатора
 loadout-group-salvage-envirosuit = Экокостюм утилизатора
 loadout-group-salvage-envirogloves = Экоперчатки утилизатора
+loadout-group-salvage-specialist-jumpsuit = Комбинезон утилизатора
 # Chemist
 loadout-group-chemist-envirohelm = Экошлем химика
 loadout-group-chemist-envirosuit = Экокостюм химика
@@ -179,3 +180,5 @@ loadout-group-boxer-envirohelm = Экошлем боксёра
 loadout-group-boxer-envirosuit = Экокостюм боксёра
 # Misc
 loadout-group-plasma-tank = Баллон с плазмой
+# Shaft Miner
+loadout-group-shaft-miner-jumpsuit = Комбинезон шахтёра

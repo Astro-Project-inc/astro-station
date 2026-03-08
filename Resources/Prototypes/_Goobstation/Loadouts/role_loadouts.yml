@@ -165,15 +165,15 @@
   groups:
   - Inventory # CorvaxGoob-loadouts
   - GroupTankHarness
-  - ScientistHead
+  - RoboticistHead
   - RoboticistGlasses # CorvaxGoob-loadouts: Glasses > RoboticistGlasses
   - ScientistNeck
-  - ScientistJumpsuit
-  - ScientistBackpack
-  - ScientistOuterClothing
-  - ScientistGloves
-  - ScientistShoes
-  - ScientistPDA
+  - RoboticistJumpsuit
+  - RoboticistBackpack
+  - RoboticistOuterClothing
+  - RoboticistGloves
+  - RoboticistShoes
+  - RoboticistPDA
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
