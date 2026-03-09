@@ -85,8 +85,10 @@
   icon: "JobIconPassenger"
   supervisors: job-supervisors-everyone
   # goobcoins: 20 #Goob content Corvax-Goob-coins
-  access:
-  - Maintenance
+  # Corvax-Goob-RemovePassengerMaintenanceAccess-start
+  #access:
+  #- Maintenance
+  # Corvax-Goob-RemovePassengerMaintenanceAccess-end
   special: # Goobstation
   - !type:AddComponentSpecial
     components:
