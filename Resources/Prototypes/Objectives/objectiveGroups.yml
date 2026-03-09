@@ -132,6 +132,7 @@
     GeminiProjectorStealObjective: 0.5 # Goobstation
     ExecutiveBriefcaseStealObjective: 0.5 # Goobstation
     JusticeStealObjective: 0.5 # Goobstation
+    MagistrHammerStealObjective: 1 #CorvaxNext-Magstrat
 
 - type: weightedRandom
   id: TraitorObjectiveGroupKill
@@ -200,6 +201,7 @@
     BibleStealObjective: 1
     ClothingNeckGoldmedalStealObjective: 1              #other
     ClothingNeckClownmedalStealObjective: 0.5
+    MagistrHammerStealObjective: 1 #CorvaxNext-Magistrat
 
 - type: weightedRandom
   id: ThiefObjectiveGroupStructure
