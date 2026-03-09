@@ -1320,6 +1320,7 @@
   - HeadofSecurityCloakExperimental # CorvaxGoob
   - Bodycam # Goobstation - Body cameras
   - HeadOfSecurityEnsemble # goob
+  - ClothingNeckMantleHOSShoulder #CorvaxGoob
 
 - type: loadoutGroup
   id: HeadofSecurityOuterClothing
