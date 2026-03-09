@@ -62,3 +62,35 @@
     sprite: _CorvaxGoob/Bluespace/Crates/limited_secure.rsi
   - type: AccessReader
     access: [["Command"]]
+
+- type: entity
+  parent: CrateGeneric
+  id: Crateholographic
+  name: holographic crate
+  components:
+  - type: HologramVisuals
+  - type: TriggerOnSpawn
+  - type: TimerTrigger
+    delay: 300
+  - type: DamageOnTrigger
+    damage:
+      types:
+        Blunt: 5000
+    keysIn:
+    - timer
+  - type: StaticPrice
+    price: 0
+  - type: Construction
+    graph: Crateholographic
+    node: crateholographic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/stealthoff.ogg
