@@ -78,6 +78,11 @@
         Blunt: 5000
     keysIn:
     - timer
+  - type: StaticPrice
+    price: 0
+  - type: Construction
+    graph: Crateholographic
+    node: crateholographic
   - type: Destructible
     thresholds:
     - trigger:
