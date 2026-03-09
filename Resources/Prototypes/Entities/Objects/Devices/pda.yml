@@ -258,7 +258,7 @@
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
-      - NanoTaskCartridge
+      #- NanoTaskCartridge Corvax-Goob-RemoveRoundStartNanoTask
       - NewsReaderCartridge
       - NanoChatCartridge # DeltaV
     cartridgeSlot:
@@ -339,7 +339,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
-    - NanoTaskCartridge
+    #- NanoTaskCartridge Corvax-Goob-RemoveRoundStartNanoTask
     - NewsReaderCartridge
     - WantedListCartridge
     - NanoChatCartridge # DeltaV
@@ -354,7 +354,7 @@
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
-      - NanoTaskCartridge
+      #- NanoTaskCartridge Corvax-Goob-RemoveRoundStartNanoTask
       - NewsReaderCartridge
       - MedTekCartridge
       - NanoChatCartridge # DeltaV
@@ -670,7 +670,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
-    - NanoTaskCartridge
+    #- NanoTaskCartridge Corvax-Goob-RemoveRoundStartNanoTask
     - NewsReaderCartridge
     - AstroNavCartridge
     - MailMetricsCartridge
@@ -717,7 +717,7 @@
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
-      - NanoTaskCartridge
+      #- NanoTaskCartridge Corvax-Goob-RemoveRoundStartNanoTask
       - NewsReaderCartridge
       - AstroNavCartridge
       - NanoChatCartridge # DeltaV
@@ -1067,7 +1067,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
-    - NanoTaskCartridge
+    #- NanoTaskCartridge Corvax-Goob-RemoveRoundStartNanoTask
     - NewsReaderCartridge
     - WantedListCartridge
     - LogProbeCartridge
@@ -1138,7 +1138,7 @@
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
-      - NanoTaskCartridge
+      #- NanoTaskCartridge Corvax-Goob-RemoveRoundStartNanoTask
       - NewsReaderCartridge
       - MedTekCartridge
       - WantedListCartridge
@@ -1293,7 +1293,7 @@
     uiKey: enum.PdaUiKey.Key
     preinstalled:
       - NotekeeperCartridge
-      - NanoTaskCartridge
+      #- NanoTaskCartridge Corvax-Goob-RemoveRoundStartNanoTask
       - NanoChatCartridge # DeltaV
 
 - type: entity
@@ -1321,7 +1321,7 @@
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
-      - NanoTaskCartridge
+      #- NanoTaskCartridge Corvax-Goob-RemoveRoundStartNanoTask
       - NewsReaderCartridge
       - MedTekCartridge
       - WantedListCartridge
@@ -1493,7 +1493,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
-    - NanoTaskCartridge
+    #- NanoTaskCartridge Corvax-Goob-RemoveRoundStartNanoTask
     - NewsReaderCartridge
     - WantedListCartridge
     - LogProbeCartridge
@@ -1522,7 +1522,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
-    - NanoTaskCartridge
+    #- NanoTaskCartridge Corvax-Goob-RemoveRoundStartNanoTask
     - NewsReaderCartridge
     - WantedListCartridge
     - MedTekCartridge
@@ -1670,7 +1670,7 @@
     uiKey: enum.PdaUiKey.Key
     preinstalled:
       - NotekeeperCartridge
-      - NanoTaskCartridge
+      #- NanoTaskCartridge Corvax-Goob-RemoveRoundStartNanoTask
       - MedTekCartridge
       - NanoChatCartridge # DeltaV
 
