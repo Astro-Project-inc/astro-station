@@ -731,7 +731,7 @@
       damageContainer: StructuralInorganic
       damageModifierSet: StructuralMetallicStrong
     - type: RadiationBlocker
-      resistance: 10
+      resistance: 999 # CorvaxGoob 10 -> 999
 
 - type: entity
   parent: WallPlastitaniumIndestructible
@@ -775,7 +775,7 @@
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrong
   - type: RadiationBlocker
-    resistance: 10
+    resistance: 999 # CorvaxGoob 10 -> 999
 
 - type: entity
   parent: WallPlastitaniumDiagonalIndestructible
