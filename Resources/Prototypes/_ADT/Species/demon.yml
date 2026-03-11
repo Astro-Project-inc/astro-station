@@ -4,35 +4,16 @@
   roundStart: true
   prototype: MobDemon
   sprites: MobDemonSprites
-  shortDesc: species-short-desc-demon
   defaultSkinTone: "#34a223"
   markingLimits: MobDemonMarkingLimits
   dollPrototype: MobDemonDummy
   skinColoration: Hues
-  maleFirstNames: names_first_male
-  femaleFirstNames: names_first_female
-  maleLastNames: NamesHumanLastMale
-  femaleLastNames: NamesHumanLastFemale
-  naming: firstlast
-  category: Unusual
-  description: "/ServerInfo/ADT/SpeciesDescriptions/Arkan.xml"
-  pros:
-  - Получают на 30% меньше урона обморожением
-  - Получают на 15% меньше урона ожогами
-  - Получают на 20% меньше урона ядом
-  special:
-  - Имеют нестандартные возрастные рамки (Молодые 50-150, Зрелые 151-250, Старые 251-350)
-  cons:
-  - Получают на 10% больше тупого и колотого урона
-  - Получают на 5% больше урона порезами
-  - Получают на 50% больше урона клеточными
-  defaultLanguages:
-  - GalacticCommon
-  - Arkane
-  minAge: 50
-  maxAge: 350
-  oldAge: 251
-  youngAge: 151
+  minHeight: 0.90
+  defaultHeight: 1
+  maxHeight: 1.20
+  minWidth: 0.90
+  defaultWidth: 1
+  maxWidth: 1.10
 
 - type: speciesBaseSprites
   id: MobDemonSprites
