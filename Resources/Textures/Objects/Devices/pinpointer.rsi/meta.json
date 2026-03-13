@@ -167,6 +167,14 @@
             "name": "pinpointer-science"
         },
         {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        },
+        {
             "name": "inhand-left-base",
             "directions": 4
         },
